@@ -1,0 +1,23 @@
+site_name: Calculus and Analysis in Euclidean Space
+theme: readthedocs
+
+nav:
+  - Home: index.md
+
+extra_javascript: 
+    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+    # - javascripts/config.js
+
+# extra_javascript:
+#   - javascripts/mathjax.js
+#   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+markdown_extensions:
+    - mdx_math:
+        enable_dollar_delimiter: True
+    # - pymdownx.arithmatex:
+    #     generic: true
+
+repo_name: Github
+repo_url: https://github.com/eroicaleo/shurman-calculus-euclidean-space/
+edit_uri: 'blob/main/docs/'
