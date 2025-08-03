@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Chapter 01 Notes - Calculus and Analysis in Euclidean Space</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Chapter 01 Notes";
+        var mkdocs_page_input_path = "ch01notes.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Calculus and Analysis in Euclidean Space
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Chapter 01 Notes</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#11-the-real-number-system">1.1 The Real Number System</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-111-field-axioms-for-r">Theorem 1.1.1 (Field axioms for (R,+,·)).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-112-order-axioms">Theorem 1.1.2 (Order axioms).</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#13-taylors-theorem">1.3 Taylor’s Theorem</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch01ex/">Chapter 01 Exercises</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Calculus and Analysis in Euclidean Space</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li class="breadcrumb-item active">Chapter 01 Notes</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/eroicaleo/shurman-calculus-euclidean-space/blob/main/docs/ch01notes.md" class="icon icon-github"> Edit on Github</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="chapter-1-results-from-one-variable-calculus">Chapter 1 Results from One-Variable Calculus</h1>
+<h2 id="11-the-real-number-system">1.1 The Real Number System</h2>
+<h3 id="theorem-111-field-axioms-for-r">Theorem 1.1.1 (Field axioms for (<script type="math/tex">R,+,·</script>)).</h3>
+<p>(a1) Addition is associative</p>
+<p>(a2) <script type="math/tex">0</script> is an additive identity</p>
+<p>(a3) Existence of additive inverses</p>
+<p>(a4) Addition is commutative</p>
+<p>(m1) Multiplication is associative</p>
+<p>(m2) <script type="math/tex">1</script> is a multiplicative identity</p>
+<p>(m3) Existence of multiplicative inverses</p>
+<p>(m4) Multiplication is commutative</p>
+<p>(d1) Multiplication distributes over addition</p>
+<h3 id="theorem-112-order-axioms">Theorem 1.1.2 (Order axioms).</h3>
+<p>(o1) Trichotomy axiom: for every real number <script type="math/tex">x</script>, exactly one of 
+the following conditions holds:</p>
+<p>
+<script type="math/tex; mode=display"> 
+x \in \mathbb{R}^+, x \in \mathbb{R}^-, x = 0.
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(o2) Closure of positive numbers under addition: for all real 
+numbers <script type="math/tex">x</script> and <script type="math/tex">y</script>, if <script type="math/tex">x \in \mathbb{R}^+</script>,
+and <script type="math/tex">y \in \mathbb{R}^+</script>, then also <script type="math/tex">x+y \in \mathbb{R}^+</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(o3) Closure of positive numbers under multiplication: for all 
+real numbers <script type="math/tex">x</script> and <script type="math/tex">y</script>, if <script type="math/tex">x \in \mathbb{R}^+</script>,
+and <script type="math/tex">y \in \mathbb{R}^+</script>, then also <script type="math/tex">xy \in \mathbb{R}^+</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>For all real numbers <script type="math/tex">x</script> and <script type="math/tex">y</script>, define</p>
+<p>
+<script type="math/tex; mode=display"> 
+x < y
+</script>
+</p>
+<p>to mean</p>
+<p>
+<script type="math/tex; mode=display"> 
+y - x \in \mathbb{R}^+
+</script>
+</p>
+<p>We want to show this definition is the same as what we learned in
+"Understanding Analysis".</p>
+<p>
+<script type="math/tex">\Rightarrow</script> We define this relation, if <script type="math/tex">x < y</script> of <script type="math/tex">x = y</script> then
+we say <script type="math/tex">x \leq y</script>.</p>
+<p>(o1ua) Given any <script type="math/tex">x, y</script>, since either</p>
+<p>
+<script type="math/tex; mode=display"> 
+x - y \in \mathbb{R}^+, x - y \in \mathbb{R}^-, x - y = 0.
+</script>
+</p>
+<p>Then either <script type="math/tex">x \leq y</script> or <script type="math/tex">y \leq x</script>.</p>
+<p>(o2ua) If <script type="math/tex">x \leq y</script>, then <script type="math/tex">x - y \leq 0</script>. <script type="math/tex">y \leq x</script>, then
+<script type="math/tex">y - x \leq 0</script>. So <script type="math/tex">x = y</script>.</p>
+<p>(o3ua) If <script type="math/tex">x \leq y</script>, then <script type="math/tex">x - y \leq 0</script>. <script type="math/tex">y - z \leq 0</script>, then
+<script type="math/tex">(x-y) + (y-z) = x - z \leq 0</script>, i.e. <script type="math/tex">x \leq z</script>.</p>
+<p>(o4ua) If <script type="math/tex">y \leq z</script>, <script type="math/tex">y - z \leq 0</script>, then <script type="math/tex">x + (y-z) \leq x</script>.
+so <script type="math/tex">x + y \leq x + z</script>.</p>
+<p>(o5ua) It's automatic.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>We define the set to be</p>
+<p>
+<script type="math/tex; mode=display"> 
+\mathbb{F}^+ = \{
+x : 0 \leq x \text{ and } x \neq 0
+\}
+</script>
+</p>
+<p>We want to showthe following:</p>
+<p>(o1) We want to show if <script type="math/tex">x \not\in \mathbb{F}^+</script> and
+<script type="math/tex">x \neq 0</script>, then <script type="math/tex">-x \in \mathbb{F}^+</script>.</p>
+<p>Assume <script type="math/tex">-x \leq 0</script>, then <script type="math/tex">-x + x \leq 0 + x</script>, so <script type="math/tex">0 \leq x</script>,
+we have a contradiction. So <script type="math/tex">0 \leq -x</script>.</p>
+<p>Since <script type="math/tex">x \neq 0</script>, then if <script type="math/tex">-x = 0</script>, we have <script type="math/tex">0 = x + (-x) = x</script>,
+we have a contradiction again, so <script type="math/tex">-x \neq 0</script>.</p>
+<p>Then <script type="math/tex">x \in \mathbb{F}^+</script>.</p>
+<p>(o2) We want to show if <script type="math/tex">x \in \mathbb{F}^+</script>,
+and <script type="math/tex">y \in \mathbb{F}^+</script>, then also <script type="math/tex">x+y \in \mathbb{F}^+</script>.</p>
+<p>
+<script type="math/tex">0 \leq x, 0 \leq y</script>, then <script type="math/tex">0 + 0 \leq x + 0 \leq x + y</script>.</p>
+<p>In addition, if <script type="math/tex">x + y = 0</script>, then <script type="math/tex">x = -y</script>, since
+<script type="math/tex">y \in \mathbb{F}^+</script>, then <script type="math/tex">-y \not\in \mathbb{F}^+</script>, i.e.
+<script type="math/tex">x \not\in \mathbb{F}^+</script>, we have a contradiction.</p>
+<p>(o3) We want to show <script type="math/tex">x \in \mathbb{F}^+</script>,
+and <script type="math/tex">y \in \mathbb{F}^+</script>, then also <script type="math/tex">xy \in \mathbb{F}^+</script>.</p>
+<p>(o5ua) guarantees <script type="math/tex">0 \leq x, 0 \leq y</script> then <script type="math/tex">0 \leq xy</script>.
+If <script type="math/tex">xy = 0</script>, since <script type="math/tex">y \neq 0</script>, we can find <script type="math/tex">y^{-1}</script> such that
+<script type="math/tex">x = xyy^{-1} = 0y^{-1} = 0</script>, we have a contradiction.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>Another thing we can show is that no order can be made to a finite
+field.</p>
+<p><strong>Proof</strong>: Assume we <script type="math/tex">\mathbb{F}</script> is a finite field. We proved
+<script type="math/tex">1 \in \mathbb{F}^+</script>. Then consider the sequence</p>
+<p>
+<script type="math/tex; mode=display"> 
+1,2,3,\cdots 
+</script>
+</p>
+<p>Since <script type="math/tex">\mathbb{F}</script> is finite, we must have for some <script type="math/tex">k,n</script>
+<script type="math/tex">k = k+n</script>, then we have <script type="math/tex">n = 0</script>. On the other hand,
+<script type="math/tex">n</script> is the sum of <script type="math/tex">n</script>
+<script type="math/tex">1</script>s, so <script type="math/tex">n \in \mathbb{F}^+</script>.
+We have a contradiction.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="13-taylors-theorem">1.3 Taylor’s Theorem</h2>
+<p>Let <script type="math/tex">I ⊂ \mathbb{R}</script> be a nonempty open interval, and let <script type="math/tex">a ∈ I</script> 
+be any point. Let <script type="math/tex">n</script> be a nonnegative integer. Suppose that the 
+function <script type="math/tex">f : I \to \mathbb{R}</script> has <script type="math/tex">n</script> continuous derivatives</p>
+<p>
+<script type="math/tex; mode=display"> 
+f, f', f'', \cdots, f^{(n)} : I \to \mathbb{R}
+</script>
+</p>
+<p>For every positive integer <script type="math/tex">k</script> and every <script type="math/tex">x ∈ \mathbb{R}</script> define a k-fold nested integral,</p>
+<p>
+<script type="math/tex; mode=display"> 
+I_k(x) =
+\int_{x_1 = a}^{x}
+\int_{x_2 = a}^{x_1}
+\cdots
+\int_{x_k = a}^{x_{k-1}}
+d x_k \cdots d x_2 d x_1
+</script>
+</p>
+<p>Then we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+I_1(x) =
+\int_{x_1 = a}^{x} d x_1 = x_1 \Big|_{x_1 = a}^x = x - a
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+I_2(x) =
+\int_{x_1 = a}^{x}
+\int_{x_2 = a}^{x_1}
+d x_2 d x_1 =
+\int_{x_1 = a}^{x}
+I_1(x_1) d x_1
+=
+\frac{1}{2} (x_1 - a)^2 \Big|_{x_1 = a}^x
+=
+\frac{1}{2} (x - a)^2
+</script>
+</p>
+<p>So in general</p>
+<p>
+<script type="math/tex; mode=display"> 
+I_k(x) = \frac{1}{k!} (x - a)^k, k \in \mathbb{Z}^+.
+</script>
+</p>
+<p>According to the fundamental theorem,</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) = f(a) + \int_{a}^{x} f'(x_1) d x_1 \\
+f'(x_1) = f'(a) + \int_{a}^{x_1} f''(x_2) d x_2 \\
+</script>
+</p>
+<p>So we have</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{split}
+f(x)
+&= T_0(x) + \int_{a}^{x} f'(x_1) d x_1 \\
+&= T_0(x) + f'(a) I_1(x) +
+\int_{a}^{x} 
+\int_{a}^{x_1}
+f''(x_2) d x_2 d x_1 
+ \\
+&= T_1(x) +
+\int_{a}^{x} 
+\int_{a}^{x_1}
+f''(x_2) d x_2 d x_1 \\
+&\cdots \\
+&= T_n(x) +
+\int_{x_1 = a}^{x}
+\int_{x_2 = a}^{x_1}
+\cdots
+\int_{x_{n+1} = a}^{x_{n}}
+f^{(n+1)}(x_{n+1}) d x_{n+1} \cdots d x_2 d x_1 \\
+&= T_n(x) + R_n(x)
+\end{split}
+</script>
+</p>
+<p>Assume <script type="math/tex">m \leq f^{(n+1)}(x_{n+1}) \leq M</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+m I_1(x_n) \leq 
+\int_{x_{n+1} = a}^{x_{n}}
+f^{(n+1)}(x_{n+1}) d x_{n+1}
+\leq
+M I_1(x_n)
+</script>
+</p>
+<p>and</p>
+<p>
+<script type="math/tex; mode=display"> 
+m I_2(x_{n-1}) \leq 
+\int_{x_{n} = a}^{x_{n-1}}
+\int_{x_{n+1} = a}^{x_{n}}
+f^{(n+1)}(x_{n+1}) d x_{n+1} d x_n
+\leq
+M I_2(x_{n-1})
+</script>
+</p>
+<p>and so on. Eventually, we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+m I_{n+1}(x)
+\leq
+R_n(x)
+\leq
+M I_{n+1}(x)
+</script>
+</p>
+<p>i.e.</p>
+<p>
+<script type="math/tex; mode=display"> 
+m \frac{(x-a)^{n+1}}{(n+1)!}
+\leq
+R_n(x)
+\leq
+M \frac{(x-a)^{n+1}}{(n+1)!}
+</script>
+</p>
+<p>If we let</p>
+<p>
+<script type="math/tex; mode=display"> 
+g(t) = f^{(n+1)}(t) \frac{(x-a)^{n+1}}{(n+1)!},
+t \in [a, x]
+</script>
+</p>
+<p>Then we have
+<script type="math/tex; mode=display">
+g(t_m) = m \frac{(x-a)^{n+1}}{(n+1)!},
+g(t_M) = M \frac{(x-a)^{n+1}}{(n+1)!}
+</script> and since <script type="math/tex">g(t)</script> is
+continuous, we can find <script type="math/tex">c \in [a, x]</script>, such that <script type="math/tex">g(c) = R_n(x)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>Next, we discuss the case for <script type="math/tex">x < a</script>.</p>
+<p>Consider <script type="math/tex">\tilde{f} : -I \to \mathbb{R}</script>, <script type="math/tex">\tilde{f}(-x) = f(x)</script>
+</p>
+<p>With chain rule, we can see</p>
+<p>
+<script type="math/tex; mode=display"> 
+\tilde{f}^{(n)}(-x) = (-1)^n f^{(n)}(x)
+</script>
+</p>
+<p>If <script type="math/tex">x < a</script> in <script type="math/tex">I</script> then <script type="math/tex">−x >−a</script> in <script type="math/tex">−I</script>, and so we know by the 
+version of Taylor’s theorem that we have already proved that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\tilde{f}(-x) = \tilde{T}_n(-x) + \tilde{R}_n(-x)
+</script>
+</p>
+<p>To get the <script type="math/tex">\tilde{T}_n(-x)</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\tilde{T}_n(-x) =
+\sum_{k = 0}^{n}
+\frac{\tilde{f}^{(k)}(-a)}{k!} (-x - (-a))^k \\
+= \sum_{k = 0}^{n}
+(-1)^k \frac{f^{(k)}(a)}{k!} (a-x)^k \\
+= \sum_{k = 0}^{n}
+\frac{f^{(k)}(a)}{k!} (x-a)^k \\
+</script>
+</p>
+<p>and also</p>
+<p>
+<script type="math/tex; mode=display"> 
+\tilde{R}_n(-x) =
+\frac{\tilde{f}^{(n+1)}(-c)}{(n+1)!} (-x - (-a))^{n+1}
+=
+(-1)^{n+1}
+\frac{f^{(n+1)}(c)}{(n+1)!} (a-x)^{n+1}
+\\
+= \frac{f^{(n+1)}(c)}{(n+1)!} (x-a)^{n+1}
+</script>
+</p>
+<p>So we proved when <script type="math/tex">x < a</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<ul>
+<li>
+<p>Whereas our proof of Taylor’s theorem relies primarily on the fundamental theorem of integral calculus</p>
+<ul>
+<li>a similar proof relies on repeated integration byparts(Exercise1.3.6) (Also see Jay Cumming's Real Analysis)</li>
+<li>many proofs rely instead on the mean value theorem.
+  Also see Understanding Analysis.</li>
+</ul>
+</li>
+<li>
+<p>Our proof neatly uses three diﬀerent mathematical techniques for 
+  the three diﬀerent parts of the argument:</p>
+<ul>
+<li>To find the Taylor polynomial <script type="math/tex">T_n(x)</script>, we diﬀerentiated 
+  repeatedly, using a substitution at each step to determine a 
+  coeﬃcient.</li>
+<li>To get a precise (if unwieldy) expression for the remainder 
+  <script type="math/tex">R_n(x) = f(x)− T_n(x)</script>, we integrated repeatedly, 
+  usingthefundamental theorem of integral calculus at each 
+  step to produce a term of the Taylor polynomial.</li>
+<li>To express the remainder in a more convenient form, we used 
+  the extreme value theorem and then the intermediate value 
+  theorem once each. These foundational theorems are not 
+  results from calculus but (as we will discuss in
+  Section 2.4) from an area of mathematics called topology.</li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ch01ex/" class="btn btn-neutral float-right" title="Chapter 01 Exercises">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../ch01ex/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
