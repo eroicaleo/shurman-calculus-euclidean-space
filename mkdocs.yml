@@ -5,6 +5,9 @@ nav:
   - Home: index.md
   - Chapter 01 Notes: ch01notes.md
   - Chapter 01 Exercises: ch01ex.md
+  - Chapter 02 Notes: ch02notes.md
+  - Chapter 02 Exercises: ch02ex.md
+  - Unsolved Problems: unsolved.md
 
 extra_javascript: 
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML
