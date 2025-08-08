@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Chapter 02 Notes - Calculus and Analysis in Euclidean Space</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Chapter 02 Notes";
+        var mkdocs_page_input_path = "ch02notes.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Calculus and Analysis in Euclidean Space
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch01notes/">Chapter 01 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch01ex/">Chapter 01 Exercises</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Chapter 02 Notes</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#21-algebra-vectors">2.1 Algebra: Vectors</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-211-vector-space-axioms">Theorem 2.1.1 (Vector space axioms).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-212-basis">Definition 2.1.2 (Basis).</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch02ex/">Chapter 02 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../unsolved/">Unsolved Problems</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Calculus and Analysis in Euclidean Space</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li class="breadcrumb-item active">Chapter 02 Notes</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/eroicaleo/shurman-calculus-euclidean-space/blob/main/docs/ch02notes.md" class="icon icon-github"> Edit on Github</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="chapter-2-euclidean-space">Chapter 2 Euclidean Space</h1>
+<h2 id="21-algebra-vectors">2.1 Algebra: Vectors</h2>
+<h3 id="theorem-211-vector-space-axioms">Theorem 2.1.1 (Vector space axioms).</h3>
+<p>(A1) Addition is associative</p>
+<p>(A2) 0 is an additive identity</p>
+<p>(A3) Existence of additive inverses</p>
+<p>(A4) Addition is commutative</p>
+<p>(M1) Scalar multiplication is associative</p>
+<p>(M2) 1 is a multiplicative identity</p>
+<p>(D1) Scalar multiplication distributes over scalar addition</p>
+<p>(D2) Scalar multiplication distributes over vector addition</p>
+<p><em>For <script type="math/tex">n > 1</script>, <script type="math/tex">\mathbb{R}^n</script> is not endowed with vector-by-vector multiplication.</em></p>
+<p>If the vector space axioms are satisfied with <script type="math/tex">V</script> and <script type="math/tex">F</script> replacing <script type="math/tex">\mathbb{R}^n</script>
+and <script type="math/tex">\mathbb{R}</script> then we say that <script type="math/tex">V</script> is a vector space over <script type="math/tex">F</script>.</p>
+<p>We can use intrinsic vector algebra to prove a result from Euclidean geometry, 
+that the three medians of a triangle intersect.</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display">
+p = \frac{x + y + z}{3}
+</script>
+</p>
+<p>Rewrite it as</p>
+<p>
+<script type="math/tex; mode=display"> 
+p = x + \frac{2}{3}(\frac{y+z}{2} - x)
+</script>
+</p>
+<p>Note that <script type="math/tex">\frac{y+z}{2}</script> is the middle point of <script type="math/tex">yz</script>. Then <script type="math/tex">\frac{y+z}{2} - x</script>
+is the median from <script type="math/tex">x</script> to <script type="math/tex">yz</script>, so <script type="math/tex">p</script> is on the median.</p>
+<p>Since <script type="math/tex">x,y,z</script> are symmetric, then <script type="math/tex">p</script> is on all 3 medians.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>The standard basis of <script type="math/tex">\mathbb{R}^n</script> is the set of vectors</p>
+<p>
+<script type="math/tex; mode=display"> 
+e_1 = (1, 0, \cdots 0) \\
+e_2 = (0, 1, \cdots 0) \\
+\cdots \\
+e_n = (0, 0, \cdots 1) \\
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display">
+\tag{2.1}
+x = \sum_{i = 1}^{n}x_i e_i
+</script>
+</p>
+<h3 id="definition-212-basis">Definition 2.1.2 (Basis).</h3>
+<p>A set of vectors <script type="math/tex">\{f_i\}</script> is a basis of <script type="math/tex">\mathbb{R}^n</script> if every
+<script type="math/tex">x ∈ \mathbb{R}^n</script> is uniquely expressible as a linear combination of the <script type="math/tex">f_i</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../ch01ex/" class="btn btn-neutral float-left" title="Chapter 01 Exercises"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ch02ex/" class="btn btn-neutral float-right" title="Chapter 02 Exercises">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../ch01ex/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../ch02ex/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
