@@ -260,7 +260,8 @@ $$
 
 So $S_1$ is a base.
 
-For $S_2$, it is a base
+For $S_2$, it is note a base. For example
+$(1,1,1)$ can be expressed by multiple ways.
 
 For $S_3$
 
@@ -345,6 +346,343 @@ S_2 = \{
 \cdots 
 (0,\cdots,1)
 \}
+$$
+
+$\square$
+
+## 2.2 Geometry: Length and Angle
+
+### 2.2.1
+
+Let
+
+$$ 
+x = (\frac{\sqrt[]{3}}{2}, -\frac{1}{2}, 0),
+y = (\frac{1}{2}, \frac{\sqrt[]{3}}{2}, 1),
+z = (1, 1, 1)
+$$
+
+Compute $⟨x,x⟩, ⟨x,y⟩, ⟨y,z⟩, |x|, |y|, |z|, 
+θ_{x,y}, θ_{y,e_1}, θ_{z,e_2}$
+
+**Solution**:
+
+$$ 
+⟨x,x⟩ = \frac{3}{4} + \frac{1}{4} + 0 = 1 \\
+⟨x,y⟩ = \frac{\sqrt[]{3}}{4} - \frac{\sqrt[]{3}}{4} + 0 = 0 \\
+⟨y,z⟩ = \frac{1}{2} + \frac{\sqrt[]{3}}{2} + 1
+= \frac{3 + \sqrt[]{3}}{2} \\
+|x| = 1 \\
+|y| = \sqrt[]{2} \\
+|z| = \sqrt[]{3} \\
+θ_{x,y} = \frac{⟨x,y⟩}{|x| |y|} = \frac{0}{|x| |y|} = 0 \\
+θ_{y,e_1} = \frac{⟨y,e_1⟩}{|y| |e_1|} = \frac{1/2}{|x| |y|} =
+\frac{1}{2 \sqrt[]{2}} \\
+θ_{z,e_2} = \frac{1}{\sqrt[]{3}}
+$$
+
+$\square$
+
+### 2.2.2.
+
+Show that the points
+$x = (2,−1,3,1), y = (4,2,1,4), z = (1,3,6,1)$
+form the vertices of a triangle in $\mathbb{R}^4$ with two equal 
+angles.
+
+**Solution**:
+
+$$ 
+d(x,y) = |x - y| = \sqrt[]{⟨x-y,x-y⟩}
+= \sqrt[]{⟨(-2,-3,2,-3),(-2,-3,2,-3)⟩}
+= \sqrt[]{4+9+4+9} = \sqrt[]{26} \\
+d(y,z) = |y-z| = \sqrt[]{⟨y-z,y-z⟩}
+= \sqrt[]{⟨(3,-1,-5,3),(3,-1,-5,3)⟩}
+= \sqrt[]{9+1+25+9} = \sqrt[]{44} \\
+d(z,x) = |z-x| = \sqrt[]{⟨z-x,z-x⟩}
+= \sqrt[]{⟨(-1,4,3,0),(-1,4,3,0)⟩}
+= \sqrt[]{1+16+9+0} = \sqrt[]{26} \\
+$$
+
+$\square$
+
+### 2.2.3.
+
+Explain why for all $x ∈ \mathbb{R}^n$,
+$x = \sum_{j=1}^{n} ⟨x,e_j⟩e_j$.
+
+**Proof**:
+
+Note
+
+$$ 
+⟨x,e_j⟩ =
+⟨(x_1, \cdots, x_n),(0, \cdots, 1, \cdots, 0)⟩
+= x_j \\
+x_j e_j = (0, \cdots, x_j, \cdots, 0) \\
+\sum_{j=1}^{n} x_j e_j = (x_1, \cdots, x_n) = x
+$$
+
+$\square$
+
+### 2.2.4.
+
+Prove the inner product properties.
+
+**Proof**:
+
+(IP1) The inner product is positive definite:
+$⟨x,x⟩ ≥ 0$ for all $x ∈ \mathbb{R}^n$, with
+equality if and only if $x = 0$.
+
+$$ 
+⟨x,x⟩ = x_1^2 + \cdots + x_n^2 \geq 0
+$$
+
+It equals 0 only when $x_1 = \cdots = x_n = 0$.
+
+$\square$
+
+(IP2) The inner product is symmetric:
+$⟨x,y⟩= ⟨y,x⟩$ for all $x,y ∈ \mathbb{R}^n$
+
+$$ 
+⟨x,y⟩ = x_1 y_1 + \cdots + x_n y_n
+= y_1 x_1 + \cdots + y_n x_n = ⟨y,x⟩
+$$
+
+$\square$
+
+(IP3) The inner product is bilinear:
+
+$$ 
+⟨x+x',y⟩ = (x_1 + x'_1) y_1 + \cdots + (x_n + x'_n) y_n \\
+= (x_1 y_1 + \cdots + x_n y_n) + (x'_1 y_1 + \cdots + x'_n y_n) \\
+= ⟨x,y⟩ + ⟨x',y⟩
+$$
+
+$$ 
+⟨ax,y⟩ = (ax_1) y_1 + \cdots + (ax_n) y_n \\
+= a (x_1 y_1 + \cdots + x_n y_n) \\
+= a ⟨x,y⟩
+$$
+
+$\square$
+
+### 2.2.5.
+
+Use the inner product properties and the definition of the modulus 
+in terms of the inner product to prove the modulus properties.
+
+**Proof**:
+
+(Mod1) The modulus is positive: $|x| ≥ 0$ for all $x ∈ \mathbb{R}^n$, with equality if and only if $x = 0$.
+
+$$ 
+⟨x,x⟩ \geq 0 \\
+\Rightarrow \\
+|x| = \sqrt[]{⟨x,x⟩} \geq 0
+$$
+
+$⟨x,x⟩ = 0$ if and only if $x = 0$.
+
+$\square$
+
+(Mod2) The modulus is absolute-homogeneous: $|ax|= |a||x|$ for all 
+$a ∈ R$ and $x ∈ \mathbb{R}^n$.
+
+$$ 
+⟨ax,ax⟩ = a ⟨x,ax⟩ = a^2 ⟨x,x⟩
+$$
+
+So $|ax| = \sqrt[]{⟨ax,ax⟩} = \sqrt[]{a^2 ⟨x,x⟩} = |a||x|$
+
+$\square$
+
+### 2.2.6.
+
+In the text, the modulus is defined in terms of the inner product. Prove that this can be turned around by showing that for every
+$x,y ∈ \mathbb{R}^n$,
+
+$$ 
+⟨x,y⟩ = \frac{|x+y|^2 - |x-y|^2}{4}.
+$$
+
+**Proof**:
+
+$$ 
+|x+y|^2 = ⟨x+y,x+y⟩ = ⟨x,x⟩ + 2 ⟨x,y⟩ + ⟨y,y⟩ \\
+|x-y|^2 = ⟨x-y,x-y⟩ = ⟨x,x⟩ - 2 ⟨x,y⟩ + ⟨y,y⟩ \\
+$$
+
+So the equation holds.
+
+$\square$
+
+### 2.2.7.
+
+Prove the full triangle inequality: for every $x,y ∈ \mathbb{R}^n$,
+
+$$ 
+||x| - |y|| \leq |x \pm y | \leq |x| + |y|
+$$
+
+Do not do this by writing three more variants of the proof of the 
+triangle inequality, but by substituting suitably into the basic 
+triangle inequality, which is already proved.
+
+**Proof**:
+
+1. 
+$$ 
+|x - y| \leq |x| + |y|
+$$
+
+Note
+
+$$ 
+\begin{split}
+|x-y|
+& = |x + (-y)| \\
+& \leq |x| + |-y| \\
+& = |x| + |y| \\
+\end{split}
+$$
+
+2.
+$$ 
+||x| - |y|| \leq |x + y|
+$$
+
+Note
+
+$$ 
+\begin{split}
+|x| &= |(-y) + (x+y)| \\
+& \leq |-y| + |x+y| \\
+& = |y| + |x+y| \\
+\end{split} \\
+\Rightarrow \\
+|x| - |y| \leq |x+y|
+$$
+
+And similarly
+
+$$ 
+\begin{split}
+|y| &= |(-x) + (x+y)| \\
+& \leq |-x| + |x+y| \\
+& = |x| + |x+y| \\
+\end{split} \\
+\Rightarrow \\
+|y| - |x| \leq |x+y|
+$$
+
+Combine these 2 together, we have
+
+$$ 
+||x| - |y|| \leq |x + y|
+$$
+
+3.
+$$ 
+||x| - |y|| \leq |x - y|
+$$
+
+This is similar to 2.
+
+$\square$
+
+### 2.2.8.
+
+Let $x = (x_1,...,x_n) ∈ \mathbb{R}^n$. Prove the size bounds: for 
+every $j ∈ \{1,...,n\}$,
+
+$$ 
+|x_j| \leq |x| \leq
+\sum_{j=1}^{n} |x_j|.
+$$
+
+(One approach is to start by noting that $x_j= ⟨x,e_j⟩$ and 
+recalling equation (2.1).) When can each $≤$ be an $=$?
+
+**Proof**:
+
+From the hint:
+
+$$
+\begin{split}
+|x_j| &= |⟨x,e_j⟩| \\
+& \leq |x||e_j| \\
+& \text{Cauchy-Schwarz inequality} \\
+& = |x| \cdot 1 \\
+& = |x|
+\end{split}
+$$
+
+This equality holds when $x = a \cdot e_j$.
+
+Note
+
+$$
+\begin{split}
+|x| &=
+\left| \sum_{j=1}^{n} x_j e_j \right| \\
+& \leq \sum_{j=1}^{n} \left| x_j e_j \right| \\
+& \text{Generalized triangle inequality}\\
+& = \sum_{j=1}^{n} | x_j | | e_j | \\
+& \text{The modulus is absolute-homogeneous}\\
+& = \sum_{j=1}^{n} | x_j | \\
+\end{split}
+$$
+
+This equality holds when only only one of $x_j$ is not $0$.
+
+$\square$
+
+### 2.2.9.
+
+Prove the distance properties.
+
+**Proof**:
+
+(D1) Distance is positive: $d(x,y) ≥ 0$ for all $x,y ∈ \mathbb{R}^n$, and $d(x,y) = 0$ if and only if $x = y$.
+
+Note
+
+$$ 
+d(x,y) = |x-y| \geq 0
+$$
+
+The equality holds only when $x-y = 0$, i.e. $x = y$. 
+
+$\square$
+
+(D2) Distance is symmetric: $d(x,y) = d(y,x)$ for all
+$x,y ∈ \mathbb{R}^n$.
+
+Note:
+
+$$ 
+d(x,y) = |x-y| = |y-x| = d(y,x)
+$$
+
+$\square$
+
+$\square$
+
+(D3) Triangle inequality: $d(x,z) ≤ d(x,y)+d(y,z)$ for all
+$x,y,z ∈ \mathbb{R}^n$.
+
+Note:
+
+$$
+\begin{split}
+d(x,z) &= |x-z| \\
+&= |(x-y)+(y-z)| \\
+& \leq |x-y| + |y-z| \\
+&= d(x,y) + d(y,z)
+\end{split}
 $$
 
 $\square$
