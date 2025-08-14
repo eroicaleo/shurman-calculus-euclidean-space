@@ -1012,7 +1012,6 @@ Given nonzero vectors $x_1,x_2,...,x_n$ in $\mathbb{R}^n$, the Gram–Schmidt pr
 
 $$
 \begin{split}
-    
 x_1' &= x_1 \\ 
 x_2' &= x_2 - (x_2)_{(\parallel x_1')}\\ 
 x_3' &= x_3 - (x_3)_{(\parallel x_2')} - (x_3)_{(\parallel x_1')} \\
@@ -1020,7 +1019,6 @@ x_3' &= x_3 - (x_3)_{(\parallel x_2')} - (x_3)_{(\parallel x_1')} \\
 x_n' &= x_n - (x_n)_{(\parallel x_{n-1}')} - \cdots - (x_n)_{(\parallel x_1')}
 \\ 
 \end{split}
-
 $$
 
 Answer:
