@@ -686,3 +686,424 @@ d(x,z) &= |x-z| \\
 $$
 
 $\square$
+
+### 2.2.10
+
+Working in $\mathbb{R}^2$, depict the nonzero vectors $x$ and $y$ as arrows from the
+origin and depict $x−y$ as an arrow from the endpoint of $y$ to the endpoint
+of $x$. Let $θ$ denote the angle (in the usual geometric sense) between $x$ and $y$.
+Use the law of cosines to show that
+
+$$ 
+\cos θ = \frac{⟨x,y⟩}{|x||y|}
+$$
+
+**Proof**
+
+Geometric proof:
+
+$$ 
+\frac{⟨x,y⟩}{|x||y|} = \frac{x_1 y_1 + x_2 y_2}{|x||y|}
+= \frac{1}{|x|} \left( \frac{x_1 y_1 + x_2 y_2}{|y|} \right) 
+$$
+
+As shown in the figure below, $XD \perp OY$, $AC \perp OY$ and
+$XB \perp AC$.
+
+We just need to show
+
+$$ 
+\frac{x_1 y_1 + x_2 y_2}{|y|} = OD
+$$
+
+Note
+
+$$ 
+\frac{y_1}{y} = \cos \angle AOC \\
+\Rightarrow \\
+\frac{x_1 y_1}{|y|} = OC
+$$
+
+$$ 
+\frac{y_2}{y} = \cos \angle AXB \\
+\Rightarrow \\
+\frac{x_2 y_2}{|y|} = CD
+$$
+
+Then we finished the proof.
+
+![](./assets/ex-2-2-10.png)
+
+Proof with triangle equalities:
+
+$$ 
+x_1 = |x| \cos θ_x,
+x_2 = |x| \sin θ_x,
+y_1 = |y| \cos θ_y,
+y_2 = |y| \sin θ_y,
+$$
+
+Then
+
+$$ 
+⟨x,y⟩ = |x||y| \cos θ_x \cos θ_y + |x||y| \sin θ_x \sin θ_y \\
+= |x||y| \cos (θ_x - θ_y) = |x||y| \cos θ
+$$
+
+This also proved.
+
+$\square$
+
+### 2.2.11.
+
+Prove that for every nonzero $x ∈ \mathbb{R}^n$,
+$\sum_{i = 1}^{n} \cos ^2 θ_{x, e_i} = 1$.
+
+**Proof**:
+
+$$ 
+\cos ^2 θ_{x, e_i} =
+\sum_{i = 1}^{n} \left( \frac{⟨x,e_i⟩}{|x||e_i|} \right)^2 \\
+\sum_{i = 1}^{n} \frac{x_i^2}{|x|^2} \\
+= \frac{1}{|x|^2} \sum_{i = 1}^{n} x_i^2 \\
+= 1
+$$
+
+$\square$
+
+### 2.2.12.
+
+Prove that two nonzero vectors $x, y$ are orthogonal if and
+only if
+
+$$ 
+|x+y|^2 = |x|^2 +|y|^2.
+$$
+
+**Proof**:
+
+$$ 
+\begin{split}
+|x+y|^2 = ⟨x+y,x+y⟩ = |x|^2 + 2 ⟨x,y⟩ + |y|^2    
+\end{split}
+$$
+
+Then $|x+y|^2 = |x|^2 +|y|^2$ means $⟨x,y⟩=0$.
+
+$\square$
+
+### 2.2.13.
+
+Use vectors in $\mathbb{R}^2$ to show that the diagonals of a 
+parallelogram are perpendicular if and only if the parallelogram 
+is a rhombus.
+
+**Proof**:
+
+The 2 diagonals of the parallelogram are $x+y, x-y$.
+
+$$ 
+⟨x+y,x-y⟩ = |x|^2 - |y|^2
+$$
+
+If $x+y \perp x-y$, then $|x|^2 - |y|^2=0$, i.e. $|x| = |y|$.
+
+On the other hand, if $|x| = |y|$, then $⟨x+y,x-y⟩$.
+
+$\square$
+
+### 2.2.14.
+
+Use vectors to show that every angle inscribed in a semicircle is right.
+
+Let $(x,y)$ on the semicircle, then 
+$x^2+y^2=1$.
+
+consider
+
+$(x,y) - (-1,0) = (x+1,y)$ and $(x,y) - (1,0) = (x-1,y)$.
+
+Then
+
+$$ 
+⟨(x+1,y), (x-1, y)⟩ = x^2 - 1 + y^2 = 0
+$$
+
+$\square$
+
+### 2.2.15.
+
+Let $x$ and $y$ be vectors, with $x$ nonzero.Define the parallel 
+component of $y$ along $x$ and the normal component of
+$y$ to $x$ to be
+
+$$ 
+y_{(\parallel x)} = \frac{⟨x,y⟩}{|x|^2} x
+\qquad
+\text{and}
+\qquad
+y_{(\perp x)} = y - y_{(\parallel x)}
+$$
+
+Answer:
+
+(a) Show that $y = y_{(\parallel x)} + y_{(\perp x)}$.
+show that $y_{(\parallel x)}$ is a scalar multiple of $x$.
+show that $y_{(\perp x)}$ is orthogonal to $x$. Show that the 
+decomposition of $y$ as a sum of vectors parallel and 
+perpendicular to $x$ is unique. Draw an illustration.
+
+**Proof**:
+
+$$ 
+y_{(\parallel x)} + y_{(\perp x)} = \\
+y_{(\parallel x)} + (y - y_{(\parallel x)}) = \\
+y
+$$
+
+$$ 
+y_{(\parallel x)} = \frac{⟨x,y⟩}{|x|^2} x
+$$
+
+Since $\frac{⟨x,y⟩}{|x|^2}$ is a scalar, then
+$y_{(\parallel x)}$ is a scalar multiple of $x$.
+
+$$ 
+⟨y - y_{(\parallel x)},y_{(\parallel x)}) = \\
+⟨|x|^2 y - ⟨x,y⟩x, ⟨x,y⟩x⟩ \\
+= |x|^2 ⟨x,y⟩ ⟨y,x⟩ - ⟨x,y⟩^2 ⟨x,x⟩ \\
+= 0
+$$
+
+So $y_{(\perp x)}$ is orthogonal to $y_{(\parallel x)}$,
+thus is orthogonal to $x$.
+
+In general if $x \perp y$ and $ax + by = 0, x,y \neq 0$, then
+
+$$ 
+0 = ⟨0, x⟩ = ⟨ax + by,x⟩ = a ⟨x,x⟩ + b ⟨y,x⟩ = a ⟨x,x⟩ \geq 0 \\
+\Rightarrow \\
+a = 0
+$$
+
+For the same reason $b = 0$.
+
+With this, the decomposition of $y$ as a sum of vectors parallel 
+and perpendicular to $x$ is unique.
+
+$\square$
+
+(b) Show that
+
+$$ 
+|y|^2 = |y_{(\parallel x)}|^2 + |y_{(\perp x)}|^2
+$$
+
+What theorem from classical geometry does this encompass?
+
+**Proof**:
+
+$$ 
+|y|^2 = \\
+|y_{(\parallel x)} + y_{(\perp x)}|^2 = \\
+|y_{(\parallel x)}|^2 + |y_{(\perp x)}|^2 +
+2 ⟨y_{(\parallel x)}, y_{(\perp x)}⟩ \\
+= |y_{(\parallel x)}|^2 + |y_{(\perp x)}|^2 \\
+$$
+
+It's Pythagorean theorem or Gougu theorem.
+
+$\square$
+
+(c) Explain why it follows from (b) that
+
+$$ 
+|y_{(\parallel x)}|^2 \leq |y|^2
+$$
+
+with equality if and only if $y$ is a scalar multiple of $x$.
+Use this inequality to give another proof of the Cauchy–Schwarz 
+inequality. This argument gives the
+geometric content of Cauchy–Schwarz: the parallel component of one 
+vector along another is at most as long as the original vector.
+
+**Proof**:
+
+This is because $y_{(\perp x)}|^2 \geq 0$.
+
+The equality holds when $y_{(\perp x)}|^2 = 0$.
+In this case
+
+$$ 
+y = y_{(\parallel x)} = \frac{⟨x,y⟩}{|x|^2} x
+$$
+
+To prove
+
+$$ 
+|⟨x,y⟩| \leq |x||y|
+$$
+
+Note
+
+$$ 
+|⟨x,y⟩| = |⟨x,y_{(\parallel x)}+y_{(\perp x)}⟩| \\
+= |⟨x,y_{(\parallel x)}⟩ + 0|\\
+= |⟨x,y_{(\parallel x)}⟩|
+$$
+
+Now in general, if $a$ is a scaler, then
+
+$$ 
+|⟨x,ax⟩| = |a ⟨x,x⟩| = |a||x|^2 = |x| |ax|
+$$
+
+Then
+
+$$ 
+|⟨x,y_{(\parallel x)}⟩| = |x||y_{(\parallel x)}||
+\leq |x||y|
+$$
+$\square$
+
+(d) The proof of the Cauchy–Schwarz inequality in part (c) refers 
+to parts (a) and (b), part (a) refers to orthogonality, 
+orthogonality refers to an angle, and as explained in the text, 
+the fact that angles make sense depends on the
+Cauchy–Schwarz inequality. And so the proof in part (c) apparently 
+relies on circular logic. Explain why the logic is in fact not 
+circular.
+
+**Solution**:
+
+Note that when we define $\cos θ$, it is this:
+
+$$ 
+\cos θ = \frac{⟨x,y⟩}{|x||y|}
+$$
+
+But here, we define $y_{(\parallel x)}$ as
+
+$$ 
+y_{(\parallel x)} = \frac{⟨x,y⟩}{|x|^2}x
+$$
+
+If we think geometrically in $\mathbb{R}^2$ or $\mathbb{R}^3$,
+the projection of $y$ on $x$ should be $y \cos θ$.
+
+The unit length vector along $x$ is $\frac{x}{|x|}$.
+Also the length of $y$ projection is
+
+$$
+|y \cos θ|
+= \frac{⟨x,y⟩}{|x|}
+$$
+
+So it's reasonable to define $y_{(\parallel x)}$ this way.
+
+Now, since we does not rely on the fact that
+$|\cos θ| \leq 1$, it is not circular.
+
+$\square$
+
+### 2.2.16.
+
+Given nonzero vectors $x_1,x_2,...,x_n$ in $\mathbb{R}^n$, the Gram–Schmidt process is to set
+
+$$
+\begin{split}
+    
+x_1' &= x_1 \\ 
+x_2' &= x_2 - (x_2)_{(\parallel x_1')}\\ 
+x_3' &= x_3 - (x_3)_{(\parallel x_2')} - (x_3)_{(\parallel x_1')} \\
+\vdots \\
+x_n' &= x_n - (x_n)_{(\parallel x_{n-1}')} - \cdots - (x_n)_{(\parallel x_1')}
+\\ 
+\end{split}
+
+$$
+
+Answer:
+
+(a)What is the result of applying the Gram–Schmidt  process to the vectors
+$x_1 = (1,0,0), x_2 = (1,1,0)$, and $x_3 = (1,1,1)$?
+
+**Solution**:
+
+$$ 
+x_1' = (1,0,0) \\
+x_2' = (0,1,0) \\
+x_3' = (0,0,1) \\
+$$
+
+$\square$
+
+(b) Returning to the general case, show that
+$x_1',...,x_n'$ are pairwise orthogonal and that each
+$x_j'$ has the form
+
+$$ 
+x_j'= a_{j,1} x_1 +a_{j,2}x_2 +···+a_{j,j−1}x_{j−1} +x_j.
+$$
+
+Thus every linear combination of the new
+${x_j'}$ is also a linear combination
+of the original ${x_j}$. The converse is also true and will be 
+shown in Exercise 3.3.13.
+
+**Proof**:
+
+First, we want to prove a small lemma: Given $x, y, z$, if $x \perp y$, then we want to show
+
+$$ 
+z_{(\parallel x)} \perp y
+$$
+
+Note
+
+$$ 
+⟨z_{(\parallel x)},y⟩ =
+⟨\frac{⟨z,x⟩}{|x|^2}x,y⟩ =
+\frac{⟨z,x⟩}{|x|^2} ⟨x,y⟩ = 0
+$$
+
+Then we can use induction. And assume
+$$ 
+x_1',...,x_{k-1}'
+$$
+
+are orthogonal to each other. Assume $1 \leq j \leq k-1$,
+
+$$ 
+⟨x_j',x_{k}'⟩ = ⟨x_j',x_k - {x_k}_{(\parallel x_j')}⟩
+-
+\sum_{i \neq j} ⟨x_j', {x_k}_{(\parallel x_i')}⟩
+$$
+
+$⟨x_j',x_k - {x_k}_{(\parallel x_j')}⟩ = 0$ is proved in
+exercise 2.2.15.
+
+Also, since $⟨x_j',x_i'⟩=0$ for $j \neq i$, then
+$⟨x_j', {x_k}_{(\parallel x_i')}⟩ = 0$ as just proved in the 
+lemma.
+
+So $⟨x_j',x_{k}'⟩ = 0$.
+
+For the 2nd part, we can still use induction.
+
+And assume for $x_1',...,x_{k-1}'$, they are all 
+linear combination of $x_1, x_2, x_3, \cdots, x_{k-1}$.
+
+Then
+
+$$ 
+x_k' = x_k - (x_k)_{(\parallel x_{k-1}')} - \cdots - (x_k)_{(\parallel x_1')}
+$$
+
+Note $(x_k)_{(\parallel x_j')}$ is a scaler of $x_j', j < k$, thus
+a linear combination of $x_1, x_2, x_3, \cdots, x_{k-1}$.
+
+Therefore, $x_k'$ is a linear combination of
+$x_1,...,x_{k}$.
+
+$\square$
