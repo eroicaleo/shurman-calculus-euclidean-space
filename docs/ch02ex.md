@@ -929,9 +929,9 @@ vector along another is at most as long as the original vector.
 
 **Proof**:
 
-This is because $y_{(\perp x)}|^2 \geq 0$.
+This is because $|y_{(\perp x)}|^2 \geq 0$.
 
-The equality holds when $y_{(\perp x)}|^2 = 0$.
+The equality holds when $|y_{(\perp x)}|^2 = 0$.
 In this case
 
 $$ 
@@ -1103,5 +1103,67 @@ a linear combination of $x_1, x_2, x_3, \cdots, x_{k-1}$.
 
 Therefore, $x_k'$ is a linear combination of
 $x_1,...,x_{k}$.
+
+$\square$
+
+## 2.3 Analysis: Continuous Mappings
+
+### 2.3.1.
+
+For $A ⊂ \mathbb{R}^n$, partially verify that
+$\mathcal{M}(A,\mathbb{R}^m)$ is a vector space over $\mathbb{R}$
+by showing that it satisfies vector space axioms (A4) and (D1).
+
+**Proof**:
+
+(A4) Addition is commutative
+
+$$ 
+\begin{align*}
+    (f+g)(x) &= f(x) + g(x)
+    \quad &\text{by definition of “+” in } \mathcal{M}(A,\mathbb{R}^m)\\
+    &= g(x) + f(x)
+    \quad &\text{by commutativity of “+” in }\mathbb{R}^m\\
+    &= (g+f)(x)
+    &\text{by definition of “+” in } \mathcal{M}(A,\mathbb{R}^m)
+\end{align*} 
+$$
+
+Next,
+
+(D1) Scalar multiplication distributes over scalar addition
+
+$$ 
+\begin{align*}
+    ((a+b)f)(x) &= (a+b)f(x)
+    \quad &\text{by definition of “.” in } \mathcal{M}(A,\mathbb{R}^m)\\
+    &= af(x) + bf(x) 
+    \quad &\text{by D1 in }\mathbb{R}^m\\
+    &= (af)(x) + (bf)(x) 
+    \quad &\text{by definition of “.” in } \mathcal{M}(A,\mathbb{R}^m)\\
+    &= ((af) + (bf))(x)
+    \quad &\text{by definition of “+” in } \mathcal{M}(A,\mathbb{R}^m)\\
+\end{align*}
+$$
+
+$\square$
+
+### 2.3.5
+
+Use the definition of convergence and the componentwise nature of
+nullness to prove the componentwise nature of convergence. (The 
+argument is short.)
+
+**Proof**:
+
+$$ 
+\{(x_{1, ν}, \cdots, x_{n, ν})\} \longrightarrow p \\
+\Longleftrightarrow \\
+x_ν - p = \text{null} \\
+\Longleftrightarrow \\
+x_{j, ν} - p_j = \text{null} \\
+\Longleftrightarrow \\
+x_{j, ν} \longrightarrow p_j
+$$
 
 $\square$

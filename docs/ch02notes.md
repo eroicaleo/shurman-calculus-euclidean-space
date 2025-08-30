@@ -348,3 +348,165 @@ $$
 
 $\square$
 
+## 2.3 Analysis: Continuous Mappings
+
+### Mapping from $\mathbb{R}^n$ to $\mathbb{R}^m$
+
+A mapping from $\mathbb{R}^n$ to $\mathbb{R}^m$ is some rule that 
+assigns to each point $x$ in $\mathbb{R}^n$ a point in
+$\mathbb{R}^m$. 
+Generally, mappings will be denoted by letters such as $f, g, h$.
+
+### Mappings as a vector space
+
+For a given dimension $n$, a given set $A ⊂ \mathbb{R}^n$,
+and a second dimension $m$,
+let $\mathcal{M}(A,\mathbb{R}^m)$ denote the set of all mappings $f : A \rightarrow \mathbb{R}^m$.
+This set forms a vector space over $\mathbb{R}$ (whose points are functions)
+under the operations
+
+$$ 
++ :
+\mathcal{M}(A,\mathbb{R}^m)
+\times
+\mathcal{M}(A,\mathbb{R}^m)
+\longrightarrow
+\mathcal{M}(A,\mathbb{R}^m),
+$$
+
+defined by
+
+$$ 
+(f +g)(x) = f(x)+g(x) \quad\text{for all } x ∈ A,
+$$
+
+and
+
+$$ 
+\cdot  :
+\mathbb{R}
+\times
+\mathcal{M}(A,\mathbb{R}^m)
+\longrightarrow
+\mathcal{M}(A,\mathbb{R}^m),
+$$
+
+defined by
+
+$$ 
+(a \cdot f )(x) = a \cdot f(x) \quad\text{for all } x ∈ A.
+$$
+
+### Sequence in $\mathbb{R}^n$ 
+
+Let $A$ be a subset of $\mathbb{R}^n$. A sequence in $A$ is an infinite list of vectors
+$\{x_1,x_2,x_3,...\}$ in $A$, often written $\{x_ν\}$.
+
+Since a vector has $n$ entries, each vector $x_ν$ in the sequence takes the form
+$(x_{1,ν},...,x_{n,ν})$.
+
+### Definition 2.3.1 (Null Sequence).
+
+The sequence $(x_{\nu })$ in $\mathbb{R}^n$ is **null** if for
+every $ε > 0$ there exists some $ν_0$ such that
+
+$$ 
+\text{if } ν > ν_0 \text{ then } |x_v| < \epsilon.
+$$
+
+That is, a sequence is null if for every $ε > 0$, all but
+finitely many terms of
+the sequence lie within distance $ε$ of $0_n$.
+
+* If $\{x_ν\}$ is a null sequence and $|y_ν| \leq |x_ν|$
+  or all $ν$ then also $\{y_ν\}$ is null.
+* $\{x_ν\}$ and $\{y_ν\}$ are null sequence, then
+  $|x_ν + y_ν| \leq |x_ν| + |y_ν|$, so $\{x_ν + y_ν\}$
+  is null.
+* $\{c x_ν\}$ is null seq, since $|cx_ν| = |c||x_ν|$
+
+So the set of null sequences in $\mathbb{R}^n$ forms a vector 
+space.
+
+A vector sequence $\{x_ν\}$ is null if and only if the scalar sequence $\{|x_ν|\}$ is null.
+
+### Lemma 2.3.2 (Componentwise nature of nullness).
+
+The vector sequence
+$\{(x_{1,ν}, \cdots, x_{n,ν})\}$
+is null if and only if each of its component scalar sequences
+$\{x_{j,ν}\} (j \in \{1, \cdots, n\})$ is null.
+
+**Proof**
+
+Use
+
+$$ 
+|x_{j,ν}| \leq |x_ν| \leq \sum_{j=1}^{n} |x_{j,ν}|
+$$
+
+$\square$
+
+### Definition 2.3.3 (Sequence convergence, sequence limit).
+
+Let $A$ be a subset of $\mathbb{R}^n$. Consider a sequence
+$\{x_ν\}$ in $A$ and a point $p ∈ \mathbb{R}^n$. The sequence
+$\{x_ν\}$ converges to $p$ (or has limit $p$),
+written $\{x_ν\}  → p$, if the sequence
+$\{x_ν−p\}$ is null. When the limit $p$ is a point of $A$, the 
+sequence $\{x_ν\}$  converges in $A$.
+
+A sequence can only converges to one limit.
+
+### Proposition 2.3.4 (Linearity of convergence).
+
+Let $\{x_ν\}$ be a sequence in $\mathbb{R}^n$ converging to $p$, 
+let $\{y_ν\}$ be a sequence in $\mathbb{R}^n$ converging to $q$, 
+and let $c$ be a scalar. Then the sequence $\{x_ν +y_ν\}$ 
+converges to $p+q$, and the sequence $\{c x_ν\}$ converges to
+$c_p$.
+
+**Proof**:
+
+$$
+\begin{split}
+|(x_ν + y_ν) - (p + q)|
+&= |(x_ν - p) + (y_ν-q)| \\
+&\leq  |x_ν - p| + |y_ν - q|
+\end{split}
+$$
+
+So $(x_ν + y_ν) - (p + q)$ is null.
+Then $x_ν + y_ν → p+q$.
+
+$$ 
+|c x_ν - cp| = |c (x_ν - p)| \leq 
+|c| |x_ν - p|
+$$
+
+So $c x_ν - cp$ is null. Then $c x_ν → cp$ 
+
+$\square$
+
+### Proposition 2.3.5 (Componentwise nature of convergence).
+
+The vector sequence
+$\{(x_{1, ν}, \cdots, x_{n, ν})\}$ converges to the vector
+$(p_1, \cdots, p_n)$
+if and only if each component scalar sequence
+$\{x_{j, ν}\} (j = 1, \cdots, n)$.
+converges to the scalar $p_j$.
+
+**Proof**:
+
+$$ 
+\{(x_{1, ν}, \cdots, x_{n, ν})\} \longrightarrow p \\
+\Longleftrightarrow \\
+x_ν - p = \text{null} \\
+\Longleftrightarrow \\
+x_{j, ν} - p_j = \text{null} \\
+\Longleftrightarrow \\
+x_{j, ν} \longrightarrow p_j
+$$
+
+$\square$
