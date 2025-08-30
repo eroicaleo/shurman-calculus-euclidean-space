@@ -62,6 +62,52 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#22-geometry-length-and-angle">2.2 Geometry: Length and Angle</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-221-inner-product">Definition 2.2.1 (Inner product).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#proposition-222-inner-product-properties">Proposition 2.2.2 (Inner product properties).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-223-modulus">Definition 2.2.3 (Modulus).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#proposition-224-modulus-properties">Proposition 2.2.4 (Modulus properties).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-225-cauchyschwarz-inequality">Theorem 2.2.5 (Cauchy–Schwarz inequality).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-226-triangle-inequality">Theorem 2.2.6 (Triangle inequality).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#proposition-227-size-bounds">Proposition 2.2.7 (Size bounds).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#distance-definition">Distance Definition</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-228-distance-properties">Theorem 2.2.8 (Distance properties).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#angle-definition">Angle Definition</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#three-altitudes-must-meet">three altitudes must meet</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#23-analysis-continuous-mappings">2.3 Analysis: Continuous Mappings</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#mapping-from-mathbbrn-to-mathbbrm">Mapping from \mathbb{R}^n to \mathbb{R}^m</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mappings-as-a-vector-space">Mappings as a vector space</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sequence-in-mathbbrn">Sequence in \mathbb{R}^n</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-231-null-sequence">Definition 2.3.1 (Null Sequence).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lemma-232-componentwise-nature-of-nullness">Lemma 2.3.2 (Componentwise nature of nullness).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-233-sequence-convergence-sequence-limit">Definition 2.3.3 (Sequence convergence, sequence limit).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#proposition-234-linearity-of-convergence">Proposition 2.3.4 (Linearity of convergence).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#proposition-235-componentwise-nature-of-convergence">Proposition 2.3.5 (Componentwise nature of convergence).</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -150,6 +196,414 @@ x = \sum_{i = 1}^{n}x_i e_i
 <h3 id="definition-212-basis">Definition 2.1.2 (Basis).</h3>
 <p>A set of vectors <script type="math/tex">\{f_i\}</script> is a basis of <script type="math/tex">\mathbb{R}^n</script> if every
 <script type="math/tex">x ∈ \mathbb{R}^n</script> is uniquely expressible as a linear combination of the <script type="math/tex">f_i</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="22-geometry-length-and-angle">2.2 Geometry: Length and Angle</h2>
+<h3 id="definition-221-inner-product">Definition 2.2.1 (Inner product).</h3>
+<p>The inner product is a function from pairs of vectors to scalars,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left\langle , \right\rangle 
+: \mathbb{R}^n \times \mathbb{R}^n \rightarrow  \mathbb{R}
+</script>
+</p>
+<p>defined by the formula</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left\langle 
+(x_1, \cdots, x_n)
+,
+(y_1, \cdots, y_n)
+\right\rangle 
+=
+\sum_{i = 1}^{n} x_i y_i
+</script>
+</p>
+<h3 id="proposition-222-inner-product-properties">Proposition 2.2.2 (Inner product properties).</h3>
+<p>(IP1) The inner product is positive definite:
+<script type="math/tex">⟨x,x⟩ ≥ 0</script> for all <script type="math/tex">x ∈ \mathbb{R}^n</script>, with
+equality if and only if <script type="math/tex">x = 0</script>.</p>
+<p>(IP2) The inner product is symmetric:
+<script type="math/tex">⟨x,y⟩= ⟨y,x⟩</script> for all <script type="math/tex">x,y ∈ \mathbb{R}^n</script>
+</p>
+<p>(IP3) The inner product is bilinear:</p>
+<p>
+<script type="math/tex; mode=display"> 
+⟨x+x',y⟩ = ⟨x,y⟩ + ⟨x',y⟩, \quad ⟨ax,y⟩ = a ⟨x,y⟩ \\
+⟨x,y+y'⟩ = ⟨x,y⟩ + ⟨x,y'⟩, \quad ⟨x,by⟩ = b ⟨x,y⟩
+</script>
+</p>
+<p>for all <script type="math/tex">a,b ∈ \mathbb{R}</script>, <script type="math/tex">x,x',y,y' ∈ \mathbb{R}^n</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<blockquote>
+<p>Like the vector space axioms, the inner product properties are 
+phrased intrinsically, although they need to be proved using 
+coordinates. As mentioned in the previous section,intrinsic 
+methods are neater and more conceptual than
+using coordinates. More importantly:</p>
+<p><em>The rest of the results of this section are proved by reference 
+to the inner product properties, with no further reference to 
+the inner product formula.</em></p>
+</blockquote>
+<h3 id="definition-223-modulus">Definition 2.2.3 (Modulus).</h3>
+<p>The modulus (or absolute value) of a vector <script type="math/tex">x ∈ \mathbb{R}^n</script> is 
+defined as</p>
+<p>
+<script type="math/tex; mode=display">
+|x| = \sqrt[]{⟨x,x⟩}.
+</script>
+</p>
+<h3 id="proposition-224-modulus-properties">Proposition 2.2.4 (Modulus properties).</h3>
+<p>(Mod1) The modulus is positive: <script type="math/tex">|x| ≥ 0</script> for all <script type="math/tex">x ∈ \mathbb{R}^n</script>, with equality if and only if <script type="math/tex">x = 0</script>.</p>
+<p>(Mod2) The modulus is absolute-homogeneous: <script type="math/tex">|ax|= |a||x|</script> for all 
+<script type="math/tex">a ∈ R</script> and <script type="math/tex">x ∈ \mathbb{R}^n</script>.</p>
+<h3 id="theorem-225-cauchyschwarz-inequality">Theorem 2.2.5 (Cauchy–Schwarz inequality).</h3>
+<p>For all <script type="math/tex">x,y ∈ \mathbb{R}^n</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+|⟨x,y⟩| \leq |x| |y|
+</script>
+</p>
+<p>with equality if and only if one of <script type="math/tex">x, y</script> is a scalar multiple of 
+the other.</p>
+<blockquote>
+<p>Note that the absolute value signs mean diﬀerent things on each 
+  side of the Cauchy–Schwarz inequality. On the left side, the 
+  quantities <script type="math/tex">x</script> and <script type="math/tex">y</script> are vectors, their inner product <script type="math/tex">⟨x,y⟩</script> 
+  is a scalar, and <script type="math/tex">|⟨x,y⟩|</script> is its scalar absolute value, while 
+  on the right side, <script type="math/tex">|x|</script> and <script type="math/tex">|y|</script> are the scalar absolute 
+  values of vectors, and <script type="math/tex">|x||y|</script> is their product. That is, the 
+  Cauchy–Schwarz inequality says:</p>
+<p><em>The size of the product is at most the product of the sizes.</em></p>
+<p>The computation draws on the minutiae of the formulas for the 
+inner product and the modulus, rather than using their properties. 
+It is uninformative, making the Cauchy–Schwarz inequality look 
+like a low-level accident. It suggests that larger-scale 
+mathematics is just a matter of bigger and bigger formulas. To
+prove the inequality in a way that is enlightening and general, we 
+should work intrinsically, keeping the scalars
+<script type="math/tex">⟨x,y⟩</script> and <script type="math/tex">|x|</script> and <script type="math/tex">|y|</script> notated in their concise forms, and we 
+should use properties, not formulas.</p>
+</blockquote>
+<p><strong>Proof</strong>.
+The result is clear when <script type="math/tex">x = 0</script>, so assume <script type="math/tex">x \neq 0</script>. For every <script type="math/tex">a ∈ \mathbb{R}^n</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{split}
+0 &\leq ⟨ax-y,ax-y⟩ \quad \\
+& \quad \text{by positive definiteness} \\
+&= a⟨x,ax-y⟩ - ⟨y,ax-y⟩ \\
+& \quad \text{by linearity in the first variable} \\
+&= a^2 ⟨x,x⟩ - a ⟨x,y⟩ - a ⟨y,x⟩ + ⟨y,y⟩ \\
+& \quad \text{by linearity in the second variable} \\
+&= a^2 |x|^2 - 2a ⟨x,y⟩ + |y|^2 \\
+& \quad \text{by symmetry, definition of modulus.}
+\end{split}
+</script>
+</p>
+<p>Define</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(a) = a^2 |x|^2 - 2a ⟨x,y⟩ + |y|^2
+</script>
+</p>
+<p>Since <script type="math/tex">f(a)</script> is always nonnegative, so <script type="math/tex">f</script> has at most one root.
+Thus by the quadratic formula its discriminant is nonpositive,</p>
+<p>
+<script type="math/tex; mode=display">
+4⟨x,y⟩^2 −4|x|^2|y|^2 ≤ 0
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+|⟨x,y⟩| \leq |x| |y|
+</script>
+</p>
+<p>Equality holds exactly when the quadratic polynomial
+<script type="math/tex">f(a) = |ax− y|^2</script> has a root a, i.e., exactly when
+<script type="math/tex">y= ax</script> for some <script type="math/tex">a ∈ \mathbb{R}^n</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="theorem-226-triangle-inequality">Theorem 2.2.6 (Triangle inequality).</h3>
+<p>For all <script type="math/tex">x,y ∈ \mathbb{R}^n</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+|x+y| \leq |x| + |y|,
+</script>
+</p>
+<p>with equality if and only if one of <script type="math/tex">x, y</script> is a nonnegative scalar 
+multiple of the other.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{split}
+⟨x+y,x+y⟩ \\
+&= ⟨x,x+y⟩ + ⟨y,x+y⟩ \\
+&= ⟨x,x⟩ + ⟨x,y⟩ + ⟨y,x⟩ + ⟨y,y⟩ \\
+&= ⟨x,x⟩ + 2⟨x,y⟩ + ⟨y,y⟩ \\
+&\leq  ⟨x,x⟩ + 2|x||y| + ⟨y,y⟩ \\
+& \quad \text{by Cauchy–Schwarz} \\
+&= (|x| + |y|)^2
+\end{split}
+</script>
+</p>
+<p>Equality holds exactly when <script type="math/tex">⟨x,y⟩= |x||y|</script>, or
+equivalently when <script type="math/tex">|⟨x,y⟩|= |x||y|</script> and <script type="math/tex">⟨x,y⟩ ≥ 0</script>.
+These hold when one of <script type="math/tex">x, y</script> is a
+scalar multiple of the other and the scalar is nonnegative.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<ul>
+<li>While the Cauchy–Schwarz inequality says that the size of the 
+  product is at most the product of the sizes, the triangle 
+  inequality says:</li>
+</ul>
+<blockquote>
+<p><em>The size of the sum is at most the sum of the sizes.</em></p>
+</blockquote>
+<h3 id="proposition-227-size-bounds">Proposition 2.2.7 (Size bounds).</h3>
+<p>For every <script type="math/tex">j ∈ \{1,...,n\}</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+|x_j| \leq |x| \leq \sum_{i=1}^{n} |x_i|.
+</script>
+</p>
+<h3 id="distance-definition">Distance Definition</h3>
+<p>The modulus gives rise to a distance function on Rn that behaves as distance should. Define</p>
+<p>
+<script type="math/tex; mode=display"> 
+d: \mathbb{R}^n \times \mathbb{R}^n \xrightarrow{} \mathbb{R}
+</script>
+</p>
+<p>by</p>
+<p>
+<script type="math/tex; mode=display"> 
+d(x,y) = |y-x|
+</script>
+</p>
+<h3 id="theorem-228-distance-properties">Theorem 2.2.8 (Distance properties).</h3>
+<p>(D1) Distance is positive: <script type="math/tex">d(x,y) ≥ 0</script> for all <script type="math/tex">x,y ∈ \mathbb{R}^n</script>, and <script type="math/tex">d(x,y) = 0</script> if and only if <script type="math/tex">x = y</script>.</p>
+<p>(D2) Distance is symmetric: <script type="math/tex">d(x,y) = d(y,x)</script> for all
+<script type="math/tex">x,y ∈ \mathbb{R}^n</script>.</p>
+<p>(D3) Triangle inequality: <script type="math/tex">d(x,z) ≤ d(x,y)+d(y,z)</script> for all
+<script type="math/tex">x,y,z ∈ \mathbb{R}^n</script>.</p>
+<h3 id="angle-definition">Angle Definition</h3>
+<p>If <script type="math/tex">x</script> and <script type="math/tex">y</script> are nonzero vectors
+in <script type="math/tex">\mathbb{R}^n</script>, define their angle <script type="math/tex">θ_{x,y}</script> by the condition</p>
+<p>
+<script type="math/tex; mode=display">
+\tag{2.2}
+\cos θ_{x,y} =
+\frac{⟨x,y⟩}{|x||y|},
+\quad
+0 \leq θ_{x,y} \leq π.
+</script>
+</p>
+<p>In particular, two nonzero vectors <script type="math/tex">x</script> and <script type="math/tex">y</script> are orthogonal
+when <script type="math/tex">⟨x,y⟩ = 0</script>. Thus <script type="math/tex">0</script> orthogonal to all vectors.</p>
+<h3 id="three-altitudes-must-meet">three altitudes must meet</h3>
+<p>We have</p>
+<p>
+<script type="math/tex; mode=display">
+q-y \perp x
+\quad
+\text{and}
+\quad
+q-x \perp y
+</script>
+</p>
+<p>And we want to show</p>
+<p>
+<script type="math/tex; mode=display">
+\left\{ 
+\begin{array}{lr}
+⟨q-y,x⟩ = 0 \\
+⟨q-x,y⟩ = 0 \\
+\end{array}
+\right\} 
+\Longrightarrow
+⟨q,x-y⟩ = 0
+</script>
+</p>
+<p>We have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left\{ 
+\begin{array}{lr}
+⟨q,x⟩ - ⟨y,x⟩ = 0 \\
+⟨q,y⟩ - ⟨x,y⟩ = 0 \\
+\end{array}
+\right\} 
+\Longrightarrow
+⟨q,x-y⟩ = 0
+</script>
+</p>
+<p>So we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+⟨q,x⟩ = ⟨y,x⟩ = ⟨x,y⟩ = ⟨q,y⟩ \\
+\Longrightarrow \\
+⟨q,x-y⟩ = 0
+</script>
+</p>
+<p><img alt="" src="../assets/ch0208.png" /></p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="23-analysis-continuous-mappings">2.3 Analysis: Continuous Mappings</h2>
+<h3 id="mapping-from-mathbbrn-to-mathbbrm">Mapping from <script type="math/tex">\mathbb{R}^n</script> to <script type="math/tex">\mathbb{R}^m</script>
+</h3>
+<p>A mapping from <script type="math/tex">\mathbb{R}^n</script> to <script type="math/tex">\mathbb{R}^m</script> is some rule that 
+assigns to each point <script type="math/tex">x</script> in <script type="math/tex">\mathbb{R}^n</script> a point in
+<script type="math/tex">\mathbb{R}^m</script>. 
+Generally, mappings will be denoted by letters such as <script type="math/tex">f, g, h</script>.</p>
+<h3 id="mappings-as-a-vector-space">Mappings as a vector space</h3>
+<p>For a given dimension <script type="math/tex">n</script>, a given set <script type="math/tex">A ⊂ \mathbb{R}^n</script>,
+and a second dimension <script type="math/tex">m</script>,
+let <script type="math/tex">\mathcal{M}(A,\mathbb{R}^m)</script> denote the set of all mappings <script type="math/tex">f : A \rightarrow \mathbb{R}^m</script>.
+This set forms a vector space over <script type="math/tex">\mathbb{R}</script> (whose points are functions)
+under the operations</p>
+<p>
+<script type="math/tex; mode=display"> 
++ :
+\mathcal{M}(A,\mathbb{R}^m)
+\times
+\mathcal{M}(A,\mathbb{R}^m)
+\longrightarrow
+\mathcal{M}(A,\mathbb{R}^m),
+</script>
+</p>
+<p>defined by</p>
+<p>
+<script type="math/tex; mode=display"> 
+(f +g)(x) = f(x)+g(x) \quad\text{for all } x ∈ A,
+</script>
+</p>
+<p>and</p>
+<p>
+<script type="math/tex; mode=display"> 
+\cdot  :
+\mathbb{R}
+\times
+\mathcal{M}(A,\mathbb{R}^m)
+\longrightarrow
+\mathcal{M}(A,\mathbb{R}^m),
+</script>
+</p>
+<p>defined by</p>
+<p>
+<script type="math/tex; mode=display"> 
+(a \cdot f )(x) = a \cdot f(x) \quad\text{for all } x ∈ A.
+</script>
+</p>
+<h3 id="sequence-in-mathbbrn">Sequence in <script type="math/tex">\mathbb{R}^n</script>
+</h3>
+<p>Let <script type="math/tex">A</script> be a subset of <script type="math/tex">\mathbb{R}^n</script>. A sequence in <script type="math/tex">A</script> is an infinite list of vectors
+<script type="math/tex">\{x_1,x_2,x_3,...\}</script> in <script type="math/tex">A</script>, often written <script type="math/tex">\{x_ν\}</script>.</p>
+<p>Since a vector has <script type="math/tex">n</script> entries, each vector <script type="math/tex">x_ν</script> in the sequence takes the form
+<script type="math/tex">(x_{1,ν},...,x_{n,ν})</script>.</p>
+<h3 id="definition-231-null-sequence">Definition 2.3.1 (Null Sequence).</h3>
+<p>The sequence <script type="math/tex">(x_{\nu })</script> in <script type="math/tex">\mathbb{R}^n</script> is <strong>null</strong> if for
+every <script type="math/tex">ε > 0</script> there exists some <script type="math/tex">ν_0</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\text{if } ν > ν_0 \text{ then } |x_v| < \epsilon.
+</script>
+</p>
+<p>That is, a sequence is null if for every <script type="math/tex">ε > 0</script>, all but
+finitely many terms of
+the sequence lie within distance <script type="math/tex">ε</script> of <script type="math/tex">0_n</script>.</p>
+<ul>
+<li>If <script type="math/tex">\{x_ν\}</script> is a null sequence and <script type="math/tex">|y_ν| \leq |x_ν|</script>
+  or all <script type="math/tex">ν</script> then also <script type="math/tex">\{y_ν\}</script> is null.</li>
+<li>
+<script type="math/tex">\{x_ν\}</script> and <script type="math/tex">\{y_ν\}</script> are null sequence, then
+  <script type="math/tex">|x_ν + y_ν| \leq |x_ν| + |y_ν|</script>, so <script type="math/tex">\{x_ν + y_ν\}</script>
+  is null.</li>
+<li>
+<script type="math/tex">\{c x_ν\}</script> is null seq, since <script type="math/tex">|cx_ν| = |c||x_ν|</script>
+</li>
+</ul>
+<p>So the set of null sequences in <script type="math/tex">\mathbb{R}^n</script> forms a vector 
+space.</p>
+<p>A vector sequence <script type="math/tex">\{x_ν\}</script> is null if and only if the scalar sequence <script type="math/tex">\{|x_ν|\}</script> is null.</p>
+<h3 id="lemma-232-componentwise-nature-of-nullness">Lemma 2.3.2 (Componentwise nature of nullness).</h3>
+<p>The vector sequence
+<script type="math/tex">\{(x_{1,ν}, \cdots, x_{n,ν})\}</script>
+is null if and only if each of its component scalar sequences
+<script type="math/tex">\{x_{j,ν}\} (j \in \{1, \cdots, n\})</script> is null.</p>
+<p><strong>Proof</strong></p>
+<p>Use</p>
+<p>
+<script type="math/tex; mode=display"> 
+|x_{j,ν}| \leq |x_ν| \leq \sum_{j=1}^{n} |x_{j,ν}|
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="definition-233-sequence-convergence-sequence-limit">Definition 2.3.3 (Sequence convergence, sequence limit).</h3>
+<p>Let <script type="math/tex">A</script> be a subset of <script type="math/tex">\mathbb{R}^n</script>. Consider a sequence
+<script type="math/tex">\{x_ν\}</script> in <script type="math/tex">A</script> and a point <script type="math/tex">p ∈ \mathbb{R}^n</script>. The sequence
+<script type="math/tex">\{x_ν\}</script> converges to <script type="math/tex">p</script> (or has limit <script type="math/tex">p</script>),
+written <script type="math/tex">\{x_ν\}  → p</script>, if the sequence
+<script type="math/tex">\{x_ν−p\}</script> is null. When the limit <script type="math/tex">p</script> is a point of <script type="math/tex">A</script>, the 
+sequence <script type="math/tex">\{x_ν\}</script>  converges in <script type="math/tex">A</script>.</p>
+<p>A sequence can only converges to one limit.</p>
+<h3 id="proposition-234-linearity-of-convergence">Proposition 2.3.4 (Linearity of convergence).</h3>
+<p>Let <script type="math/tex">\{x_ν\}</script> be a sequence in <script type="math/tex">\mathbb{R}^n</script> converging to <script type="math/tex">p</script>, 
+let <script type="math/tex">\{y_ν\}</script> be a sequence in <script type="math/tex">\mathbb{R}^n</script> converging to <script type="math/tex">q</script>, 
+and let <script type="math/tex">c</script> be a scalar. Then the sequence <script type="math/tex">\{x_ν +y_ν\}</script> 
+converges to <script type="math/tex">p+q</script>, and the sequence <script type="math/tex">\{c x_ν\}</script> converges to
+<script type="math/tex">c_p</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{split}
+|(x_ν + y_ν) - (p + q)|
+&= |(x_ν - p) + (y_ν-q)| \\
+&\leq  |x_ν - p| + |y_ν - q|
+\end{split}
+</script>
+</p>
+<p>So <script type="math/tex">(x_ν + y_ν) - (p + q)</script> is null.
+Then <script type="math/tex">x_ν + y_ν → p+q</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+|c x_ν - cp| = |c (x_ν - p)| \leq 
+|c| |x_ν - p|
+</script>
+</p>
+<p>So <script type="math/tex">c x_ν - cp</script> is null. Then <script type="math/tex">c x_ν → cp</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="proposition-235-componentwise-nature-of-convergence">Proposition 2.3.5 (Componentwise nature of convergence).</h3>
+<p>The vector sequence
+<script type="math/tex">\{(x_{1, ν}, \cdots, x_{n, ν})\}</script> converges to the vector
+<script type="math/tex">(p_1, \cdots, p_n)</script>
+if and only if each component scalar sequence
+<script type="math/tex">\{x_{j, ν}\} (j = 1, \cdots, n)</script>.
+converges to the scalar <script type="math/tex">p_j</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\{(x_{1, ν}, \cdots, x_{n, ν})\} \longrightarrow p \\
+\Longleftrightarrow \\
+x_ν - p = \text{null} \\
+\Longleftrightarrow \\
+x_{j, ν} - p_j = \text{null} \\
+\Longleftrightarrow \\
+x_{j, ν} \longrightarrow p_j
+</script>
+</p>
 <p>
 <script type="math/tex">\square</script>
 </p>

@@ -82,6 +82,50 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#22-geometry-length-and-angle">2.2 Geometry: Length and Angle</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#221">2.2.1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#222">2.2.2.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#223">2.2.3.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#224">2.2.4.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#225">2.2.5.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#226">2.2.6.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#227">2.2.7.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#228">2.2.8.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#229">2.2.9.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2210">2.2.10</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2211">2.2.11.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2212">2.2.12.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2213">2.2.13.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2214">2.2.14.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2215">2.2.15.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2216">2.2.16.</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#23-analysis-continuous-mappings">2.3 Analysis: Continuous Mappings</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#231">2.3.1.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#235">2.3.5</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -339,7 +383,8 @@ proof) geometric descriptions of all bases of <script type="math/tex">\mathbb{R}
 </script>
 </p>
 <p>So <script type="math/tex">S_1</script> is a base.</p>
-<p>For <script type="math/tex">S_2</script>, it is a base</p>
+<p>For <script type="math/tex">S_2</script>, it is note a base. For example
+<script type="math/tex">(1,1,1)</script> can be expressed by multiple ways.</p>
 <p>For <script type="math/tex">S_3</script>
 </p>
 <p>
@@ -416,6 +461,772 @@ S_2 = \{
 \cdots 
 (0,\cdots,1)
 \}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="22-geometry-length-and-angle">2.2 Geometry: Length and Angle</h2>
+<h3 id="221">2.2.1</h3>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+x = (\frac{\sqrt[]{3}}{2}, -\frac{1}{2}, 0),
+y = (\frac{1}{2}, \frac{\sqrt[]{3}}{2}, 1),
+z = (1, 1, 1)
+</script>
+</p>
+<p>Compute <script type="math/tex">⟨x,x⟩, ⟨x,y⟩, ⟨y,z⟩, |x|, |y|, |z|, 
+θ_{x,y}, θ_{y,e_1}, θ_{z,e_2}</script>
+</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+⟨x,x⟩ = \frac{3}{4} + \frac{1}{4} + 0 = 1 \\
+⟨x,y⟩ = \frac{\sqrt[]{3}}{4} - \frac{\sqrt[]{3}}{4} + 0 = 0 \\
+⟨y,z⟩ = \frac{1}{2} + \frac{\sqrt[]{3}}{2} + 1
+= \frac{3 + \sqrt[]{3}}{2} \\
+|x| = 1 \\
+|y| = \sqrt[]{2} \\
+|z| = \sqrt[]{3} \\
+θ_{x,y} = \frac{⟨x,y⟩}{|x| |y|} = \frac{0}{|x| |y|} = 0 \\
+θ_{y,e_1} = \frac{⟨y,e_1⟩}{|y| |e_1|} = \frac{1/2}{|x| |y|} =
+\frac{1}{2 \sqrt[]{2}} \\
+θ_{z,e_2} = \frac{1}{\sqrt[]{3}}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="222">2.2.2.</h3>
+<p>Show that the points
+<script type="math/tex">x = (2,−1,3,1), y = (4,2,1,4), z = (1,3,6,1)</script>
+form the vertices of a triangle in <script type="math/tex">\mathbb{R}^4</script> with two equal 
+angles.</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+d(x,y) = |x - y| = \sqrt[]{⟨x-y,x-y⟩}
+= \sqrt[]{⟨(-2,-3,2,-3),(-2,-3,2,-3)⟩}
+= \sqrt[]{4+9+4+9} = \sqrt[]{26} \\
+d(y,z) = |y-z| = \sqrt[]{⟨y-z,y-z⟩}
+= \sqrt[]{⟨(3,-1,-5,3),(3,-1,-5,3)⟩}
+= \sqrt[]{9+1+25+9} = \sqrt[]{44} \\
+d(z,x) = |z-x| = \sqrt[]{⟨z-x,z-x⟩}
+= \sqrt[]{⟨(-1,4,3,0),(-1,4,3,0)⟩}
+= \sqrt[]{1+16+9+0} = \sqrt[]{26} \\
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="223">2.2.3.</h3>
+<p>Explain why for all <script type="math/tex">x ∈ \mathbb{R}^n</script>,
+<script type="math/tex">x = \sum_{j=1}^{n} ⟨x,e_j⟩e_j</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Note</p>
+<p>
+<script type="math/tex; mode=display"> 
+⟨x,e_j⟩ =
+⟨(x_1, \cdots, x_n),(0, \cdots, 1, \cdots, 0)⟩
+= x_j \\
+x_j e_j = (0, \cdots, x_j, \cdots, 0) \\
+\sum_{j=1}^{n} x_j e_j = (x_1, \cdots, x_n) = x
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="224">2.2.4.</h3>
+<p>Prove the inner product properties.</p>
+<p><strong>Proof</strong>:</p>
+<p>(IP1) The inner product is positive definite:
+<script type="math/tex">⟨x,x⟩ ≥ 0</script> for all <script type="math/tex">x ∈ \mathbb{R}^n</script>, with
+equality if and only if <script type="math/tex">x = 0</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+⟨x,x⟩ = x_1^2 + \cdots + x_n^2 \geq 0
+</script>
+</p>
+<p>It equals 0 only when <script type="math/tex">x_1 = \cdots = x_n = 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(IP2) The inner product is symmetric:
+<script type="math/tex">⟨x,y⟩= ⟨y,x⟩</script> for all <script type="math/tex">x,y ∈ \mathbb{R}^n</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+⟨x,y⟩ = x_1 y_1 + \cdots + x_n y_n
+= y_1 x_1 + \cdots + y_n x_n = ⟨y,x⟩
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(IP3) The inner product is bilinear:</p>
+<p>
+<script type="math/tex; mode=display"> 
+⟨x+x',y⟩ = (x_1 + x'_1) y_1 + \cdots + (x_n + x'_n) y_n \\
+= (x_1 y_1 + \cdots + x_n y_n) + (x'_1 y_1 + \cdots + x'_n y_n) \\
+= ⟨x,y⟩ + ⟨x',y⟩
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+⟨ax,y⟩ = (ax_1) y_1 + \cdots + (ax_n) y_n \\
+= a (x_1 y_1 + \cdots + x_n y_n) \\
+= a ⟨x,y⟩
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="225">2.2.5.</h3>
+<p>Use the inner product properties and the definition of the modulus 
+in terms of the inner product to prove the modulus properties.</p>
+<p><strong>Proof</strong>:</p>
+<p>(Mod1) The modulus is positive: <script type="math/tex">|x| ≥ 0</script> for all <script type="math/tex">x ∈ \mathbb{R}^n</script>, with equality if and only if <script type="math/tex">x = 0</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+⟨x,x⟩ \geq 0 \\
+\Rightarrow \\
+|x| = \sqrt[]{⟨x,x⟩} \geq 0
+</script>
+</p>
+<p>
+<script type="math/tex">⟨x,x⟩ = 0</script> if and only if <script type="math/tex">x = 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(Mod2) The modulus is absolute-homogeneous: <script type="math/tex">|ax|= |a||x|</script> for all 
+<script type="math/tex">a ∈ R</script> and <script type="math/tex">x ∈ \mathbb{R}^n</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+⟨ax,ax⟩ = a ⟨x,ax⟩ = a^2 ⟨x,x⟩
+</script>
+</p>
+<p>So <script type="math/tex">|ax| = \sqrt[]{⟨ax,ax⟩} = \sqrt[]{a^2 ⟨x,x⟩} = |a||x|</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="226">2.2.6.</h3>
+<p>In the text, the modulus is defined in terms of the inner product. Prove that this can be turned around by showing that for every
+<script type="math/tex">x,y ∈ \mathbb{R}^n</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+⟨x,y⟩ = \frac{|x+y|^2 - |x-y|^2}{4}.
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+|x+y|^2 = ⟨x+y,x+y⟩ = ⟨x,x⟩ + 2 ⟨x,y⟩ + ⟨y,y⟩ \\
+|x-y|^2 = ⟨x-y,x-y⟩ = ⟨x,x⟩ - 2 ⟨x,y⟩ + ⟨y,y⟩ \\
+</script>
+</p>
+<p>So the equation holds.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="227">2.2.7.</h3>
+<p>Prove the full triangle inequality: for every <script type="math/tex">x,y ∈ \mathbb{R}^n</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+||x| - |y|| \leq |x \pm y | \leq |x| + |y|
+</script>
+</p>
+<p>Do not do this by writing three more variants of the proof of the 
+triangle inequality, but by substituting suitably into the basic 
+triangle inequality, which is already proved.</p>
+<p><strong>Proof</strong>:</p>
+<ol>
+<li>
+<script type="math/tex; mode=display"> 
+|x - y| \leq |x| + |y|
+</script>
+</li>
+</ol>
+<p>Note</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{split}
+|x-y|
+& = |x + (-y)| \\
+& \leq |x| + |-y| \\
+& = |x| + |y| \\
+\end{split}
+</script>
+</p>
+<p>2.
+<script type="math/tex; mode=display"> 
+||x| - |y|| \leq |x + y|
+</script>
+</p>
+<p>Note</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{split}
+|x| &= |(-y) + (x+y)| \\
+& \leq |-y| + |x+y| \\
+& = |y| + |x+y| \\
+\end{split} \\
+\Rightarrow \\
+|x| - |y| \leq |x+y|
+</script>
+</p>
+<p>And similarly</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{split}
+|y| &= |(-x) + (x+y)| \\
+& \leq |-x| + |x+y| \\
+& = |x| + |x+y| \\
+\end{split} \\
+\Rightarrow \\
+|y| - |x| \leq |x+y|
+</script>
+</p>
+<p>Combine these 2 together, we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+||x| - |y|| \leq |x + y|
+</script>
+</p>
+<p>3.
+<script type="math/tex; mode=display"> 
+||x| - |y|| \leq |x - y|
+</script>
+</p>
+<p>This is similar to 2.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="228">2.2.8.</h3>
+<p>Let <script type="math/tex">x = (x_1,...,x_n) ∈ \mathbb{R}^n</script>. Prove the size bounds: for 
+every <script type="math/tex">j ∈ \{1,...,n\}</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+|x_j| \leq |x| \leq
+\sum_{j=1}^{n} |x_j|.
+</script>
+</p>
+<p>(One approach is to start by noting that <script type="math/tex">x_j= ⟨x,e_j⟩</script> and 
+recalling equation (2.1).) When can each <script type="math/tex">≤</script> be an <script type="math/tex">=</script>?</p>
+<p><strong>Proof</strong>:</p>
+<p>From the hint:</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{split}
+|x_j| &= |⟨x,e_j⟩| \\
+& \leq |x||e_j| \\
+& \text{Cauchy-Schwarz inequality} \\
+& = |x| \cdot 1 \\
+& = |x|
+\end{split}
+</script>
+</p>
+<p>This equality holds when <script type="math/tex">x = a \cdot e_j</script>.</p>
+<p>Note</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{split}
+|x| &=
+\left| \sum_{j=1}^{n} x_j e_j \right| \\
+& \leq \sum_{j=1}^{n} \left| x_j e_j \right| \\
+& \text{Generalized triangle inequality}\\
+& = \sum_{j=1}^{n} | x_j | | e_j | \\
+& \text{The modulus is absolute-homogeneous}\\
+& = \sum_{j=1}^{n} | x_j | \\
+\end{split}
+</script>
+</p>
+<p>This equality holds when only only one of <script type="math/tex">x_j</script> is not <script type="math/tex">0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="229">2.2.9.</h3>
+<p>Prove the distance properties.</p>
+<p><strong>Proof</strong>:</p>
+<p>(D1) Distance is positive: <script type="math/tex">d(x,y) ≥ 0</script> for all <script type="math/tex">x,y ∈ \mathbb{R}^n</script>, and <script type="math/tex">d(x,y) = 0</script> if and only if <script type="math/tex">x = y</script>.</p>
+<p>Note</p>
+<p>
+<script type="math/tex; mode=display"> 
+d(x,y) = |x-y| \geq 0
+</script>
+</p>
+<p>The equality holds only when <script type="math/tex">x-y = 0</script>, i.e. <script type="math/tex">x = y</script>. </p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(D2) Distance is symmetric: <script type="math/tex">d(x,y) = d(y,x)</script> for all
+<script type="math/tex">x,y ∈ \mathbb{R}^n</script>.</p>
+<p>Note:</p>
+<p>
+<script type="math/tex; mode=display"> 
+d(x,y) = |x-y| = |y-x| = d(y,x)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(D3) Triangle inequality: <script type="math/tex">d(x,z) ≤ d(x,y)+d(y,z)</script> for all
+<script type="math/tex">x,y,z ∈ \mathbb{R}^n</script>.</p>
+<p>Note:</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{split}
+d(x,z) &= |x-z| \\
+&= |(x-y)+(y-z)| \\
+& \leq |x-y| + |y-z| \\
+&= d(x,y) + d(y,z)
+\end{split}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="2210">2.2.10</h3>
+<p>Working in <script type="math/tex">\mathbb{R}^2</script>, depict the nonzero vectors <script type="math/tex">x</script> and <script type="math/tex">y</script> as arrows from the
+origin and depict <script type="math/tex">x−y</script> as an arrow from the endpoint of <script type="math/tex">y</script> to the endpoint
+of <script type="math/tex">x</script>. Let <script type="math/tex">θ</script> denote the angle (in the usual geometric sense) between <script type="math/tex">x</script> and <script type="math/tex">y</script>.
+Use the law of cosines to show that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\cos θ = \frac{⟨x,y⟩}{|x||y|}
+</script>
+</p>
+<p><strong>Proof</strong></p>
+<p>Geometric proof:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{⟨x,y⟩}{|x||y|} = \frac{x_1 y_1 + x_2 y_2}{|x||y|}
+= \frac{1}{|x|} \left( \frac{x_1 y_1 + x_2 y_2}{|y|} \right) 
+</script>
+</p>
+<p>As shown in the figure below, <script type="math/tex">XD \perp OY</script>, <script type="math/tex">AC \perp OY</script> and
+<script type="math/tex">XB \perp AC</script>.</p>
+<p>We just need to show</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{x_1 y_1 + x_2 y_2}{|y|} = OD
+</script>
+</p>
+<p>Note</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{y_1}{y} = \cos \angle AOC \\
+\Rightarrow \\
+\frac{x_1 y_1}{|y|} = OC
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{y_2}{y} = \cos \angle AXB \\
+\Rightarrow \\
+\frac{x_2 y_2}{|y|} = CD
+</script>
+</p>
+<p>Then we finished the proof.</p>
+<p><img alt="" src="../assets/ex-2-2-10.png" /></p>
+<p>Proof with triangle equalities:</p>
+<p>
+<script type="math/tex; mode=display"> 
+x_1 = |x| \cos θ_x,
+x_2 = |x| \sin θ_x,
+y_1 = |y| \cos θ_y,
+y_2 = |y| \sin θ_y,
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+⟨x,y⟩ = |x||y| \cos θ_x \cos θ_y + |x||y| \sin θ_x \sin θ_y \\
+= |x||y| \cos (θ_x - θ_y) = |x||y| \cos θ
+</script>
+</p>
+<p>This also proved.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="2211">2.2.11.</h3>
+<p>Prove that for every nonzero <script type="math/tex">x ∈ \mathbb{R}^n</script>,
+<script type="math/tex">\sum_{i = 1}^{n} \cos ^2 θ_{x, e_i} = 1</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\cos ^2 θ_{x, e_i} =
+\sum_{i = 1}^{n} \left( \frac{⟨x,e_i⟩}{|x||e_i|} \right)^2 \\
+\sum_{i = 1}^{n} \frac{x_i^2}{|x|^2} \\
+= \frac{1}{|x|^2} \sum_{i = 1}^{n} x_i^2 \\
+= 1
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="2212">2.2.12.</h3>
+<p>Prove that two nonzero vectors <script type="math/tex">x, y</script> are orthogonal if and
+only if</p>
+<p>
+<script type="math/tex; mode=display"> 
+|x+y|^2 = |x|^2 +|y|^2.
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{split}
+|x+y|^2 = ⟨x+y,x+y⟩ = |x|^2 + 2 ⟨x,y⟩ + |y|^2    
+\end{split}
+</script>
+</p>
+<p>Then <script type="math/tex">|x+y|^2 = |x|^2 +|y|^2</script> means <script type="math/tex">⟨x,y⟩=0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="2213">2.2.13.</h3>
+<p>Use vectors in <script type="math/tex">\mathbb{R}^2</script> to show that the diagonals of a 
+parallelogram are perpendicular if and only if the parallelogram 
+is a rhombus.</p>
+<p><strong>Proof</strong>:</p>
+<p>The 2 diagonals of the parallelogram are <script type="math/tex">x+y, x-y</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+⟨x+y,x-y⟩ = |x|^2 - |y|^2
+</script>
+</p>
+<p>If <script type="math/tex">x+y \perp x-y</script>, then <script type="math/tex">|x|^2 - |y|^2=0</script>, i.e. <script type="math/tex">|x| = |y|</script>.</p>
+<p>On the other hand, if <script type="math/tex">|x| = |y|</script>, then <script type="math/tex">⟨x+y,x-y⟩</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="2214">2.2.14.</h3>
+<p>Use vectors to show that every angle inscribed in a semicircle is right.</p>
+<p>Let <script type="math/tex">(x,y)</script> on the semicircle, then 
+<script type="math/tex">x^2+y^2=1</script>.</p>
+<p>consider</p>
+<p>
+<script type="math/tex">(x,y) - (-1,0) = (x+1,y)</script> and <script type="math/tex">(x,y) - (1,0) = (x-1,y)</script>.</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+⟨(x+1,y), (x-1, y)⟩ = x^2 - 1 + y^2 = 0
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="2215">2.2.15.</h3>
+<p>Let <script type="math/tex">x</script> and <script type="math/tex">y</script> be vectors, with <script type="math/tex">x</script> nonzero.Define the parallel 
+component of <script type="math/tex">y</script> along <script type="math/tex">x</script> and the normal component of
+<script type="math/tex">y</script> to <script type="math/tex">x</script> to be</p>
+<p>
+<script type="math/tex; mode=display"> 
+y_{(\parallel x)} = \frac{⟨x,y⟩}{|x|^2} x
+\qquad
+\text{and}
+\qquad
+y_{(\perp x)} = y - y_{(\parallel x)}
+</script>
+</p>
+<p>Answer:</p>
+<p>(a) Show that <script type="math/tex">y = y_{(\parallel x)} + y_{(\perp x)}</script>.
+show that <script type="math/tex">y_{(\parallel x)}</script> is a scalar multiple of <script type="math/tex">x</script>.
+show that <script type="math/tex">y_{(\perp x)}</script> is orthogonal to <script type="math/tex">x</script>. Show that the 
+decomposition of <script type="math/tex">y</script> as a sum of vectors parallel and 
+perpendicular to <script type="math/tex">x</script> is unique. Draw an illustration.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+y_{(\parallel x)} + y_{(\perp x)} = \\
+y_{(\parallel x)} + (y - y_{(\parallel x)}) = \\
+y
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+y_{(\parallel x)} = \frac{⟨x,y⟩}{|x|^2} x
+</script>
+</p>
+<p>Since <script type="math/tex">\frac{⟨x,y⟩}{|x|^2}</script> is a scalar, then
+<script type="math/tex">y_{(\parallel x)}</script> is a scalar multiple of <script type="math/tex">x</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+⟨y - y_{(\parallel x)},y_{(\parallel x)}) = \\
+⟨|x|^2 y - ⟨x,y⟩x, ⟨x,y⟩x⟩ \\
+= |x|^2 ⟨x,y⟩ ⟨y,x⟩ - ⟨x,y⟩^2 ⟨x,x⟩ \\
+= 0
+</script>
+</p>
+<p>So <script type="math/tex">y_{(\perp x)}</script> is orthogonal to <script type="math/tex">y_{(\parallel x)}</script>,
+thus is orthogonal to <script type="math/tex">x</script>.</p>
+<p>In general if <script type="math/tex">x \perp y</script> and <script type="math/tex">ax + by = 0, x,y \neq 0</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+0 = ⟨0, x⟩ = ⟨ax + by,x⟩ = a ⟨x,x⟩ + b ⟨y,x⟩ = a ⟨x,x⟩ \geq 0 \\
+\Rightarrow \\
+a = 0
+</script>
+</p>
+<p>For the same reason <script type="math/tex">b = 0</script>.</p>
+<p>With this, the decomposition of <script type="math/tex">y</script> as a sum of vectors parallel 
+and perpendicular to <script type="math/tex">x</script> is unique.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show that</p>
+<p>
+<script type="math/tex; mode=display"> 
+|y|^2 = |y_{(\parallel x)}|^2 + |y_{(\perp x)}|^2
+</script>
+</p>
+<p>What theorem from classical geometry does this encompass?</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+|y|^2 = \\
+|y_{(\parallel x)} + y_{(\perp x)}|^2 = \\
+|y_{(\parallel x)}|^2 + |y_{(\perp x)}|^2 +
+2 ⟨y_{(\parallel x)}, y_{(\perp x)}⟩ \\
+= |y_{(\parallel x)}|^2 + |y_{(\perp x)}|^2 \\
+</script>
+</p>
+<p>It's Pythagorean theorem or Gougu theorem.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Explain why it follows from (b) that</p>
+<p>
+<script type="math/tex; mode=display"> 
+|y_{(\parallel x)}|^2 \leq |y|^2
+</script>
+</p>
+<p>with equality if and only if <script type="math/tex">y</script> is a scalar multiple of <script type="math/tex">x</script>.
+Use this inequality to give another proof of the Cauchy–Schwarz 
+inequality. This argument gives the
+geometric content of Cauchy–Schwarz: the parallel component of one 
+vector along another is at most as long as the original vector.</p>
+<p><strong>Proof</strong>:</p>
+<p>This is because <script type="math/tex">|y_{(\perp x)}|^2 \geq 0</script>.</p>
+<p>The equality holds when <script type="math/tex">|y_{(\perp x)}|^2 = 0</script>.
+In this case</p>
+<p>
+<script type="math/tex; mode=display"> 
+y = y_{(\parallel x)} = \frac{⟨x,y⟩}{|x|^2} x
+</script>
+</p>
+<p>To prove</p>
+<p>
+<script type="math/tex; mode=display"> 
+|⟨x,y⟩| \leq |x||y|
+</script>
+</p>
+<p>Note</p>
+<p>
+<script type="math/tex; mode=display"> 
+|⟨x,y⟩| = |⟨x,y_{(\parallel x)}+y_{(\perp x)}⟩| \\
+= |⟨x,y_{(\parallel x)}⟩ + 0|\\
+= |⟨x,y_{(\parallel x)}⟩|
+</script>
+</p>
+<p>Now in general, if <script type="math/tex">a</script> is a scaler, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+|⟨x,ax⟩| = |a ⟨x,x⟩| = |a||x|^2 = |x| |ax|
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+|⟨x,y_{(\parallel x)}⟩| = |x||y_{(\parallel x)}||
+\leq |x||y|
+</script>
+<script type="math/tex">\square</script>
+</p>
+<p>(d) The proof of the Cauchy–Schwarz inequality in part (c) refers 
+to parts (a) and (b), part (a) refers to orthogonality, 
+orthogonality refers to an angle, and as explained in the text, 
+the fact that angles make sense depends on the
+Cauchy–Schwarz inequality. And so the proof in part (c) apparently 
+relies on circular logic. Explain why the logic is in fact not 
+circular.</p>
+<p><strong>Solution</strong>:</p>
+<p>Note that when we define <script type="math/tex">\cos θ</script>, it is this:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\cos θ = \frac{⟨x,y⟩}{|x||y|}
+</script>
+</p>
+<p>But here, we define <script type="math/tex">y_{(\parallel x)}</script> as</p>
+<p>
+<script type="math/tex; mode=display"> 
+y_{(\parallel x)} = \frac{⟨x,y⟩}{|x|^2}x
+</script>
+</p>
+<p>If we think geometrically in <script type="math/tex">\mathbb{R}^2</script> or <script type="math/tex">\mathbb{R}^3</script>,
+the projection of <script type="math/tex">y</script> on <script type="math/tex">x</script> should be <script type="math/tex">y \cos θ</script>.</p>
+<p>The unit length vector along <script type="math/tex">x</script> is <script type="math/tex">\frac{x}{|x|}</script>.
+Also the length of <script type="math/tex">y</script> projection is</p>
+<p>
+<script type="math/tex; mode=display">
+|y \cos θ|
+= \frac{⟨x,y⟩}{|x|}
+</script>
+</p>
+<p>So it's reasonable to define <script type="math/tex">y_{(\parallel x)}</script> this way.</p>
+<p>Now, since we does not rely on the fact that
+<script type="math/tex">|\cos θ| \leq 1</script>, it is not circular.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="2216">2.2.16.</h3>
+<p>Given nonzero vectors <script type="math/tex">x_1,x_2,...,x_n</script> in <script type="math/tex">\mathbb{R}^n</script>, the Gram–Schmidt process is to set</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{split}
+x_1' &= x_1 \\ 
+x_2' &= x_2 - (x_2)_{(\parallel x_1')}\\ 
+x_3' &= x_3 - (x_3)_{(\parallel x_2')} - (x_3)_{(\parallel x_1')} \\
+\vdots \\
+x_n' &= x_n - (x_n)_{(\parallel x_{n-1}')} - \cdots - (x_n)_{(\parallel x_1')}
+\\ 
+\end{split}
+</script>
+</p>
+<p>Answer:</p>
+<p>(a)What is the result of applying the Gram–Schmidt  process to the vectors
+<script type="math/tex">x_1 = (1,0,0), x_2 = (1,1,0)</script>, and <script type="math/tex">x_3 = (1,1,1)</script>?</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+x_1' = (1,0,0) \\
+x_2' = (0,1,0) \\
+x_3' = (0,0,1) \\
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Returning to the general case, show that
+<script type="math/tex">x_1',...,x_n'</script> are pairwise orthogonal and that each
+<script type="math/tex">x_j'</script> has the form</p>
+<p>
+<script type="math/tex; mode=display"> 
+x_j'= a_{j,1} x_1 +a_{j,2}x_2 +···+a_{j,j−1}x_{j−1} +x_j.
+</script>
+</p>
+<p>Thus every linear combination of the new
+<script type="math/tex">{x_j'}</script> is also a linear combination
+of the original <script type="math/tex">{x_j}</script>. The converse is also true and will be 
+shown in Exercise 3.3.13.</p>
+<p><strong>Proof</strong>:</p>
+<p>First, we want to prove a small lemma: Given <script type="math/tex">x, y, z</script>, if <script type="math/tex">x \perp y</script>, then we want to show</p>
+<p>
+<script type="math/tex; mode=display"> 
+z_{(\parallel x)} \perp y
+</script>
+</p>
+<p>Note</p>
+<p>
+<script type="math/tex; mode=display"> 
+⟨z_{(\parallel x)},y⟩ =
+⟨\frac{⟨z,x⟩}{|x|^2}x,y⟩ =
+\frac{⟨z,x⟩}{|x|^2} ⟨x,y⟩ = 0
+</script>
+</p>
+<p>Then we can use induction. And assume
+<script type="math/tex; mode=display"> 
+x_1',...,x_{k-1}'
+</script>
+</p>
+<p>are orthogonal to each other. Assume <script type="math/tex">1 \leq j \leq k-1</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+⟨x_j',x_{k}'⟩ = ⟨x_j',x_k - {x_k}_{(\parallel x_j')}⟩
+-
+\sum_{i \neq j} ⟨x_j', {x_k}_{(\parallel x_i')}⟩
+</script>
+</p>
+<p>
+<script type="math/tex">⟨x_j',x_k - {x_k}_{(\parallel x_j')}⟩ = 0</script> is proved in
+exercise 2.2.15.</p>
+<p>Also, since <script type="math/tex">⟨x_j',x_i'⟩=0</script> for <script type="math/tex">j \neq i</script>, then
+<script type="math/tex">⟨x_j', {x_k}_{(\parallel x_i')}⟩ = 0</script> as just proved in the 
+lemma.</p>
+<p>So <script type="math/tex">⟨x_j',x_{k}'⟩ = 0</script>.</p>
+<p>For the 2nd part, we can still use induction.</p>
+<p>And assume for <script type="math/tex">x_1',...,x_{k-1}'</script>, they are all 
+linear combination of <script type="math/tex">x_1, x_2, x_3, \cdots, x_{k-1}</script>.</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+x_k' = x_k - (x_k)_{(\parallel x_{k-1}')} - \cdots - (x_k)_{(\parallel x_1')}
+</script>
+</p>
+<p>Note <script type="math/tex">(x_k)_{(\parallel x_j')}</script> is a scaler of <script type="math/tex">x_j', j < k</script>, thus
+a linear combination of <script type="math/tex">x_1, x_2, x_3, \cdots, x_{k-1}</script>.</p>
+<p>Therefore, <script type="math/tex">x_k'</script> is a linear combination of
+<script type="math/tex">x_1,...,x_{k}</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="23-analysis-continuous-mappings">2.3 Analysis: Continuous Mappings</h2>
+<h3 id="231">2.3.1.</h3>
+<p>For <script type="math/tex">A ⊂ \mathbb{R}^n</script>, partially verify that
+<script type="math/tex">\mathcal{M}(A,\mathbb{R}^m)</script> is a vector space over <script type="math/tex">\mathbb{R}</script>
+by showing that it satisfies vector space axioms (A4) and (D1).</p>
+<p><strong>Proof</strong>:</p>
+<p>(A4) Addition is commutative</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+    (f+g)(x) &= f(x) + g(x)
+    \quad &\text{by definition of “+” in } \mathcal{M}(A,\mathbb{R}^m)\\
+    &= g(x) + f(x)
+    \quad &\text{by commutativity of “+” in }\mathbb{R}^m\\
+    &= (g+f)(x)
+    &\text{by definition of “+” in } \mathcal{M}(A,\mathbb{R}^m)
+\end{align*} 
+</script>
+</p>
+<p>Next,</p>
+<p>(D1) Scalar multiplication distributes over scalar addition</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+    ((a+b)f)(x) &= (a+b)f(x)
+    \quad &\text{by definition of “.” in } \mathcal{M}(A,\mathbb{R}^m)\\
+    &= af(x) + bf(x) 
+    \quad &\text{by D1 in }\mathbb{R}^m\\
+    &= (af)(x) + (bf)(x) 
+    \quad &\text{by definition of “.” in } \mathcal{M}(A,\mathbb{R}^m)\\
+    &= ((af) + (bf))(x)
+    \quad &\text{by definition of “+” in } \mathcal{M}(A,\mathbb{R}^m)\\
+\end{align*}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="235">2.3.5</h3>
+<p>Use the definition of convergence and the componentwise nature of
+nullness to prove the componentwise nature of convergence. (The 
+argument is short.)</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\{(x_{1, ν}, \cdots, x_{n, ν})\} \longrightarrow p \\
+\Longleftrightarrow \\
+x_ν - p = \text{null} \\
+\Longleftrightarrow \\
+x_{j, ν} - p_j = \text{null} \\
+\Longleftrightarrow \\
+x_{j, ν} \longrightarrow p_j
 </script>
 </p>
 <p>
