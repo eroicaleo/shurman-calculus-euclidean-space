@@ -1160,10 +1160,193 @@ $$
 \{(x_{1, ν}, \cdots, x_{n, ν})\} \longrightarrow p \\
 \Longleftrightarrow \\
 x_ν - p = \text{null} \\
+\text{definition of convergence} \\
 \Longleftrightarrow \\
 x_{j, ν} - p_j = \text{null} \\
+\text{Lemma 2.3.2 (Componentwise nature of nullness).} \\
 \Longleftrightarrow \\
-x_{j, ν} \longrightarrow p_j
+x_{j, ν} \longrightarrow p_j \\
+\text{definition of convergence} \\
 $$
+
+$\square$
+
+### 2.3.6.
+
+Use the definition of continuity and the componentwise nature of 
+convergence to prove the componentwise nature of continuity.
+
+**Proof**:
+
+$\Rightarrow$
+
+Given any sequence $(x_{\nu}) \rightarrow p$,
+since $f$ is continuous at $p$,
+then $f(x_{\nu}) \rightarrow f(p)$.
+
+From Proposition 2.3.5 Componentwise nature of convergence
+$f_i(x_{\nu}) \rightarrow f_i(p)$.
+
+So $f_i$ is continuous at $p$.
+
+$\Leftarrow$
+
+Given any sequence $(x_{\nu}) \rightarrow p$,
+and since $f_i$ is continuous at $p$,
+then $f_i(x_{\nu}) \rightarrow f_i(p)$.
+
+From Proposition 2.3.5 Componentwise nature of convergence
+$f(x_{\nu}) \rightarrow f(p)$.
+
+So $f$ is continuous at $p$.
+
+$\square$
+
+### 2.3.7
+
+Prove the persistence of continuity under composition.
+
+**Proof**:
+
+Given $p \in A$, and $\{x_ν\} \rightarrow p$.
+We have $\{f(x_ν)\} \rightarrow f(p)$.
+
+Since $f(x_ν), f(p) \in B$, and $g$ is a continuous mapping,
+we have $\{g(f(x_ν))\} \rightarrow g(f(p))$.
+
+Therefore, $g \circ f$ is continuous.
+
+$\square$
+
+### 2.3.9.
+
+Which of the following functions on $\mathbb{R}^2$
+can be defined continuously at $0$?
+
+(a)
+
+$$
+f(x, y) =
+\begin{cases}
+    \frac{x^4 - y^4}{(x^2 + y^2)^2} &\text{if } (x,y) \neq 0 \\
+    b &\text{if } (x,y) = 0 \\
+\end{cases} 
+$$
+
+**Solution**
+
+$$ 
+\begin{split}
+\frac{x^4 - y^4}{(x^2 + y^2)^2}
+&=
+\frac{x^2 - y^2}{x^2 + y^2}
+\end{split}
+$$
+
+When $(x,y)$ approaches $0$ with $y = mx$, then
+
+$$ 
+\begin{split}
+\frac{x^2 - y^2}{x^2 + y^2}
+&=
+\frac{1 - m^2}{1 + m^2}
+\end{split}
+$$
+
+So it cannot be defined continuously at $0$.
+
+$\square$
+
+(b)
+
+$$
+g(x, y) =
+\begin{cases}
+    \frac{x^2 - y^3}{x^2 + y^2} &\text{if } (x,y) \neq 0 \\
+    b &\text{if } (x,y) = 0 \\
+\end{cases} 
+$$
+
+**Solution**:
+
+$$
+\begin{split}
+\frac{x^2 - y^3}{x^2 + y^2}
+&= 1 - \frac{y^2 + y^3}{x^2 + y^2}
+\end{split}
+$$
+
+When $(x,y)$ approaches $0$ with $y = mx$, then
+
+$$ 
+\frac{y^2 + y^3}{x^2 + y^2} \\
+= \frac{m^2 + m^3y}{1+m^2} \rightarrow
+\frac{m^2}{1+m^2}
+$$
+
+So it cannot be defined continuously at $0$.
+
+$\square$
+
+(c)
+
+$$
+h(x, y) =
+\begin{cases}
+    \frac{x^3 - y^3}{x^2 + y^2} &\text{if } (x,y) \neq 0 \\
+    b &\text{if } (x,y) = 0 \\
+\end{cases} 
+$$
+
+**Solution**:
+
+$$ 
+\begin{split}
+\left| \frac{x^3 - y^3}{x^2 + y^2} \right| 
+&=
+\left| (x-y) \frac{x^2 + xy + y^2}{x^2 + y^2} \right| \\
+& \leq
+|x-y| + |x-y|
+\left| \frac{xy}{x^2 + y^2} \right| \\
+& \leq
+|x-y| + |x-y|
+\left| \frac{|(x,y)||(x,y)|}{|(x,y)|^2} \right| \\
+& = 2 |x - y| \\
+& \leq 2 (|x| + |y|) \rightarrow 0
+\end{split}
+$$
+
+So it can be defined continuously at 0.
+
+$\square$
+
+(d)
+
+$$ 
+k(x, y) =
+\begin{cases}
+    \frac{xy^2}{x^2 + y^6} &\text{if } (x,y) \neq 0 \\
+    b &\text{if } (x,y) = 0 \\
+\end{cases} 
+$$
+
+**Solution**:
+
+When $(x,y)$ approaches $0$ with $y = x$, then
+
+$$ 
+\frac{xy^2}{x^2 + y^6} = \frac{x^3}{x^2 + x^6}
+= \frac{x}{1 + x^4} \rightarrow 0
+$$
+
+However, when $(x,y)$ approaches $0$ with $y = \sqrt[]{x}$,
+then
+
+$$ 
+\frac{xy^2}{x^2 + y^6} = \frac{x^2}{x^2 + x^3}
+= \frac{1}{1 + x} \rightarrow 1
+$$
+
+So it cannot be defined continuously at $0$.
 
 $\square$

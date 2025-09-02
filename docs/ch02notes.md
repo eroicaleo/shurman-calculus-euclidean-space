@@ -502,11 +502,177 @@ converges to the scalar $p_j$.
 $$ 
 \{(x_{1, ν}, \cdots, x_{n, ν})\} \longrightarrow p \\
 \Longleftrightarrow \\
-x_ν - p = \text{null} \\
+x_ν - p \quad \text{is null} \\
 \Longleftrightarrow \\
-x_{j, ν} - p_j = \text{null} \\
+x_{j, ν} - p_j \quad \text{is null} \\
 \Longleftrightarrow \\
 x_{j, ν} \longrightarrow p_j
 $$
+
+$\square$
+
+### Definition 2.3.6 (Continuity).
+
+Let $A$ be a subset of $\mathbb{R}^n$, let
+$f : A \longrightarrow \mathbb{R}^m$
+be a mapping, and let $p$ be a point of $A$.
+Then $f$ is continuous at $p$ if for
+every sequence $\{x_ν\}$ in $A$ converging to $p$,
+the sequence $f(x_ν)$ converges
+to $f(p)$. The mapping $f$ is continuous on $A$
+(or just continuous when $A$ is
+clearly established) if it is continuous at each point $p ∈ A$.
+
+### Modulus function is continuous
+
+$$ 
+|| : \mathbb{R}^n \longrightarrow \mathbb{R}
+$$
+
+**Proof**:
+
+Assume $\{x_ν\} \rightarrow p$, then from exercise 2.2.7
+
+$$ 
+||x_ν| - |p|| \leq | x_ν - p |
+$$
+
+Then $|x_ν| - |p|$ is null, i.e. $\{f(x_ν)\} \rightarrow f(p)$.
+So $||$ is continuous.
+
+### The inner product is continuous
+
+Given $a \in \mathbb{R}^n$, define
+
+$$ 
+T : \mathbb{R}^n \longrightarrow \mathbb{R}^n,
+\quad
+T(x) = ⟨a,x⟩
+$$
+
+$T$ is continuous.
+
+From Cauchy-Schwarz inequality
+
+$$ 
+|⟨a,x⟩| \leq |a||x|
+$$
+
+Given $p \in \mathbb{R}^n$ 
+$$ 
+|T(x_ν) - T(p)| =
+|⟨a,x_v⟩ - ⟨a,p⟩| =
+|⟨a,x_ν - p⟩| \leq  |a| | x_ν - p |
+$$
+
+Since we know $|x_ν - p| \rightarrow 0$, we have
+$|T(x_ν) - T(p)| \rightarrow 0$.
+
+$\square$
+
+### jth coordinate function map
+
+Consider the following mapping
+
+$$ 
+\pi_j : \mathbb{R}^n \longrightarrow \mathbb{R},
+\quad
+\pi_j (x_1, \cdots, x_n) = x_j
+$$
+
+Since $\pi_j(x) = ⟨e_j,x⟩$, this mapping is continuous.
+
+### Proposition 2.3.7 (Vector space properties of continuity).
+
+Let $A$ be a subset of $\mathbb{R}^n$, let
+$f,g : A \longrightarrow \mathbb{R}^m$ be continuous mappings,
+and let $c \in \mathbb{R}$. Then
+the sum and the scalar multiple mappings
+
+$$ 
+f+g,cf : A \longrightarrow \mathbb{R}^m
+$$
+
+are continuous. Thus the set of continuous mappings from
+$A$ to $\mathbb{R}^m$ forms a vector subspace of
+$\mathcal{M}(A, \mathbb{R}^m)$.
+
+**Proof**:
+
+Given $p \in A$, and $\{x_ν\} \rightarrow p$. Then
+$\{f(x_ν)\} \rightarrow f(p), \{g(x_ν)\} \rightarrow g(p)$.
+
+Then from Proposition 2.3.4 (Linearity of convergence),
+$\{f(x_ν) + g(x_ν)\} \rightarrow f(p) + g(p)$, i.e.
+$\{(f+g)(x_ν)\} \rightarrow (f+g)(p)$. So $f+g$ is continuous.
+
+For the same reason $cf$ is continuous.
+
+$\square$
+
+### Proposition 2.3.8 (Persistence of continuity under composition).
+
+Let $A$ be a subset of $\mathbb{R}^n$, let
+$f : A \longrightarrow \mathbb{R}^m$ be a continuous mapping.
+
+Let $B$
+be a superset of $f(A)$ in $\mathbb{R}^m$, and let
+$g : B \longrightarrow \mathbb{R}^l$ be a continuous mapping.
+
+Then the composition mapping
+
+$$
+g \circ f : A \longrightarrow \mathbb{R}^l
+$$
+
+is continuous.
+
+**Proof**:
+
+Given $p \in A$, and $\{x_ν\} \rightarrow p$.
+We have $\{f(x_ν)\} \rightarrow f(p)$.
+
+Since $f(x_ν), f(p) \in B$, and $g$ is a continuous mapping,
+we have $\{g(f(x_ν))\} \rightarrow g(f(p))$.
+
+Therefore, $g \circ f$ is continuous.
+
+$\square$
+
+### Theorem 2.3.9 (Componentwise nature of continuity).
+
+Let $A ⊂ \mathbb{R}^n$,
+let $f : A \longrightarrow \mathbb{R}^m$ have component functions 
+$f_1,...,f_m$, and let $p$ be a point in $A$. Then
+
+$$ 
+f \text{ is continuous at }  p 
+\Longleftrightarrow
+\text{each } f_i \text{ is continuous at } p.
+$$
+
+**Proof**:
+
+$\Rightarrow$
+
+Given any sequence $(x_{\nu}) \rightarrow p$,
+since $f$ is continuous at $p$,
+then $f(x_{\nu}) \rightarrow f(p)$.
+
+From Proposition 2.3.5 Componentwise nature of convergence
+$f_i(x_{\nu}) \rightarrow f_i(p)$.
+
+So $f_i$ is continuous at $p$.
+
+$\Leftarrow$
+
+Given any sequence $(x_{\nu}) \rightarrow p$,
+and since $f_i$ is continuous at $p$,
+then $f_i(x_{\nu}) \rightarrow f_i(p)$.
+
+From Proposition 2.3.5 Componentwise nature of convergence
+$f(x_{\nu}) \rightarrow f(p)$.
+
+So $f$ is continuous at $p$.
 
 $\square$
