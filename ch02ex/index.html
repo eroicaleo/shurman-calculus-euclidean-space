@@ -124,6 +124,12 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#235">2.3.5</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#236">2.3.6.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#237">2.3.7</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#239">2.3.9.</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -1223,12 +1229,181 @@ argument is short.)</p>
 \{(x_{1, ν}, \cdots, x_{n, ν})\} \longrightarrow p \\
 \Longleftrightarrow \\
 x_ν - p = \text{null} \\
+\text{definition of convergence} \\
 \Longleftrightarrow \\
 x_{j, ν} - p_j = \text{null} \\
+\text{Lemma 2.3.2 (Componentwise nature of nullness).} \\
 \Longleftrightarrow \\
-x_{j, ν} \longrightarrow p_j
+x_{j, ν} \longrightarrow p_j \\
+\text{definition of convergence} \\
 </script>
 </p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="236">2.3.6.</h3>
+<p>Use the definition of continuity and the componentwise nature of 
+convergence to prove the componentwise nature of continuity.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>Given any sequence <script type="math/tex">(x_{\nu}) \rightarrow p</script>,
+since <script type="math/tex">f</script> is continuous at <script type="math/tex">p</script>,
+then <script type="math/tex">f(x_{\nu}) \rightarrow f(p)</script>.</p>
+<p>From Proposition 2.3.5 Componentwise nature of convergence
+<script type="math/tex">f_i(x_{\nu}) \rightarrow f_i(p)</script>.</p>
+<p>So <script type="math/tex">f_i</script> is continuous at <script type="math/tex">p</script>.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>Given any sequence <script type="math/tex">(x_{\nu}) \rightarrow p</script>,
+and since <script type="math/tex">f_i</script> is continuous at <script type="math/tex">p</script>,
+then <script type="math/tex">f_i(x_{\nu}) \rightarrow f_i(p)</script>.</p>
+<p>From Proposition 2.3.5 Componentwise nature of convergence
+<script type="math/tex">f(x_{\nu}) \rightarrow f(p)</script>.</p>
+<p>So <script type="math/tex">f</script> is continuous at <script type="math/tex">p</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="237">2.3.7</h3>
+<p>Prove the persistence of continuity under composition.</p>
+<p><strong>Proof</strong>:</p>
+<p>Given <script type="math/tex">p \in A</script>, and <script type="math/tex">\{x_ν\} \rightarrow p</script>.
+We have <script type="math/tex">\{f(x_ν)\} \rightarrow f(p)</script>.</p>
+<p>Since <script type="math/tex">f(x_ν), f(p) \in B</script>, and <script type="math/tex">g</script> is a continuous mapping,
+we have <script type="math/tex">\{g(f(x_ν))\} \rightarrow g(f(p))</script>.</p>
+<p>Therefore, <script type="math/tex">g \circ f</script> is continuous.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="239">2.3.9.</h3>
+<p>Which of the following functions on <script type="math/tex">\mathbb{R}^2</script>
+can be defined continuously at <script type="math/tex">0</script>?</p>
+<p>(a)</p>
+<p>
+<script type="math/tex; mode=display">
+f(x, y) =
+\begin{cases}
+    \frac{x^4 - y^4}{(x^2 + y^2)^2} &\text{if } (x,y) \neq 0 \\
+    b &\text{if } (x,y) = 0 \\
+\end{cases} 
+</script>
+</p>
+<p><strong>Solution</strong></p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{split}
+\frac{x^4 - y^4}{(x^2 + y^2)^2}
+&=
+\frac{x^2 - y^2}{x^2 + y^2}
+\end{split}
+</script>
+</p>
+<p>When <script type="math/tex">(x,y)</script> approaches <script type="math/tex">0</script> with <script type="math/tex">y = mx</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{split}
+\frac{x^2 - y^2}{x^2 + y^2}
+&=
+\frac{1 - m^2}{1 + m^2}
+\end{split}
+</script>
+</p>
+<p>So it cannot be defined continuously at <script type="math/tex">0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b)</p>
+<p>
+<script type="math/tex; mode=display">
+g(x, y) =
+\begin{cases}
+    \frac{x^2 - y^3}{x^2 + y^2} &\text{if } (x,y) \neq 0 \\
+    b &\text{if } (x,y) = 0 \\
+\end{cases} 
+</script>
+</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{split}
+\frac{x^2 - y^3}{x^2 + y^2}
+&= 1 - \frac{y^2 + y^3}{x^2 + y^2}
+\end{split}
+</script>
+</p>
+<p>When <script type="math/tex">(x,y)</script> approaches <script type="math/tex">0</script> with <script type="math/tex">y = mx</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{y^2 + y^3}{x^2 + y^2} \\
+= \frac{m^2 + m^3y}{1+m^2} \rightarrow
+\frac{m^2}{1+m^2}
+</script>
+</p>
+<p>So it cannot be defined continuously at <script type="math/tex">0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c)</p>
+<p>
+<script type="math/tex; mode=display">
+h(x, y) =
+\begin{cases}
+    \frac{x^3 - y^3}{x^2 + y^2} &\text{if } (x,y) \neq 0 \\
+    b &\text{if } (x,y) = 0 \\
+\end{cases} 
+</script>
+</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{split}
+\left| \frac{x^3 - y^3}{x^2 + y^2} \right| 
+&=
+\left| (x-y) \frac{x^2 + xy + y^2}{x^2 + y^2} \right| \\
+& \leq
+|x-y| + |x-y|
+\left| \frac{xy}{x^2 + y^2} \right| \\
+& \leq
+|x-y| + |x-y|
+\left| \frac{|(x,y)||(x,y)|}{|(x,y)|^2} \right| \\
+& = 2 |x - y| \\
+& \leq 2 (|x| + |y|) \rightarrow 0
+\end{split}
+</script>
+</p>
+<p>So it can be defined continuously at 0.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(d)</p>
+<p>
+<script type="math/tex; mode=display"> 
+k(x, y) =
+\begin{cases}
+    \frac{xy^2}{x^2 + y^6} &\text{if } (x,y) \neq 0 \\
+    b &\text{if } (x,y) = 0 \\
+\end{cases} 
+</script>
+</p>
+<p><strong>Solution</strong>:</p>
+<p>When <script type="math/tex">(x,y)</script> approaches <script type="math/tex">0</script> with <script type="math/tex">y = x</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{xy^2}{x^2 + y^6} = \frac{x^3}{x^2 + x^6}
+= \frac{x}{1 + x^4} \rightarrow 0
+</script>
+</p>
+<p>However, when <script type="math/tex">(x,y)</script> approaches <script type="math/tex">0</script> with <script type="math/tex">y = \sqrt[]{x}</script>,
+then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{xy^2}{x^2 + y^6} = \frac{x^2}{x^2 + x^3}
+= \frac{1}{1 + x} \rightarrow 1
+</script>
+</p>
+<p>So it cannot be defined continuously at <script type="math/tex">0</script>.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>

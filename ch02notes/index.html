@@ -106,6 +106,28 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#proposition-235-componentwise-nature-of-convergence">Proposition 2.3.5 (Componentwise nature of convergence).</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-236-continuity">Definition 2.3.6 (Continuity).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#modulus-function-is-continuous">Modulus function is continuous</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-inner-product-is-continuous">The inner product is continuous</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#jth-coordinate-function-map">jth coordinate function map</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#proposition-237-vector-space-properties-of-continuity">Proposition 2.3.7 (Vector space properties of continuity).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#proposition-238-persistence-of-continuity-under-composition">Proposition 2.3.8 (Persistence of continuity under composition).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-239-componentwise-nature-of-continuity">Theorem 2.3.9 (Componentwise nature of continuity).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#some-examples">Some examples</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-size-bounds-to-prove-continuity">The size bounds to prove continuity</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#summary-of-the-3-examples">Summary of the 3 examples</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#proposition-2310-persistence-of-inequality">Proposition 2.3.10 (Persistence of inequality).</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -597,13 +619,258 @@ converges to the scalar <script type="math/tex">p_j</script>.</p>
 <script type="math/tex; mode=display"> 
 \{(x_{1, ν}, \cdots, x_{n, ν})\} \longrightarrow p \\
 \Longleftrightarrow \\
-x_ν - p = \text{null} \\
+x_ν - p \quad \text{is null} \\
 \Longleftrightarrow \\
-x_{j, ν} - p_j = \text{null} \\
+x_{j, ν} - p_j \quad \text{is null} \\
 \Longleftrightarrow \\
 x_{j, ν} \longrightarrow p_j
 </script>
 </p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="definition-236-continuity">Definition 2.3.6 (Continuity).</h3>
+<p>Let <script type="math/tex">A</script> be a subset of <script type="math/tex">\mathbb{R}^n</script>, let
+<script type="math/tex">f : A \longrightarrow \mathbb{R}^m</script>
+be a mapping, and let <script type="math/tex">p</script> be a point of <script type="math/tex">A</script>.
+Then <script type="math/tex">f</script> is continuous at <script type="math/tex">p</script> if for
+every sequence <script type="math/tex">\{x_ν\}</script> in <script type="math/tex">A</script> converging to <script type="math/tex">p</script>,
+the sequence <script type="math/tex">f(x_ν)</script> converges
+to <script type="math/tex">f(p)</script>. The mapping <script type="math/tex">f</script> is continuous on <script type="math/tex">A</script>
+(or just continuous when <script type="math/tex">A</script> is
+clearly established) if it is continuous at each point <script type="math/tex">p ∈ A</script>.</p>
+<h3 id="modulus-function-is-continuous">Modulus function is continuous</h3>
+<p>
+<script type="math/tex; mode=display"> 
+|| : \mathbb{R}^n \longrightarrow \mathbb{R}
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">\{x_ν\} \rightarrow p</script>, then from exercise 2.2.7</p>
+<p>
+<script type="math/tex; mode=display"> 
+||x_ν| - |p|| \leq | x_ν - p |
+</script>
+</p>
+<p>Then <script type="math/tex">|x_ν| - |p|</script> is null, i.e. <script type="math/tex">\{f(x_ν)\} \rightarrow f(p)</script>.
+So <script type="math/tex">||</script> is continuous.</p>
+<h3 id="the-inner-product-is-continuous">The inner product is continuous</h3>
+<p>Given <script type="math/tex">a \in \mathbb{R}^n</script>, define</p>
+<p>
+<script type="math/tex; mode=display"> 
+T : \mathbb{R}^n \longrightarrow \mathbb{R}^n,
+\quad
+T(x) = ⟨a,x⟩
+</script>
+</p>
+<p>
+<script type="math/tex">T</script> is continuous.</p>
+<p>From Cauchy-Schwarz inequality</p>
+<p>
+<script type="math/tex; mode=display"> 
+|⟨a,x⟩| \leq |a||x|
+</script>
+</p>
+<p>Given <script type="math/tex">p \in \mathbb{R}^n</script>
+<script type="math/tex; mode=display"> 
+|T(x_ν) - T(p)| =
+|⟨a,x_v⟩ - ⟨a,p⟩| =
+|⟨a,x_ν - p⟩| \leq  |a| | x_ν - p |
+</script>
+</p>
+<p>Since we know <script type="math/tex">|x_ν - p| \rightarrow 0</script>, we have
+<script type="math/tex">|T(x_ν) - T(p)| \rightarrow 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="jth-coordinate-function-map">jth coordinate function map</h3>
+<p>Consider the following mapping</p>
+<p>
+<script type="math/tex; mode=display"> 
+\pi_j : \mathbb{R}^n \longrightarrow \mathbb{R},
+\quad
+\pi_j (x_1, \cdots, x_n) = x_j
+</script>
+</p>
+<p>Since <script type="math/tex">\pi_j(x) = ⟨e_j,x⟩</script>, this mapping is continuous.</p>
+<h3 id="proposition-237-vector-space-properties-of-continuity">Proposition 2.3.7 (Vector space properties of continuity).</h3>
+<p>Let <script type="math/tex">A</script> be a subset of <script type="math/tex">\mathbb{R}^n</script>, let
+<script type="math/tex">f,g : A \longrightarrow \mathbb{R}^m</script> be continuous mappings,
+and let <script type="math/tex">c \in \mathbb{R}</script>. Then
+the sum and the scalar multiple mappings</p>
+<p>
+<script type="math/tex; mode=display"> 
+f+g,cf : A \longrightarrow \mathbb{R}^m
+</script>
+</p>
+<p>are continuous. Thus the set of continuous mappings from
+<script type="math/tex">A</script> to <script type="math/tex">\mathbb{R}^m</script> forms a vector subspace of
+<script type="math/tex">\mathcal{M}(A, \mathbb{R}^m)</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Given <script type="math/tex">p \in A</script>, and <script type="math/tex">\{x_ν\} \rightarrow p</script>. Then
+<script type="math/tex">\{f(x_ν)\} \rightarrow f(p), \{g(x_ν)\} \rightarrow g(p)</script>.</p>
+<p>Then from Proposition 2.3.4 (Linearity of convergence),
+<script type="math/tex">\{f(x_ν) + g(x_ν)\} \rightarrow f(p) + g(p)</script>, i.e.
+<script type="math/tex">\{(f+g)(x_ν)\} \rightarrow (f+g)(p)</script>. So <script type="math/tex">f+g</script> is continuous.</p>
+<p>For the same reason <script type="math/tex">cf</script> is continuous.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="proposition-238-persistence-of-continuity-under-composition">Proposition 2.3.8 (Persistence of continuity under composition).</h3>
+<p>Let <script type="math/tex">A</script> be a subset of <script type="math/tex">\mathbb{R}^n</script>, let
+<script type="math/tex">f : A \longrightarrow \mathbb{R}^m</script> be a continuous mapping.</p>
+<p>Let <script type="math/tex">B</script>
+be a superset of <script type="math/tex">f(A)</script> in <script type="math/tex">\mathbb{R}^m</script>, and let
+<script type="math/tex">g : B \longrightarrow \mathbb{R}^l</script> be a continuous mapping.</p>
+<p>Then the composition mapping</p>
+<p>
+<script type="math/tex; mode=display">
+g \circ f : A \longrightarrow \mathbb{R}^l
+</script>
+</p>
+<p>is continuous.</p>
+<p><strong>Proof</strong>:</p>
+<p>Given <script type="math/tex">p \in A</script>, and <script type="math/tex">\{x_ν\} \rightarrow p</script>.
+We have <script type="math/tex">\{f(x_ν)\} \rightarrow f(p)</script>.</p>
+<p>Since <script type="math/tex">f(x_ν), f(p) \in B</script>, and <script type="math/tex">g</script> is a continuous mapping,
+we have <script type="math/tex">\{g(f(x_ν))\} \rightarrow g(f(p))</script>.</p>
+<p>Therefore, <script type="math/tex">g \circ f</script> is continuous.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="theorem-239-componentwise-nature-of-continuity">Theorem 2.3.9 (Componentwise nature of continuity).</h3>
+<p>Let <script type="math/tex">A ⊂ \mathbb{R}^n</script>,
+let <script type="math/tex">f : A \longrightarrow \mathbb{R}^m</script> have component functions 
+<script type="math/tex">f_1,...,f_m</script>, and let <script type="math/tex">p</script> be a point in <script type="math/tex">A</script>. Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+f \text{ is continuous at }  p 
+\Longleftrightarrow
+\text{each } f_i \text{ is continuous at } p.
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>Given any sequence <script type="math/tex">(x_{\nu}) \rightarrow p</script>,
+since <script type="math/tex">f</script> is continuous at <script type="math/tex">p</script>,
+then <script type="math/tex">f(x_{\nu}) \rightarrow f(p)</script>.</p>
+<p>From Proposition 2.3.5 Componentwise nature of convergence
+<script type="math/tex">f_i(x_{\nu}) \rightarrow f_i(p)</script>.</p>
+<p>So <script type="math/tex">f_i</script> is continuous at <script type="math/tex">p</script>.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>Given any sequence <script type="math/tex">(x_{\nu}) \rightarrow p</script>,
+and since <script type="math/tex">f_i</script> is continuous at <script type="math/tex">p</script>,
+then <script type="math/tex">f_i(x_{\nu}) \rightarrow f_i(p)</script>.</p>
+<p>From Proposition 2.3.5 Componentwise nature of convergence
+<script type="math/tex">f(x_{\nu}) \rightarrow f(p)</script>.</p>
+<p>So <script type="math/tex">f</script> is continuous at <script type="math/tex">p</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="some-examples">Some examples</h3>
+<p>Consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x, y) = \begin{cases}
+  \frac{2xy}{x^2 + y^2} &\text{if } (x,y) \neq 0\\
+  b &\text{if } (x,y) = 0\\
+\end{cases} 
+</script>
+</p>
+<p>Can the constant <script type="math/tex">b</script> be specified to make <script type="math/tex">f</script> continuous at <script type="math/tex">0</script>?</p>
+<p>Take a sequence <script type="math/tex">\{(x_ν, y_ν)\} \rightarrow 0</script> along the line
+<script type="math/tex">y= mx</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x_ν, y_ν) = \\
+\frac{2x_ν y_ν}{x_ν^2 + y_ν^2} = \\
+\frac{2m}{1 + m^2}
+</script>
+</p>
+<p>hence <script type="math/tex">f</script> cannot be made continuous at <script type="math/tex">0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>Now consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+g(x, y) =
+\begin{cases}
+  \frac{x^2y}{x^4 + y^2} &\text{if } (x,y) \neq 0\\
+  b &\text{if } (x,y) = 0\\
+\end{cases} 
+</script>
+</p>
+<p>If <script type="math/tex">(x,y)</script> approaches to <script type="math/tex">(0,0)</script> with <script type="math/tex">y = x</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+g(x,y) = \frac{x^3}{x^4 + x^2} = \frac{x}{x^2 + 1} \rightarrow 0
+</script>
+</p>
+<p>If <script type="math/tex">(x,y)</script> approaches to <script type="math/tex">(0,0)</script> with <script type="math/tex">y = x^2</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+g(x,y) = \frac{x^4}{x^4 + x^4} = \frac{1}{2}
+</script>
+</p>
+<p>hence <script type="math/tex">f</script> cannot be made continuous at <script type="math/tex">0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="the-size-bounds-to-prove-continuity">The size bounds to prove continuity</h3>
+<p>Consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+h(x, y) =
+\begin{cases}
+  \frac{x^3}{x^2 + y^2} &\text{if } (x,y) \neq 0\\
+  b &\text{if } (x,y) = 0\\
+\end{cases} 
+</script>
+</p>
+<p>Note from 2.2.7, we have <script type="math/tex">|x| \leq |(x,y)|</script>, so
+<script type="math/tex; mode=display"> 
+\frac{x^3}{x^2 + y^2}
+\leq
+\frac{|(x,y)|^3}{|(x,y)|^2}
+=
+|(x,y)| \rightarrow 0
+</script>
+</p>
+<p>So setting <script type="math/tex">b = 0</script> makes it continuous at <script type="math/tex">0</script>.</p>
+<h3 id="summary-of-the-3-examples">Summary of the 3 examples</h3>
+<blockquote>
+<p>The straight line test can prove that a limit does not exist, or 
+it can determine the only candidate for the value of the limit, 
+but it cannot prove that the candidate value is the limit.</p>
+<p>When the straight line test determines a candidate value of the 
+limit, approaching along a curve can further support the 
+candidate, or it can prove that the limit does not exist by 
+determining a diﬀerent candidate as well.</p>
+<p>The size bounds can prove that a limit does exist,
+but they can only suggest that a limit does not exist.</p>
+</blockquote>
+<h3 id="proposition-2310-persistence-of-inequality">Proposition 2.3.10 (Persistence of inequality).</h3>
+<p>Let <script type="math/tex">A</script> be a subset of <script type="math/tex">\mathbb{R}^n</script> and let
+<script type="math/tex">f : A \longrightarrow \mathbb{R}^m</script> be a continuous mapping.
+Let <script type="math/tex">p</script> be a point of <script type="math/tex">A</script>, let <script type="math/tex">b</script> be a point of
+<script type="math/tex">\mathbb{R}^m</script>, and suppose that <script type="math/tex">f(p) \neq b</script>.
+Then there exists some <script type="math/tex">\epsilon > 0</script>, such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\text{for all } x \in A
+\text{such that } |x-p| < \epsilon, f(x) \neq b.
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume otherwise, then for <script type="math/tex">\nu \in \mathbb{N}</script>, we can find
+<script type="math/tex">x_ν</script>, such that <script type="math/tex">| x_ν - p | < 1/ν</script> and <script type="math/tex">f(x_ν) = b</script>.</p>
+<p>Since <script type="math/tex">f</script> is continuous, then <script type="math/tex">f(p) = b</script>. We have
+a contradiction.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
