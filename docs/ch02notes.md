@@ -676,3 +676,115 @@ $f(x_{\nu}) \rightarrow f(p)$.
 So $f$ is continuous at $p$.
 
 $\square$
+
+### Some examples
+
+Consider
+
+$$ 
+f(x, y) = \begin{cases}
+  \frac{2xy}{x^2 + y^2} &\text{if } (x,y) \neq 0\\
+  b &\text{if } (x,y) = 0\\
+\end{cases} 
+$$
+
+Can the constant $b$ be specified to make $f$ continuous at $0$?
+
+Take a sequence $\{(x_ν, y_ν)\} \rightarrow 0$ along the line
+$y= mx$.
+
+$$ 
+f(x_ν, y_ν) = \\
+\frac{2x_ν y_ν}{x_ν^2 + y_ν^2} = \\
+\frac{2m}{1 + m^2}
+$$
+
+hence $f$ cannot be made continuous at $0$.
+
+$\square$
+
+Now consider
+
+$$ 
+g(x, y) =
+\begin{cases}
+  \frac{x^2y}{x^4 + y^2} &\text{if } (x,y) \neq 0\\
+  b &\text{if } (x,y) = 0\\
+\end{cases} 
+$$
+
+If $(x,y)$ approaches to $(0,0)$ with $y = x$, then
+
+$$ 
+g(x,y) = \frac{x^3}{x^4 + x^2} = \frac{x}{x^2 + 1} \rightarrow 0
+$$
+
+If $(x,y)$ approaches to $(0,0)$ with $y = x^2$, then
+
+$$ 
+g(x,y) = \frac{x^4}{x^4 + x^4} = \frac{1}{2}
+$$
+
+hence $f$ cannot be made continuous at $0$.
+
+$\square$
+
+### The size bounds to prove continuity
+
+Consider
+
+$$ 
+h(x, y) =
+\begin{cases}
+  \frac{x^3}{x^2 + y^2} &\text{if } (x,y) \neq 0\\
+  b &\text{if } (x,y) = 0\\
+\end{cases} 
+$$
+
+Note from 2.2.7, we have $|x| \leq |(x,y)|$, so
+$$ 
+\frac{x^3}{x^2 + y^2}
+\leq
+\frac{|(x,y)|^3}{|(x,y)|^2}
+=
+|(x,y)| \rightarrow 0
+$$
+
+So setting $b = 0$ makes it continuous at $0$.
+
+### Summary of the 3 examples
+
+> The straight line test can prove that a limit does not exist, or 
+> it can determine the only candidate for the value of the limit, 
+> but it cannot prove that the candidate value is the limit.
+
+> When the straight line test determines a candidate value of the 
+> limit, approaching along a curve can further support the 
+> candidate, or it can prove that the limit does not exist by 
+> determining a diﬀerent candidate as well.
+
+> The size bounds can prove that a limit does exist,
+> but they can only suggest that a limit does not exist.
+
+### Proposition 2.3.10 (Persistence of inequality).
+
+Let $A$ be a subset of $\mathbb{R}^n$ and let
+$f : A \longrightarrow \mathbb{R}^m$ be a continuous mapping.
+Let $p$ be a point of $A$, let $b$ be a point of
+$\mathbb{R}^m$, and suppose that $f(p) \neq b$.
+Then there exists some $\epsilon > 0$, such that
+
+$$ 
+\text{for all } x \in A
+\text{such that } |x-p| < \epsilon, f(x) \neq b.
+$$
+
+**Proof**:
+
+Assume otherwise, then for $\nu \in \mathbb{N}$, we can find
+$x_ν$, such that $| x_ν - p | < 1/ν$ and $f(x_ν) = b$.
+
+Since $f$ is continuous, then $f(p) = b$. We have
+a contradiction.
+
+$\square$
