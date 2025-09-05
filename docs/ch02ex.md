@@ -1231,7 +1231,6 @@ $$
 \int_{0}^{1} f(t)g(t)dt,
 \quad
 |f| = \sqrt[]{⟨f,f⟩}.
-
 $$
 
 Do the inner product properties (IP1),(IP2),and(IP3) (see 
