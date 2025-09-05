@@ -1148,6 +1148,194 @@ $$
 
 $\square$
 
+### 2.3.2.
+
+Define multiplication
+
+$$ 
+* :
+\mathcal{M}(A, \mathbb{R}^m)
+\times
+\mathcal{M}(A, \mathbb{R}^m)
+\longrightarrow
+\mathcal{M}(A, \mathbb{R}^m)
+$$
+
+Is $\mathcal{M}(A, \mathbb{R}^m)$ a field
+with $“+”$ from the section and this multiplication?
+Does it have a subspace that is a field?
+
+**Solution**
+
+Define:
+
+$$
+(f * g)(x) = f(x) * g(x)
+$$
+
+And $f(x) = 1$ is it's multiplication identity.
+
+However, this function does not have inverse.
+
+$$ 
+f(x) =
+\begin{cases}
+    0 &\text{if } x = 0 \\
+    1 &\text{if } x \neq 0 \\
+\end{cases} 
+$$
+
+Consider
+
+$$ 
+V =
+\{f : f(x) = (r, \cdots, r) \in \mathbb{R}^m \text{ for all } x \in A\}
+$$
+
+This is a field.
+
+$\square$
+
+### 2.3.3.
+
+For $A ⊂ \mathbb{R}^n$ and $m ∈ \mathbb{Z}^+$ define a subspace 
+of the space of mappings
+from $A$ to $\mathbb{R}^m$
+
+$$ 
+\mathcal{C}(A, \mathbb{R}^m)
+=
+\{
+f \in \mathcal{M}(A, \mathbb{R}^m) :
+f \text{ is continuous on } A
+\}.
+$$
+
+Briefly explain how this section has shown that
+$\mathcal{C}(A, \mathbb{R}^m)$ is a vector space.
+
+**Solution**:
+
+It's stated in
+Proposition 2.3.7 (Vector space properties of continuity).
+
+$\square$
+
+### 2.3.4.
+
+Define an inner product and a modulus on
+$\mathcal{C}([0,1], \mathbb{R})$ by
+
+$$ 
+⟨f,g⟩ =
+\int_{0}^{1} f(t)g(t)dt,
+\quad
+|f| = \sqrt[]{⟨f,f⟩}.
+
+$$
+
+Do the inner product properties (IP1),(IP2),and(IP3) (see 
+Proposition2.2.2)
+hold for this inner product on $\mathcal{C}([0,1], \mathbb{R})$
+How much of the material from
+Section2.2 on the inner product and modulus in
+$\mathbb{R}^n$ carries over to $\mathcal{C}([0,1], \mathbb{R})$?
+Express the Cauchy–Schwarz inequality as a relation between 
+integrals.
+
+**Proof**:
+
+(IP1)
+
+$$ 
+⟨f, f⟩ =
+\int_{0}^{1} f(t)f(t)dt
+\geq
+\int_{0}^{1} 0dt = 0
+$$
+
+It achieves 0 only when $f(t) = 0$.
+
+(IP2)
+
+$$ 
+⟨f,g⟩ =
+\int_{0}^{1} f(t)g(t)dt =
+\int_{0}^{1} g(t)f(t)dt =
+⟨g,f⟩
+$$
+
+So IP2 holds.
+
+(IP3)
+
+First, we want to show
+
+$$
+\int_{0}^{1} f (g+h) =
+\int_{0}^{1} fg +
+\int_{0}^{1} fh
+$$
+
+Based on the definition of integral, give a partition $P$ on
+$[0,1]$.
+
+$$ 
+L(fg, P) + L(fh, P)
+\leq 
+L(fg+fh, P)
+\leq
+U(fg+fh, P)
+\leq
+U(fg, P) + L(fh, P)
+$$
+
+So we have
+
+$$
+\int_{0}^{1} f (g+h) =
+\int_{0}^{1} fg +
+\int_{0}^{1} fh.
+$$
+
+Now
+
+$$ 
+⟨f,g+h⟩ =
+\int_{0}^{1} f (g+h) =
+\int_{0}^{1} fg +
+\int_{0}^{1} fh
+= ⟨f,g⟩ + ⟨f,h⟩
+$$
+
+Also
+
+$$ 
+⟨af,g⟩ =
+\int_{0}^{1} (af)g =
+a(\int_{0}^{1} fg) = a ⟨f,g⟩
+$$
+
+$\square$
+
+All of the material from
+Section2.2 on the inner product and modulus in
+$\mathbb{R}^n$ carries over to $\mathcal{C}([0,1], \mathbb{R})$
+
+Cauchy–Schwarz inequality
+
+$$ 
+\left| 
+\int_{0}^{1} f(t)g(t) dt
+ \right|
+ \leq
+\sqrt[]{\int_{0}^{1}f^2(t)dt}
+\cdot
+\sqrt[]{\int_{0}^{1}g^2(t)dt}
+$$
+
+$\square$
+
 ### 2.3.5
 
 Use the definition of convergence and the componentwise nature of
@@ -1215,6 +1403,28 @@ Since $f(x_ν), f(p) \in B$, and $g$ is a continuous mapping,
 we have $\{g(f(x_ν))\} \rightarrow g(f(p))$.
 
 Therefore, $g \circ f$ is continuous.
+
+$\square$
+
+### 2.3.8.
+
+Define $f : \mathbb{Q} \longrightarrow \mathbb{R}$ by the rule
+
+$$ 
+f(x) =
+\begin{cases}
+    1 &\text{if } x^2 < 2,\\
+    0 &\text{if } x^2 > 2.\\
+\end{cases} 
+$$
+
+**Solution**:
+
+It is continuous. Given any $p \in \mathbb{Q}$,
+if $p^2 < 2$, we can always find a $U_{\delta}(p)$ such that
+if $q \in U_{\delta}(p)$, then $q^2 < 2$.
+
+Same thing when $p^2 > 2$.
 
 $\square$
 
@@ -1348,5 +1558,42 @@ $$
 $$
 
 So it cannot be defined continuously at $0$.
+
+$\square$
+
+### 2.3.10.
+
+Let $f(x,y) = g(xy)$, where $g : \mathbb{R} → \mathbb{R}$ is continuous. Is $f$ continuous?
+
+**Proof**:
+
+Let $h(x,y) = xy$, then $h(x,y)$ is a continuous function.
+
+Then from Proposition 2.3.8 (Persistence of continuity under composition), $f = g \circ h$. So $f$ is also continuous.
+
+$\square$
+
+### 2.3.11.
+
+Let $f,g \in \mathcal{M}(\mathbb{R}^n, \mathbb{R})$  
+such that $f +g$ and $fg$ are continuous. Are
+$f$ and $g$ necessarily continuous?
+
+**Proof**:
+
+No, it's not necessary. Consider the case when $n = 1$.
+
+$$ 
+f(x) =
+\begin{cases}
+    0 &\text{if } x \in \mathbb{Q}\\
+    1 &\text{if } x \in \mathbb{I}\\
+\end{cases} 
+$$
+
+Then $g(x) = 1 - f(x)$ .
+
+Then $f+g = 1, fg = 0$ are continuous.
+But $f, g$ are not continuous.
 
 $\square$
