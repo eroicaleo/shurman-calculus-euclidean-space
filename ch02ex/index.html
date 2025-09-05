@@ -122,13 +122,25 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#231">2.3.1.</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#232">2.3.2.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#233">2.3.3.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#234">2.3.4.</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#235">2.3.5</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#236">2.3.6.</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#237">2.3.7</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#238">2.3.8.</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#239">2.3.9.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2310">2.3.10.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2311">2.3.11.</a>
     </li>
         </ul>
     </li>
@@ -1219,6 +1231,181 @@ by showing that it satisfies vector space axioms (A4) and (D1).</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
+<h3 id="232">2.3.2.</h3>
+<p>Define multiplication</p>
+<p>
+<script type="math/tex; mode=display"> 
+* :
+\mathcal{M}(A, \mathbb{R}^m)
+\times
+\mathcal{M}(A, \mathbb{R}^m)
+\longrightarrow
+\mathcal{M}(A, \mathbb{R}^m)
+</script>
+</p>
+<p>Is <script type="math/tex">\mathcal{M}(A, \mathbb{R}^m)</script> a field
+with <script type="math/tex">“+”</script> from the section and this multiplication?
+Does it have a subspace that is a field?</p>
+<p><strong>Solution</strong></p>
+<p>Define:</p>
+<p>
+<script type="math/tex; mode=display">
+(f * g)(x) = f(x) * g(x)
+</script>
+</p>
+<p>And <script type="math/tex">f(x) = 1</script> is it's multiplication identity.</p>
+<p>However, this function does not have inverse.</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) =
+\begin{cases}
+    0 &\text{if } x = 0 \\
+    1 &\text{if } x \neq 0 \\
+\end{cases} 
+</script>
+</p>
+<p>Consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+V =
+\{f : f(x) = (r, \cdots, r) \in \mathbb{R}^m \text{ for all } x \in A\}
+</script>
+</p>
+<p>This is a field.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="233">2.3.3.</h3>
+<p>For <script type="math/tex">A ⊂ \mathbb{R}^n</script> and <script type="math/tex">m ∈ \mathbb{Z}^+</script> define a subspace 
+of the space of mappings
+from <script type="math/tex">A</script> to <script type="math/tex">\mathbb{R}^m</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\mathcal{C}(A, \mathbb{R}^m)
+=
+\{
+f \in \mathcal{M}(A, \mathbb{R}^m) :
+f \text{ is continuous on } A
+\}.
+</script>
+</p>
+<p>Briefly explain how this section has shown that
+<script type="math/tex">\mathcal{C}(A, \mathbb{R}^m)</script> is a vector space.</p>
+<p><strong>Solution</strong>:</p>
+<p>It's stated in
+Proposition 2.3.7 (Vector space properties of continuity).</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="234">2.3.4.</h3>
+<p>Define an inner product and a modulus on
+<script type="math/tex">\mathcal{C}([0,1], \mathbb{R})</script> by</p>
+<p>$$ 
+⟨f,g⟩ =
+\int_{0}^{1} f(t)g(t)dt,
+\quad
+|f| = \sqrt[]{⟨f,f⟩}.</p>
+<p>$$</p>
+<p>Do the inner product properties (IP1),(IP2),and(IP3) (see 
+Proposition2.2.2)
+hold for this inner product on <script type="math/tex">\mathcal{C}([0,1], \mathbb{R})</script>
+How much of the material from
+Section2.2 on the inner product and modulus in
+<script type="math/tex">\mathbb{R}^n</script> carries over to <script type="math/tex">\mathcal{C}([0,1], \mathbb{R})</script>?
+Express the Cauchy–Schwarz inequality as a relation between 
+integrals.</p>
+<p><strong>Proof</strong>:</p>
+<p>(IP1)</p>
+<p>
+<script type="math/tex; mode=display"> 
+⟨f, f⟩ =
+\int_{0}^{1} f(t)f(t)dt
+\geq
+\int_{0}^{1} 0dt = 0
+</script>
+</p>
+<p>It achieves 0 only when <script type="math/tex">f(t) = 0</script>.</p>
+<p>(IP2)</p>
+<p>
+<script type="math/tex; mode=display"> 
+⟨f,g⟩ =
+\int_{0}^{1} f(t)g(t)dt =
+\int_{0}^{1} g(t)f(t)dt =
+⟨g,f⟩
+</script>
+</p>
+<p>So IP2 holds.</p>
+<p>(IP3)</p>
+<p>First, we want to show</p>
+<p>
+<script type="math/tex; mode=display">
+\int_{0}^{1} f (g+h) =
+\int_{0}^{1} fg +
+\int_{0}^{1} fh
+</script>
+</p>
+<p>Based on the definition of integral, give a partition <script type="math/tex">P</script> on
+<script type="math/tex">[0,1]</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+L(fg, P) + L(fh, P)
+\leq 
+L(fg+fh, P)
+\leq
+U(fg+fh, P)
+\leq
+U(fg, P) + L(fh, P)
+</script>
+</p>
+<p>So we have</p>
+<p>
+<script type="math/tex; mode=display">
+\int_{0}^{1} f (g+h) =
+\int_{0}^{1} fg +
+\int_{0}^{1} fh.
+</script>
+</p>
+<p>Now</p>
+<p>
+<script type="math/tex; mode=display"> 
+⟨f,g+h⟩ =
+\int_{0}^{1} f (g+h) =
+\int_{0}^{1} fg +
+\int_{0}^{1} fh
+= ⟨f,g⟩ + ⟨f,h⟩
+</script>
+</p>
+<p>Also</p>
+<p>
+<script type="math/tex; mode=display"> 
+⟨af,g⟩ =
+\int_{0}^{1} (af)g =
+a(\int_{0}^{1} fg) = a ⟨f,g⟩
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>All of the material from
+Section2.2 on the inner product and modulus in
+<script type="math/tex">\mathbb{R}^n</script> carries over to <script type="math/tex">\mathcal{C}([0,1], \mathbb{R})</script>
+</p>
+<p>Cauchy–Schwarz inequality</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+\int_{0}^{1} f(t)g(t) dt
+ \right|
+ \leq
+\sqrt[]{\int_{0}^{1}f^2(t)dt}
+\cdot
+\sqrt[]{\int_{0}^{1}g^2(t)dt}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
 <h3 id="235">2.3.5</h3>
 <p>Use the definition of convergence and the componentwise nature of
 nullness to prove the componentwise nature of convergence. (The 
@@ -1274,6 +1461,25 @@ We have <script type="math/tex">\{f(x_ν)\} \rightarrow f(p)</script>.</p>
 <p>Since <script type="math/tex">f(x_ν), f(p) \in B</script>, and <script type="math/tex">g</script> is a continuous mapping,
 we have <script type="math/tex">\{g(f(x_ν))\} \rightarrow g(f(p))</script>.</p>
 <p>Therefore, <script type="math/tex">g \circ f</script> is continuous.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="238">2.3.8.</h3>
+<p>Define <script type="math/tex">f : \mathbb{Q} \longrightarrow \mathbb{R}</script> by the rule</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) =
+\begin{cases}
+    1 &\text{if } x^2 < 2,\\
+    0 &\text{if } x^2 > 2.\\
+\end{cases} 
+</script>
+</p>
+<p><strong>Solution</strong>:</p>
+<p>It is continuous. Given any <script type="math/tex">p \in \mathbb{Q}</script>,
+if <script type="math/tex">p^2 < 2</script>, we can always find a <script type="math/tex">U_{\delta}(p)</script> such that
+if <script type="math/tex">q \in U_{\delta}(p)</script>, then <script type="math/tex">q^2 < 2</script>.</p>
+<p>Same thing when <script type="math/tex">p^2 > 2</script>.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
@@ -1404,6 +1610,36 @@ then</p>
 </script>
 </p>
 <p>So it cannot be defined continuously at <script type="math/tex">0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="2310">2.3.10.</h3>
+<p>Let <script type="math/tex">f(x,y) = g(xy)</script>, where <script type="math/tex">g : \mathbb{R} → \mathbb{R}</script> is continuous. Is <script type="math/tex">f</script> continuous?</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">h(x,y) = xy</script>, then <script type="math/tex">h(x,y)</script> is a continuous function.</p>
+<p>Then from Proposition 2.3.8 (Persistence of continuity under composition), <script type="math/tex">f = g \circ h</script>. So <script type="math/tex">f</script> is also continuous.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="2311">2.3.11.</h3>
+<p>Let <script type="math/tex">f,g \in \mathcal{M}(\mathbb{R}^n, \mathbb{R})</script>
+<br />
+such that <script type="math/tex">f +g</script> and <script type="math/tex">fg</script> are continuous. Are
+<script type="math/tex">f</script> and <script type="math/tex">g</script> necessarily continuous?</p>
+<p><strong>Proof</strong>:</p>
+<p>No, it's not necessary. Consider the case when <script type="math/tex">n = 1</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) =
+\begin{cases}
+    0 &\text{if } x \in \mathbb{Q}\\
+    1 &\text{if } x \in \mathbb{I}\\
+\end{cases} 
+</script>
+</p>
+<p>Then <script type="math/tex">g(x) = 1 - f(x)</script> .</p>
+<p>Then <script type="math/tex">f+g = 1, fg = 0</script> are continuous.
+But <script type="math/tex">f, g</script> are not continuous.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
