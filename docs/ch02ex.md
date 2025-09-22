@@ -1596,3 +1596,257 @@ Then $f+g = 1, fg = 0$ are continuous.
 But $f, g$ are not continuous.
 
 $\square$
+
+## 2.4 Topology: Compact Sets and Continuity
+
+### 2.4.1.
+
+Are the following subsets of $\mathbb{R}^n$ closed, bounded, 
+compact?
+
+(a) $B(0,1)$: not closed, bounded, not compact.
+
+(b) $\{(x,y) \in \mathbb{R}^2 : y - x^2 = 0\}$:
+
+closed, not bounded, not compact.
+
+(c) $\{(x,y,z) \in \mathbb{R}^3: x^2 +y^2 +z^2 −1 = 0 \}$
+
+closed, bounded, compact.
+
+(d) $\{x : f(x) = 0_m\}$, where $f \in \mathcal{M}(\mathbb{R}^n, \mathbb{R}^m)$
+is continuous (this generalizes (b) and (c)),
+
+**Solution**: Consider $\{x_ν\} \rightarrow p$, since
+$f$ is continuous, $\{f(x_ν)\} \rightarrow f(p)$.
+So $f(p) = 0$. So it's closed. It can be either bounded
+or unbounded, so either compact or not compact.
+
+(f) $\{(x_1,...,x_n) : x_1 +···+x_n > 0\}$.
+
+not closed, not bounded, not compact.
+
+$\square$
+
+### 2.4.2.
+
+Give a set $A ⊂ \mathbb{R}^n$ and limit point $b$ of $A$ 
+such that $b \not\in A$. Give a set
+$A ⊂ \mathbb{R}^n$ and a point $a ∈ A$ such that $a$ is not 
+a limit point of $A$.
+
+**Solution**:
+
+Consider $n = 1$, let $A = (0, 1)$, $b = 0$.
+
+Let $A = \mathbb{N}, a = 0$.
+
+$\square$
+
+### 2.4.3.
+
+Let $A$ be a closed subset of $\mathbb{R}^n$ and let
+$f ∈ \mathcal{M}(A, \mathbb{R}^m)$.
+Define the graph of $f$ to be
+
+$$ 
+G(f) =
+\{(a, f(a)) : a \in A\}
+$$
+
+a subset of $\mathbb{R}^{n+m}$.
+Show that if $f$ is continuous then its graph is closed.
+
+**Proof**:
+
+Given $\{x_ν\} \rightarrow p$, $\{x_ν\} \in G(f)$.
+
+Let $x_ν = (a_ν, f(a_ν))$. Then from
+Proposition 2.3.5 (Componentwise nature of convergence),
+$\{a_ν\} \rightarrow p_0$, and since $f$ is continuous
+$\{f(a_ν)\} \rightarrow f(p_0)$. Also since $A$ is closed,
+so $p_0 \in A$.
+
+So $p = (p_0, f(p_0) \in G(f)$.
+
+Then $G(f)$ is closed.
+
+$\square$
+
+### 2.4.4.
+
+Prove the closed set properties:
+(1) the empty set $∅$ and the full space
+$\mathbb{R}^n$ are closed subsets of $\mathbb{R}^n$;
+
+(2) every intersection of closed sets is closed;
+
+(3) every finite union of closed sets is closed.
+
+**Proof**:
+
+(1) $∅$ does not have limit point, so $∅$ contains
+all it's limit point, which is nothing.
+$\mathbb{R}^n$'s limit points are in $\mathbb{R}^n$.
+So $\mathbb{R}^n$ is closed.
+
+(2) Let $C = \cap C_i$, $p$ is a limit point of $C$.
+So we can find a $\{x_ν\} \rightarrow p$, where $x_ν \in C$.
+Then $x_ν \in C_i$. So $p \in C_i$. Then $p \in C$.
+
+(3) Let $C = \cup_{i=1}^{n} C_i$, $p$ is a limit point of 
+$C$. So we can find a $\{x_ν\} \rightarrow p$, where
+$x_ν \in C$. Then we can find at least one $i$, such that
+there are infinitely many $x_ν \in C_i$. It is
+a subsequence of $\{x_ν\}$ and also convergences to $p$.
+So $p \in C_i \subseteq C$.
+
+$\square$
+
+### 2.4.5.
+
+Prove that every ball $B(p,ε)$ is bounded in $\mathbb{R}^n$.
+
+**Proof**:
+
+Assume $x \in B(p,ε)$, then
+
+$$ 
+|x| \leq |x-p| + |p| < \epsilon + p
+$$
+
+$\square$
+
+### 2.4.6.
+
+Show that $A$ is a bounded subset of $\mathbb{R}^n$ if and only if for each $j ∈ \{1,...,n\}$, the $j$th coordinates of its points form a bounded subset of $\mathbb{R}$.
+
+**Proof**: We will need Proposition 2.2.7 (Size bounds)
+
+$$ 
+A \text{ is a bounded } \\
+\Longleftrightarrow \\
+|x| < R, \forall x \in A \\
+\Longleftrightarrow \\
+|x_j| < R \\
+\Longleftrightarrow \\
+j\text{th coordinates of its points form a bounded subset of}
+\mathbb{R}
+$$
+
+### 2.4.7.
+
+Show by example that a closed set need not satisfy the 
+sequential characterization of bounded sets, and that a 
+bounded set need not satisfy the
+sequential characterization of closed sets.
+
+Solutions:
+
+Consider $A = [0, +\infty)$ which is a closed set.
+Let $\{x_ν\} = \{1, 2, 3, \cdots\}$,
+then it does not have a subsequence that convergences.
+
+Consider $A = (0, 1)$ which is bounded.
+Let $\{x_ν\} = \{1, 1/2, 1/3, \cdots\}$,
+we have $\{x_ν\} \rightarrow 0 \not\in A$.
+
+$\square$
+
+### 2.4.8.
+
+Show by example that the continuous image of a closed set 
+need not be closed,
+that the continuous image of a closed set need not be 
+bounded,
+that the continuous image of a bounded set need not be 
+closed,
+and that the continuous image of a bounded set need not be 
+bounded.
+
+**Solution**:
+
+Consider $f(x) = \frac{1}{x}, x \in [1, +\infty)$.
+$f(C) = (0, 1]$ which is not closed.
+
+Consider $f(x) = x, x \in [1, +\infty)$. 
+$f(C) = [1, +\infty)$ which is not bounded.
+
+Consider $f(x) = x, x \in (0, 1)$.
+$f(C) = (0, 1)$ which is not closed.
+
+Consider $f(x) = 1/x, x \in (0, 1)$.
+$f(C) = [1, +\infty)$ which is not bounded.
+
+### 2.4.9.
+
+A subset $A$ of $\mathbb{R}^n$ is called discrete if each of 
+its points is isolated.
+(Recall that the term isolated was defined in this section.) 
+Show or take for
+granted the (perhaps surprising at first) fact that every 
+mapping whose domain is discrete must be continuous. Is 
+discreteness a topological property?
+That is, need the continuous image of a discrete set be 
+discrete?
+
+**Solution**:
+
+First we show a function
+$f : A \longrightarrow \mathbb{R}^n$ is continuous at
+any point $a \in A$.
+
+Give any $\{x_ν\} \rightarrow a$, since $a$ is isolated,
+we must have $x_ν = a$ for $ν > \Nu$, then
+$\{f(x_ν)\} \rightarrow f(a)$, which means $f$ is
+continuous.
+
+Consider
+
+$$
+f(x) = \begin{cases}
+    0 &\text{if } x = 0\\
+    1/x &\text{otherwise}\\
+\end{cases} 
+$$
+
+and let $A = \mathbb{N}$. So $0$ is in $f(A)$, and
+$0$ is not isolated.
+
+$\square$
+
+### 2.4.10
+
+A subset $A$ of $\mathbb{R}^n$ is called path-connected if 
+for every two points
+$x,y ∈ A$, there is a continuous mapping
+
+$$ 
+γ : [0,1] \longrightarrow A
+$$
+
+such that $γ(0) = x$ and $γ(1) = y$.
+(This $γ$ is the path that connects $x$ and $y$.)
+Draw a picture to illustrate the definition of a 
+path-connected set. Prove that
+path-connectedness is a topological property.
+
+**Proof**:
+
+Let $f : A \longrightarrow \mathbb{R}^m$ is a continuous map.
+Given $x, y \in A$, we want to show $f(x), f(y)$ is also
+path-connected.
+
+From Proposition 2.3.8 (Persistence of continuity under 
+composition),
+$f \circ γ : [0,1] \longrightarrow \mathbb{R}^m$
+is a continuous map and
+
+$$
+(f \circ γ)(0) = f(x) \\
+(f \circ γ)(1) = f(y) \\
+$$
+
+So $f(x), f(y)$ is also path-connected.
+
+$\square$

@@ -788,3 +788,193 @@ Since $f$ is continuous, then $f(p) = b$. We have
 a contradiction.
 
 $\square$
+
+## 2.4 Topology: Compact Sets and Continuity
+
+### Definition 2.4.1 (ε-ball).
+
+For every point $p ∈ \mathbb{R}^n$ and every positive real
+number $ε > 0$, the $ε$-ball centered at $p$ is the set
+
+$$ 
+B(p, ε) = \{x \in \mathbb{R}^n : |x-p| \leq ε\}
+$$
+
+### Definition 2.4.2 (Limit point).
+
+Let $A$ be a subset of $\mathbb{R}^n$, and let $p$ be a
+point of $\mathbb{R}^n$. The point $p$ is a limit point of A 
+if every $ε$-ball centered at $p$
+contains some point $x ∈ A$ such that $x \neq p$.
+
+#### Isolated point
+
+Definition 1: A point in $A$ that is not a limit point of $A$.
+
+Definition 2:
+Equivalently, $p$ is an isolated point
+of $A$ if $p ∈ A$ and there exists some $ε > 0$
+such that $B(p,ε)∩A= \{p\}$. 
+
+### Lemma 2.4.3 (Sequential characterization of limit points).
+
+Let $A$ be a subset of Rn, and let $p$ be a point of $\mathbb{R}^n$.
+Then $p$ is the limit of a sequence $\{x_ν\}$ in $A$ with each
+$x_ν \neq p$ if and only if $p$ is a limit point of $A$.
+
+**Proof**:
+
+$\Rightarrow$
+
+Given $B(p, ε)$, since $\{x_ν\} \rightarrow p$, we can find
+$ν_0$, such that $ν > ν_0$, $|x_ν - p| < ε$, i.e. $x_ν \in B(p, ε)$.
+Since $x_ν \neq p$, then $p$ is a limit point of $A$.
+
+$\Leftarrow$
+
+Assume $p$ is a limit point of $A$, let $x_1 \in A$.
+Let $ε_1 = |x_1 - p|$, and $ε_2 = ε_1 / 2$.
+We can find $p \neq x_2 \in B(p, ε_2)$.
+This process can continue infinitely.
+Then we find a $\{x_ν\} \rightarrow p$.
+
+$\square$
+
+### Definition 2.4.4 (Closed set).
+
+A subset $A$ of $\mathbb{R}^n$ is closed if it contains all of
+its limit points.
+
+### Proposition 2.4.5 (Sequential characterization of closed sets). 
+
+Let $A$ be a subset of $\mathbb{R}^n$. Then $A$ is closed if and only 
+if every sequence in $A$ that
+converges in $\mathbb{R}^n$ in fact converges in $A$.
+
+**Proof**:
+
+$\Rightarrow$
+
+Assume $\{x_ν\} \rightarrow p$ and $x_ν \in A$, if $p = x_ν$ for
+some $ν$, then $p \in A$.
+
+If $p \neq x_ν$, then $p$ is a limit point of $A$. Since
+$A$ is closed, so $p \in A$.
+
+$\square$
+
+$\Leftarrow$
+
+Assume $p$ is a limit point of $A$, then from Lemma 2.4.3
+$\Rightarrow$, we can find $\{x_ν\} \rightarrow p$ and
+$x_ν \in A$. Then $p \in A$, so $p$ is closed.
+
+$\square$
+
+### Definition 2.4.6 (Bounded set).
+
+A set $A$ in $\mathbb{R}^n$ is bounded if $A ⊂ B(0,R)$ for some
+$R > 0$.
+
+### Proposition 2.4.7 (Convergence implies boundedness).
+
+If the sequence $\{x_ν\}$ converges in $\mathbb{R}^n$ then it is 
+bounded.
+
+### Definition 2.4.8 (Subsequence).
+
+A subsequence of the sequence $\{x_ν\}$ is
+a sequence consisting of some (possibly all) of the original terms, 
+in ascending order of indices.
+
+### Lemma 2.4.9 (Persistence of convergence).
+
+Let $\{x_ν\}$ converge to $p$.
+Then every subsequence $\{x_{ν_k}\}$ also converges to $p$.
+
+### Theorem 2.4.10 (Bolzano–Weierstrass property in $R$).
+
+Let $A$ be a bounded subset of $\mathbb{R}$.
+Then every sequence in $A$ has a convergent subsequence.
+
+**Proof**: This is just a summary. Define the
+max-point if it is at least as big as all later terms, i.e.,
+$x_ν ≥ x_μ$ for all $μ > ν$.
+
+If there are infinitely many max-points
+in $\{x_ν\}$ then these form a decreasing sequence. If there are 
+only finitely many
+max-points then $\{x_ν\}$ has an increasing sequence starting 
+after the last max-point.
+
+$\square$
+
+### Theorem 2.4.11 (Bolzano–Weierstrass property in $\mathbb{R}^n$: sequential characterization of bounded sets).
+
+Let $A$ be a subset of $\mathbb{R}^n$. Then $A$
+is bounded if and only if every sequence in $A$ has a subsequence 
+that converges in $\mathbb{R}^n$.
+
+**Proof**:
+
+$\Longrightarrow$ 
+
+Use 2.4.10 on every index.
+
+$\Longleftarrow$
+
+Proof by contradiction.
+
+$\square$
+
+> Note how the sequential characterizations in Proposition 2.4.5 > and in the Bolzano–Weierstrass property complement each other. 
+
+> The proposition characterizes every closed set in $\mathbb{R}^n$ by the 
+> fact that if a sequence converges in the ambient space then it 
+> converges in the set.
+
+> The Bolzano–Weierstrass property characterizes every bounded 
+> set in $\mathbb{R}^n$ by the fact that every sequence in the set has a 
+> subsequence that converges in the ambient space but not necessarily in the set.
+
+> Both the sequential characterization of a closed set and the 
+> sequential characterization of a bounded set refer to the 
+> ambient space $\mathbb{R}^n$ in which the set lies.
+
+### Definition 2.4.12 (Compact set).
+
+A subset $K$ of $\mathbb{R}^n$ is compact if it is closed and 
+bounded.
+
+### Theorem 2.4.13 (Sequential characterization of compact sets). 
+
+Let $K$ be a subset of $\mathbb{R}^n$.
+Then $K$ is compact if and only if every sequence in $K$
+has a subsequence that converges in $K$.
+
+**Proof**:
+
+$\Longrightarrow$ 
+
+Since its bounded we can use the Bolzano–Weierstrass property.
+And since it's closed, it converges in $K$.
+
+$\Longleftarrow$
+
+Just use the $\Longleftarrow$ of 2.4.5 and 2.4.11.
+
+$\square$
+
+> By contrast to the sequential characterizations of a closed set 
+> and of a bounded set, the sequential characterization of a
+> compact set $K$ makes no reference to the ambient space Rn in
+> which $K$ lies.
+
+> A set’s property of being compact is innate in a way that a
+> set’s property of being closed or of being bounded is not.
+
+### Theorem 2.4.14 (The continuous image of a compact set is compact).
+
+Let K be a compact subset of Rn and let f : K −→ Rm be continuous.
+Then f(K), the image set of K under f, is a compact subset of Rm
+.
