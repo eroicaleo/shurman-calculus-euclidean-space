@@ -975,6 +975,62 @@ $\square$
 
 ### Theorem 2.4.14 (The continuous image of a compact set is compact).
 
-Let K be a compact subset of Rn and let f : K −→ Rm be continuous.
-Then f(K), the image set of K under f, is a compact subset of Rm
-.
+Let $K$ be a compact subset of $\mathbb{R}^n$ and let
+$f : K \longrightarrow \mathbb{R}^m$ be continuous.
+Then $f(K)$, the image set of $K$ under $f$, is a compact subset of $\mathbb{R}^m$.
+
+**Proof**:
+
+Let $\{y_ν\} \in f(K)$, we can find $\{x_ν\} \in K$, such that
+$f(x_ν) = y_ν$. Since $K$ is compact, then we can find
+subsuquence $\{x_{ν_k}\} \longrightarrow p \in K$. Since
+$f$ is continuous, then $\{f(x_{ν_k})\} \longrightarrow f(p) \in f(K)$. And $\{f(x_{ν_k})\}$ is subsequence of $f(x_ν)$.
+
+So $f(K)$ is also compact.
+
+$\square$
+
+### Theorem 2.4.15 (Extreme value theorem).
+
+Let $K$ be a nonempty compact subset of $\mathbb{R}^n$ and let the function $f : K \longrightarrow R$ be continuous. Then $f$
+takes a minimum and a maximum value on $K$.
+
+**Proof**:
+
+$f(K)$ is compact in $\mathbb{R}$, so it has
+a greatest lower bound $a$ and
+a least upper bound $b$ by the completeness of the real number 
+system.
+
+If $a$ is not a limit point of $f(K)$ and $a \not\in f(K)$, then
+we can find $U_{\delta}(a)$ such that
+$U_{\delta}(a) \cap f(K) = \emptyset$.
+That means, $a + \delta /2$ is another lower bound.
+We got a contradiction.
+
+So $a$ is either an isolated point or a limit point of $f(K)$.
+
+$\square$
+
+### Topological property
+
+> A topological property of sets is a property that is preserved 
+> under continuity. Theorem 2.4.14 says that compactness is a 
+> topological property. Neither
+> the property of being closed nor the property of being bounded 
+> is in itself topological. That is, the continuous image of a 
+> closed set need not be closed, 
+> and the continuous image of a bounded set need not be bounded; 
+> for that matter, the continuous image of a closed set need not 
+> be bounded, and the continuous image of a bounded set need not 
+> be closed (Exercise 2.4.8).
+
+> The nomenclature continuous image in the slogan-title of 
+> Theorem 2.4.14 and in the previous paragraph is, strictly 
+> speaking, inaccurate: the image of a mapping is a set, and the 
+> notion of a set being continuous doesn’t even 
+> make sense according to our grammar. As stated correctly in the 
+> body of the theorem, continuous image is short for image under 
+> a continuous mapping.
+
+$\square$
