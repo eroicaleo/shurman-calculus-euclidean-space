@@ -664,3 +664,159 @@ $$
 $$
 
 $\square$
+
+## 3.2 Operations on Matrices
+
+### 3.2.1.
+
+Justify Definition 3.2.2 of scalar multiplication of matrices.
+
+**Solution**:
+
+The $j$th column of $αA$ is
+
+$$ 
+(αS)(e_j) = α (S(e_j)) = α \times \text{($j$th column of A)}
+$$
+
+So it's reasonable to define $αA = [αa_{ij}]_{m \times n}$.
+
+$\square$
+
+### 3.2.2.
+
+Carry out the matrix multiplications.
+
+**Solution**: skipped.
+
+### 3.2.3
+
+Prove more of Proposition 3.2.5, that
+$A(B+C) = AB+AC$, $(αA)B= A(αB)$, and
+$I_mA= A$ for suitable matrices $A,B,C$ and any scalar $α$.
+
+**Proof**:
+
+$$ 
+\begin{align*}
+(R ◦ (S + T))(x)
+&= R((S+T)(x))
+&\quad \text{by definition of $R ◦ (S + T)$} \\
+&= R(S(x)+T(x))
+&\quad \text{by definition of $(S + T)$} \\
+&= R(S(x)) + R(S(x))
+&\quad \text{$R$ is linear mapping} \\
+&= (R ◦ S)(x) + (R ◦ T)(x)
+&\quad \text{by definition of $R ◦ S$ and $R ◦ T$}
+\end{align*}
+$$
+
+$$
+\begin{align*}
+((αS) ◦ T)(x)
+&= (αS)(T(x))
+&\quad \text{by definition of $(αS) ◦ T$} \\
+&= α (S(T(x)))
+&\quad \text{by definition of $(αS)$} \\
+&= S(αT(x))
+&\quad \text{$S$ is linear} \\
+&= S((αT)(x))
+&\quad \text{by definition of $(αT)$} \\
+&= (S◦(αT))(x)
+&\quad \text{by definition of $S◦(αT)$} \\
+\end{align*} 
+$$
+
+$$
+\begin{align*}
+(\text{id} ◦ A) (x)
+&= \text{id}(A(x))
+&\quad \text{by definition of id $ ◦ A$} \\
+&= A(x)
+&\quad \text{by definition of id} \\
+\end{align*} 
+$$
+
+### 3.2.4.
+
+(If you have not yet worked Exercise 3.1.14 then do so before working
+this exercise.) 
+
+Let $A = [a_{ij}]_{m \times n} \in M_{m, n}(\mathbb{R})$
+be the matrix of $S \in \mathcal{L}(\mathbb{R}^n, \mathbb{R}^m)$
+Its transpose $A^T \in M_{n, m}(\mathbb{R})$
+is the matrix of the transpose mapping $S^T$.
+Since $S$ and $S^T$ act respectively as multiplication by
+$A$ and $A^T$, the characterizing
+property of $S$ from Exercise 3.1.14 gives
+
+$$ 
+⟨x,A^T y⟩ = ⟨Ax,y⟩ \quad \text{for all } x \in \mathbb{R}^n \text{ and } y \in \mathbb{R}^m.
+$$
+
+Make specific choices of x and y to show that the transpose $A^T \in M_{m, n}(\mathbb{R})$
+is obtained by flipping $A$ about its northwest–southeast diagonal; that is, show
+that the $(i,j)$th entry of $A^T$ is $a_{ji}$. 
+
+It follows that the rows of $A^T$ are the
+columns of $A$, and the columns of $A^T$ are the rows of $A$.
+
+**Proof**:
+
+Given any $1 \leq p \leq m, 1 \leq q \leq n$, let $x = e_p \in \mathbb{R}^n, y = e_q \in \mathbb{R}^m$.
+
+Let $A = [a_{ij}]_{m \times n}, A^T = [b_{ij}]_{n \times m}$.
+
+Then $A^T y = A^T e_q = j \text{th column of }A^T$, then $⟨x,A^T y⟩ = b_{ij}$.
+
+On the other hand, $Ax = i \text{th column of }A$, then $⟨Ax,y⟩ = a_{ji}$.
+
+So we proved.
+
+> (Similarly, let $B \in M_{n, p}(\mathbb{R})$ be the matrix of
+> $T \in \mathcal{L}(\mathbb{R}^p, \mathbb{R}^n)$ so that $B^T$
+> is the matrix of $T^T$. Because matrix multiplication is compatible with linear
+> mapping composition, we know immediately from Exercise 3.1.14(b), with no
+> reference to the concrete description of the matrix transposes $A^T$ and $B^T$ in
+> terms of the original matrices $A$ and $B$, that the transpose of the product is
+> the product of the transposes in reverse order,
+
+$$ 
+(AB)^T = B^T A^T \quad \text{for all } A \in M_{m, n}(\mathbb{R}) \text{ and }
+B \in M_{n, p}(\mathbb{R}).
+$$
+
+> That is, by characterizing the transpose mapping in Exercise 3.1.14, we
+> easily derived the construction of the transpose matrix here and obtained the
+> formula for the product of transpose matrices with no reference to their construction.)
+
+$\square$
+
+### 3.2.5.
+
+The trace of a square matrix $A \in M_{n}(\mathbb{R})$ is the sum of its diagonal
+elements,
+
+$$ 
+\text{tr}(A) = \sum_{i = 1}^{n} a_{ii}
+$$
+
+Show that
+
+$$ 
+\text{tr}(AB) = \text{tr}(BA), \quad A,B \in M_{n}(\mathbb{R})
+$$
+
+**Proof**:
+
+$$ 
+\text{tr}(AB) = \sum_{i = 1}^{n} c_{ii} \\
+= \sum_{i = 1}^{n} \left( \sum_{j = 1}^{n} a_{ij} b_{ji} \right) \\
+= \sum_{i = 1}^{n} \sum_{j = 1}^{n} a_{ij} b_{ji} \\
+= \sum_{j = 1}^{n} \sum_{i = 1}^{n} b_{ji} a_{ij} \\
+= \sum_{j = 1}^{n} \left( \sum_{i = 1}^{n} b_{ji} a_{ij}  \right) \\
+= \text{tr}(BA)
+$$
+
+$\square$
+
