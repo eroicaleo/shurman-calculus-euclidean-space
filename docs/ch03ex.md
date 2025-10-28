@@ -820,3 +820,767 @@ $$
 
 $\square$
 
+### 3.2.6
+
+For every matrix $A \in M_{m, n}(\mathbb{R})$ and column vector
+$a \in \mathbb{R}^m$, define the aﬃne mapping (cf. Exercise 3.1.15)
+
+$$ 
+\text{Aff}_{A, a} : \mathbb{R}^n \longrightarrow \mathbb{R}^m
+$$
+
+by the rule $\text{Aff}_{A, a} = Ax + a$ for all
+$x \in \mathbb{R}^n$, viewing $x$ as a column vector.
+
+(a) Explain why every aﬃne mapping from $\mathbb{R}^n$ to
+$\mathbb{R}^m$ takes this form.
+
+**Proof**:
+
+An affine mapping is this form: $f(x) = T(x) + b$,
+$T \in \mathcal{L}(\mathbb{R}^n, \mathbb{R}^m)$ and
+$b \in \mathbb{R}^m$.
+
+Since $T \in \mathcal{L}(\mathbb{R}^n, \mathbb{R}^m)$,
+then we can find matrix $A \in M_{m, n}(\mathbb{R})$ such that
+$T(x) = A(x)$.
+
+So $\text{Aff}_{A, a} = Ax + a$.
+
+$\square$
+
+(b) Given such $A$ and $a$, define the matrix
+$A' \in M_{{m+1}, {n+1}}(\mathbb{R})$ to be 
+
+$$
+A' =
+\begin{bmatrix}
+    A          & a \\
+    \bold{0}_n & 1 \\
+\end{bmatrix}.
+$$
+
+Show that for all $x ∈ \mathbb{R}^n$,
+
+$$ 
+A'
+\begin{bmatrix}
+x \\
+1 \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+\text{Aff}_{A, a}(x) \\
+1
+\end{bmatrix}.
+$$
+
+Thus, aﬃne mappings, like linear mappings, behave as 
+matrix-by-vector multiplications but where the vectors are the usual 
+input and output vectors augmented with an extra “1” at the bottom.
+
+**Proof**:
+
+For $e_j, j < n+1$,
+
+$$ 
+A' e_j =
+\begin{bmatrix}
+A_j \\
+0 \\
+\end{bmatrix} \\
+A' e_{n+1} =
+\begin{bmatrix}
+a \\
+1 \\
+\end{bmatrix}
+$$
+
+Let
+$$
+x' = \begin{bmatrix}
+x \\
+1 \\
+\end{bmatrix}
+$$
+
+Then
+
+$$ 
+x' = \sum_{j = 1}^{n} x_j e_j + e_{n+1}
+$$
+
+Then
+
+$$ 
+A'x' = \sum_{j = 1}^{n} x_j A' e_j + A' e_{n+1} \\
+= \sum_{j = 1}^{n} x_j A_j +
+\begin{bmatrix}
+a \\
+1 \\
+\end{bmatrix} \\
+= \sum_{j = 1}^{n}
+\begin{bmatrix}
+A_j x_j \\
+0 \\
+\end{bmatrix} +
+\begin{bmatrix}
+a \\
+1 \\
+\end{bmatrix}  \\
+=
+\begin{bmatrix}
+\text{Aff}_{A, a}(x) \\
+1
+\end{bmatrix}
+$$
+
+$\square$
+
+(c) The aﬃne mapping
+$\text{Aff}_{B, b} : \mathbb{R}^p \longrightarrow \mathbb{R}^n$
+determined by $B \in M_{n, p}(\mathbb{R})$ and $b \in \mathbb{R}^n$
+has matrix
+
+$$ 
+B' =
+\begin{bmatrix}
+B          & b \\
+\bold{0}_p & 1 \\
+\end{bmatrix}
+$$
+
+Show that
+
+$\text{Aff}_{A, a} \circ \text{Aff}_{B, b} : \mathbb{R}^p \longrightarrow \mathbb{R}^m$ has matrix $A'B'$.
+That is, matrix
+multiplication is compatible with composition of aﬃne mappings.
+
+**Proof**:
+
+First we know
+
+$$
+B'x =
+\begin{bmatrix}
+\text{Aff}_{B, b}(x) \\
+1
+\end{bmatrix}
+$$
+
+Then
+
+$$
+\begin{align*}
+(A'B')x
+&=
+A' (B'x) &\quad \text{Properties of matrix multiplication} \\
+&=
+A' \begin{bmatrix}
+\text{Aff}_{B, b}(x) \\
+1
+\end{bmatrix} &\quad \text{Compute $B'x$ from (b)} \\ 
+&= 
+\begin{bmatrix}
+\text{Aff}_{A, a} ( \text{Aff}_{B, b}(x) ) \\
+1 \\
+\end{bmatrix} &\quad \text{Again from (b)} \\
+&=
+\begin{bmatrix}
+(\text{Aff}_{A, a} \circ \text{Aff}_{B, b})(x) \\
+1
+\end{bmatrix} &\quad \text{Definition of composition of maps.} 
+\end{align*} 
+$$
+
+$\square$
+
+### 3.2.7.
+
+The exponential of a square matrix $A$ is the infinite matrix sum
+
+$$ 
+e^A =
+I + A + \frac{1}{2!} A^2 + \frac{1}{3!} A^3 + \cdots 
+$$
+
+Compute the exponentials of the following matrices.
+
+**Solution**:
+
+(a) $A = [λ]$
+
+$$ 
+e^A = [e^λ]
+$$
+
+$\square$
+
+(b)
+
+$$ 
+A =
+\begin{bmatrix}
+    λ & 1 \\
+    0 & λ \\
+\end{bmatrix}
+$$
+
+$$ 
+A^2 = 
+\begin{bmatrix}
+    λ & 1 \\
+    0 & λ \\
+\end{bmatrix}
+\begin{bmatrix}
+    λ & 1 \\
+    0 & λ \\
+\end{bmatrix} \\
+=
+\begin{bmatrix}
+λ^2 & 2λ \\
+0   & λ^2 \\
+\end{bmatrix}
+
+$$
+
+$$ 
+A^3 =
+\begin{bmatrix}
+λ^2 & 2λ \\
+0   & λ^2 \\
+\end{bmatrix}
+\begin{bmatrix}
+    λ & 1 \\
+    0 & λ \\
+\end{bmatrix} \\
+=
+\begin{bmatrix}
+λ^3 & 3λ^2 \\
+0   & λ^3 \\
+\end{bmatrix}
+$$
+
+Then
+
+$$ 
+e^A =
+\begin{bmatrix}
+e^λ & e^λ \\
+0   & e^λ \\
+\end{bmatrix}
+$$
+
+$\square$
+
+(c)
+
+$$ 
+A =
+\begin{bmatrix}
+λ & 1 & 0 \\
+0 & λ & 1 \\
+0 & 0 & λ \\
+\end{bmatrix}
+$$
+
+$$ 
+A^2 =
+\begin{bmatrix}
+λ & 1 & 0 \\
+0 & λ & 1 \\
+0 & 0 & λ \\
+\end{bmatrix}
+\begin{bmatrix}
+λ & 1 & 0 \\
+0 & λ & 1 \\
+0 & 0 & λ \\
+\end{bmatrix} \\
+=
+\begin{bmatrix}
+λ^2 & 2λ  & 1 \\
+0   & λ^2 & 2λ \\
+0   & 0   & λ^2 \\
+\end{bmatrix}
+$$
+
+$$ 
+A^3 =
+\begin{bmatrix}
+λ^2 & 2λ  & 1 \\
+0   & λ^2 & 2λ \\
+0   & 0   & λ^2 \\
+\end{bmatrix}
+\begin{bmatrix}
+λ & 1 & 0 \\
+0 & λ & 1 \\
+0 & 0 & λ \\
+\end{bmatrix} \\
+=
+\begin{bmatrix}
+λ^3 & 3λ^2  & 3λ \\
+0   & λ^3   & 3λ^2 \\
+0   & 0     & λ^3 \\
+\end{bmatrix}
+$$
+
+$$ 
+A^4 =
+\begin{bmatrix}
+λ^3 & 3λ^2  & 3λ \\
+0   & λ^3   & 3λ^2 \\
+0   & 0     & λ^3 \\
+\end{bmatrix}
+\begin{bmatrix}
+λ & 1 & 0 \\
+0 & λ & 1 \\
+0 & 0 & λ \\
+\end{bmatrix} \\
+=
+\begin{bmatrix}
+λ^4 & 4λ^3  & 6λ^2 \\
+0   & λ^4   & 4λ^3 \\
+0   & 0     & λ^4 \\
+\end{bmatrix}
+$$
+
+So
+
+$$ 
+e^A =
+\begin{bmatrix}
+e^λ & e^λ  & e^λ/2 \\
+0   & e^λ   & e^λ \\
+0   & 0     & e^λ \\
+\end{bmatrix}
+$$
+
+$\square$
+
+(d)
+
+$$ 
+A =
+\begin{bmatrix}
+λ & 1 & 0 & 0 \\
+0 & λ & 1 & 0 \\
+0 & 0 & λ & 1 \\
+0 & 0 & 0 & λ \\
+\end{bmatrix}
+$$
+
+$$ 
+A^2 =
+\begin{bmatrix}
+λ & 1 & 0 & 0 \\
+0 & λ & 1 & 0 \\
+0 & 0 & λ & 1 \\
+0 & 0 & 0 & λ \\
+\end{bmatrix}
+\begin{bmatrix}
+λ & 1 & 0 & 0 \\
+0 & λ & 1 & 0 \\
+0 & 0 & λ & 1 \\
+0 & 0 & 0 & λ \\
+\end{bmatrix} \\
+=
+\begin{bmatrix}
+λ^2 & 2λ  & 1   & 0   \\
+0   & λ^2 & 2λ  & 1   \\
+0   & 0   & λ^2 & 2λ  \\
+0   & 0   & 0   & λ^2 \\
+\end{bmatrix}
+$$
+
+So
+
+$$ 
+\frac{1}{2!} A^2 =
+\begin{bmatrix}
+\frac{1}{2!} λ^2 & λ  & \frac{1}{2}   & 0   \\
+0   & \frac{1}{2!} λ^2 & λ  & \frac{1}{2}   \\
+0   & 0   & \frac{1}{2!} λ^2 & λ  \\
+0   & 0   & 0   & \frac{1}{2!} λ^2 \\
+\end{bmatrix}
+$$
+
+Then
+
+$$ 
+A^3 = 
+\begin{bmatrix}
+λ^2 & 2λ  & 1   & 0   \\
+0   & λ^2 & 2λ  & 1   \\
+0   & 0   & λ^2 & 2λ  \\
+0   & 0   & 0   & λ^2 \\
+\end{bmatrix}
+\begin{bmatrix}
+λ & 1 & 0 & 0 \\
+0 & λ & 1 & 0 \\
+0 & 0 & λ & 1 \\
+0 & 0 & 0 & λ \\
+\end{bmatrix} \\
+=
+\begin{bmatrix}
+λ^3 & 3λ^2 & 3λ   & 1   \\
+0   & λ^3  & 3λ^2 & 3λ   \\
+0   & 0    & λ^3  & 3λ^2  \\
+0   & 0    & 0    & λ^3 \\
+\end{bmatrix}
+$$
+
+So
+
+$$ 
+\frac{1}{3!} A^3 =
+\begin{bmatrix}
+\frac{1}{3!} λ^3 & \frac{1}{2!} λ^2              & \frac{1}{2} λ   & \frac{1}{3!}   \\
+0                & \frac{1}{3!} λ^3  & \frac{1}{2!} λ^2 & \frac{1}{2} λ   \\
+0                & 0                 & \frac{1}{3!} λ^3  & \frac{1}{2!} λ^2  \\
+0                & 0                 & 0    & \frac{1}{3!} λ^3 \\
+\end{bmatrix}
+$$
+
+Then
+
+$$ 
+A^4 =
+\begin{bmatrix}
+λ^3 & 3λ^2 & 3λ   & 1   \\
+0   & λ^3  & 3λ^2 & 3λ   \\
+0   & 0    & λ^3  & 3λ^2  \\
+0   & 0    & 0    & λ^3 \\
+\end{bmatrix}
+\begin{bmatrix}
+λ & 1 & 0 & 0 \\
+0 & λ & 1 & 0 \\
+0 & 0 & λ & 1 \\
+0 & 0 & 0 & λ \\
+\end{bmatrix} \\
+=
+\begin{bmatrix}
+λ^4 & 4 λ^3 & 6 λ^2 & 4 λ \\
+0   & λ^4   & 4 λ^3 & 6 λ^2 \\
+0   & 0     & λ^4   & 4 λ^3 \\
+0   & 0     & 0     & λ^4 \\
+\end{bmatrix} \\
+$$
+
+So
+
+$$ 
+\frac{1}{4!} A^4
+=
+\begin{bmatrix}
+(1/4!)λ^4 & (1/3!) λ^3 & (1/2)(1/2!) λ^2 & (1/3!) λ \\
+0   & (1/4!)λ^4   & (1/3!) λ^3 & (1/2)(1/2!) λ^2 \\
+0   & 0     & (1/4!)λ^4   & (1/3!) λ^3 \\
+0   & 0     & 0     & (1/4!)λ^4 \\
+\end{bmatrix} \\
+$$
+
+Then finally
+
+$$ 
+e^A =
+\begin{bmatrix}
+e^λ & e^λ & \frac{1}{2!} e^λ & \frac{1}{3!} e^λ \\
+0 & e^λ & e^λ & \frac{1}{2!} e^λ \\
+0 & 0 & e^λ & e^λ \\
+0 & 0 & 0 & e^λ \\
+\end{bmatrix} \\
+$$
+
+$\square$
+
+### 3.2.8.
+
+Let $a,b,d$ be real numbers with $ad = 1$. show that
+
+$$ 
+\begin{bmatrix}
+a & b \\
+0 & d \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & ab \\
+0 & 1  \\
+\end{bmatrix}
+\begin{bmatrix}
+a & 0 \\
+0 & d  \\
+\end{bmatrix}
+$$.
+
+**Proof**: Just regular matrix multiplication.
+
+(b)
+
+Let $a,b,c,d$ be real numbers with $c \neq 0$ and $ad−bc = 1$. Show that
+
+$$ 
+
+$$
+
+$\square$
+
+## 3.3 The Inverse of a Linear Mapping
+
+### 3.3.8.
+
+For each matrix $A$ solve the equation $Ax= 0$.
+
+(a)
+
+$$ 
+\begin{bmatrix}
+-1 & 1 & 4 \\
+ 1 & 3 & 8 \\
+ 1 & 2 & 5 \\
+\end{bmatrix}
+$$
+
+**Solution**:
+
+Multiply by $R_{2;1,1}$ we got 
+
+$$ 
+\begin{bmatrix}
+-1 & 1 & 4 \\
+ 0 & 4 & 12 \\
+ 1 & 2 & 5 \\
+\end{bmatrix}
+$$
+
+Multiply by $R_{3;1,1}$ we got
+
+$$ 
+\begin{bmatrix}
+-1 & 1 & 4 \\
+ 0 & 4 & 12 \\
+ 0 & 3 & 9 \\
+\end{bmatrix}
+$$
+
+Multiply by $S_{1,-1}$ we got
+
+$$ 
+\begin{bmatrix}
+ 1 & -1 & -4 \\
+ 0 & 4 & 12 \\
+ 0 & 3 & 9 \\
+\end{bmatrix}
+$$
+
+Multiply by $R_{1;3,1/3}$ we got
+
+$$ 
+\begin{bmatrix}
+ 1 & 0 & -1 \\
+ 0 & 4 & 12 \\
+ 0 & 3 & 9 \\
+\end{bmatrix}
+$$
+
+Multiply by $R_{2;3,-4/3}$ we got
+
+$$ 
+\begin{bmatrix}
+ 1 & 0 & -1 \\
+ 0 & 0 & 0  \\
+ 0 & 3 & 9  \\
+\end{bmatrix}
+$$
+
+Multiply by $T_{2;3}$ we got
+
+$$ 
+\begin{bmatrix}
+ 1 & 0 & -3 \\
+ 0 & 3 & 9  \\
+ 0 & 0 & 0  \\
+\end{bmatrix}
+$$
+
+Multiply by $S_{2,1/3}$ we got
+
+$$ 
+\begin{bmatrix}
+ 1 & 0 & -1 \\
+ 0 & 1 & 3  \\
+ 0 & 0 & 0  \\
+\end{bmatrix}
+$$
+
+Then $x = (1, -3, 1)$ can be one solution.
+
+$\square$
+
+### 3.3.9.
+
+Balance the chemical equation
+
+$$ 
+\text{Ca} + \text{H}_3 \text{PO}_4
+\rightarrow
+\text{Ca}_3 \text{P}_2 \text{O}_8 + \text{H}_2
+$$
+
+**Solution**
+
+$$ 
+\begin{bmatrix}
+    1 & 0 & -3 &  0 \\
+    0 & 3 &  0 & -2 \\
+    0 & 1 & -2 &  0 \\
+    0 & 4 & -8 &  0 \\
+\end{bmatrix}
+$$
+
+So $(3, 2, 1, 3)$ is a solution.
+
+$$ 
+3 \text{Ca} + 2\text{H}_3 \text{PO}_4
+\rightarrow
+1 \text{Ca}_3 \text{P}_2 \text{O}_8 + 3 \text{H}_2
+$$
+
+$\square$
+
+### 3.3.10.
+
+Prove by induction that the only square echelon matrix with all new
+columns is the identity matrix.
+
+**Proof**:
+
+Assume this is true for $n \times n$, i.e. $E_n = I_n$.
+
+Consider $(n+1) \times (n+1)$ echelon matrix. Since the last column
+is a new column, then
+
+$$ 
+E_{n+1} =
+\begin{bmatrix}
+    A & 0 \\
+    0 & 1 \\
+\end{bmatrix}
+$$
+
+If any column of $A$ is not a new column, then it does not have a leading $1$'s.
+Then that column does not have a leading $1$'s in $E_{n+1}$ either.
+So it's not a new column in $E_{n+1}$. We have a contradiction.
+
+So every column in $A$ is a new column, and since its size is $n \times n$,
+then $A = I_n$. So $E_{n+1} = I_{n+1}$.
+
+$\square$
+
+### 3.3.11.
+
+Are the following matrices invertible? Find the inverse when possible,
+and then check your answer.
+
+**Solution**:
+
+We check (b)
+
+$$ 
+B = [P | I] = \\
+\begin{bmatrix}
+2 &  5 & -1 &  1 &  0 &  0 \\
+4 & -1 &  2 &  0 &  1 &  0 \\
+6 &  4 &  1 &  0 &  0 &  1 \\
+\end{bmatrix}
+$$
+
+Apply $R_{2;1,-2}$
+
+$$ 
+\begin{bmatrix}
+2 &  5  & -1 &   1 &  0 &  0 \\
+0 & -11 &  4 &  -2 &  1 &  0 \\
+6 &  4  &  1 &   0 &  0 &  1 \\
+\end{bmatrix}
+$$
+
+Apply $R_{3;1,-3}$
+
+$$ 
+\begin{bmatrix}
+2 &  5   & -1 &   1 &  0 &  0 \\
+0 & -11  &  4 &  -2 &  1 &  0 \\
+0 & -11  &  4 &  -3 &  0 &  1 \\
+\end{bmatrix}
+$$
+
+Apply $R_{3;2,-1}$
+
+$$ 
+\begin{bmatrix}
+2 &  5   & -1 &   1 &  0  &  0 \\
+0 & -11  &  4 &  -2 &  1  &  0 \\
+0 &   0  &  0 &  -1 &  -1 &  1 \\
+\end{bmatrix}
+$$
+
+So it's not invertible.
+
+$\square$
+
+### 3.3.12.
+
+The matrix $A$ is called lower triangular if $a_{ij} = 0$ whenever $i < j$.
+If $A$ is a lower triangular square matrix with all diagonal entries equal to $1$,
+show that $A$ is invertible and $A^{−1}$ takes the same form.
+
+**Proof**:
+
+We can mutiply $A$ with $R_{2;1,-a_{2,1}}, \cdots R_{n;1,-a_{n,1}}$ to get the
+first column to become a new column, let the new matrix be $A_1$. And the right
+half be $B_1$. Then $B_1$ is still a lower triangular.
+
+Similarly, we can mutiply $A_1$ with
+$R_{3;2,-a_{3,2}}, \cdots R_{n;2,-a_{n,2}}$ to get $A_2$ and $B_2$ which are also
+lower triangular.
+
+Eventually, we can get $A_n = I_n$ and $B_n$, which are also lower triangular.
+
+$\square$
+
+### 3.3.13.
+
+This exercise refers back to the Gram–Schmidt exercise in Chapter 2.
+That exercise expresses the relation between the vectors $\{x'_j\}$  and 
+the vectors
+$\{x_j\}$ formally as $x' = Ax$, where $x'$ is a column vector whose 
+entries are 
+the vectors $x'_1, \cdots, x'_n$, $x$ is the corresponding column vector 
+of $x_j$’s, and $A$ is an $n×n$ lower triangular matrix.
+
+Show that each $x_j$ has the form
+
+$$ 
+x_j = a'_{j1} x'_1 + \cdots + a'_{j,j-1} x'_{j-1} + x'_j
+$$
+
+and thus every linear combination of the original $\{x_j\}$ is also a 
+linear combination of the new $\{x'_j\}$.
+
+**Proof**:
+
+Since $A$ is lower triangular matrix, from 3.3.12, $A$ is invertible,
+and $A^{-1}$ is also a lower triangular matrix, such that
+
+$$ 
+x = A^{-1} x'
+$$
+
+If we expand it, we have
+
+$$ 
+x_j = a'_{j1} x'_1 + \cdots + a'_{j,j-1} x'_{j-1} + x'_j
+$$
+
+$\square$
