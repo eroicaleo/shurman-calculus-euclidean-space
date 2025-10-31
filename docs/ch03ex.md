@@ -1327,6 +1327,98 @@ $\square$
 
 ## 3.3 The Inverse of a Linear Mapping
 
+### 3.3.2.
+
+Finish the proof of Proposition 3.3.2.
+
+**Proof**:
+
+To prove (b), each row $r_j$ of $S_{i,a} M$ is the row $r_i$ of $M$.
+And $r_i$ of $S_{i,a} M$ is $a r_i$.
+
+$\square$
+
+### 3.3.4.
+
+Finish the proof of Lemma 3.3.3, part (1).
+
+**Proof**:
+
+We need to prove
+
+$$ 
+S_{i,a}^{-1} = S_{i,a^{-1}}
+$$
+
+Note $S_{i,a}$ is the identity matrix $I_m$ with $a$ times it's $i$th row,
+and multiplying this from the left by $S_{i,a^{-1}}$ makes the $i$th row
+back to be $(0,\cdots , 1, \cdots 0)$.
+
+We also need to prove
+
+$$ 
+T_{i;j}^{-1} = T_{i;j}
+$$
+
+Note $T_{i;j}$ is the identity matrix $I_m$ with swapping its $i$th row
+with its $j$th row, and multiplying this from the left by $T_{i;j}$ 
+makes it back to $I_m$.
+
+### 3.3.5.
+
+What is the eﬀect of right multiplying the $m×n$ matrix $M$ by an $n×n$
+matrix $R_{i;j,a}, S_{i,a}, T_{i;j}$?
+
+**Solution**:
+
+We can directly carry out the matrix multiplication and the effect is
+described in 3.3.6.
+
+### 3.3.6.
+
+Recall the transpose of a matrix $M$ (cf. Exercise 3.2.4), denoted $M^T$.
+Prove $R_{i;j,a}^T = R_{j;i,a}M$; $S_{i,a}^T = S_{i,a}$; $T_{i;j}^T = T_{i;j}$.
+
+Use these results and the formula $(AB)^T = B^TA^T$ to redo the previous problem.
+
+**Proof**:
+
+Let $A = [a_{ij}]_{m \times n}, A^T = [b_{ij}]_{n \times m}$.
+Then we know, $a_{ij} = b_{ji}$. So then it's easy to prove.
+
+For the second part
+
+$$ 
+(A R_{i;j,a})^T = R_{i;j,a}^T A^T = R_{j;i,a} A^T
+$$
+
+So the effect is to use $a$ times $i$th column and add to the $j$th column.
+
+$$ 
+(A S_{i,a})^T = S_{i,a} A^T
+$$
+
+So the effect is to use $a$ times $i$th column of $A$.
+
+Similar, the effect is to swap the $i$th and $j$th column of $A$.
+
+### 3.3.7.
+
+Are the following matrices echelon? For each matrix $M$, solve the
+equation $Mx= 0$.
+
+**Solution**:
+
+(a) no, the last column is not a neither a new column nor an old column.
+
+(b) (c) yes.
+
+(d) No. The 2nd/3rd column should be swapped with the 1st row.
+
+(e) The 3rd row should be subtract from the 2nd row.
+
+(f) The 1st and 2nd row should be swapped.
+
 ### 3.3.8.
 
 For each matrix $A$ solve the equation $Ax= 0$.
