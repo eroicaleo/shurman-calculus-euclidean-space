@@ -56,7 +56,7 @@
                 </li>
               </ul>
               <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">Chapter 02 Exercises</a>
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Chapter 02 Exercises</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#21-algebra-vectors">2.1 Algebra: Vectors</a>
         <ul>
@@ -144,7 +144,39 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#24-topology-compact-sets-and-continuity">2.4 Topology: Compact Sets and Continuity</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#241">2.4.1.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#242">2.4.2.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#243">2.4.3.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#244">2.4.4.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#245">2.4.5.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#246">2.4.6.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#247">2.4.7.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#248">2.4.8.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#249">2.4.9.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2410">2.4.10</a>
+    </li>
+        </ul>
+    </li>
     </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch03notes/">Chapter 03 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch03ex/">Chapter 03 Exercises</a>
                 </li>
               </ul>
               <ul>
@@ -164,7 +196,7 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
       <li class="breadcrumb-item active">Chapter 02 Exercises</li>
     <li class="wy-breadcrumbs-aside">
           <a href="https://github.com/eroicaleo/shurman-calculus-euclidean-space/blob/main/docs/ch02ex.md" class="icon icon-github"> Edit on Github</a>
@@ -1301,12 +1333,14 @@ Proposition 2.3.7 (Vector space properties of continuity).</p>
 <h3 id="234">2.3.4.</h3>
 <p>Define an inner product and a modulus on
 <script type="math/tex">\mathcal{C}([0,1], \mathbb{R})</script> by</p>
-<p>$$ 
+<p>
+<script type="math/tex; mode=display"> 
 ⟨f,g⟩ =
 \int_{0}^{1} f(t)g(t)dt,
 \quad
-|f| = \sqrt[]{⟨f,f⟩}.</p>
-<p>$$</p>
+|f| = \sqrt[]{⟨f,f⟩}.
+</script>
+</p>
 <p>Do the inner product properties (IP1),(IP2),and(IP3) (see 
 Proposition2.2.2)
 hold for this inner product on <script type="math/tex">\mathcal{C}([0,1], \mathbb{R})</script>
@@ -1643,12 +1677,215 @@ But <script type="math/tex">f, g</script> are not continuous.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
+<h2 id="24-topology-compact-sets-and-continuity">2.4 Topology: Compact Sets and Continuity</h2>
+<h3 id="241">2.4.1.</h3>
+<p>Are the following subsets of <script type="math/tex">\mathbb{R}^n</script> closed, bounded, 
+compact?</p>
+<p>(a) <script type="math/tex">B(0,1)</script>: not closed, bounded, not compact.</p>
+<p>(b) <script type="math/tex">\{(x,y) \in \mathbb{R}^2 : y - x^2 = 0\}</script>:</p>
+<p>closed, not bounded, not compact.</p>
+<p>(c) <script type="math/tex">\{(x,y,z) \in \mathbb{R}^3: x^2 +y^2 +z^2 −1 = 0 \}</script>
+</p>
+<p>closed, bounded, compact.</p>
+<p>(d) <script type="math/tex">\{x : f(x) = 0_m\}</script>, where <script type="math/tex">f \in \mathcal{M}(\mathbb{R}^n, \mathbb{R}^m)</script>
+is continuous (this generalizes (b) and (c)),</p>
+<p><strong>Solution</strong>: Consider <script type="math/tex">\{x_ν\} \rightarrow p</script>, since
+<script type="math/tex">f</script> is continuous, <script type="math/tex">\{f(x_ν)\} \rightarrow f(p)</script>.
+So <script type="math/tex">f(p) = 0</script>. So it's closed. It can be either bounded
+or unbounded, so either compact or not compact.</p>
+<p>(f) <script type="math/tex">\{(x_1,...,x_n) : x_1 +···+x_n > 0\}</script>.</p>
+<p>not closed, not bounded, not compact.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="242">2.4.2.</h3>
+<p>Give a set <script type="math/tex">A ⊂ \mathbb{R}^n</script> and limit point <script type="math/tex">b</script> of <script type="math/tex">A</script> 
+such that <script type="math/tex">b \not\in A</script>. Give a set
+<script type="math/tex">A ⊂ \mathbb{R}^n</script> and a point <script type="math/tex">a ∈ A</script> such that <script type="math/tex">a</script> is not 
+a limit point of <script type="math/tex">A</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>Consider <script type="math/tex">n = 1</script>, let <script type="math/tex">A = (0, 1)</script>, <script type="math/tex">b = 0</script>.</p>
+<p>Let <script type="math/tex">A = \mathbb{N}, a = 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="243">2.4.3.</h3>
+<p>Let <script type="math/tex">A</script> be a closed subset of <script type="math/tex">\mathbb{R}^n</script> and let
+<script type="math/tex">f ∈ \mathcal{M}(A, \mathbb{R}^m)</script>.
+Define the graph of <script type="math/tex">f</script> to be</p>
+<p>
+<script type="math/tex; mode=display"> 
+G(f) =
+\{(a, f(a)) : a \in A\}
+</script>
+</p>
+<p>a subset of <script type="math/tex">\mathbb{R}^{n+m}</script>.
+Show that if <script type="math/tex">f</script> is continuous then its graph is closed.</p>
+<p><strong>Proof</strong>:</p>
+<p>Given <script type="math/tex">\{x_ν\} \rightarrow p</script>, <script type="math/tex">\{x_ν\} \in G(f)</script>.</p>
+<p>Let <script type="math/tex">x_ν = (a_ν, f(a_ν))</script>. Then from
+Proposition 2.3.5 (Componentwise nature of convergence),
+<script type="math/tex">\{a_ν\} \rightarrow p_0</script>, and since <script type="math/tex">f</script> is continuous
+<script type="math/tex">\{f(a_ν)\} \rightarrow f(p_0)</script>. Also since <script type="math/tex">A</script> is closed,
+so <script type="math/tex">p_0 \in A</script>.</p>
+<p>So <script type="math/tex">p = (p_0, f(p_0) \in G(f)</script>.</p>
+<p>Then <script type="math/tex">G(f)</script> is closed.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="244">2.4.4.</h3>
+<p>Prove the closed set properties:
+(1) the empty set <script type="math/tex">∅</script> and the full space
+<script type="math/tex">\mathbb{R}^n</script> are closed subsets of <script type="math/tex">\mathbb{R}^n</script>;</p>
+<p>(2) every intersection of closed sets is closed;</p>
+<p>(3) every finite union of closed sets is closed.</p>
+<p><strong>Proof</strong>:</p>
+<p>(1) <script type="math/tex">∅</script> does not have limit point, so <script type="math/tex">∅</script> contains
+all it's limit point, which is nothing.
+<script type="math/tex">\mathbb{R}^n</script>'s limit points are in <script type="math/tex">\mathbb{R}^n</script>.
+So <script type="math/tex">\mathbb{R}^n</script> is closed.</p>
+<p>(2) Let <script type="math/tex">C = \cap C_i</script>, <script type="math/tex">p</script> is a limit point of <script type="math/tex">C</script>.
+So we can find a <script type="math/tex">\{x_ν\} \rightarrow p</script>, where <script type="math/tex">x_ν \in C</script>.
+Then <script type="math/tex">x_ν \in C_i</script>. So <script type="math/tex">p \in C_i</script>. Then <script type="math/tex">p \in C</script>.</p>
+<p>(3) Let <script type="math/tex">C = \cup_{i=1}^{n} C_i</script>, <script type="math/tex">p</script> is a limit point of 
+<script type="math/tex">C</script>. So we can find a <script type="math/tex">\{x_ν\} \rightarrow p</script>, where
+<script type="math/tex">x_ν \in C</script>. Then we can find at least one <script type="math/tex">i</script>, such that
+there are infinitely many <script type="math/tex">x_ν \in C_i</script>. It is
+a subsequence of <script type="math/tex">\{x_ν\}</script> and also convergences to <script type="math/tex">p</script>.
+So <script type="math/tex">p \in C_i \subseteq C</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="245">2.4.5.</h3>
+<p>Prove that every ball <script type="math/tex">B(p,ε)</script> is bounded in <script type="math/tex">\mathbb{R}^n</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">x \in B(p,ε)</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+|x| \leq |x-p| + |p| < \epsilon + p
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="246">2.4.6.</h3>
+<p>Show that <script type="math/tex">A</script> is a bounded subset of <script type="math/tex">\mathbb{R}^n</script> if and only if for each <script type="math/tex">j ∈ \{1,...,n\}</script>, the <script type="math/tex">j</script>th coordinates of its points form a bounded subset of <script type="math/tex">\mathbb{R}</script>.</p>
+<p><strong>Proof</strong>: We will need Proposition 2.2.7 (Size bounds)</p>
+<p>
+<script type="math/tex; mode=display"> 
+A \text{ is a bounded } \\
+\Longleftrightarrow \\
+|x| < R, \forall x \in A \\
+\Longleftrightarrow \\
+|x_j| < R \\
+\Longleftrightarrow \\
+j\text{th coordinates of its points form a bounded subset of}
+\mathbb{R}
+</script>
+</p>
+<h3 id="247">2.4.7.</h3>
+<p>Show by example that a closed set need not satisfy the 
+sequential characterization of bounded sets, and that a 
+bounded set need not satisfy the
+sequential characterization of closed sets.</p>
+<p>Solutions:</p>
+<p>Consider <script type="math/tex">A = [0, +\infty)</script> which is a closed set.
+Let <script type="math/tex">\{x_ν\} = \{1, 2, 3, \cdots\}</script>,
+then it does not have a subsequence that convergences.</p>
+<p>Consider <script type="math/tex">A = (0, 1)</script> which is bounded.
+Let <script type="math/tex">\{x_ν\} = \{1, 1/2, 1/3, \cdots\}</script>,
+we have <script type="math/tex">\{x_ν\} \rightarrow 0 \not\in A</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="248">2.4.8.</h3>
+<p>Show by example that the continuous image of a closed set 
+need not be closed,
+that the continuous image of a closed set need not be 
+bounded,
+that the continuous image of a bounded set need not be 
+closed,
+and that the continuous image of a bounded set need not be 
+bounded.</p>
+<p><strong>Solution</strong>:</p>
+<p>Consider <script type="math/tex">f(x) = \frac{1}{x}, x \in [1, +\infty)</script>.
+<script type="math/tex">f(C) = (0, 1]</script> which is not closed.</p>
+<p>Consider <script type="math/tex">f(x) = x, x \in [1, +\infty)</script>. 
+<script type="math/tex">f(C) = [1, +\infty)</script> which is not bounded.</p>
+<p>Consider <script type="math/tex">f(x) = x, x \in (0, 1)</script>.
+<script type="math/tex">f(C) = (0, 1)</script> which is not closed.</p>
+<p>Consider <script type="math/tex">f(x) = 1/x, x \in (0, 1)</script>.
+<script type="math/tex">f(C) = [1, +\infty)</script> which is not bounded.</p>
+<h3 id="249">2.4.9.</h3>
+<p>A subset <script type="math/tex">A</script> of <script type="math/tex">\mathbb{R}^n</script> is called discrete if each of 
+its points is isolated.
+(Recall that the term isolated was defined in this section.) 
+Show or take for
+granted the (perhaps surprising at first) fact that every 
+mapping whose domain is discrete must be continuous. Is 
+discreteness a topological property?
+That is, need the continuous image of a discrete set be 
+discrete?</p>
+<p><strong>Solution</strong>:</p>
+<p>First we show a function
+<script type="math/tex">f : A \longrightarrow \mathbb{R}^n</script> is continuous at
+any point <script type="math/tex">a \in A</script>.</p>
+<p>Give any <script type="math/tex">\{x_ν\} \rightarrow a</script>, since <script type="math/tex">a</script> is isolated,
+we must have <script type="math/tex">x_ν = a</script> for <script type="math/tex">ν > \Nu</script>, then
+<script type="math/tex">\{f(x_ν)\} \rightarrow f(a)</script>, which means <script type="math/tex">f</script> is
+continuous.</p>
+<p>Consider</p>
+<p>
+<script type="math/tex; mode=display">
+f(x) = \begin{cases}
+    0 &\text{if } x = 0\\
+    1/x &\text{otherwise}\\
+\end{cases} 
+</script>
+</p>
+<p>and let <script type="math/tex">A = \mathbb{N}</script>. So <script type="math/tex">0</script> is in <script type="math/tex">f(A)</script>, and
+<script type="math/tex">0</script> is not isolated.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="2410">2.4.10</h3>
+<p>A subset <script type="math/tex">A</script> of <script type="math/tex">\mathbb{R}^n</script> is called path-connected if 
+for every two points
+<script type="math/tex">x,y ∈ A</script>, there is a continuous mapping</p>
+<p>
+<script type="math/tex; mode=display"> 
+γ : [0,1] \longrightarrow A
+</script>
+</p>
+<p>such that <script type="math/tex">γ(0) = x</script> and <script type="math/tex">γ(1) = y</script>.
+(This <script type="math/tex">γ</script> is the path that connects <script type="math/tex">x</script> and <script type="math/tex">y</script>.)
+Draw a picture to illustrate the definition of a 
+path-connected set. Prove that
+path-connectedness is a topological property.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">f : A \longrightarrow \mathbb{R}^m</script> is a continuous map.
+Given <script type="math/tex">x, y \in A</script>, we want to show <script type="math/tex">f(x), f(y)</script> is also
+path-connected.</p>
+<p>From Proposition 2.3.8 (Persistence of continuity under 
+composition),
+<script type="math/tex">f \circ γ : [0,1] \longrightarrow \mathbb{R}^m</script>
+is a continuous map and</p>
+<p>
+<script type="math/tex; mode=display">
+(f \circ γ)(0) = f(x) \\
+(f \circ γ)(1) = f(y) \\
+</script>
+</p>
+<p>So <script type="math/tex">f(x), f(y)</script> is also path-connected.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../ch02notes/" class="btn btn-neutral float-left" title="Chapter 02 Notes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../unsolved/" class="btn btn-neutral float-right" title="Unsolved Problems">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../ch03notes/" class="btn btn-neutral float-right" title="Chapter 03 Notes">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -1670,11 +1907,15 @@ But <script type="math/tex">f, g</script> are not continuous.</p>
   <div class="rst-versions" role="note" aria-label="Versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
+        <span>
+          <a href="https://github.com/eroicaleo/shurman-calculus-euclidean-space/" class="fa fa-code-fork" style="color: #fcfcfc"> Github</a>
+        </span>
+    
     
       <span><a href="../ch02notes/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../unsolved/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../ch03notes/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

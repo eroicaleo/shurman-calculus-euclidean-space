@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Chapter 03 Exercises - Calculus and Analysis in Euclidean Space</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Chapter 03 Exercises";
+        var mkdocs_page_input_path = "ch03ex.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Calculus and Analysis in Euclidean Space
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch01notes/">Chapter 01 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch01ex/">Chapter 01 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch02notes/">Chapter 02 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch02ex/">Chapter 02 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch03notes/">Chapter 03 Notes</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Chapter 03 Exercises</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#31-linear-mappings">3.1 Linear Mappings</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#311">3.1.1.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#312">3.1.2.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#313">3.1.3</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#314">3.1.4</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#315">3.1.5.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#316">3.1.6.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#317">3.1.7.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#318">3.1.8.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#319">3.1.9.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3110">3.1.10.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3111">3.1.11.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3112">3.1.12.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3113">3.1.13.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3114">3.1.14</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3115">3.1.15</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3116">3.1.16</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3117">3.1.17.</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#32-operations-on-matrices">3.2 Operations on Matrices</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#321">3.2.1.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#322">3.2.2.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#323">3.2.3</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#324">3.2.4.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#325">3.2.5.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#326">3.2.6</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#327">3.2.7.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#328">3.2.8.</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#33-the-inverse-of-a-linear-mapping">3.3 The Inverse of a Linear Mapping</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#332">3.3.2.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#334">3.3.4.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#335">3.3.5.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#336">3.3.6.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#337">3.3.7.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#338">3.3.8.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#339">3.3.9.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3310">3.3.10.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3311">3.3.11.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3312">3.3.12.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3313">3.3.13.</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../unsolved/">Unsolved Problems</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Calculus and Analysis in Euclidean Space</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Chapter 03 Exercises</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/eroicaleo/shurman-calculus-euclidean-space/blob/main/docs/ch03ex.md" class="icon icon-github"> Edit on Github</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="chapter-3-linear-mappings-and-their-matrices">Chapter 3 Linear Mappings and Their Matrices</h1>
+<h2 id="31-linear-mappings">3.1 Linear Mappings</h2>
+<h3 id="311">3.1.1.</h3>
+<p>Prove that <script type="math/tex">T : \mathbb{R}^n \longrightarrow \mathbb{R}^m</script>  is linear if and only if 
+it satisfies (3.1) and (3.2). (It may help to rewrite (3.1) with the symbols
+<script type="math/tex">x_1</script> and <script type="math/tex">x_2</script> in place of <script type="math/tex">x</script> and <script type="math/tex">y</script>.
+Then prove one direction by showing that (3.1) and (3.2) are
+implied by the defining condition for linearity, and prove the other direction
+by using induction to show that (3.1) and (3.2) imply the defining condition.
+Note that as pointed out in the text, one direction of this argument has a bit
+more substance than the other.)</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>Use induction, when <script type="math/tex">k = 1</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+T(α_1 x_1) = α_1 T(x_1)
+</script>
+</p>
+<p>This is (3.2).</p>
+<p>Then assume <script type="math/tex">k = n</script> holds, we are checking <script type="math/tex">k = n + 1</script>.</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+T(\sum_{i = 1}^{n+1} α_i x_i)
+&= T((\sum_{i = 1}^{n} α_i x_i) + α_{n+1} x_{n+1}) \\
+&= T((\sum_{i = 1}^{n} α_i x_i)) + T(α_{n+1} x_{n+1}) \qquad \text{Use (3.1)}\\
+&= T((\sum_{i = 1}^{n} α_i x_i)) + α_{n+1} T(x_{n+1}) \qquad \text{Use (3.2)}\\
+&= \sum_{i = 1}^{n}α_kT(x_k) + α_{n+1} T(x_{n+1}) \qquad \text{Use induction}\\
+&= \sum_{i = 1}^{n+1}α_kT(x_k)\\
+\end{align*}
+</script>
+</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>To prove (3.1), set <script type="math/tex">k = 2, α_1 = α_2 = 1</script>.</p>
+<p>To prove (3.2), set <script type="math/tex">k = 1</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="312">3.1.2.</h3>
+<p>Suppose that <script type="math/tex">T : \mathbb{R}^n \longrightarrow \mathbb{R}^m</script> is linear.
+Show that <script type="math/tex">T(0_n) = 0_m</script>. (An intrinsic argument is nicer.)</p>
+<p><strong>Proof</strong>:</p>
+<p>Note in both <script type="math/tex">\mathbb{R}^n, \mathbb{R}^m</script>, <script type="math/tex">0 v = 0</script>.
+So</p>
+<p>
+<script type="math/tex; mode=display"> 
+T(0) = T(0 v_n) = 0 T(v_n) = 0 v_m = 0
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="313">3.1.3</h3>
+<p>Fix a vector <script type="math/tex">a ∈ \mathbb{R}</script>. Show that the mapping
+<script type="math/tex">f : \mathbb{R}^n \longrightarrow \mathbb{R}</script>  given by
+<script type="math/tex">T(x) = ⟨a,x⟩</script> is linear, and that <script type="math/tex">T(e_j) = a_j</script> for <script type="math/tex">j = 1,...,n</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>(3.1) <script type="math/tex">T(x + y) = ⟨a,x+y⟩ = ⟨a,x⟩ + ⟨a,y⟩ = T(x) + T(y)</script>
+</p>
+<p>(3.2) <script type="math/tex">T(αx) = ⟨a,αx⟩ = α ⟨a,x⟩ = αT(x)</script>
+</p>
+<p>
+<script type="math/tex">T(e_j) = a_j</script> follows the definition of the inner product.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="314">3.1.4</h3>
+<p>Find the linear mapping <script type="math/tex">T : \mathbb{R}^3 \longrightarrow \mathbb{R}</script>
+such that <script type="math/tex">T(0,1,1) = 1</script>, <script type="math/tex">T(1,0,1) = 2</script>, and <script type="math/tex">T(1,1,0) = 3</script>.</p>
+<p><strong>Solution</strong></p>
+<p>We need to solve this equations</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{cases}
+    0x + 1y + 1z = 1 &\text{}\\
+    1x + 0y + 1z = 2  &\text{}\\
+    1x + 1y + 0z = 3  &\text{}\\
+\end{cases} 
+</script>
+</p>
+<p>So <script type="math/tex">T(x) = ⟨a,x⟩, a = (2, 1, 0)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="315">3.1.5.</h3>
+<p>Complete the proof of the componentwise nature of linearity.</p>
+<p><strong>Proof</strong>:</p>
+<p>For <script type="math/tex">α \in \mathbb{R}, x \in \mathbb{R}^n</script>
+</p>
+<p>If <script type="math/tex">T_1, \cdots, T_m</script> are linear, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+T(αx) =
+(T_1(\alpha x), \cdots, T_m(\alpha x)) \\
+= (αT_1(x), \cdots, αT_m(x)) \\
+= α (T_1(x), \cdots, T_m(x)) \\
+= α T(x)
+</script>
+</p>
+<p>On the other hand, if <script type="math/tex">T</script> is linear,</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{split}
+(T_1(\alpha x), \cdots, T_m(\alpha x))
+&= T(αx)  \\
+&= α T(x)  \\
+&= α (T_1(x), \cdots, T_m(x))  \\
+&= (αT_1(x), \cdots, αT_m(x)) \\
+\end{split}
+</script>
+</p>
+<p>So <script type="math/tex">T_i(αx) = α T_i(x)</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="316">3.1.6.</h3>
+<p>Carry out the matrix-by-vector multiplications</p>
+<p><strong>Solution</strong>:</p>
+<p>(a) <script type="math/tex">[1,3,6]</script>
+</p>
+<p>(b) <script type="math/tex">(ax+by, cx+dy, ex+fy)</script>
+</p>
+<p>(c) <script type="math/tex">(x_1 y_1, \cdots, x_n y_n)</script>
+</p>
+<p>(d) <script type="math/tex">(0,0,0)</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="317">3.1.7.</h3>
+<p>Prove that the identity mapping <script type="math/tex">\text{id} : \mathbb{R}^n \longrightarrow \mathbb{R}^n</script> is linear. What is its matrix? Explain.</p>
+<p><strong>Proof</strong></p>
+<p>(3.1) <script type="math/tex">\text{id}(x+y) = x+y = \text{id}(x) + \text{id}(y)</script>
+</p>
+<p>(3.2) <script type="math/tex">\text{id}(αx) = αx = α \text{id}(x)</script>
+</p>
+<p>Then matrix is</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{bmatrix}
+1 &0 &\cdots &0 \\
+0 &1 &\cdots &0 \\
+\vdots &\vdots &\ddots &\vdots \\
+0 &0 &\cdots &1 \\
+\end{bmatrix}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="318">3.1.8.</h3>
+<p>Let <script type="math/tex">θ</script> denote a fixed but generic angle. Argue geometrically that the
+mapping <script type="math/tex">R : \mathbb{R}^n \longrightarrow \mathbb{R}^n</script> given by counterclockwise
+rotation by <script type="math/tex">θ</script> is linear, and then find its matrix.</p>
+<p><strong>Proof</strong>:</p>
+<p>Geometrically is quite obvious.</p>
+<p>Consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+R(e_1) = (\cos θ, \sin θ) \\
+R(e_2) = (-\sin θ, \cos θ) \\
+</script>
+</p>
+<p>Then matrix is</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{bmatrix}
+\cos θ & -\sin θ \\
+\sin θ & \cos θ \\
+\end{bmatrix}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="319">3.1.9.</h3>
+<p>Show that the mapping <script type="math/tex">Q : \mathbb{R}^2 \longrightarrow \mathbb{R}^2</script> given by reflection 
+through the x-axis is linear. Find its matrix.</p>
+<p>
+<script type="math/tex; mode=display"> 
+R(e_1) = (1, 0) \\
+R(e_2) = (0, -1) \\
+</script>
+</p>
+<p>Then matrix is</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{bmatrix}
+1 & 0 \\
+0 & -1 \\
+\end{bmatrix}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3110">3.1.10.</h3>
+<p>Show that the mapping <script type="math/tex">P : \mathbb{R}^2 \longrightarrow \mathbb{R}^2</script> given by
+orthogonal projection onto the diagonal line <script type="math/tex">x = y</script> is 
+linear. Find its matrix. (See Exercise 2.2.15.)</p>
+<p><strong>Proof</strong>:</p>
+<p>We can use vector <script type="math/tex">d = (1,1)</script> to represent the
+diagonal line <script type="math/tex">x = y</script>.</p>
+<p>Then for <script type="math/tex">x, y \in \mathbb{R}^2</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+P(x) = \frac{⟨d,x⟩}{|d|^2} d \\
+P(y) = \frac{⟨d,y⟩}{|d|^2} d \\
+P(x+y) = \frac{⟨d,x+y⟩}{|d|^2} d \\
+= \frac{⟨d,x⟩}{|d|^2} d + \frac{⟨d,y⟩}{|d|^2} d = P(x) + P(y)
+</script>
+</p>
+<p>Also</p>
+<p>
+<script type="math/tex; mode=display"> 
+P(αx) = \frac{⟨d,αx⟩}{|d|^2} d = α\frac{⟨d,x⟩}{|d|^2} d = α P(x)
+</script>
+</p>
+<p>So <script type="math/tex">P</script> is linear.</p>
+<p>
+<script type="math/tex; mode=display"> 
+R(e_1) = (\sqrt[]{2}/2, \sqrt[]{2}/2) \\
+R(e_2) = (\sqrt[]{2}/2, \sqrt[]{2}/2) \\
+</script>
+</p>
+<p>Then matrix is</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{bmatrix}
+\sqrt[]{2}/2 & \sqrt[]{2}/2 \\
+\sqrt[]{2}/2 & \sqrt[]{2}/2 \\
+\end{bmatrix}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3111">3.1.11.</h3>
+<p>Draw the graph of a generic linear mapping from <script type="math/tex">\mathbb{R}^2</script> to <script type="math/tex">\mathbb{R}^3</script>.</p>
+<p><strong>Solution</strong>: skip.</p>
+<h3 id="3112">3.1.12.</h3>
+<p>Continue the proof of Proposition 3.1.8 by proving the other three
+statements about <script type="math/tex">S + T</script> and <script type="math/tex">aS</script> satisfying (3.1) and (3.2).</p>
+<p><strong>Proof</strong>:</p>
+<p>(3.2) for <script type="math/tex">S+T</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+(S+T)(αx) = S(αx) + T(αx) = αS(x) + αT(x) = α (S(x) + T(x)) = α (S+T)(x)
+</script>
+</p>
+<p>Next, (3.1) for <script type="math/tex">aS</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+(aS)(x+y)
+&= a(S(x + y))       & \quad \text{definition of the } aS \\
+&= a(S(x) + S(y))    & \quad \text{S is linear} \\
+&= aS(x) + aS(y)     & \quad \text{Vector space axioms D2} \\
+&= (aS)(x) + (aS)(y) & \quad \text{definition of the } aS \\
+\end{align*}
+</script>
+</p>
+<p>Next, (3.2) for <script type="math/tex">aS</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{aligned}
+(aS)(αx)
+&= a(S(αx))   & \quad \text{definition of the } aS \\
+&= a(αS(x))   & \quad \text{S is linear} \\
+&= α(aS(x))   & \quad \mathbb{R} \text{ is a field} \\
+&= α((aS)(x)) & \quad \text{definition of the } aS \\
+\end{aligned} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3113">3.1.13.</h3>
+<p>If <script type="math/tex">S \in \mathcal{L}(\mathbb{R}^n, \mathbb{R}^m)</script> and <script type="math/tex">T \in \mathcal{L}(\mathbb{R}^p, \mathbb{R}^n)</script>,
+show that <script type="math/tex">S \circ T : \mathbb{R}^p \longrightarrow \mathbb{R}^m</script>
+lies in <script type="math/tex">\mathcal{L}(\mathbb{R}^p, \mathbb{R}^m)</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>(3.1)</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+(S \circ T)(x+y)
+&= S(T(x+y))                       \\
+&= S(T(x) + T(y))                  \\
+&= (S \circ T)(x) + (S \circ T)(y) \\
+\end{align*}
+</script>
+</p>
+<p>Next (3.2)</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+(S \circ T)(αx)
+&= S(T(αx))                       \\
+&= S(αT(x))                       \\
+&= α(S(T(x)))                     \\
+&= α((S \circ T)(x))              \\
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">S \circ T \in \mathcal{L}(\mathbb{R}^p, \mathbb{R}^m)</script>.</p>
+<h3 id="3114">3.1.14</h3>
+<p>(a) Let <script type="math/tex">S \in \mathcal{L}(\mathbb{R}^n, \mathbb{R}^m)</script>. Its transpose is the mapping</p>
+<p>
+<script type="math/tex; mode=display"> 
+S^T : \mathbb{R}^m \longrightarrow \mathbb{R}^n
+</script>
+</p>
+<p>defined by the characterizing condition</p>
+<p>
+<script type="math/tex; mode=display"> 
+⟨x,S^T(y)⟩ = ⟨S(x),y⟩ \qquad \text{for all } x \in \mathbb{R}^n \text{ and } y \in \mathbb{R}^m.
+</script>
+</p>
+<p>Granting that indeed a unique such <script type="math/tex">S^T</script> exists, use the characterizing condition to show that</p>
+<p>
+<script type="math/tex; mode=display"> 
+S^T(y+y') = S^T(y) + S^T(y') \qquad \text{for all } y, y' \in \mathbb{R}^m
+</script>
+</p>
+<p>by showing that</p>
+<p>
+<script type="math/tex; mode=display"> 
+⟨x,S^T(y+y')⟩ = ⟨x,S^T(y)+S^T(y')⟩
+\qquad \text{for all } x \in \mathbb{R}^n \text{ and } y, y' \in \mathbb{R}^m.
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+⟨x,S^T(y+y')⟩
+&= ⟨S(x),y+y'⟩              \\
+&= ⟨S(x),y⟩ + ⟨S(x),y'⟩     \\
+&= ⟨x,S^T(y)⟩ + ⟨x,S^T(y')⟩ \\
+&= ⟨x,S^T(y) + S^T(y')⟩     \\
+\end{align*}
+</script>
+</p>
+<p>Because <script type="math/tex">x</script> can be arbitrary, so we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+S^T(y+y') = S^T(y) + S^T(y') \qquad \text{for all } y, y' \in \mathbb{R}^m
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Keeping S from part (a), now further introduce <script type="math/tex">T \in  \mathcal{L}(\mathbb{R}^p, \mathbb{R}^n)</script>,
+so that also <script type="math/tex">S \circ T \in \mathcal{L}(\mathbb{R}^p, \mathbb{R}^m)</script>.
+Show that the transpose of the composition is
+the composition of the transposes in reverse order,</p>
+<p>
+<script type="math/tex; mode=display"> 
+(S ◦T)^T = T^T ◦S^T,
+</script>
+</p>
+<p>by showing that</p>
+<p>
+<script type="math/tex; mode=display"> 
+⟨x,(S ◦T)^T(z)⟩ = ⟨x, (T^T ◦S^T)(z)⟩
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+⟨x,(S ◦T)^T(z)⟩ 
+&= ⟨(S◦T)(x), z⟩       \\
+&= ⟨S(T(x)), z⟩        \\
+&= ⟨T(x), S^T(z)⟩      \\
+&= ⟨x, T^T (S^T(z))⟩   \\
+&= ⟨x, (T^T ◦ S^T)(z)⟩ \\
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3115">3.1.15</h3>
+<p>A mapping <script type="math/tex">f : \mathbb{R}^n \longrightarrow \mathbb{R}^m</script> 
+is called aﬃne if it has the form
+<script type="math/tex">f(x) = T(x) + b</script>, where
+<script type="math/tex">T ∈ \mathcal{L}(\mathbb{R}^n, \mathbb{R}^m)</script> and
+<script type="math/tex">b ∈ \mathbb{R}^m</script>.
+State precisely and prove: the composition of aﬃne 
+mappings is aﬃne.</p>
+<p><strong>Proof</strong>:</p>
+<p>If <script type="math/tex">f : \mathbb{R}^p \longrightarrow \mathbb{R}^n</script> and
+<script type="math/tex">g : \mathbb{R}^n \longrightarrow \mathbb{R}^m</script> are affine,
+then</p>
+<p>
+<script type="math/tex; mode=display"> 
+g \circ f : \mathbb{R}^p \longrightarrow \mathbb{R}^m
+\quad \text{ is affine}.
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+g(f(x))
+&= g(T(x) + b)        \\
+&= g(T(x)) + g(b)     \\
+&= S(T(x)) + c + g(b) \\
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3116">3.1.16</h3>
+<p>Let <script type="math/tex">T : \mathbb{R}^n \longrightarrow \mathbb{R}^m</script>
+be a linear mapping. Note that since <script type="math/tex">T</script> is
+continuous and since the absolute value function on <script type="math/tex">\mathbb{R}^m</script> is 
+continuous, the composite function</p>
+<p>
+<script type="math/tex; mode=display"> 
+|T| : \mathbb{R}^n \longrightarrow \mathbb{R}
+</script>
+</p>
+<p>is continuous.</p>
+<p>(a) Let <script type="math/tex">S= \{x ∈ \mathbb{R}^n : |x| = 1\}</script>. Explain why <script type="math/tex">S</script> is a compact 
+subset of <script type="math/tex">\mathbb{R}^n</script>.
+Explain why it follows that <script type="math/tex">|T|</script> takes a maximum value <script type="math/tex">c</script> on <script type="math/tex">S</script>.</p>
+<p><strong>Proof</strong>: <script type="math/tex">S</script> is bounded. Then we just need to show
+<script type="math/tex">S</script> is closed.</p>
+<p>Use "Sequential characterization of closed sets", assume <script type="math/tex">\{x_ν\} \rightarrow p \in \mathbb{R}^n</script>.</p>
+<p>Since <script type="math/tex">||</script> is a continuous function and</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{\nu \to \infty} |x_ν| = 1
+</script>
+</p>
+<p>Then <script type="math/tex">|p| = 1</script>.</p>
+<p>So <script type="math/tex">p \in S</script>, then <script type="math/tex">S</script> is closed. So <script type="math/tex">S</script> is compact.</p>
+<p>Then based on Theorem 2.4.15 (Extreme value theorem),
+<script type="math/tex">|T|</script> takes a maximum value <script type="math/tex">c</script> on <script type="math/tex">S</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show that <script type="math/tex">|T(x)| ≤ c|x|</script> for all <script type="math/tex">x ∈ \mathbb{R}^n</script>.
+This result is the linear
+magnification boundedness lemma. We will use it in Chapter 4.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display">
+x =  |x|\frac{x}{|x|}\\
+\begin{align*}
+T(x)
+&= T(|x|\frac{x}{|x|}) \\
+&= |x|T(\frac{x}{|x|}) &\qquad T\text{ is linear} \\
+&\leq c|x| &\qquad \left| \frac{x}{|x|} \right| = 1 \\
+\end{align*}  
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3117">3.1.17.</h3>
+<p>Let <script type="math/tex">T : \mathbb{R}^n \longrightarrow \mathbb{R}^m</script> be a linear mapping.</p>
+<p>(a) Explain why the set <script type="math/tex">D = \{x ∈ \mathbb{R}^n : |x| = 1\}</script> is compact.</p>
+<p><strong>Proof</strong>: See 3.1.16 (a)</p>
+<p>(b) Use part (a) of this exercise and part (b) of the preceding exercise
+to explain why therefore the set <script type="math/tex">\{|T(x)| : x ∈ D\}</script> has a maximum. This
+maximum is called the norm of <script type="math/tex">T</script> and is denoted <script type="math/tex">\left\| T \right\|</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>See 3.1.16 (b).</p>
+<p>(c) Explain why <script type="math/tex">\left\| T \right\|</script> is the smallest value 
+<script type="math/tex">K</script> that satisfies the condition
+from part (b) of the preceding exercise,
+<script type="math/tex">|T(x)| ≤ K|x|</script> for all <script type="math/tex">x ∈ \mathbb{R}^n</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>First, we know from 3.1.16 (b),
+<script type="math/tex">|T(x)| ≤ \left\| T \right\|  |x|</script>.</p>
+<p>Next, we can find a point <script type="math/tex">c \in D</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+|T(c)| = \left\| T \right\| |c| = \left\| T \right\|
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(d) Show that for every
+<script type="math/tex">S,T ∈ \mathcal{L}(\mathbb{R}^n, \mathbb{R}^m)</script> and
+every <script type="math/tex">a ∈ \mathbb{R}</script>,</p>
+<p>
+<script type="math/tex; mode=display">
+\left\| S + T \right\| \leq
+\left\| S \right\| +
+\left\| T \right\|
+\qquad \text{and} \qquad
+\left\| aT \right\| =
+|a|\left\| T \right\|
+</script>
+</p>
+<p>Define a distance function</p>
+<p>
+<script type="math/tex; mode=display"> 
+d:
+\mathcal{L}(\mathbb{R}^n, \mathbb{R}^m)
+\times
+\mathcal{L}(\mathbb{R}^n, \mathbb{R}^m)
+\longrightarrow
+\mathbb{R},
+\quad
+d(S, T) = \left\| S - T \right\|
+</script>
+</p>
+<p>Show that this function satisfies the distance properties 
+of Theorem 2.2.8.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left\| S+T \right\| = |(S+T)(c)| \\
+= |S(c) + T(c)| \\
+\leq |S(c)| + |T(c)| \\
+\leq \left\| S \right\| + \left\| T \right\|
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left\| aT \right\| = |(aT)(c)| \\
+|a(T(c))| = |a| |T(c)| = |a| \left\| T \right\|
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(D1) <script type="math/tex">d(S, T) \geq 0</script>.</p>
+<p>Since <script type="math/tex">|(S - T)(x)| \geq 0</script>, then
+<script type="math/tex">\left\| S-T \right\| \geq 0</script>.</p>
+<p>
+<script type="math/tex">d(S,T) = 0</script> if and only if <script type="math/tex">S = T</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(D2) <script type="math/tex">d(S,T) = d(T,S)</script>
+</p>
+<p>Because</p>
+<p>
+<script type="math/tex; mode=display"> 
+|(S-T)(x)| = |(T-S)(x)|
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(D3) <script type="math/tex">d(R,T) ≤ d(R,S)+d(S,T)</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+d(R,T) =
+\left\| R - T \right\|
+= |(R-T)(c)| \\
+= |R(c) - T(c)| \\
+= |(R(c)-S(c)) + (S(c)-T(c))| \\
+\leq |R(c)-S(c)| + |S(c)-T(c)| \\
+= |(R-S)(c)| + |(S-T)(c)| \\
+\leq \left\| R-S \right\| + \left\| S-T \right\| \\
+= d(R,S)+d(S,T)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(e) Show that for every
+<script type="math/tex">S \in \mathcal{L}(\mathbb{R}^n, \mathbb{R}^m)</script>
+and every <script type="math/tex">T \in \mathcal{L}(\mathbb{R}^p, \mathbb{R}^n)</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left\| ST \right\| \leq
+\left\| S \right\|
+\left\| T \right\|
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left\| ST \right\| = |S(T(c))|
+</script>
+</p>
+<p>Let <script type="math/tex">x = T(c) \in \mathbb{R}^n</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+|S(x)| \leq \left\| S \right\| |x| \\
+|x| = |T(c)| \leq \left\| T \right\| |c| =
+\left\| T \right\|
+</script>
+</p>
+<p>Therefore</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+\left\| ST \right\|
+&= |S(T(c))| \\
+&= |S(x)| \\
+&\leq  \left\| S \right\| |x| \\
+&\leq  \left\| S \right\| \left\| T \right\| \\
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="32-operations-on-matrices">3.2 Operations on Matrices</h2>
+<h3 id="321">3.2.1.</h3>
+<p>Justify Definition 3.2.2 of scalar multiplication of matrices.</p>
+<p><strong>Solution</strong>:</p>
+<p>The <script type="math/tex">j</script>th column of <script type="math/tex">αA</script> is</p>
+<p>$$ 
+(αS)(e_j) = α (S(e_j)) = α \times \text{(<script type="math/tex">j</script>th column of A)}
+$$</p>
+<p>So it's reasonable to define <script type="math/tex">αA = [αa_{ij}]_{m \times n}</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="322">3.2.2.</h3>
+<p>Carry out the matrix multiplications.</p>
+<p><strong>Solution</strong>: skipped.</p>
+<h3 id="323">3.2.3</h3>
+<p>Prove more of Proposition 3.2.5, that
+<script type="math/tex">A(B+C) = AB+AC</script>, <script type="math/tex">(αA)B= A(αB)</script>, and
+<script type="math/tex">I_mA= A</script> for suitable matrices <script type="math/tex">A,B,C</script> and any scalar <script type="math/tex">α</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>$$ 
+<script type="math/tex; mode=display">\begin{align*}
+(R ◦ (S + T))(x)
+&= R((S+T)(x))
+&\quad \text{by definition of <script type="math/tex">R ◦ (S + T)</script>} \
+&amp;= R(S(x)+T(x))
+&amp;\quad \text{by definition of <script type="math/tex">(S + T)</script>} \
+&amp;= R(S(x)) + R(S(x))
+&amp;\quad \text{<script type="math/tex">R</script> is linear mapping} \
+&amp;= (R ◦ S)(x) + (R ◦ T)(x)
+&amp;\quad \text{by definition of <script type="math/tex">R ◦ S</script> and <script type="math/tex">R ◦ T</script>}
+\end{align*}</script>
+$$</p>
+<p>$$
+<script type="math/tex; mode=display">\begin{align*}
+((αS) ◦ T)(x)
+&= (αS)(T(x))
+&\quad \text{by definition of <script type="math/tex">(αS) ◦ T</script>} \
+&amp;= α (S(T(x)))
+&amp;\quad \text{by definition of <script type="math/tex">(αS)</script>} \
+&amp;= S(αT(x))
+&amp;\quad \text{<script type="math/tex">S</script> is linear} \
+&amp;= S((αT)(x))
+&amp;\quad \text{by definition of <script type="math/tex">(αT)</script>} \
+&amp;= (S◦(αT))(x)
+&amp;\quad \text{by definition of <script type="math/tex">S◦(αT)</script>} \\
+\end{align*}</script> 
+$$</p>
+<p>$$
+<script type="math/tex; mode=display">\begin{align*}
+(\text{id} ◦ A) (x)
+&= \text{id}(A(x))
+&\quad \text{by definition of id <script type="math/tex"> ◦ A</script>} \\
+&amp;= A(x)
+&amp;\quad \text{by definition of id} \\
+\end{align*}</script> 
+$$</p>
+<h3 id="324">3.2.4.</h3>
+<p>(If you have not yet worked Exercise 3.1.14 then do so before working
+this exercise.) </p>
+<p>Let <script type="math/tex">A = [a_{ij}]_{m \times n} \in M_{m, n}(\mathbb{R})</script>
+be the matrix of <script type="math/tex">S \in \mathcal{L}(\mathbb{R}^n, \mathbb{R}^m)</script>
+Its transpose <script type="math/tex">A^T \in M_{n, m}(\mathbb{R})</script>
+is the matrix of the transpose mapping <script type="math/tex">S^T</script>.
+Since <script type="math/tex">S</script> and <script type="math/tex">S^T</script> act respectively as multiplication by
+<script type="math/tex">A</script> and <script type="math/tex">A^T</script>, the characterizing
+property of <script type="math/tex">S</script> from Exercise 3.1.14 gives</p>
+<p>
+<script type="math/tex; mode=display"> 
+⟨x,A^T y⟩ = ⟨Ax,y⟩ \quad \text{for all } x \in \mathbb{R}^n \text{ and } y \in \mathbb{R}^m.
+</script>
+</p>
+<p>Make specific choices of x and y to show that the transpose <script type="math/tex">A^T \in M_{m, n}(\mathbb{R})</script>
+is obtained by flipping <script type="math/tex">A</script> about its northwest–southeast diagonal; that is, show
+that the <script type="math/tex">(i,j)</script>th entry of <script type="math/tex">A^T</script> is <script type="math/tex">a_{ji}</script>. </p>
+<p>It follows that the rows of <script type="math/tex">A^T</script> are the
+columns of <script type="math/tex">A</script>, and the columns of <script type="math/tex">A^T</script> are the rows of <script type="math/tex">A</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Given any <script type="math/tex">1 \leq p \leq m, 1 \leq q \leq n</script>, let <script type="math/tex">x = e_p \in \mathbb{R}^n, y = e_q \in \mathbb{R}^m</script>.</p>
+<p>Let <script type="math/tex">A = [a_{ij}]_{m \times n}, A^T = [b_{ij}]_{n \times m}</script>.</p>
+<p>Then <script type="math/tex">A^T y = A^T e_q = j \text{th column of }A^T</script>, then <script type="math/tex">⟨x,A^T y⟩ = b_{ij}</script>.</p>
+<p>On the other hand, <script type="math/tex">Ax = i \text{th column of }A</script>, then <script type="math/tex">⟨Ax,y⟩ = a_{ji}</script>.</p>
+<p>So we proved.</p>
+<blockquote>
+<p>(Similarly, let <script type="math/tex">B \in M_{n, p}(\mathbb{R})</script> be the matrix of
+<script type="math/tex">T \in \mathcal{L}(\mathbb{R}^p, \mathbb{R}^n)</script> so that <script type="math/tex">B^T</script>
+is the matrix of <script type="math/tex">T^T</script>. Because matrix multiplication is compatible with linear
+mapping composition, we know immediately from Exercise 3.1.14(b), with no
+reference to the concrete description of the matrix transposes <script type="math/tex">A^T</script> and <script type="math/tex">B^T</script> in
+terms of the original matrices <script type="math/tex">A</script> and <script type="math/tex">B</script>, that the transpose of the product is
+the product of the transposes in reverse order,</p>
+</blockquote>
+<p>
+<script type="math/tex; mode=display"> 
+(AB)^T = B^T A^T \quad \text{for all } A \in M_{m, n}(\mathbb{R}) \text{ and }
+B \in M_{n, p}(\mathbb{R}).
+</script>
+</p>
+<blockquote>
+<p>That is, by characterizing the transpose mapping in Exercise 3.1.14, we
+easily derived the construction of the transpose matrix here and obtained the
+formula for the product of transpose matrices with no reference to their construction.)</p>
+</blockquote>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="325">3.2.5.</h3>
+<p>The trace of a square matrix <script type="math/tex">A \in M_{n}(\mathbb{R})</script> is the sum of its diagonal
+elements,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\text{tr}(A) = \sum_{i = 1}^{n} a_{ii}
+</script>
+</p>
+<p>Show that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\text{tr}(AB) = \text{tr}(BA), \quad A,B \in M_{n}(\mathbb{R})
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\text{tr}(AB) = \sum_{i = 1}^{n} c_{ii} \\
+= \sum_{i = 1}^{n} \left( \sum_{j = 1}^{n} a_{ij} b_{ji} \right) \\
+= \sum_{i = 1}^{n} \sum_{j = 1}^{n} a_{ij} b_{ji} \\
+= \sum_{j = 1}^{n} \sum_{i = 1}^{n} b_{ji} a_{ij} \\
+= \sum_{j = 1}^{n} \left( \sum_{i = 1}^{n} b_{ji} a_{ij}  \right) \\
+= \text{tr}(BA)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="326">3.2.6</h3>
+<p>For every matrix <script type="math/tex">A \in M_{m, n}(\mathbb{R})</script> and column vector
+<script type="math/tex">a \in \mathbb{R}^m</script>, define the aﬃne mapping (cf. Exercise 3.1.15)</p>
+<p>
+<script type="math/tex; mode=display"> 
+\text{Aff}_{A, a} : \mathbb{R}^n \longrightarrow \mathbb{R}^m
+</script>
+</p>
+<p>by the rule <script type="math/tex">\text{Aff}_{A, a} = Ax + a</script> for all
+<script type="math/tex">x \in \mathbb{R}^n</script>, viewing <script type="math/tex">x</script> as a column vector.</p>
+<p>(a) Explain why every aﬃne mapping from <script type="math/tex">\mathbb{R}^n</script> to
+<script type="math/tex">\mathbb{R}^m</script> takes this form.</p>
+<p><strong>Proof</strong>:</p>
+<p>An affine mapping is this form: <script type="math/tex">f(x) = T(x) + b</script>,
+<script type="math/tex">T \in \mathcal{L}(\mathbb{R}^n, \mathbb{R}^m)</script> and
+<script type="math/tex">b \in \mathbb{R}^m</script>.</p>
+<p>Since <script type="math/tex">T \in \mathcal{L}(\mathbb{R}^n, \mathbb{R}^m)</script>,
+then we can find matrix <script type="math/tex">A \in M_{m, n}(\mathbb{R})</script> such that
+<script type="math/tex">T(x) = A(x)</script>.</p>
+<p>So <script type="math/tex">\text{Aff}_{A, a} = Ax + a</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Given such <script type="math/tex">A</script> and <script type="math/tex">a</script>, define the matrix
+<script type="math/tex">A' \in M_{{m+1}, {n+1}}(\mathbb{R})</script> to be </p>
+<p>
+<script type="math/tex; mode=display">
+A' =
+\begin{bmatrix}
+    A          & a \\
+    \bold{0}_n & 1 \\
+\end{bmatrix}.
+</script>
+</p>
+<p>Show that for all <script type="math/tex">x ∈ \mathbb{R}^n</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+A'
+\begin{bmatrix}
+x \\
+1 \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+\text{Aff}_{A, a}(x) \\
+1
+\end{bmatrix}.
+</script>
+</p>
+<p>Thus, aﬃne mappings, like linear mappings, behave as 
+matrix-by-vector multiplications but where the vectors are the usual 
+input and output vectors augmented with an extra “1” at the bottom.</p>
+<p><strong>Proof</strong>:</p>
+<p>For <script type="math/tex">e_j, j < n+1</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+A' e_j =
+\begin{bmatrix}
+A_j \\
+0 \\
+\end{bmatrix} \\
+A' e_{n+1} =
+\begin{bmatrix}
+a \\
+1 \\
+\end{bmatrix}
+</script>
+</p>
+<p>Let
+<script type="math/tex; mode=display">
+x' = \begin{bmatrix}
+x \\
+1 \\
+\end{bmatrix}
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+x' = \sum_{j = 1}^{n} x_j e_j + e_{n+1}
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+A'x' = \sum_{j = 1}^{n} x_j A' e_j + A' e_{n+1} \\
+= \sum_{j = 1}^{n} x_j A_j +
+\begin{bmatrix}
+a \\
+1 \\
+\end{bmatrix} \\
+= \sum_{j = 1}^{n}
+\begin{bmatrix}
+A_j x_j \\
+0 \\
+\end{bmatrix} +
+\begin{bmatrix}
+a \\
+1 \\
+\end{bmatrix}  \\
+=
+\begin{bmatrix}
+\text{Aff}_{A, a}(x) \\
+1
+\end{bmatrix}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) The aﬃne mapping
+<script type="math/tex">\text{Aff}_{B, b} : \mathbb{R}^p \longrightarrow \mathbb{R}^n</script>
+determined by <script type="math/tex">B \in M_{n, p}(\mathbb{R})</script> and <script type="math/tex">b \in \mathbb{R}^n</script>
+has matrix</p>
+<p>
+<script type="math/tex; mode=display"> 
+B' =
+\begin{bmatrix}
+B          & b \\
+\bold{0}_p & 1 \\
+\end{bmatrix}
+</script>
+</p>
+<p>Show that</p>
+<p>
+<script type="math/tex">\text{Aff}_{A, a} \circ \text{Aff}_{B, b} : \mathbb{R}^p \longrightarrow \mathbb{R}^m</script> has matrix <script type="math/tex">A'B'</script>.
+That is, matrix
+multiplication is compatible with composition of aﬃne mappings.</p>
+<p><strong>Proof</strong>:</p>
+<p>First we know</p>
+<p>
+<script type="math/tex; mode=display">
+B'x =
+\begin{bmatrix}
+\text{Aff}_{B, b}(x) \\
+1
+\end{bmatrix}
+</script>
+</p>
+<p>Then</p>
+<p>$$
+<script type="math/tex; mode=display">\begin{align*}
+(A'B')x
+&=
+A' (B'x) &\quad \text{Properties of matrix multiplication} \\
+&=
+A' \begin{bmatrix}
+\text{Aff}_{B, b}(x) \\
+1
+\end{bmatrix} &\quad \text{Compute <script type="math/tex">B'x</script> from (b)} \\ 
+&amp;= 
+\begin{bmatrix}
+\text{Aff}_{A, a} ( \text{Aff}_{B, b}(x) ) \\
+1 \\
+\end{bmatrix} &amp;\quad \text{Again from (b)} \\
+&amp;=
+\begin{bmatrix}
+(\text{Aff}_{A, a} \circ \text{Aff}_{B, b})(x) \\
+1
+\end{bmatrix} &amp;\quad \text{Definition of composition of maps.} 
+\end{align*}</script> 
+$$</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="327">3.2.7.</h3>
+<p>The exponential of a square matrix <script type="math/tex">A</script> is the infinite matrix sum</p>
+<p>
+<script type="math/tex; mode=display"> 
+e^A =
+I + A + \frac{1}{2!} A^2 + \frac{1}{3!} A^3 + \cdots 
+</script>
+</p>
+<p>Compute the exponentials of the following matrices.</p>
+<p><strong>Solution</strong>:</p>
+<p>(a) <script type="math/tex">A = [λ]</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+e^A = [e^λ]
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b)</p>
+<p>
+<script type="math/tex; mode=display"> 
+A =
+\begin{bmatrix}
+    λ & 1 \\
+    0 & λ \\
+\end{bmatrix}
+</script>
+</p>
+<p>$$ 
+A^2 = 
+<script type="math/tex; mode=display">\begin{bmatrix}
+    λ & 1 \\
+    0 & λ \\
+\end{bmatrix}</script>
+<script type="math/tex; mode=display">\begin{bmatrix}
+    λ & 1 \\
+    0 & λ \\
+\end{bmatrix}</script> \
+=
+<script type="math/tex; mode=display">\begin{bmatrix}
+λ^2 & 2λ \\
+0   & λ^2 \\
+\end{bmatrix}</script>
+</p>
+<p>$$</p>
+<p>
+<script type="math/tex; mode=display"> 
+A^3 =
+\begin{bmatrix}
+λ^2 & 2λ \\
+0   & λ^2 \\
+\end{bmatrix}
+\begin{bmatrix}
+    λ & 1 \\
+    0 & λ \\
+\end{bmatrix} \\
+=
+\begin{bmatrix}
+λ^3 & 3λ^2 \\
+0   & λ^3 \\
+\end{bmatrix}
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+e^A =
+\begin{bmatrix}
+e^λ & e^λ \\
+0   & e^λ \\
+\end{bmatrix}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c)</p>
+<p>
+<script type="math/tex; mode=display"> 
+A =
+\begin{bmatrix}
+λ & 1 & 0 \\
+0 & λ & 1 \\
+0 & 0 & λ \\
+\end{bmatrix}
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+A^2 =
+\begin{bmatrix}
+λ & 1 & 0 \\
+0 & λ & 1 \\
+0 & 0 & λ \\
+\end{bmatrix}
+\begin{bmatrix}
+λ & 1 & 0 \\
+0 & λ & 1 \\
+0 & 0 & λ \\
+\end{bmatrix} \\
+=
+\begin{bmatrix}
+λ^2 & 2λ  & 1 \\
+0   & λ^2 & 2λ \\
+0   & 0   & λ^2 \\
+\end{bmatrix}
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+A^3 =
+\begin{bmatrix}
+λ^2 & 2λ  & 1 \\
+0   & λ^2 & 2λ \\
+0   & 0   & λ^2 \\
+\end{bmatrix}
+\begin{bmatrix}
+λ & 1 & 0 \\
+0 & λ & 1 \\
+0 & 0 & λ \\
+\end{bmatrix} \\
+=
+\begin{bmatrix}
+λ^3 & 3λ^2  & 3λ \\
+0   & λ^3   & 3λ^2 \\
+0   & 0     & λ^3 \\
+\end{bmatrix}
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+A^4 =
+\begin{bmatrix}
+λ^3 & 3λ^2  & 3λ \\
+0   & λ^3   & 3λ^2 \\
+0   & 0     & λ^3 \\
+\end{bmatrix}
+\begin{bmatrix}
+λ & 1 & 0 \\
+0 & λ & 1 \\
+0 & 0 & λ \\
+\end{bmatrix} \\
+=
+\begin{bmatrix}
+λ^4 & 4λ^3  & 6λ^2 \\
+0   & λ^4   & 4λ^3 \\
+0   & 0     & λ^4 \\
+\end{bmatrix}
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+e^A =
+\begin{bmatrix}
+e^λ & e^λ  & e^λ/2 \\
+0   & e^λ   & e^λ \\
+0   & 0     & e^λ \\
+\end{bmatrix}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(d)</p>
+<p>
+<script type="math/tex; mode=display"> 
+A =
+\begin{bmatrix}
+λ & 1 & 0 & 0 \\
+0 & λ & 1 & 0 \\
+0 & 0 & λ & 1 \\
+0 & 0 & 0 & λ \\
+\end{bmatrix}
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+A^2 =
+\begin{bmatrix}
+λ & 1 & 0 & 0 \\
+0 & λ & 1 & 0 \\
+0 & 0 & λ & 1 \\
+0 & 0 & 0 & λ \\
+\end{bmatrix}
+\begin{bmatrix}
+λ & 1 & 0 & 0 \\
+0 & λ & 1 & 0 \\
+0 & 0 & λ & 1 \\
+0 & 0 & 0 & λ \\
+\end{bmatrix} \\
+=
+\begin{bmatrix}
+λ^2 & 2λ  & 1   & 0   \\
+0   & λ^2 & 2λ  & 1   \\
+0   & 0   & λ^2 & 2λ  \\
+0   & 0   & 0   & λ^2 \\
+\end{bmatrix}
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{1}{2!} A^2 =
+\begin{bmatrix}
+\frac{1}{2!} λ^2 & λ  & \frac{1}{2}   & 0   \\
+0   & \frac{1}{2!} λ^2 & λ  & \frac{1}{2}   \\
+0   & 0   & \frac{1}{2!} λ^2 & λ  \\
+0   & 0   & 0   & \frac{1}{2!} λ^2 \\
+\end{bmatrix}
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+A^3 = 
+\begin{bmatrix}
+λ^2 & 2λ  & 1   & 0   \\
+0   & λ^2 & 2λ  & 1   \\
+0   & 0   & λ^2 & 2λ  \\
+0   & 0   & 0   & λ^2 \\
+\end{bmatrix}
+\begin{bmatrix}
+λ & 1 & 0 & 0 \\
+0 & λ & 1 & 0 \\
+0 & 0 & λ & 1 \\
+0 & 0 & 0 & λ \\
+\end{bmatrix} \\
+=
+\begin{bmatrix}
+λ^3 & 3λ^2 & 3λ   & 1   \\
+0   & λ^3  & 3λ^2 & 3λ   \\
+0   & 0    & λ^3  & 3λ^2  \\
+0   & 0    & 0    & λ^3 \\
+\end{bmatrix}
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{1}{3!} A^3 =
+\begin{bmatrix}
+\frac{1}{3!} λ^3 & \frac{1}{2!} λ^2              & \frac{1}{2} λ   & \frac{1}{3!}   \\
+0                & \frac{1}{3!} λ^3  & \frac{1}{2!} λ^2 & \frac{1}{2} λ   \\
+0                & 0                 & \frac{1}{3!} λ^3  & \frac{1}{2!} λ^2  \\
+0                & 0                 & 0    & \frac{1}{3!} λ^3 \\
+\end{bmatrix}
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+A^4 =
+\begin{bmatrix}
+λ^3 & 3λ^2 & 3λ   & 1   \\
+0   & λ^3  & 3λ^2 & 3λ   \\
+0   & 0    & λ^3  & 3λ^2  \\
+0   & 0    & 0    & λ^3 \\
+\end{bmatrix}
+\begin{bmatrix}
+λ & 1 & 0 & 0 \\
+0 & λ & 1 & 0 \\
+0 & 0 & λ & 1 \\
+0 & 0 & 0 & λ \\
+\end{bmatrix} \\
+=
+\begin{bmatrix}
+λ^4 & 4 λ^3 & 6 λ^2 & 4 λ \\
+0   & λ^4   & 4 λ^3 & 6 λ^2 \\
+0   & 0     & λ^4   & 4 λ^3 \\
+0   & 0     & 0     & λ^4 \\
+\end{bmatrix} \\
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{1}{4!} A^4
+=
+\begin{bmatrix}
+(1/4!)λ^4 & (1/3!) λ^3 & (1/2)(1/2!) λ^2 & (1/3!) λ \\
+0   & (1/4!)λ^4   & (1/3!) λ^3 & (1/2)(1/2!) λ^2 \\
+0   & 0     & (1/4!)λ^4   & (1/3!) λ^3 \\
+0   & 0     & 0     & (1/4!)λ^4 \\
+\end{bmatrix} \\
+</script>
+</p>
+<p>Then finally</p>
+<p>
+<script type="math/tex; mode=display"> 
+e^A =
+\begin{bmatrix}
+e^λ & e^λ & \frac{1}{2!} e^λ & \frac{1}{3!} e^λ \\
+0 & e^λ & e^λ & \frac{1}{2!} e^λ \\
+0 & 0 & e^λ & e^λ \\
+0 & 0 & 0 & e^λ \\
+\end{bmatrix} \\
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="328">3.2.8.</h3>
+<p>Let <script type="math/tex">a,b,d</script> be real numbers with <script type="math/tex">ad = 1</script>. show that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{bmatrix}
+a & b \\
+0 & d \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & ab \\
+0 & 1  \\
+\end{bmatrix}
+\begin{bmatrix}
+a & 0 \\
+0 & d  \\
+\end{bmatrix}
+</script>.</p>
+<p><strong>Proof</strong>: Just regular matrix multiplication.</p>
+<p>(b)</p>
+<p>Let <script type="math/tex">a,b,c,d</script> be real numbers with <script type="math/tex">c \neq 0</script> and <script type="math/tex">ad−bc = 1</script>. Show that</p>
+<p>$$ </p>
+<p>$$</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="33-the-inverse-of-a-linear-mapping">3.3 The Inverse of a Linear Mapping</h2>
+<h3 id="332">3.3.2.</h3>
+<p>Finish the proof of Proposition 3.3.2.</p>
+<p><strong>Proof</strong>:</p>
+<p>To prove (b), each row <script type="math/tex">r_j</script> of <script type="math/tex">S_{i,a} M</script> is the row <script type="math/tex">r_i</script> of <script type="math/tex">M</script>.
+And <script type="math/tex">r_i</script> of <script type="math/tex">S_{i,a} M</script> is <script type="math/tex">a r_i</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="334">3.3.4.</h3>
+<p>Finish the proof of Lemma 3.3.3, part (1).</p>
+<p><strong>Proof</strong>:</p>
+<p>We need to prove</p>
+<p>
+<script type="math/tex; mode=display"> 
+S_{i,a}^{-1} = S_{i,a^{-1}}
+</script>
+</p>
+<p>Note <script type="math/tex">S_{i,a}</script> is the identity matrix <script type="math/tex">I_m</script> with <script type="math/tex">a</script> times it's <script type="math/tex">i</script>th row,
+and multiplying this from the left by <script type="math/tex">S_{i,a^{-1}}</script> makes the <script type="math/tex">i</script>th row
+back to be <script type="math/tex">(0,\cdots , 1, \cdots 0)</script>.</p>
+<p>We also need to prove</p>
+<p>
+<script type="math/tex; mode=display"> 
+T_{i;j}^{-1} = T_{i;j}
+</script>
+</p>
+<p>Note <script type="math/tex">T_{i;j}</script> is the identity matrix <script type="math/tex">I_m</script> with swapping its <script type="math/tex">i</script>th row
+with its <script type="math/tex">j</script>th row, and multiplying this from the left by <script type="math/tex">T_{i;j}</script> 
+makes it back to <script type="math/tex">I_m</script>.</p>
+<h3 id="335">3.3.5.</h3>
+<p>What is the eﬀect of right multiplying the <script type="math/tex">m×n</script> matrix <script type="math/tex">M</script> by an <script type="math/tex">n×n</script>
+matrix <script type="math/tex">R_{i;j,a}, S_{i,a}, T_{i;j}</script>?</p>
+<p><strong>Solution</strong>:</p>
+<p>We can directly carry out the matrix multiplication and the effect is
+described in 3.3.6.</p>
+<h3 id="336">3.3.6.</h3>
+<p>Recall the transpose of a matrix <script type="math/tex">M</script> (cf. Exercise 3.2.4), denoted <script type="math/tex">M^T</script>.
+Prove <script type="math/tex">R_{i;j,a}^T = R_{j;i,a}M</script>; <script type="math/tex">S_{i,a}^T = S_{i,a}</script>; <script type="math/tex">T_{i;j}^T = T_{i;j}</script>.</p>
+<p>Use these results and the formula <script type="math/tex">(AB)^T = B^TA^T</script> to redo the previous problem.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">A = [a_{ij}]_{m \times n}, A^T = [b_{ij}]_{n \times m}</script>.
+Then we know, <script type="math/tex">a_{ij} = b_{ji}</script>. So then it's easy to prove.</p>
+<p>For the second part</p>
+<p>
+<script type="math/tex; mode=display"> 
+(A R_{i;j,a})^T = R_{i;j,a}^T A^T = R_{j;i,a} A^T
+</script>
+</p>
+<p>So the effect is to use <script type="math/tex">a</script> times <script type="math/tex">i</script>th column and add to the <script type="math/tex">j</script>th column.</p>
+<p>
+<script type="math/tex; mode=display"> 
+(A S_{i,a})^T = S_{i,a} A^T
+</script>
+</p>
+<p>So the effect is to use <script type="math/tex">a</script> times <script type="math/tex">i</script>th column of <script type="math/tex">A</script>.</p>
+<p>Similar, the effect is to swap the <script type="math/tex">i</script>th and <script type="math/tex">j</script>th column of <script type="math/tex">A</script>.</p>
+<h3 id="337">3.3.7.</h3>
+<p>Are the following matrices echelon? For each matrix <script type="math/tex">M</script>, solve the
+equation <script type="math/tex">Mx= 0</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>(a) no, the last column is not a neither a new column nor an old column.</p>
+<p>(b) (c) yes.</p>
+<p>(d) No. The 2nd/3rd column should be swapped with the 1st row.</p>
+<p>(e) The 3rd row should be subtract from the 2nd row.</p>
+<p>(f) The 1st and 2nd row should be swapped.</p>
+<h3 id="338">3.3.8.</h3>
+<p>For each matrix <script type="math/tex">A</script> solve the equation <script type="math/tex">Ax= 0</script>.</p>
+<p>(a)</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{bmatrix}
+-1 & 1 & 4 \\
+ 1 & 3 & 8 \\
+ 1 & 2 & 5 \\
+\end{bmatrix}
+</script>
+</p>
+<p><strong>Solution</strong>:</p>
+<p>Multiply by <script type="math/tex">R_{2;1,1}</script> we got </p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{bmatrix}
+-1 & 1 & 4 \\
+ 0 & 4 & 12 \\
+ 1 & 2 & 5 \\
+\end{bmatrix}
+</script>
+</p>
+<p>Multiply by <script type="math/tex">R_{3;1,1}</script> we got</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{bmatrix}
+-1 & 1 & 4 \\
+ 0 & 4 & 12 \\
+ 0 & 3 & 9 \\
+\end{bmatrix}
+</script>
+</p>
+<p>Multiply by <script type="math/tex">S_{1,-1}</script> we got</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{bmatrix}
+ 1 & -1 & -4 \\
+ 0 & 4 & 12 \\
+ 0 & 3 & 9 \\
+\end{bmatrix}
+</script>
+</p>
+<p>Multiply by <script type="math/tex">R_{1;3,1/3}</script> we got</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{bmatrix}
+ 1 & 0 & -1 \\
+ 0 & 4 & 12 \\
+ 0 & 3 & 9 \\
+\end{bmatrix}
+</script>
+</p>
+<p>Multiply by <script type="math/tex">R_{2;3,-4/3}</script> we got</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{bmatrix}
+ 1 & 0 & -1 \\
+ 0 & 0 & 0  \\
+ 0 & 3 & 9  \\
+\end{bmatrix}
+</script>
+</p>
+<p>Multiply by <script type="math/tex">T_{2;3}</script> we got</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{bmatrix}
+ 1 & 0 & -3 \\
+ 0 & 3 & 9  \\
+ 0 & 0 & 0  \\
+\end{bmatrix}
+</script>
+</p>
+<p>Multiply by <script type="math/tex">S_{2,1/3}</script> we got</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{bmatrix}
+ 1 & 0 & -1 \\
+ 0 & 1 & 3  \\
+ 0 & 0 & 0  \\
+\end{bmatrix}
+</script>
+</p>
+<p>Then <script type="math/tex">x = (1, -3, 1)</script> can be one solution.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="339">3.3.9.</h3>
+<p>Balance the chemical equation</p>
+<p>
+<script type="math/tex; mode=display"> 
+\text{Ca} + \text{H}_3 \text{PO}_4
+\rightarrow
+\text{Ca}_3 \text{P}_2 \text{O}_8 + \text{H}_2
+</script>
+</p>
+<p><strong>Solution</strong></p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{bmatrix}
+    1 & 0 & -3 &  0 \\
+    0 & 3 &  0 & -2 \\
+    0 & 1 & -2 &  0 \\
+    0 & 4 & -8 &  0 \\
+\end{bmatrix}
+</script>
+</p>
+<p>So <script type="math/tex">(3, 2, 1, 3)</script> is a solution.</p>
+<p>
+<script type="math/tex; mode=display"> 
+3 \text{Ca} + 2\text{H}_3 \text{PO}_4
+\rightarrow
+1 \text{Ca}_3 \text{P}_2 \text{O}_8 + 3 \text{H}_2
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3310">3.3.10.</h3>
+<p>Prove by induction that the only square echelon matrix with all new
+columns is the identity matrix.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume this is true for <script type="math/tex">n \times n</script>, i.e. <script type="math/tex">E_n = I_n</script>.</p>
+<p>Consider <script type="math/tex">(n+1) \times (n+1)</script> echelon matrix. Since the last column
+is a new column, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+E_{n+1} =
+\begin{bmatrix}
+    A & 0 \\
+    0 & 1 \\
+\end{bmatrix}
+</script>
+</p>
+<p>If any column of <script type="math/tex">A</script> is not a new column, then it does not have a leading <script type="math/tex">1</script>'s.
+Then that column does not have a leading <script type="math/tex">1</script>'s in <script type="math/tex">E_{n+1}</script> either.
+So it's not a new column in <script type="math/tex">E_{n+1}</script>. We have a contradiction.</p>
+<p>So every column in <script type="math/tex">A</script> is a new column, and since its size is <script type="math/tex">n \times n</script>,
+then <script type="math/tex">A = I_n</script>. So <script type="math/tex">E_{n+1} = I_{n+1}</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3311">3.3.11.</h3>
+<p>Are the following matrices invertible? Find the inverse when possible,
+and then check your answer.</p>
+<p><strong>Solution</strong>:</p>
+<p>We check (b)</p>
+<p>
+<script type="math/tex; mode=display"> 
+B = [P | I] = \\
+\begin{bmatrix}
+2 &  5 & -1 &  1 &  0 &  0 \\
+4 & -1 &  2 &  0 &  1 &  0 \\
+6 &  4 &  1 &  0 &  0 &  1 \\
+\end{bmatrix}
+</script>
+</p>
+<p>Apply <script type="math/tex">R_{2;1,-2}</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{bmatrix}
+2 &  5  & -1 &   1 &  0 &  0 \\
+0 & -11 &  4 &  -2 &  1 &  0 \\
+6 &  4  &  1 &   0 &  0 &  1 \\
+\end{bmatrix}
+</script>
+</p>
+<p>Apply <script type="math/tex">R_{3;1,-3}</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{bmatrix}
+2 &  5   & -1 &   1 &  0 &  0 \\
+0 & -11  &  4 &  -2 &  1 &  0 \\
+0 & -11  &  4 &  -3 &  0 &  1 \\
+\end{bmatrix}
+</script>
+</p>
+<p>Apply <script type="math/tex">R_{3;2,-1}</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{bmatrix}
+2 &  5   & -1 &   1 &  0  &  0 \\
+0 & -11  &  4 &  -2 &  1  &  0 \\
+0 &   0  &  0 &  -1 &  -1 &  1 \\
+\end{bmatrix}
+</script>
+</p>
+<p>So it's not invertible.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3312">3.3.12.</h3>
+<p>The matrix <script type="math/tex">A</script> is called lower triangular if <script type="math/tex">a_{ij} = 0</script> whenever <script type="math/tex">i < j</script>.
+If <script type="math/tex">A</script> is a lower triangular square matrix with all diagonal entries equal to <script type="math/tex">1</script>,
+show that <script type="math/tex">A</script> is invertible and <script type="math/tex">A^{−1}</script> takes the same form.</p>
+<p><strong>Proof</strong>:</p>
+<p>We can mutiply <script type="math/tex">A</script> with <script type="math/tex">R_{2;1,-a_{2,1}}, \cdots R_{n;1,-a_{n,1}}</script> to get the
+first column to become a new column, let the new matrix be <script type="math/tex">A_1</script>. And the right
+half be <script type="math/tex">B_1</script>. Then <script type="math/tex">B_1</script> is still a lower triangular.</p>
+<p>Similarly, we can mutiply <script type="math/tex">A_1</script> with
+<script type="math/tex">R_{3;2,-a_{3,2}}, \cdots R_{n;2,-a_{n,2}}</script> to get <script type="math/tex">A_2</script> and <script type="math/tex">B_2</script> which are also
+lower triangular.</p>
+<p>Eventually, we can get <script type="math/tex">A_n = I_n</script> and <script type="math/tex">B_n</script>, which are also lower triangular.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3313">3.3.13.</h3>
+<p>This exercise refers back to the Gram–Schmidt exercise in Chapter 2.
+That exercise expresses the relation between the vectors <script type="math/tex">\{x'_j\}</script>  and 
+the vectors
+<script type="math/tex">\{x_j\}</script> formally as <script type="math/tex">x' = Ax</script>, where <script type="math/tex">x'</script> is a column vector whose 
+entries are 
+the vectors <script type="math/tex">x'_1, \cdots, x'_n</script>, <script type="math/tex">x</script> is the corresponding column vector 
+of <script type="math/tex">x_j</script>’s, and <script type="math/tex">A</script> is an <script type="math/tex">n×n</script> lower triangular matrix.</p>
+<p>Show that each <script type="math/tex">x_j</script> has the form</p>
+<p>
+<script type="math/tex; mode=display"> 
+x_j = a'_{j1} x'_1 + \cdots + a'_{j,j-1} x'_{j-1} + x'_j
+</script>
+</p>
+<p>and thus every linear combination of the original <script type="math/tex">\{x_j\}</script> is also a 
+linear combination of the new <script type="math/tex">\{x'_j\}</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Since <script type="math/tex">A</script> is lower triangular matrix, from 3.3.12, <script type="math/tex">A</script> is invertible,
+and <script type="math/tex">A^{-1}</script> is also a lower triangular matrix, such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+x = A^{-1} x'
+</script>
+</p>
+<p>If we expand it, we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+x_j = a'_{j1} x'_1 + \cdots + a'_{j,j-1} x'_{j-1} + x'_j
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../ch03notes/" class="btn btn-neutral float-left" title="Chapter 03 Notes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../unsolved/" class="btn btn-neutral float-right" title="Unsolved Problems">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/eroicaleo/shurman-calculus-euclidean-space/" class="fa fa-code-fork" style="color: #fcfcfc"> Github</a>
+        </span>
+    
+    
+      <span><a href="../ch03notes/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../unsolved/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -52,7 +52,7 @@
                 </li>
               </ul>
               <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">Chapter 02 Notes</a>
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Chapter 02 Notes</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#21-algebra-vectors">2.1 Algebra: Vectors</a>
         <ul>
@@ -130,11 +130,59 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#24-topology-compact-sets-and-continuity">2.4 Topology: Compact Sets and Continuity</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-241-ball">Definition 2.4.1 (ε-ball).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-242-limit-point">Definition 2.4.2 (Limit point).</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#isolated-point">Isolated point</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lemma-243-sequential-characterization-of-limit-points">Lemma 2.4.3 (Sequential characterization of limit points).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-244-closed-set">Definition 2.4.4 (Closed set).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#proposition-245-sequential-characterization-of-closed-sets">Proposition 2.4.5 (Sequential characterization of closed sets).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-246-bounded-set">Definition 2.4.6 (Bounded set).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#proposition-247-convergence-implies-boundedness">Proposition 2.4.7 (Convergence implies boundedness).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-248-subsequence">Definition 2.4.8 (Subsequence).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lemma-249-persistence-of-convergence">Lemma 2.4.9 (Persistence of convergence).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-2410-bolzanoweierstrass-property-in-r">Theorem 2.4.10 (Bolzano–Weierstrass property in R).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-2411-bolzanoweierstrass-property-in-mathbbrn-sequential-characterization-of-bounded-sets">Theorem 2.4.11 (Bolzano–Weierstrass property in \mathbb{R}^n: sequential characterization of bounded sets).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-2412-compact-set">Definition 2.4.12 (Compact set).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-2413-sequential-characterization-of-compact-sets">Theorem 2.4.13 (Sequential characterization of compact sets).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-2414-the-continuous-image-of-a-compact-set-is-compact">Theorem 2.4.14 (The continuous image of a compact set is compact).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-2415-extreme-value-theorem">Theorem 2.4.15 (Extreme value theorem).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#topological-property">Topological property</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../ch02ex/">Chapter 02 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch03notes/">Chapter 03 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch03ex/">Chapter 03 Exercises</a>
                 </li>
               </ul>
               <ul>
@@ -154,7 +202,7 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
       <li class="breadcrumb-item active">Chapter 02 Notes</li>
     <li class="wy-breadcrumbs-aside">
           <a href="https://github.com/eroicaleo/shurman-calculus-euclidean-space/blob/main/docs/ch02notes.md" class="icon icon-github"> Edit on Github</a>
@@ -874,6 +922,212 @@ a contradiction.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
+<h2 id="24-topology-compact-sets-and-continuity">2.4 Topology: Compact Sets and Continuity</h2>
+<h3 id="definition-241-ball">Definition 2.4.1 (ε-ball).</h3>
+<p>For every point <script type="math/tex">p ∈ \mathbb{R}^n</script> and every positive real
+number <script type="math/tex">ε > 0</script>, the <script type="math/tex">ε</script>-ball centered at <script type="math/tex">p</script> is the set</p>
+<p>
+<script type="math/tex; mode=display"> 
+B(p, ε) = \{x \in \mathbb{R}^n : |x-p| \leq ε\}
+</script>
+</p>
+<h3 id="definition-242-limit-point">Definition 2.4.2 (Limit point).</h3>
+<p>Let <script type="math/tex">A</script> be a subset of <script type="math/tex">\mathbb{R}^n</script>, and let <script type="math/tex">p</script> be a
+point of <script type="math/tex">\mathbb{R}^n</script>. The point <script type="math/tex">p</script> is a limit point of A 
+if every <script type="math/tex">ε</script>-ball centered at <script type="math/tex">p</script>
+contains some point <script type="math/tex">x ∈ A</script> such that <script type="math/tex">x \neq p</script>.</p>
+<h4 id="isolated-point">Isolated point</h4>
+<p>Definition 1: A point in <script type="math/tex">A</script> that is not a limit point of <script type="math/tex">A</script>.</p>
+<p>Definition 2:
+Equivalently, <script type="math/tex">p</script> is an isolated point
+of <script type="math/tex">A</script> if <script type="math/tex">p ∈ A</script> and there exists some <script type="math/tex">ε > 0</script>
+such that <script type="math/tex">B(p,ε)∩A= \{p\}</script>. </p>
+<h3 id="lemma-243-sequential-characterization-of-limit-points">Lemma 2.4.3 (Sequential characterization of limit points).</h3>
+<p>Let <script type="math/tex">A</script> be a subset of Rn, and let <script type="math/tex">p</script> be a point of <script type="math/tex">\mathbb{R}^n</script>.
+Then <script type="math/tex">p</script> is the limit of a sequence <script type="math/tex">\{x_ν\}</script> in <script type="math/tex">A</script> with each
+<script type="math/tex">x_ν \neq p</script> if and only if <script type="math/tex">p</script> is a limit point of <script type="math/tex">A</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>Given <script type="math/tex">B(p, ε)</script>, since <script type="math/tex">\{x_ν\} \rightarrow p</script>, we can find
+<script type="math/tex">ν_0</script>, such that <script type="math/tex">ν > ν_0</script>, <script type="math/tex">|x_ν - p| < ε</script>, i.e. <script type="math/tex">x_ν \in B(p, ε)</script>.
+Since <script type="math/tex">x_ν \neq p</script>, then <script type="math/tex">p</script> is a limit point of <script type="math/tex">A</script>.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>Assume <script type="math/tex">p</script> is a limit point of <script type="math/tex">A</script>, let <script type="math/tex">x_1 \in A</script>.
+Let <script type="math/tex">ε_1 = |x_1 - p|</script>, and <script type="math/tex">ε_2 = ε_1 / 2</script>.
+We can find <script type="math/tex">p \neq x_2 \in B(p, ε_2)</script>.
+This process can continue infinitely.
+Then we find a <script type="math/tex">\{x_ν\} \rightarrow p</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="definition-244-closed-set">Definition 2.4.4 (Closed set).</h3>
+<p>A subset <script type="math/tex">A</script> of <script type="math/tex">\mathbb{R}^n</script> is closed if it contains all of
+its limit points.</p>
+<h3 id="proposition-245-sequential-characterization-of-closed-sets">Proposition 2.4.5 (Sequential characterization of closed sets).</h3>
+<p>Let <script type="math/tex">A</script> be a subset of <script type="math/tex">\mathbb{R}^n</script>. Then <script type="math/tex">A</script> is closed if and only 
+if every sequence in <script type="math/tex">A</script> that
+converges in <script type="math/tex">\mathbb{R}^n</script> in fact converges in <script type="math/tex">A</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>Assume <script type="math/tex">\{x_ν\} \rightarrow p</script> and <script type="math/tex">x_ν \in A</script>, if <script type="math/tex">p = x_ν</script> for
+some <script type="math/tex">ν</script>, then <script type="math/tex">p \in A</script>.</p>
+<p>If <script type="math/tex">p \neq x_ν</script>, then <script type="math/tex">p</script> is a limit point of <script type="math/tex">A</script>. Since
+<script type="math/tex">A</script> is closed, so <script type="math/tex">p \in A</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>Assume <script type="math/tex">p</script> is a limit point of <script type="math/tex">A</script>, then from Lemma 2.4.3
+<script type="math/tex">\Rightarrow</script>, we can find <script type="math/tex">\{x_ν\} \rightarrow p</script> and
+<script type="math/tex">x_ν \in A</script>. Then <script type="math/tex">p \in A</script>, so <script type="math/tex">p</script> is closed.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="definition-246-bounded-set">Definition 2.4.6 (Bounded set).</h3>
+<p>A set <script type="math/tex">A</script> in <script type="math/tex">\mathbb{R}^n</script> is bounded if <script type="math/tex">A ⊂ B(0,R)</script> for some
+<script type="math/tex">R > 0</script>.</p>
+<h3 id="proposition-247-convergence-implies-boundedness">Proposition 2.4.7 (Convergence implies boundedness).</h3>
+<p>If the sequence <script type="math/tex">\{x_ν\}</script> converges in <script type="math/tex">\mathbb{R}^n</script> then it is 
+bounded.</p>
+<h3 id="definition-248-subsequence">Definition 2.4.8 (Subsequence).</h3>
+<p>A subsequence of the sequence <script type="math/tex">\{x_ν\}</script> is
+a sequence consisting of some (possibly all) of the original terms, 
+in ascending order of indices.</p>
+<h3 id="lemma-249-persistence-of-convergence">Lemma 2.4.9 (Persistence of convergence).</h3>
+<p>Let <script type="math/tex">\{x_ν\}</script> converge to <script type="math/tex">p</script>.
+Then every subsequence <script type="math/tex">\{x_{ν_k}\}</script> also converges to <script type="math/tex">p</script>.</p>
+<h3 id="theorem-2410-bolzanoweierstrass-property-in-r">Theorem 2.4.10 (Bolzano–Weierstrass property in <script type="math/tex">R</script>).</h3>
+<p>Let <script type="math/tex">A</script> be a bounded subset of <script type="math/tex">\mathbb{R}</script>.
+Then every sequence in <script type="math/tex">A</script> has a convergent subsequence.</p>
+<p><strong>Proof</strong>: This is just a summary. Define the
+max-point if it is at least as big as all later terms, i.e.,
+<script type="math/tex">x_ν ≥ x_μ</script> for all <script type="math/tex">μ > ν</script>.</p>
+<p>If there are infinitely many max-points
+in <script type="math/tex">\{x_ν\}</script> then these form a decreasing sequence. If there are 
+only finitely many
+max-points then <script type="math/tex">\{x_ν\}</script> has an increasing sequence starting 
+after the last max-point.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="theorem-2411-bolzanoweierstrass-property-in-mathbbrn-sequential-characterization-of-bounded-sets">Theorem 2.4.11 (Bolzano–Weierstrass property in <script type="math/tex">\mathbb{R}^n</script>: sequential characterization of bounded sets).</h3>
+<p>Let <script type="math/tex">A</script> be a subset of <script type="math/tex">\mathbb{R}^n</script>. Then <script type="math/tex">A</script>
+is bounded if and only if every sequence in <script type="math/tex">A</script> has a subsequence 
+that converges in <script type="math/tex">\mathbb{R}^n</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Longrightarrow</script>
+</p>
+<p>Use 2.4.10 on every index.</p>
+<p>
+<script type="math/tex">\Longleftarrow</script>
+</p>
+<p>Proof by contradiction.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<blockquote>
+<p>Note how the sequential characterizations in Proposition 2.4.5 &gt; and in the Bolzano–Weierstrass property complement each other. </p>
+<p>The proposition characterizes every closed set in <script type="math/tex">\mathbb{R}^n</script> by the 
+fact that if a sequence converges in the ambient space then it 
+converges in the set.</p>
+<p>The Bolzano–Weierstrass property characterizes every bounded 
+set in <script type="math/tex">\mathbb{R}^n</script> by the fact that every sequence in the set has a 
+subsequence that converges in the ambient space but not necessarily in the set.</p>
+<p>Both the sequential characterization of a closed set and the 
+sequential characterization of a bounded set refer to the 
+ambient space <script type="math/tex">\mathbb{R}^n</script> in which the set lies.</p>
+</blockquote>
+<h3 id="definition-2412-compact-set">Definition 2.4.12 (Compact set).</h3>
+<p>A subset <script type="math/tex">K</script> of <script type="math/tex">\mathbb{R}^n</script> is compact if it is closed and 
+bounded.</p>
+<h3 id="theorem-2413-sequential-characterization-of-compact-sets">Theorem 2.4.13 (Sequential characterization of compact sets).</h3>
+<p>Let <script type="math/tex">K</script> be a subset of <script type="math/tex">\mathbb{R}^n</script>.
+Then <script type="math/tex">K</script> is compact if and only if every sequence in <script type="math/tex">K</script>
+has a subsequence that converges in <script type="math/tex">K</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Longrightarrow</script>
+</p>
+<p>Since its bounded we can use the Bolzano–Weierstrass property.
+And since it's closed, it converges in <script type="math/tex">K</script>.</p>
+<p>
+<script type="math/tex">\Longleftarrow</script>
+</p>
+<p>Just use the <script type="math/tex">\Longleftarrow</script> of 2.4.5 and 2.4.11.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<blockquote>
+<p>By contrast to the sequential characterizations of a closed set 
+and of a bounded set, the sequential characterization of a
+compact set <script type="math/tex">K</script> makes no reference to the ambient space Rn in
+which <script type="math/tex">K</script> lies.</p>
+<p>A set’s property of being compact is innate in a way that a
+set’s property of being closed or of being bounded is not.</p>
+</blockquote>
+<h3 id="theorem-2414-the-continuous-image-of-a-compact-set-is-compact">Theorem 2.4.14 (The continuous image of a compact set is compact).</h3>
+<p>Let <script type="math/tex">K</script> be a compact subset of <script type="math/tex">\mathbb{R}^n</script> and let
+<script type="math/tex">f : K \longrightarrow \mathbb{R}^m</script> be continuous.
+Then <script type="math/tex">f(K)</script>, the image set of <script type="math/tex">K</script> under <script type="math/tex">f</script>, is a compact subset of <script type="math/tex">\mathbb{R}^m</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">\{y_ν\} \in f(K)</script>, we can find <script type="math/tex">\{x_ν\} \in K</script>, such that
+<script type="math/tex">f(x_ν) = y_ν</script>. Since <script type="math/tex">K</script> is compact, then we can find
+subsuquence <script type="math/tex">\{x_{ν_k}\} \longrightarrow p \in K</script>. Since
+<script type="math/tex">f</script> is continuous, then <script type="math/tex">\{f(x_{ν_k})\} \longrightarrow f(p) \in f(K)</script>. And <script type="math/tex">\{f(x_{ν_k})\}</script> is subsequence of <script type="math/tex">f(x_ν)</script>.</p>
+<p>So <script type="math/tex">f(K)</script> is also compact.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="theorem-2415-extreme-value-theorem">Theorem 2.4.15 (Extreme value theorem).</h3>
+<p>Let <script type="math/tex">K</script> be a nonempty compact subset of <script type="math/tex">\mathbb{R}^n</script> and let the function <script type="math/tex">f : K \longrightarrow R</script> be continuous. Then <script type="math/tex">f</script>
+takes a minimum and a maximum value on <script type="math/tex">K</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">f(K)</script> is compact in <script type="math/tex">\mathbb{R}</script>, so it has
+a greatest lower bound <script type="math/tex">a</script> and
+a least upper bound <script type="math/tex">b</script> by the completeness of the real number 
+system.</p>
+<p>If <script type="math/tex">a</script> is not a limit point of <script type="math/tex">f(K)</script> and <script type="math/tex">a \not\in f(K)</script>, then
+we can find <script type="math/tex">U_{\delta}(a)</script> such that
+<script type="math/tex">U_{\delta}(a) \cap f(K) = \emptyset</script>.
+That means, <script type="math/tex">a + \delta /2</script> is another lower bound.
+We got a contradiction.</p>
+<p>So <script type="math/tex">a</script> is either an isolated point or a limit point of <script type="math/tex">f(K)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="topological-property">Topological property</h3>
+<blockquote>
+<p>A topological property of sets is a property that is preserved 
+under continuity. Theorem 2.4.14 says that compactness is a 
+topological property. Neither
+the property of being closed nor the property of being bounded 
+is in itself topological. That is, the continuous image of a 
+closed set need not be closed, 
+and the continuous image of a bounded set need not be bounded; 
+for that matter, the continuous image of a closed set need not 
+be bounded, and the continuous image of a bounded set need not 
+be closed (Exercise 2.4.8).</p>
+<p>The nomenclature continuous image in the slogan-title of 
+Theorem 2.4.14 and in the previous paragraph is, strictly 
+speaking, inaccurate: the image of a mapping is a set, and the 
+notion of a set being continuous doesn’t even 
+make sense according to our grammar. As stated correctly in the 
+body of the theorem, continuous image is short for image under 
+a continuous mapping.</p>
+</blockquote>
+<p>
+<script type="math/tex">\square</script>
+</p>
               
             </div>
           </div><footer>
@@ -900,6 +1154,10 @@ a contradiction.</p>
 
   <div class="rst-versions" role="note" aria-label="Versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/eroicaleo/shurman-calculus-euclidean-space/" class="fa fa-code-fork" style="color: #fcfcfc"> Github</a>
+        </span>
     
     
       <span><a href="../ch01ex/" style="color: #fcfcfc">&laquo; Previous</a></span>
