@@ -150,6 +150,36 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#35-the-determinant-characterizing-properties-and-their-consequences">3.5 The Determinant: Characterizing Properties and Their Consequences</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#351">3.5.1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#352">3.5.2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#354">3.5.4.</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#36-the-determinant-characterizing-properties-and-their-consequences">3.6 The Determinant: Characterizing Properties and Their Consequences</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#3611">3.6.11</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#38-geometry-of-the-determinant-volume">3.8 Geometry of the Determinant: Volume</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#384">3.8.4.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#385">3.8.5.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#386">3.8.6.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#387">3.8.7.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#388">3.8.8.</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -1736,6 +1766,394 @@ x = A^{-1} x'
 x_j = a'_{j1} x'_1 + \cdots + a'_{j,j-1} x'_{j-1} + x'_j
 </script>
 </p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="35-the-determinant-characterizing-properties-and-their-consequences">3.5 The Determinant: Characterizing Properties and Their Consequences</h2>
+<h3 id="351">3.5.1</h3>
+<p><strong>Solution</strong>:</p>
+<p>Assume <script type="math/tex">x = (x_1, \cdots, x_n), y = (y_1, \cdots, y_n)</script>,
+then</p>
+<p>
+<script type="math/tex; mode=display"> 
+x = \sum_{i = 1}^{n} x_i e_i \\
+y = \sum_{i = 1}^{n} y_i e_i \\
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\text{ip}(x,y)
+&=
+\text{ip}(
+\sum_{i = 1}^{n} x_i e_i,
+\sum_{i = 1}^{n} y_i e_i,
+)
+\\
+&=
+\sum_{i = 1}^{n}
+\sum_{j = 1}^{n}
+x_i y_j \text{ip} (e_i, e_j)
+\\
+&=
+\sum_{i = 1}^{n}
+\sum_{j = 1}^{n}
+x_i y_j \delta (e_i, e_j)
+\\
+&=
+\sum_{i = 1}^{n}
+x_i y_i
+\\
+&= ⟨x,y⟩
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="352">3.5.2</h3>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+(i, j)(i, k) = (j, k)(i, j) \\
+(i, j)(j, k) = (j, k)(i, k) \\
+(i, j)(k, l) = (k, l)(i, j) \\
+</script>
+</p>
+<p>If it's the last 3 cases, then only the last pair-exchange involves the 
+<script type="math/tex">i</script>th slot. So the element <script type="math/tex">i</script> will be swapped to another location.</p>
+<p>So it won't be the ordered set.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="354">3.5.4.</h3>
+<p>This exercise shows that <script type="math/tex">\det(A^T) = \det(A)</script> for every square matrix <script type="math/tex">A</script>.</p>
+<p>(b) If <script type="math/tex">E</script> is a square echelon matrix then either <script type="math/tex">E= I</script> or the bottom row
+of <script type="math/tex">E</script> is <script type="math/tex">0</script>. In either case, show that <script type="math/tex">\det(E^T) = \det(E)</script>.
+(For the case <script type="math/tex">E \neq I</script>, we
+know that <script type="math/tex">E</script> is not invertible. What is <script type="math/tex">E^T e_n</script>, and what does this say about the invertibility of <script type="math/tex">E</script>?)</p>
+<h2 id="36-the-determinant-characterizing-properties-and-their-consequences">3.6 The Determinant: Characterizing Properties and Their Consequences</h2>
+<h3 id="3611">3.6.11</h3>
+<p>Consider the following <script type="math/tex">n×n</script> matrix based on Pascal’s triangle:</p>
+<p>
+<script type="math/tex; mode=display">
+A = 
+\begin{bmatrix}
+1 & 1 & 1  & 1  & \cdots & 1 \\
+1 & 2 & 3  & 4  & \cdots & n \\
+1 & 3 & 6  & 10 & \cdots & \frac{n(n+1)}{2} \\
+1 & 4 & 10 & 20 & \cdots & \cdot \\
+\vdots & \vdots & \vdots & \vdots & \cdots & \vdots \\
+1 & n & \frac{n(n+1)}{2} & \cdot & \cdots & \cdot
+\end{bmatrix}
+</script>
+</p>
+<p>Find <script type="math/tex">\det(A)</script>. (Hint: Row and column reduce.)</p>
+<p><strong>Solution</strong>:</p>
+<p>Consider <script type="math/tex">n = 4</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+A =
+\begin{bmatrix}
+1 & 1 & 1  & 1  \\
+1 & 2 & 3  & 4  \\
+1 & 3 & 6  & 10 \\
+1 & 4 & 10 & 20 \\
+\end{bmatrix}
+</script>
+</p>
+<p>Then substract
+row <script type="math/tex">3</script> from row <script type="math/tex">4</script>,
+row <script type="math/tex">2</script> from row <script type="math/tex">3</script>,
+row <script type="math/tex">1</script> from row <script type="math/tex">2</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+A =
+\begin{bmatrix}
+1 & 1 & 1  & 1  \\
+0 & 1 & 2  & 3  \\
+0 & 1 & 3  & 6 \\
+0 & 1 & 4 & 10 \\
+\end{bmatrix}
+</script>
+</p>
+<p>Then substract
+row <script type="math/tex">3</script> from row <script type="math/tex">4</script>,
+row <script type="math/tex">2</script> from row <script type="math/tex">3</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+A =
+\begin{bmatrix}
+1 & 1 & 1 & 1  \\
+0 & 1 & 2 & 3  \\
+0 & 0 & 1 & 3 \\
+0 & 0 & 1 & 4 \\
+\end{bmatrix}
+</script>
+</p>
+<p>Then substract
+row <script type="math/tex">3</script> from row <script type="math/tex">4</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+A =
+\begin{bmatrix}
+1 & 1 & 1 & 1  \\
+0 & 1 & 2 & 3  \\
+0 & 0 & 1 & 3 \\
+0 & 0 & 0 & 1 \\
+\end{bmatrix}
+</script>
+</p>
+<p>So <script type="math/tex">\det A = 1</script>.</p>
+<p>This can be generalized for any <script type="math/tex">n</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="38-geometry-of-the-determinant-volume">3.8 Geometry of the Determinant: Volume</h2>
+<h3 id="384">3.8.4.</h3>
+<p>3.8.4. (a) Express the matrix
+<script type="math/tex">\begin{bmatrix}
+0 & -1 \\
+1 & 0 \\
+\end{bmatrix}</script>
+as a product of recombine and scale (you may not need both types).</p>
+<p><strong>Solution</strong>:</p>
+<p>Add the first row to the second row.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{bmatrix}
+1 & 0 \\
+1 & 1 \\
+\end{bmatrix}
+</script>
+</p>
+<p>Then multiply the second row with <script type="math/tex">-1</script> and add to the first row.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{bmatrix}
+0 & -1 \\
+1 & 1 \\
+\end{bmatrix}
+</script>
+</p>
+<p>Add the first row to the second row.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{bmatrix}
+0 & -1 \\
+1 & 0 \\
+\end{bmatrix}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Use part (a) to describe counterclockwise rotation of the plane through
+the angle <script type="math/tex">π/2</script> as a composition of shears and scales.</p>
+<h3 id="385">3.8.5.</h3>
+<p>Describe counterclockwise rotation of the plane through the angle <script type="math/tex">θ</script>
+(where <script type="math/tex">cosθ \neq 0</script> and <script type="math/tex">sinθ  \neq 0</script>) as a composition of shears and 
+scales.</p>
+<p><strong>Solution</strong>:</p>
+<p>The matrix is</p>
+<p>
+<script type="math/tex; mode=display">
+A =
+\begin{bmatrix}
+\cos θ & -\sin θ \\ 
+\sin θ &  \cos θ \\
+\end{bmatrix}
+</script>
+</p>
+<p>We start with</p>
+<p>
+<script type="math/tex; mode=display"> 
+E =
+\begin{bmatrix}
+1 & 0 \\ 
+0 & 1 \\
+\end{bmatrix}
+</script>
+</p>
+<p>Scale the 2nd row by <script type="math/tex">\cos θ</script>, multiply the 1st row by <script type="math/tex">\sin θ</script> and
+add to the 2nd row, we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{bmatrix}
+1 & 0 \\ 
+\sin θ &  \cos θ \\
+\end{bmatrix}
+</script>
+</p>
+<p>Then scale the 2nd row by <script type="math/tex">-\sin θ</script> and add to the 1st row, we get</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{bmatrix}
+\cos^2 θ & - \cos θ \sin θ \\ 
+\sin θ &  \cos θ \\
+\end{bmatrix}
+</script>
+</p>
+<p>Finally, multiply the 1st row by <script type="math/tex">1/\cos θ</script> we get <script type="math/tex">A</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="386">3.8.6.</h3>
+<p>In <script type="math/tex">\mathbb{R}^3</script> , describe the linear mapping that takes
+<script type="math/tex">e_1</script> to <script type="math/tex">e_2</script>, <script type="math/tex">e_2</script> to <script type="math/tex">e_3</script>, and <script type="math/tex">e_3</script> to <script type="math/tex">e_1</script> as a composition of 
+shears, scales, and transpositions.</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\mathcal{M}(T) =
+\begin{bmatrix}
+0 & 0 & 1\\
+1 & 0 & 0\\
+0 & 1 & 0\\
+\end{bmatrix}
+</script>
+</p>
+<p>So we just need to have 2 transpositions</p>
+<p>
+<script type="math/tex; mode=display"> 
+T_1 =
+\begin{bmatrix}
+0 & 1 & 0\\
+1 & 0 & 0\\
+0 & 0 & 1\\
+\end{bmatrix},
+T_2 =
+\begin{bmatrix}
+0 & 0 & 1\\
+0 & 1 & 0\\
+1 & 0 & 0\\
+\end{bmatrix},
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="387">3.8.7.</h3>
+<p>Let <script type="math/tex">\mathcal{P}</script> be the parallelogram in <script type="math/tex">\mathbb{R}^2</script> spanned by
+<script type="math/tex">(a,c)</script> and <script type="math/tex">(b,d)</script>. Calculate directly that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\bigg|
+\det 
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix}
+\bigg|
+= \text{area } \mathcal{P}
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">v_1 = (a,c), v_2 = (b,d)</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+A^2 = |v_1|^2 |v_2|^2 \sin ^2 \theta \\
+= |v_1|^2 |v_2|^2 (1 - \cos ^2 \theta ) \\
+= |v_1|^2 |v_2|^2 (1 - \frac{⟨v_1,v_2⟩^2}{|v_1|^2 |v_2|^2} ) \\
+= (a^2 + c^2)(b^2 + d^2) - (ab + cd)^2 \\
+= (ad)^2 + (cb)^2 - 2 abcd \\
+= (ad - bc)^2 \\
+=
+\bigg|
+\det 
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix}
+\bigg|^2
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="388">3.8.8.</h3>
+<p>This exercise shows directly that <script type="math/tex">|\det| =</script> volume in <script type="math/tex">\mathbb{R}^3</script>.
+Let <script type="math/tex">\mathcal{P}</script> be the parallelepiped in <script type="math/tex">\mathbb{R}^3</script> spanned by
+<script type="math/tex">v_1, v_2, v_3</script>, let <script type="math/tex">\mathcal{P}'</script> be spanned by the vectors
+<script type="math/tex">v_1', v_2', v_3'</script> obtained from performing the Gram–Schmidt process on 
+the <script type="math/tex">v_j</script>'s, let <script type="math/tex">A = M_{3}(\mathbb{R})</script> have rows <script type="math/tex">v_1, v_2, v_3</script>,
+<script type="math/tex">A' = M_{3}(\mathbb{R})</script> have rows <script type="math/tex">v'_1, v'_2, v'_3</script>.</p>
+<p>(a) Explain why <script type="math/tex">\det A' = \det A</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+v_1' = v_1 \\
+v_2' = v_2 - (v_2)_{(\parallel v_1')}
+= v_2 - \frac{⟨v_1',v_2⟩}{|v_1'|^2} v_1' \\
+v_3' = v_3 - (v_3)_{(\parallel v_2')} - (v_3)_{(\parallel v_1')}
+= v_3 - \frac{⟨v_1',v_3⟩}{|v_1'|^2} v_1' -
+\frac{⟨v_2',v_3⟩}{|v_2'|^2} v_2'
+</script>
+</p>
+<p>So <script type="math/tex">A'</script> can be transformed from <script type="math/tex">A</script> by twice recombine.
+Therefore <script type="math/tex">\det A' = \det A</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Give a plausible geometric argument that vol <script type="math/tex">\mathcal{P}'</script> = vol
+<script type="math/tex">\mathcal{P}</script> .</p>
+<p><strong>Proof</strong>:</p>
+<p>Consider the parallelogram made of <script type="math/tex">v_1, v_2</script>. The area is the same
+as the rectangle made by <script type="math/tex">v_1', v_2'</script>. So we can just calculate
+the parallelepiped made by <script type="math/tex">v_1', v_2', v_3</script>.</p>
+<p>Note it's height is the same as the
+parallelepiped made by <script type="math/tex">v_1', v_2', v_3'</script>.</p>
+<p>Therefore vol <script type="math/tex">\mathcal{P}'</script> = vol <script type="math/tex">\mathcal{P}</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Show that</p>
+<p>
+<script type="math/tex; mode=display"> 
+A' A'^t =
+\begin{bmatrix}
+|v_1'|^2 & 0 & 0 \\
+0 & |v_2'|^2 & 0 \\
+0 & 0 & |v_2'|^3 \\
+\end{bmatrix}
+</script>
+</p>
+<p>Explain why therefore <script type="math/tex">|\det A'| = \text{vol} P'</script>. It follows from parts 
+(a) and (b) that <script type="math/tex">|\det A| = \text{vol} P</script>.</p>
+<p><strong>Proof</strong></p>
+<p>
+<script type="math/tex; mode=display"> 
+A' A'^t =
+\begin{bmatrix}
+v_1' \\
+v_2' \\
+v_3' \\
+\end{bmatrix}
+[v_1'^t, v_2'^t, v_3'^t] \\
+=
+\begin{bmatrix}
+⟨v_1',v_1'^t⟩ & ⟨v_1',v_2'^t⟩ & ⟨v_1',v_3'^t⟩ \\
+⟨v_2',v_1'^t⟩ & ⟨v_2',v_2'^t⟩ & ⟨v_2',v_3'^t⟩ \\
+⟨v_3',v_1'^t⟩ & ⟨v_3',v_2'^t⟩ & ⟨v_3',v_3'^t⟩ \\
+\end{bmatrix} \\
+=
+\begin{bmatrix}
+|v_1'|^2 & 0 & 0 \\
+0 & |v_2'|^2 & 0 \\
+0 & 0 & |v_2'|^3 \\
+\end{bmatrix}
+</script>
+</p>
+<p>Exercise 3.5.4. shows <script type="math/tex">\det A' = \det A'^t</script>.</p>
+<p>On the other hand, </p>
+<p>
+<script type="math/tex; mode=display"> 
+\text{vol } P'^2 = |v_1'|^2 |v_2'|^2 |v_3'|^2
+</script>
+</p>
+<p>So <script type="math/tex">|\det A| = |\det A'| = \text{vol } P' = \text{vol} P</script>.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>

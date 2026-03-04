@@ -102,6 +102,32 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#35-the-determinant-characterizing-properties-and-their-consequences">3.5 The Determinant: Characterizing Properties and Their Consequences</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-351-existence-and-uniqueness-of-the-determinant">Theorem 3.5.1 (Existence and uniqueness of the determinant).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-parity-of-a-rearrangement">The parity of a rearrangement</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-352-the-determinant-is-multiplicative">Theorem 3.5.2 (The determinant is multiplicative).</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#36-the-determinant-characterizing-properties-and-their-consequences">3.6 The Determinant: Characterizing Properties and Their Consequences</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-361-permutation">Definition 3.6.1 (Permutation).</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#compute-e_i-e_j-cdots-e_p">Compute δ(e_i, e_j, \cdots, e_p)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-362-determinant">Definition 3.6.2 (Determinant).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#proposition-363-properties-of-the-determinant">Proposition 3.6.3 (Properties of the determinant).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#proposition-364-determinant-algorithm">Proposition 3.6.4 (Determinant algorithm).</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -463,6 +489,472 @@ is not invertible.</p>
  <script type="math/tex">m = n</script> and its matrix <script type="math/tex">A</script> has
 echelon matrix <script type="math/tex">I_n</script>, in which case its inverse <script type="math/tex">S^{−1}</script> is the linear mapping with
 matrix <script type="math/tex">A^{−1}</script> .</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="35-the-determinant-characterizing-properties-and-their-consequences">3.5 The Determinant: Characterizing Properties and Their Consequences</h2>
+<ul>
+<li>The goal is to define a function that takes such a matrix, with its
+  <script type="math/tex">n^2</script> entries, and returns a single number.</li>
+</ul>
+<p>
+<script type="math/tex; mode=display"> 
+\det : M_{n}(\mathbb{R}) \longrightarrow \mathbb{R}
+</script>
+</p>
+<ul>
+<li>For every square matrix <script type="math/tex">A ∈ M_{n}(\mathbb{R})</script>, the scalar <script type="math/tex">\det(A)</script> 
+  should contain as much algebraic and geometric information about the 
+  matrix as possible.</li>
+</ul>
+<blockquote>
+<p>This context nicely demonstrates a pedagogical principle already
+mentioned in Section 3.1: characterizing a mathematical object 
+illuminates its construction and its use. Rather than beginning with a 
+definition of the determinant, we will stipulate a few natural behaviors 
+for it, and then we will eventually see that</p>
+</blockquote>
+<ul>
+<li>there is a function with these behaviors (existence),</li>
+<li>there is only one such function (uniqueness), and, most importantly,</li>
+<li>these behaviors, rather than the definition, further show how the
+  function works (consequences).</li>
+</ul>
+<p>If <script type="math/tex">A</script> has rows <script type="math/tex">r_1,...,r_n</script>, write <script type="math/tex">\det(r_1,...,r_n)</script> for <script type="math/tex">\det(A)</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\det : \mathbb{R}^n \times \cdots \times \mathbb{R}^n \longrightarrow \mathbb{R}
+</script>
+</p>
+<p>The advantage of this viewpoint is that now we can impose conditions on
+the determinant, using language already at our disposal in a natural way.
+Specifically, we make three requirements:</p>
+<p>(1) The determinant is <strong>multilinear</strong>, meaning that it is linear as a function
+of each of its vector variables when the rest are held fixed. That is, for all
+vectors <script type="math/tex">r_1,...,r_k,r_k',...,r_n</script> and every scalar <script type="math/tex">α</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\det (r_1, \cdots, αr_k + r_k', \cdots, r_n) =
+α \det (r_1, \cdots, r_k, \cdots, r_n) \\
++ \det (r_1, \cdots, r_k', \cdots, r_n)
+</script>
+</p>
+<p>Then</p>
+<p>(2) The determinant is skew-symmetric as a function of its vector vari-
+ables, meaning that exchanging any two inputs changes the sign of the
+determinant,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\det (r_1, \cdots, r_i, \cdots, r_j, \cdots, r_n) =
+- \det (r_1, \cdots, r_j, \cdots, r_i, \cdots, r_n)
+</script>
+</p>
+<p>(Here <script type="math/tex">i \neq j</script>.) Consequently, the determinant is also <strong>alternating</strong>, meaning
+that if two inputs <script type="math/tex">r_i</script> and <script type="math/tex">r_j</script> are equal then <script type="math/tex">\det (r_1, \cdots, r_n) = 0</script>.</p>
+<p>(3) The determinant is <strong>normalized</strong>, meaning that the standard basis has
+determinant <script type="math/tex">1</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\det (e_1, \cdots, e_n) = 1.
+</script>
+</p>
+<h3 id="theorem-351-existence-and-uniqueness-of-the-determinant">Theorem 3.5.1 (Existence and uniqueness of the determinant).</h3>
+<p>One, and only one, multilinear skew-symmetric normalized function from the 
+n-fold product of <script type="math/tex">\mathbb{R}^n</script> to <script type="math/tex">R</script> exists. This function is the 
+determinant,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\det : \mathbb{R}^n \times \cdots \times \mathbb{R}^n \longrightarrow \mathbb{R}
+</script>
+</p>
+<p>Furthermore, all multilinear skew-symmetric functions from the n-fold 
+product of <script type="math/tex">\mathbb{R}^n</script> to <script type="math/tex">R</script>
+are scalar multiples of of the determinant. That is, every multilinear
+skew-symmetric function</p>
+<p>
+<script type="math/tex; mode=display"> 
+\delta : \mathbb{R}^n \times \cdots \times \mathbb{R}^n \longrightarrow \mathbb{R}
+</script>
+</p>
+<p>is</p>
+<p>
+<script type="math/tex; mode=display"> 
+\delta = c \cdot \det
+\quad
+\text{where}
+\quad
+c = \delta (e_1, \cdots, e_n).
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="the-parity-of-a-rearrangement">The parity of a rearrangement</h3>
+<p>Independently of the determinant, every rearrangement of n objects
+has a well-defined parity, meaning that for every rearrangement of the
+objects, either all sequences of pairwise exchanges that put the objects
+back in order have even length or all such sequences have odd length.</p>
+<h3 id="theorem-352-the-determinant-is-multiplicative">Theorem 3.5.2 (The determinant is multiplicative).</h3>
+<p>For all matrices <script type="math/tex">A, B \in M_{n}(\mathbb{R})</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\det (AB) = \det (A) \det (B)
+</script>
+</p>
+<p>In particular, if <script type="math/tex">A</script> is invertible then the determinant of the matrix 
+inverse is the scalar inverse of the determinant,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\det (A^{-1}) = (\det (A))^{-1}
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">B \in M_{n}(\mathbb{R})</script> be fixed. Consider the function</p>
+<p>
+<script type="math/tex; mode=display"> 
+\delta : M_{n}(\mathbb{R}) \longrightarrow \mathbb{R},
+\qquad
+\delta (A) = \det (AB)
+</script>
+</p>
+<p>So we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\delta (r_1, \cdots, r_n) =
+\det (r_1B, \cdots, r_nB).
+</script>
+</p>
+<p>We first show <script type="math/tex">\delta</script> is multilinear.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\delta (r_1, \cdots, αr_k + r_k', \cdots, r_n) =
+\det (r_1B, \cdots, (αr_k + r_k')B, \cdots, r_nB) \\
+= α \delta (r_1B, \cdots, r_kB, \cdots, r_nB) \\
++ \delta (r_1B, \cdots, r_k'B, \cdots, r_nB)
+</script>
+</p>
+<p>Next we show <script type="math/tex">\delta</script> is skew symmetric.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\delta (r_1, \cdots, r_i, \cdots, r_j, \cdots, r_n) = \\
+\det (r_1B, \cdots, r_iB, \cdots, r_jB, \cdots, r_nB) = \\
+-\det (r_1B, \cdots, r_jB, \cdots, r_iB, \cdots, r_nB) = \\
+- \delta (r_1, \cdots, r_j, \cdots, r_i, \cdots, r_n)
+</script>
+</p>
+<p>So <script type="math/tex">\delta (A) = c \det (A)</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+c = \delta (e_1, \cdots, e_n) \\
+= \det (e_1B, \cdots, e_nB) \\
+= \det (B)
+</script>
+</p>
+<p>So <script type="math/tex">\det (AB) = \det (A) \det (B)</script>.</p>
+<p>Also <script type="math/tex">1 = \det (I) = \det (A A^{-1}) = \det A \det A^{-1}</script>,
+then <script type="math/tex">\det (A^{-1}) = (\det (A))^{-1}</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="36-the-determinant-characterizing-properties-and-their-consequences">3.6 The Determinant: Characterizing Properties and Their Consequences</h2>
+<h3 id="definition-361-permutation">Definition 3.6.1 (Permutation).</h3>
+<p>A permutation of <script type="math/tex">\{1,2,...,n\}</script> is a vector</p>
+<p>
+<script type="math/tex; mode=display"> 
+π = (π(1),π(2),...,π(n))
+</script>
+</p>
+<p>whose entries are <script type="math/tex">\{1,2,...,n\}</script>, each appearing once, in any order.
+An inversion in the permutation <script type="math/tex">π</script> is a pair of entries with the larger 
+one to the left.</p>
+<p>The <strong>sign</strong> of the permutation <script type="math/tex">π</script>, written <script type="math/tex">(−1)^π</script>, is −1 raised to the 
+number of inversions in <script type="math/tex">π</script>. The set of permutations of <script type="math/tex">\{1,2,...,n\}</script> is 
+denoted <script type="math/tex">S_n</script>.</p>
+<p>Every multilinear function <script type="math/tex">δ</script> (if it exists at all) must satisfy</p>
+<p>
+<script type="math/tex; mode=display"> 
+δ (r_1, \cdots, r_n) =
+δ \Bigg(
+\sum_{i = 1}^{n} a_{1i} e_i,
+\sum_{j = 1}^{n} a_{2j} e_j,
+\cdots,
+\sum_{p = 1}^{n} a_{np} e_p,
+  \Bigg) \\
+= \sum_{i = 1}^{n}
+a_{1i} δ \Bigg(
+e_i,
+\sum_{j = 1}^{n} a_{2j} e_j,
+\cdots,
+\sum_{p = 1}^{n} a_{np} e_p,
+\Bigg) \\
+=
+\sum_{i = 1}^{n} a_{1i} 
+\Bigg(
+\sum_{j = 1}^{n} a_{2j}
+δ
+\Bigg(
+e_i, e_j,
+\sum_{k = 1}^{n} a_{3k} e_k,
+\cdots,
+\sum_{p = 1}^{n} a_{np} e_p
+\Bigg)
+\Bigg) \\
+=
+\sum_{i = 1}^{n}
+\sum_{j = 1}^{n}
+a_{1i} a_{2j}
+\Bigg(
+e_i, e_j,
+\sum_{k = 1}^{n} a_{3k} e_k,
+\cdots,
+\sum_{p = 1}^{n} a_{np} e_p
+\Bigg) \\
+\cdots \\
+=
+\sum_{i = 1}^{n}
+\sum_{j = 1}^{n}
+\cdots
+\sum_{p = 1}^{n}
+a_{1i} a_{2j} \cdots a_{np}
+δ(e_i, e_j, \cdots, e_p)
+</script>
+</p>
+<p>If <script type="math/tex">δ</script> is also alternating then for every
+<script type="math/tex">i,j,...,p ∈ \{1,...,n\}</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+δ(e_i, e_j, \cdots, e_p) = 0
+</script>
+</p>
+<p>If any two subscripts agree.</p>
+<p>Thus we may sum only over permutations,</p>
+<p>
+<script type="math/tex; mode=display"> 
+δ (r_1, \cdots, r_n) =
+\sum_{(i, j, \cdots, p) \in S_n}
+a_{1i} a_{2j} \cdots a_{np}
+δ(e_i, e_j, \cdots, e_p)
+</script>
+</p>
+<h4 id="compute-e_i-e_j-cdots-e_p">Compute <script type="math/tex">δ(e_i, e_j, \cdots, e_p)</script>
+</h4>
+<p>Consider any permutation <script type="math/tex">π = (i,j,...,p)</script>. Suppose that <script type="math/tex">π</script> contains an
+inversion, i.e., two elements are out of order. Then necessarily two 
+elements in adjacent slots are out of order.</p>
+<p>To see this, assume <script type="math/tex">i > p</script>, then either <script type="math/tex">i > j</script> (adjacent slots found) or <script type="math/tex">j > i > p</script>. In the latter case, <script type="math/tex">j, p</script> is closer than <script type="math/tex">i, p</script> by <script type="math/tex">1</script>.
+We can continue this process until find adjacent slots.</p>
+<p>After finding the adjacent slots, we can swap them and reduce the
+# of inversions by <script type="math/tex">1</script>.</p>
+<p>Repeating this process until the permutation has no remaining
+inversions shows that</p>
+<p>
+<script type="math/tex; mode=display"> 
+δ(e_i, e_j, \cdots, e_p) = (-1)^π
+δ (e_1, \cdots, e_n)
+</script>
+</p>
+<p>That is, a possible formula for a multilinear skew-symmetric function <script type="math/tex">δ</script> is</p>
+<p>
+<script type="math/tex; mode=display"> 
+δ(r_i, r_j, \cdots, r_p) =
+\sum_{π = (i, j, \cdots, p) \in S_n}
+(-1)^π
+a_{1i} a_{2j} \cdots a_{np}
+\cdot c
+</script>
+</p>
+<p>Where <script type="math/tex">c = δ (e_1, \cdots, e_n)</script>.</p>
+<p>The previous display gives the unique possible formula for a 
+multilinear skew-symmetric normalized
+function because every method of rearranging
+<script type="math/tex">(e_i, e_j, \cdots, e_p)</script> into order must
+produce the same factor <script type="math/tex">(-1)^π</script>.</p>
+<p>This is because if two rearrangings produce different factor
+<script type="math/tex">-1</script> and <script type="math/tex">1</script>, then that means we can find a sequence with
+odd steps such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+(e_1, \cdots, e_n) \longrightarrow
+(e_i, e_j, \cdots, e_p) \longrightarrow
+(e_1, \cdots, e_n)
+</script>
+</p>
+<p>Which is not possible as proved in exercise 3.5.2.</p>
+<h3 id="definition-362-determinant">Definition 3.6.2 (Determinant).</h3>
+<p>The determinant function,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\det : M_{n}(\mathbb{R}) \longrightarrow \mathbb{R}
+</script>
+</p>
+<p>is defined as follows. For every <script type="math/tex">A \in M_{n}(\mathbb{R})</script> with
+entries <script type="math/tex">(a_{ij})</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+\det (A) =
+\sum_{\pi \in S_n}
+(-1)^π
+a_{1 \pi(1)} \cdots a_{n \pi(n)}
+</script>
+</p>
+<h3 id="proposition-363-properties-of-the-determinant">Proposition 3.6.3 (Properties of the determinant).</h3>
+<p>(1) The determinant is linear as a function of each row of <script type="math/tex">A</script>.</p>
+<p><strong>Proof</strong>: Let <script type="math/tex">B</script> be a matrix with</p>
+<p>
+<script type="math/tex; mode=display"> 
+b_{ij} =
+\begin{cases}
+  a_{ij} &\text{if } i \neq k\\
+  α a_{ij} + a'_{ij} &\text{if } i = k\\
+\end{cases} 
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\det (B) = 
+\sum_{\pi \in S_n}
+(-1)^π
+b_{1 \pi(1)} \cdots b_{k \pi(k)} \cdots b_{n \pi(n)} \\
+= 
+\sum_{\pi \in S_n}
+(-1)^π
+a_{1 \pi(1)} \cdots (αa_{k \pi(k)} +a'_{k \pi(k)})\cdots a_{n \pi(n)} \\
+=
+α \left( 
+\sum_{\pi \in S_n}
+(-1)^π
+a_{1 \pi(1)} \cdots a_{k \pi(k)} \cdots a_{n \pi(n)} \\
+ \right)
++
+\left( 
+\sum_{\pi \in S_n}
+(-1)^π
+a_{1 \pi(1)} \cdots a'_{k \pi(k)} \cdots a_{n \pi(n)} \\
+ \right) \\
+=
+α \det (r_1, \cdots r_k, \cdots r_n) +
+\det (r_1, \cdots r'_k, \cdots r_n)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(2) The determinant is skew-symmetric as a function of the rows of 
+<script type="math/tex">A</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">A = (r_1, \cdots, r_n)</script> Suppose that rows
+<script type="math/tex">k</script> and <script type="math/tex">k+1</script> are exchanged. The resulting matrix <script type="math/tex">B</script> has</p>
+<p>
+<script type="math/tex; mode=display"> 
+b_{ij} =
+\begin{cases}
+  a_{ij} &\text{if } i \neq k ,\\
+  a_{(k+1)j} &\text{if } i = k ,\\
+  a_{kj} &\text{if } i = k+1 .\\
+\end{cases} 
+</script>
+</p>
+<p>For each permutation <script type="math/tex">π ∈ S_n</script>, define a companion permutation 
+<script type="math/tex">π'</script> by exchanging the <script type="math/tex">k</script>th and <script type="math/tex">(k+1)</script>st entries,</p>
+<p>
+<script type="math/tex; mode=display">
+π' = (π(1), \cdots, π(k+1), π(k), \cdots, π(n))
+</script>
+</p>
+<p>Thus <script type="math/tex">π'(k) = π(k + 1), π'(k + 1) = π(k)</script>, and <script type="math/tex">π'(i) = π(i)</script> for all other <script type="math/tex">i</script>.
+each <script type="math/tex">π</script> we have the relation <script type="math/tex">(−1)^π =−(−1)^{π'}</script> (Exercise 3.6.6). </p>
+<p>Then we have</p>
+<p>$$ 
+\begin{align*}
+\det (B)</p>
+<p>&amp;=
+\sum_{\pi \in S_n}
+(-1)^π
+b_{1 \pi(1)} \cdots b_{k \pi(k)} b_{(k+1) \pi(k+1)} \cdots b_{n \pi(n)}
+\</p>
+<p>&amp;=
+\sum_{\pi \in S_n}
+(-1)^π
+a_{1 \pi(1)} \cdots a_{(k+1) \pi(k)} a_{k \pi(k+1)} \cdots a_{n \pi(n)}
+\</p>
+<p>&amp;=
+\sum_{\pi \in S_n}
+(-1)^π
+a_{1 π'(1)} \cdots a_{(k+1) π'(k+1)} a_{k π'(k)} \cdots a_{n π'(n)}
+\</p>
+<p>&amp;=
+-\sum_{π \in S_n}
+(-1)^{π'}
+a_{1 π'(1)} \cdots a_{(k+1) π'(k+1)} a_{k π'(k)} \cdots a_{n π'(n)}
+\</p>
+<p>&amp;=
+-\sum_{π' \in S_n}
+(-1)^{π'}
+a_{1 π'(1)} \cdots a_{(k+1) π'(k+1)} a_{k π'(k)} \cdots a_{n π'(n)}
+\</p>
+<p>&amp;= - \det (A)</p>
+<p>\end{align*} </p>
+<p>$$</p>
+<p>To exchange rows <script type="math/tex">k</script> and <script type="math/tex">k+l</script> in <script type="math/tex">A</script> where <script type="math/tex">l > 0</script>, we can do
+the following exchanges:</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+k &\longleftrightarrow k+1, \\
+k+1 &\longleftrightarrow k+2, \\
+&\cdots \\
+k+l-1 &\longleftrightarrow k+l, \\
+k+l-2 &\longleftrightarrow k+l-1, \\
+&\cdots \\
+k &\longleftrightarrow k+1. \\
+\end{align*} 
+</script>
+</p>
+<p>Note there are <script type="math/tex">2l+1</script> exchanges in total, which is an odd number.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(3) The determinant is normalized.</p>
+<p><strong>Proof</strong>:</p>
+<p>Consider</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\det (e_1, \cdots, e_n) \\
+&=
+\sum_{\pi \in S_n}
+(-1)^π
+a_{1 \pi(1)} \cdots a_{n \pi(n)} \\
+\end{align*}
+</script>
+</p>
+<p>Note that if <script type="math/tex">π(i) \neq i</script>, then <script type="math/tex">a_{1 \pi(1)} = 0</script>.
+So the only item left from above summation is</p>
+<p>
+<script type="math/tex; mode=display"> 
+(-1)^0 a_{11} \cdots a_{nn} = 1
+</script>
+</p>
+<p>Therefore, the determinant is normalized.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<blockquote>
+<p>So a unique determinant function with the stipulated behavior exists. And
+we have seen that every multilinear skew-symmetric function must be a
+scalar multiple of the determinant. (This is discussed in the secton)
+before 3.6.2.</p>
+<p>Since the determinant is multilinear and skew-
+symmetric, so are its scalar multiples. This fact was shown in
+Exercise 3.5.3.</p>
+</blockquote>
+<h3 id="proposition-364-determinant-algorithm">Proposition 3.6.4 (Determinant algorithm).</h3>
+<p>Given <script type="math/tex">A ∈ M_{n}(\mathbb{R})</script>, use row
+and column operations—recombines, scales, transpositions—to reduce <script type="math/tex">A</script> to a
+triangular matrix <script type="math/tex">Δ</script>. Then <script type="math/tex">\det(A)</script> is <script type="math/tex">\det(Δ)</script> times the reciprocal of 
+each scale factor and times−1 for each transposition.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
