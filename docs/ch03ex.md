@@ -1676,3 +1676,425 @@ x_j = a'_{j1} x'_1 + \cdots + a'_{j,j-1} x'_{j-1} + x'_j
 $$
 
 $\square$
+
+## 3.5 The Determinant: Characterizing Properties and Their Consequences
+
+### 3.5.1
+
+**Solution**:
+
+Assume $x = (x_1, \cdots, x_n), y = (y_1, \cdots, y_n)$,
+then
+
+$$ 
+x = \sum_{i = 1}^{n} x_i e_i \\
+y = \sum_{i = 1}^{n} y_i e_i \\
+$$
+
+Then
+
+$$
+\begin{align*}
+\text{ip}(x,y)
+&=
+\text{ip}(
+\sum_{i = 1}^{n} x_i e_i,
+\sum_{i = 1}^{n} y_i e_i,
+)
+\\
+&=
+\sum_{i = 1}^{n}
+\sum_{j = 1}^{n}
+x_i y_j \text{ip} (e_i, e_j)
+\\
+&=
+\sum_{i = 1}^{n}
+\sum_{j = 1}^{n}
+x_i y_j \delta (e_i, e_j)
+\\
+&=
+\sum_{i = 1}^{n}
+x_i y_i
+\\
+&= ⟨x,y⟩
+\end{align*} 
+$$
+
+$\square$
+
+### 3.5.2
+
+**Proof**:
+
+$$ 
+(i, j)(i, k) = (j, k)(i, j) \\
+(i, j)(j, k) = (j, k)(i, k) \\
+(i, j)(k, l) = (k, l)(i, j) \\
+$$
+
+If it's the last 3 cases, then only the last pair-exchange involves the 
+$i$th slot. So the element $i$ will be swapped to another location.
+
+So it won't be the ordered set.
+
+$\square$
+
+### 3.5.4.
+
+This exercise shows that $\det(A^T) = \det(A)$ for every square matrix $A$.
+
+(b) If $E$ is a square echelon matrix then either $E= I$ or the bottom row
+of $E$ is $0$. In either case, show that $\det(E^T) = \det(E)$.
+(For the case $E \neq I$, we
+know that $E$ is not invertible. What is $E^T e_n$, and what does this say about the invertibility of $E$?)
+
+## 3.6 The Determinant: Characterizing Properties and Their Consequences
+
+### 3.6.11
+
+Consider the following $n×n$ matrix based on Pascal’s triangle:
+
+$$
+A = 
+\begin{bmatrix}
+1 & 1 & 1  & 1  & \cdots & 1 \\
+1 & 2 & 3  & 4  & \cdots & n \\
+1 & 3 & 6  & 10 & \cdots & \frac{n(n+1)}{2} \\
+1 & 4 & 10 & 20 & \cdots & \cdot \\
+\vdots & \vdots & \vdots & \vdots & \cdots & \vdots \\
+1 & n & \frac{n(n+1)}{2} & \cdot & \cdots & \cdot
+\end{bmatrix}
+$$
+
+Find $\det(A)$. (Hint: Row and column reduce.)
+
+**Solution**:
+
+Consider $n = 4$, then
+
+$$ 
+A =
+\begin{bmatrix}
+1 & 1 & 1  & 1  \\
+1 & 2 & 3  & 4  \\
+1 & 3 & 6  & 10 \\
+1 & 4 & 10 & 20 \\
+\end{bmatrix}
+$$
+
+Then substract
+row $3$ from row $4$,
+row $2$ from row $3$,
+row $1$ from row $2$
+
+$$ 
+A =
+\begin{bmatrix}
+1 & 1 & 1  & 1  \\
+0 & 1 & 2  & 3  \\
+0 & 1 & 3  & 6 \\
+0 & 1 & 4 & 10 \\
+\end{bmatrix}
+$$
+
+Then substract
+row $3$ from row $4$,
+row $2$ from row $3$,
+
+$$ 
+A =
+\begin{bmatrix}
+1 & 1 & 1 & 1  \\
+0 & 1 & 2 & 3  \\
+0 & 0 & 1 & 3 \\
+0 & 0 & 1 & 4 \\
+\end{bmatrix}
+$$
+
+Then substract
+row $3$ from row $4$,
+
+$$ 
+A =
+\begin{bmatrix}
+1 & 1 & 1 & 1  \\
+0 & 1 & 2 & 3  \\
+0 & 0 & 1 & 3 \\
+0 & 0 & 0 & 1 \\
+\end{bmatrix}
+$$
+
+So $\det A = 1$.
+
+This can be generalized for any $n$.
+
+$\square$
+
+## 3.8 Geometry of the Determinant: Volume
+
+### 3.8.4.
+
+3.8.4. (a) Express the matrix
+$\begin{bmatrix}
+0 & -1 \\
+1 & 0 \\
+\end{bmatrix}$
+as a product of recombine and scale (you may not need both types).
+
+**Solution**:
+
+Add the first row to the second row.
+
+$$ 
+\begin{bmatrix}
+1 & 0 \\
+1 & 1 \\
+\end{bmatrix}
+$$
+
+Then multiply the second row with $-1$ and add to the first row.
+
+$$ 
+\begin{bmatrix}
+0 & -1 \\
+1 & 1 \\
+\end{bmatrix}
+$$
+
+Add the first row to the second row.
+
+$$ 
+\begin{bmatrix}
+0 & -1 \\
+1 & 0 \\
+\end{bmatrix}
+$$
+
+$\square$
+
+(b) Use part (a) to describe counterclockwise rotation of the plane through
+the angle $π/2$ as a composition of shears and scales.
+
+
+### 3.8.5.
+
+Describe counterclockwise rotation of the plane through the angle $θ$
+(where $cosθ \neq 0$ and $sinθ  \neq 0$) as a composition of shears and 
+scales.
+
+**Solution**:
+
+The matrix is
+
+$$
+A =
+\begin{bmatrix}
+\cos θ & -\sin θ \\ 
+\sin θ &  \cos θ \\
+\end{bmatrix}
+$$
+
+We start with
+
+$$ 
+E =
+\begin{bmatrix}
+1 & 0 \\ 
+0 & 1 \\
+\end{bmatrix}
+$$
+
+Scale the 2nd row by $\cos θ$, multiply the 1st row by $\sin θ$ and
+add to the 2nd row, we have
+
+$$ 
+\begin{bmatrix}
+1 & 0 \\ 
+\sin θ &  \cos θ \\
+\end{bmatrix}
+$$
+
+Then scale the 2nd row by $-\sin θ$ and add to the 1st row, we get
+
+$$ 
+\begin{bmatrix}
+\cos^2 θ & - \cos θ \sin θ \\ 
+\sin θ &  \cos θ \\
+\end{bmatrix}
+$$
+
+Finally, multiply the 1st row by $1/\cos θ$ we get $A$.
+
+$\square$
+
+### 3.8.6.
+
+In $\mathbb{R}^3$ , describe the linear mapping that takes
+$e_1$ to $e_2$, $e_2$ to $e_3$, and $e_3$ to $e_1$ as a composition of 
+shears, scales, and transpositions.
+
+**Solution**:
+
+$$ 
+\mathcal{M}(T) =
+\begin{bmatrix}
+0 & 0 & 1\\
+1 & 0 & 0\\
+0 & 1 & 0\\
+\end{bmatrix}
+$$
+
+So we just need to have 2 transpositions
+
+$$ 
+T_1 =
+\begin{bmatrix}
+0 & 1 & 0\\
+1 & 0 & 0\\
+0 & 0 & 1\\
+\end{bmatrix},
+T_2 =
+\begin{bmatrix}
+0 & 0 & 1\\
+0 & 1 & 0\\
+1 & 0 & 0\\
+\end{bmatrix},
+$$
+
+$\square$
+
+### 3.8.7.
+
+Let $\mathcal{P}$ be the parallelogram in $\mathbb{R}^2$ spanned by
+$(a,c)$ and $(b,d)$. Calculate directly that
+
+$$ 
+\bigg|
+\det 
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix}
+\bigg|
+= \text{area } \mathcal{P}
+$$
+
+**Proof**:
+
+Let $v_1 = (a,c), v_2 = (b,d)$.
+
+$$ 
+A^2 = |v_1|^2 |v_2|^2 \sin ^2 \theta \\
+= |v_1|^2 |v_2|^2 (1 - \cos ^2 \theta ) \\
+= |v_1|^2 |v_2|^2 (1 - \frac{⟨v_1,v_2⟩^2}{|v_1|^2 |v_2|^2} ) \\
+= (a^2 + c^2)(b^2 + d^2) - (ab + cd)^2 \\
+= (ad)^2 + (cb)^2 - 2 abcd \\
+= (ad - bc)^2 \\
+=
+\bigg|
+\det 
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix}
+\bigg|^2
+$$
+
+$\square$
+
+### 3.8.8.
+
+This exercise shows directly that $|\det| =$ volume in $\mathbb{R}^3$.
+Let $\mathcal{P}$ be the parallelepiped in $\mathbb{R}^3$ spanned by
+$v_1, v_2, v_3$, let $\mathcal{P}'$ be spanned by the vectors
+$v_1', v_2', v_3'$ obtained from performing the Gram–Schmidt process on 
+the $v_j$'s, let $A = M_{3}(\mathbb{R})$ have rows $v_1, v_2, v_3$,
+$A' = M_{3}(\mathbb{R})$ have rows $v'_1, v'_2, v'_3$.
+
+(a) Explain why $\det A' = \det A$.
+
+**Proof**:
+
+$$ 
+v_1' = v_1 \\
+v_2' = v_2 - (v_2)_{(\parallel v_1')}
+= v_2 - \frac{⟨v_1',v_2⟩}{|v_1'|^2} v_1' \\
+v_3' = v_3 - (v_3)_{(\parallel v_2')} - (v_3)_{(\parallel v_1')}
+= v_3 - \frac{⟨v_1',v_3⟩}{|v_1'|^2} v_1' -
+\frac{⟨v_2',v_3⟩}{|v_2'|^2} v_2'
+$$
+
+So $A'$ can be transformed from $A$ by twice recombine.
+Therefore $\det A' = \det A$.
+
+$\square$
+
+(b) Give a plausible geometric argument that vol $\mathcal{P}'$ = vol
+$\mathcal{P}$ .
+
+**Proof**:
+
+Consider the parallelogram made of $v_1, v_2$. The area is the same
+as the rectangle made by $v_1', v_2'$. So we can just calculate
+the parallelepiped made by $v_1', v_2', v_3$.
+
+Note it's height is the same as the
+parallelepiped made by $v_1', v_2', v_3'$.
+
+Therefore vol $\mathcal{P}'$ = vol $\mathcal{P}$.
+
+$\square$
+
+(c) Show that
+
+$$ 
+A' A'^t =
+\begin{bmatrix}
+|v_1'|^2 & 0 & 0 \\
+0 & |v_2'|^2 & 0 \\
+0 & 0 & |v_2'|^3 \\
+\end{bmatrix}
+$$
+
+Explain why therefore $|\det A'| = \text{vol} P'$. It follows from parts 
+(a) and (b) that $|\det A| = \text{vol} P$.
+
+
+**Proof**
+
+$$ 
+A' A'^t =
+\begin{bmatrix}
+v_1' \\
+v_2' \\
+v_3' \\
+\end{bmatrix}
+[v_1'^t, v_2'^t, v_3'^t] \\
+=
+\begin{bmatrix}
+⟨v_1',v_1'^t⟩ & ⟨v_1',v_2'^t⟩ & ⟨v_1',v_3'^t⟩ \\
+⟨v_2',v_1'^t⟩ & ⟨v_2',v_2'^t⟩ & ⟨v_2',v_3'^t⟩ \\
+⟨v_3',v_1'^t⟩ & ⟨v_3',v_2'^t⟩ & ⟨v_3',v_3'^t⟩ \\
+\end{bmatrix} \\
+=
+\begin{bmatrix}
+|v_1'|^2 & 0 & 0 \\
+0 & |v_2'|^2 & 0 \\
+0 & 0 & |v_2'|^3 \\
+\end{bmatrix}
+$$
+
+Exercise 3.5.4. shows $\det A' = \det A'^t$.
+
+On the other hand, 
+
+$$ 
+\text{vol } P'^2 = |v_1'|^2 |v_2'|^2 |v_3'|^2
+$$
+
+So $|\det A| = |\det A'| = \text{vol } P' = \text{vol} P$.
+
+$\square$
+
+
+
