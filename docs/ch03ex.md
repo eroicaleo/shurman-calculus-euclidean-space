@@ -1832,6 +1832,69 @@ $\square$
 
 ## 3.8 Geometry of the Determinant: Volume
 
+### 3.8.1.
+
+(a) This section states that the image of a union is the union of the
+images. More specifically, let $A$ and $B$ be any sets,
+let $f : A \rightarrow B$ be any
+mapping, and let $A_1,...,A_N$ be any subsets of $A$. Show that
+
+$$ 
+f(\bigcup_{i=1}^N A_i) = \bigcup_{i=1}^N f(A_i).
+$$
+
+**Proof**
+
+Assume $b \in f(\bigcup_{i=1}^N A_i)$, then we can find
+$a \in \bigcup_{i=1}^N A_i$, such that $f(a) = b$.
+
+Then $a \in \bigcup_{i=1}^N A_i$, then $a \in A_i$, so
+$b \in f(A_i)$, $b \in \bigcup_{i=1}^N f(A_i)$.
+
+The other side is similar.
+
+$\square$
+
+### 3.8.3.
+
+Describe the geometric eﬀect of multiplying by the $3 × 3$ elementary
+matrices $R_{2;3,1}$, $R_{3;1,2}$, and $S_{2,−3}$.
+
+**Solution**:
+
+$$ 
+R_{2;3,1} =
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 1 \\
+0 & 0 & 1 \\
+\end{bmatrix}
+$$
+
+It changes the cubic to parallelepiped.
+
+$$ 
+R_{3;1,2} =
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+2 & 0 & 1 \\
+\end{bmatrix}
+$$
+
+It changes the cubic to parallelepiped.
+
+$$ 
+R_{3;1,2} =
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & -3 & 0 \\
+0 & 0 & 1 \\
+\end{bmatrix}
+$$
+
+It changes the cubic to rectangle.
+
 ### 3.8.4.
 
 3.8.4. (a) Express the matrix
@@ -1875,6 +1938,11 @@ $\square$
 (b) Use part (a) to describe counterclockwise rotation of the plane through
 the angle $π/2$ as a composition of shears and scales.
 
+**Solution**:
+
+Part (a) just shows the 3 steps of shearing to get it.
+
+$\square$
 
 ### 3.8.5.
 
