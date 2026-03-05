@@ -168,6 +168,10 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#38-geometry-of-the-determinant-volume">3.8 Geometry of the Determinant: Volume</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#381">3.8.1.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#383">3.8.3.</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#384">3.8.4.</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#385">3.8.5.</a>
@@ -1912,6 +1916,62 @@ A =
 <script type="math/tex">\square</script>
 </p>
 <h2 id="38-geometry-of-the-determinant-volume">3.8 Geometry of the Determinant: Volume</h2>
+<h3 id="381">3.8.1.</h3>
+<p>(a) This section states that the image of a union is the union of the
+images. More specifically, let <script type="math/tex">A</script> and <script type="math/tex">B</script> be any sets,
+let <script type="math/tex">f : A \rightarrow B</script> be any
+mapping, and let <script type="math/tex">A_1,...,A_N</script> be any subsets of <script type="math/tex">A</script>. Show that</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(\bigcup_{i=1}^N A_i) = \bigcup_{i=1}^N f(A_i).
+</script>
+</p>
+<p><strong>Proof</strong></p>
+<p>Assume <script type="math/tex">b \in f(\bigcup_{i=1}^N A_i)</script>, then we can find
+<script type="math/tex">a \in \bigcup_{i=1}^N A_i</script>, such that <script type="math/tex">f(a) = b</script>.</p>
+<p>Then <script type="math/tex">a \in \bigcup_{i=1}^N A_i</script>, then <script type="math/tex">a \in A_i</script>, so
+<script type="math/tex">b \in f(A_i)</script>, <script type="math/tex">b \in \bigcup_{i=1}^N f(A_i)</script>.</p>
+<p>The other side is similar.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="383">3.8.3.</h3>
+<p>Describe the geometric eﬀect of multiplying by the <script type="math/tex">3 × 3</script> elementary
+matrices <script type="math/tex">R_{2;3,1}</script>, <script type="math/tex">R_{3;1,2}</script>, and <script type="math/tex">S_{2,−3}</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+R_{2;3,1} =
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 1 \\
+0 & 0 & 1 \\
+\end{bmatrix}
+</script>
+</p>
+<p>It changes the cubic to parallelepiped.</p>
+<p>
+<script type="math/tex; mode=display"> 
+R_{3;1,2} =
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+2 & 0 & 1 \\
+\end{bmatrix}
+</script>
+</p>
+<p>It changes the cubic to parallelepiped.</p>
+<p>
+<script type="math/tex; mode=display"> 
+R_{3;1,2} =
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & -3 & 0 \\
+0 & 0 & 1 \\
+\end{bmatrix}
+</script>
+</p>
+<p>It changes the cubic to rectangle.</p>
 <h3 id="384">3.8.4.</h3>
 <p>3.8.4. (a) Express the matrix
 <script type="math/tex">\begin{bmatrix}
@@ -1952,6 +2012,11 @@ as a product of recombine and scale (you may not need both types).</p>
 </p>
 <p>(b) Use part (a) to describe counterclockwise rotation of the plane through
 the angle <script type="math/tex">π/2</script> as a composition of shears and scales.</p>
+<p><strong>Solution</strong>:</p>
+<p>Part (a) just shows the 3 steps of shearing to get it.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
 <h3 id="385">3.8.5.</h3>
 <p>Describe counterclockwise rotation of the plane through the angle <script type="math/tex">θ</script>
 (where <script type="math/tex">cosθ \neq 0</script> and <script type="math/tex">sinθ  \neq 0</script>) as a composition of shears and 
