@@ -84,6 +84,14 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#433">4.3.3.</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#434">4.3.4.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#435">4.3.5</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#436">4.3.6.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#437">4.3.7</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -168,6 +176,119 @@ f_i(a+h) - f_i(a) - T_i(h) \text{ is } o(h) \\
 & \text{componentwise nature of the } o(h)
 \end{align*}  
 </script>
+</p>
+<h3 id="434">4.3.4.</h3>
+<p>Let <script type="math/tex">f(x,y) = (x^2 −y^2, 2xy)</script>. 
+Show that <script type="math/tex">Df_{(a,b)}(h,k) = (2ah−2bk, 2bh+2ak)</script>
+for all <script type="math/tex">(a,b) ∈ R^2</script>.
+(By the previous problem, you may work component-wise.)</p>
+<p><strong>Proof</strong>:</p>
+<p>First component:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+&f(a+h, b+k) - f(a, b) - (2ah−2bk) \\
+&=((a+h)^2-(b+k)^2) - (a^2 - b^2) - (2ah−2bk) \\
+&= (2ah + h^2) - (2bk + k^2) - (2ah−2bk) \\
+&= h^2 - k^2 \\
+&= o(h)
+\end{align*} 
+</script>
+</p>
+<p>Second component:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+& f(a+h, b+k) - f(a, b) - (2ah+2bk) \\
+&= 2(a+h)(b+k) - 2ab - (2ah+2bk) \\
+&= hk \\
+&= o(h)
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="435">4.3.5</h3>
+<p>Let <script type="math/tex">g(x,y) = xe^y</script>. Show that <script type="math/tex">Dg_{(a,b)}(h,k) = he^b +kae^b</script>
+for all <script type="math/tex">(a,b) ∈ R^2</script>.
+(Note that because <script type="math/tex">e^0 = 1</script> and because the derivative of the exponential
+function at 0 is 1, the one-variable characterizing property says that
+<script type="math/tex">e^k −1 = k +o(k)</script>.)</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+&g(a+h,b+k) - g(a,b) - (he^b +kae^b) \\
+&= (a+h)e^{b+k} - ae^b - (he^b + kae^b) \\
+&= (a+h)(e^{b+k}-e^b) - kae^b \\
+&= (a+h)e^b(k + o(k)) - kae^b \\
+&= h e^b k + ae^b o(k) + h e^b o(k) \\
+&= o(h) + o(k) + o(h) \\
+&= o(h)
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="436">4.3.6.</h3>
+<p>Show that if <script type="math/tex">f : R^n → R^m</script> satisfies <script type="math/tex">|f(x)| ≤ |x|^2</script> for all <script type="math/tex">x ∈ R^n</script> then
+<script type="math/tex">f</script> is diﬀerentiable at <script type="math/tex">0^n</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Note <script type="math/tex">|f(0)| \leq |0|^2 = 0</script>. We will show <script type="math/tex">Df_a(0) = 0</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+& |f(h) - f(0) - 0 \cdot h| \\
+&= |f(h)| \\
+& \leq |h|^2 \\
+&= o(h)
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">Df_a(0) = 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="437">4.3.7</h3>
+<p>Show that the function <script type="math/tex">f(x,y) = |xy|</script> for all <script type="math/tex">(x,y) ∈ R^2</script> is not
+diﬀerentiable at <script type="math/tex">(0,0)</script>.
+(First see what <script type="math/tex">Df_{(0,0)}(h,0)</script> and <script type="math/tex">Df_{(0,0)}(0,k)</script> need to be.)</p>
+<p><strong>Proof</strong>:</p>
+<p>First assume <script type="math/tex">Df_{(0,0)}</script> exists and it's <script type="math/tex">(\alpha, \beta)</script>.</p>
+<p>We first check <script type="math/tex">Df_{(0,0)}(h,0)</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+& f(h,0) - f(0,0) - (\alpha, \beta)(h,0)^T \\
+&= 0 - 0 - \alpha h \\
+&= -\alpha h
+\end{align*}
+</script>
+</p>
+<p>For <script type="math/tex">Df_{(0,0)}(h,0)h</script> to be <script type="math/tex">o(h)</script>, we must have <script type="math/tex">\alpha = 0</script>.
+Similarly, we must have <script type="math/tex">\beta = 0</script>.</p>
+<p>So if <script type="math/tex">Df_{(0,0)}</script> exists, it can only be <script type="math/tex">0</script>. </p>
+<p>Then we check</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+& f(h,h) - f(0,0) - Df_{(0,0)} h \\
+&= |h| - 0 - 0 \\
+&= |h| \\
+& = \mathcal{O}(h) \\
+& \neq o(h)
+\end{align*} 
+</script>
+</p>
+<p>This shows <script type="math/tex">Df_{(0,0)}</script> cannot be <script type="math/tex">0</script>, then we have a contradiction.</p>
+<p>So <script type="math/tex">f</script> is not diﬀerentiable at <script type="math/tex">(0,0)</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
 </p>
               
             </div>
