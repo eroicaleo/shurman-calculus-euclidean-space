@@ -128,11 +128,21 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#39-geometry-of-the-determinant-orientation">3.9 Geometry of the Determinant: Orientation</a>
+    </li>
     </ul>
                 </li>
               </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../ch03ex/">Chapter 03 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch04notes/">Chapter 04 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch04ex/">Chapter 04 Exercises</a>
                 </li>
               </ul>
               <ul>
@@ -958,6 +968,37 @@ each scale factor and times−1 for each transposition.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
+<h2 id="39-geometry-of-the-determinant-orientation">3.9 Geometry of the Determinant: Orientation</h2>
+<p>We have <script type="math/tex">f_1, \cdots, f_p \in \mathbb{R}^n</script>. Arrange them in column to get <script type="math/tex">F \in M_{n, p}(\mathbb{R})</script>.</p>
+<p>
+<script type="math/tex">F</script> defines a linear map <script type="math/tex">T</script> from <script type="math/tex">\mathbb{R}^p</script> to <script type="math/tex">\mathbb{R}^n</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+T : x \mapsto Fx 
+</script>
+</p>
+<p>We can view <script type="math/tex">Fx</script> in two ways:</p>
+<ol>
+<li>It's the linear combination: <script type="math/tex">x_1 f_1 + \cdots + x_p f_p</script>.</li>
+<li>It's the coefficients of <script type="math/tex">\mathcal{M}(Tx) = \mathcal{M}(T) \mathcal{M}(x)</script> and note
+<script type="math/tex">\mathcal{M}(T, (e_1, \cdots, e_p), (e_1, \cdots, e_n)) = F</script>.</li>
+</ol>
+<p>We have following equivlent conditions</p>
+<ul>
+<li>
+<script type="math/tex">\{f_1, \cdots, f_p\}</script> is a basis of <script type="math/tex">\mathbb{R}^n</script>
+</li>
+<li>
+<script type="math/tex">y \in \mathbb{R}^n</script> can be uniquely represented by them</li>
+<li>
+<script type="math/tex">y = Fx</script> for some unique <script type="math/tex">x \in \mathbb{R}^p</script>.</li>
+<li>
+<script type="math/tex">F</script> is invertible</li>
+<li>
+<script type="math/tex">\det F \neq 0</script>
+</li>
+</ul>
               
             </div>
           </div><footer>

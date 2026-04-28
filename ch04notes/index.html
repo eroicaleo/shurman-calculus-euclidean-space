@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Chapter 04 Notes - Calculus and Analysis in Euclidean Space</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Chapter 04 Notes";
+        var mkdocs_page_input_path = "ch04notes.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Calculus and Analysis in Euclidean Space
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch01notes/">Chapter 01 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch01ex/">Chapter 01 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch02notes/">Chapter 02 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch02ex/">Chapter 02 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch03notes/">Chapter 03 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch03ex/">Chapter 03 Exercises</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Chapter 04 Notes</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#42-new-environment-the-bachmannlandau-notation">4.2 New Environment: The Bachmann–Landau Notation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-421-o1-mapping-mathcaloh-mapping-oh-mapping">Definition 4.2.1 (o(1)-mapping, \mathcal{O}(h)-mapping, o(h)-mapping).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#proposition-423-dominance-principle-for-the-landau-spaces">Proposition 4.2.3 (Dominance principle for the Landau spaces).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#proposition-424-vector-space-properties-of-the-landau-spaces">Proposition 4.2.4 (Vector space properties of the Landau spaces).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#proposition-425">Proposition 4.2.5.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#proposition-426-product-property-for-landau-functions">Proposition 4.2.6 (Product property for Landau functions).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#proposition-427-composition-properties-of-the-landau-spaces">Proposition 4.2.7 (Composition properties of the Landau spaces).</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch04ex/">Chapter 04 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../unsolved/">Unsolved Problems</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Calculus and Analysis in Euclidean Space</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Chapter 04 Notes</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/eroicaleo/shurman-calculus-euclidean-space/blob/main/docs/ch04notes.md" class="icon icon-github"> Edit on Github</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="chapter-4-the-derivative">Chapter 4 The Derivative</h1>
+<h2 id="42-new-environment-the-bachmannlandau-notation">4.2 New Environment: The Bachmann–Landau Notation</h2>
+<h3 id="definition-421-o1-mapping-mathcaloh-mapping-oh-mapping">Definition 4.2.1 (<script type="math/tex">o(1)</script>-mapping, <script type="math/tex">\mathcal{O}(h)</script>-mapping, <script type="math/tex">o(h)</script>-mapping).</h3>
+<p>Consider a mapping from some ball about the origin in one Euclidean space to a
+second Euclidean space,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\varphi : B(0_n, \epsilon) \rightarrow \mathbb{R}^m
+</script>
+</p>
+<p>where <script type="math/tex">n</script> and <script type="math/tex">m</script> are positive integers and <script type="math/tex">ε > 0</script> is a positive real number.
+The mapping <script type="math/tex">\varphi</script> is smaller than order <script type="math/tex">1</script> if</p>
+<p>for every <script type="math/tex">c > 0</script>, <script type="math/tex">|\varphi (h)| ≤ c</script> for all small enough <script type="math/tex">h</script>.</p>
+<p>The mapping <script type="math/tex">\varphi</script> is of order <script type="math/tex">h</script> if</p>
+<p>for some <script type="math/tex">c > 0</script>, <script type="math/tex">|\varphi (h)| ≤ c|h|</script> for all small enough <script type="math/tex">h</script>.</p>
+<p>The mapping <script type="math/tex">\varphi</script> is smaller than order <script type="math/tex">h</script> if</p>
+<p>for every <script type="math/tex">c > 0</script>, <script type="math/tex">|\varphi (h)| ≤ c|h|</script> for all small enough <script type="math/tex">h</script>.</p>
+<p>A mapping smaller than order <script type="math/tex">1</script> is denoted <script type="math/tex">o(1)</script>, a mapping of order <script type="math/tex">h</script> is
+denoted <script type="math/tex">\mathcal{O}(h)</script>, and a mapping smaller than order <script type="math/tex">h</script> is denoted <script type="math/tex">o(h)</script>. Also <script type="math/tex">o(1)</script>
+can denote the collection of <script type="math/tex">o(1)</script>-mappings, and similarly for <script type="math/tex">\mathcal{O}(h)</script> and <script type="math/tex">o(h)</script>.</p>
+<h3 id="proposition-423-dominance-principle-for-the-landau-spaces">Proposition 4.2.3 (Dominance principle for the Landau spaces).</h3>
+<p>Let <script type="math/tex">\varphi</script> be <script type="math/tex">o(1)</script>, and suppose that <script type="math/tex">|\psi (h)| ≤ |\varphi (h)|</script> for all small enough <script type="math/tex">h</script>.
+Then also <script type="math/tex">ψ</script> is <script type="math/tex">o(1)</script>. And similarly for <script type="math/tex">O(h)</script> and for <script type="math/tex">o(h)</script>.</p>
+<h3 id="proposition-424-vector-space-properties-of-the-landau-spaces">Proposition 4.2.4 (Vector space properties of the Landau spaces).</h3>
+<p>For every fixed domain-ball <script type="math/tex">B(0_n,ε)</script> and codomain-space <script type="math/tex">\mathbb{R}^m</script>, the
+<script type="math/tex">o(1)</script>-mappings form a vector space, and <script type="math/tex">\mathcal{O}(h)</script> forms a subspace, of which <script type="math/tex">o(h)</script> forms a
+subspace in turn. Symbolically,</p>
+<p>
+<script type="math/tex; mode=display"> 
+o(1) + o(1) = o(1), \mathbb{R}o(1) = o(1) \\
+\mathcal{O}(h) + \mathcal{O}(h) = \mathcal{O}(h), \mathbb{R}\mathcal{O}(h) = \mathcal{O}(h) \\
+o(h) + o(h) = o(h), \mathbb{R}o(h) = o(h) \\
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">o(1)</script>:</p>
+<p>Assume <script type="math/tex">\varphi , \psi</script> are <script type="math/tex">o(1)</script>, for any given <script type="math/tex">c</script>, we can find <script type="math/tex">h_1</script> such that when <script type="math/tex">h < h_1</script>,
+<script type="math/tex">|\varphi (h)| ≤ c/2</script>. Similarly, we can find <script type="math/tex">h_2</script> such that when <script type="math/tex">h < h_2</script>, <script type="math/tex">|\psi (h)| ≤ c/2</script>.</p>
+<p>Then let <script type="math/tex">h_0 = \min \{h_1, h_2\}</script>, when <script type="math/tex">h < h_0</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+|\varphi(h) + \psi(h)| \leq |\varphi(h)| + |\psi(h)| < c/2 + c/2 = c
+</script>
+</p>
+<p>For the scalor multiplication, given <script type="math/tex">\alpha</script>, we want to show <script type="math/tex">\alpha \varphi</script> is also <script type="math/tex">o(1)</script>.
+For any given <script type="math/tex">c</script>, we can find <script type="math/tex">\delta > 0</script>, such that if <script type="math/tex">|h| \leq \delta</script>, <script type="math/tex">|\varphi (h)| \leq  c/|\alpha|</script>.</p>
+<p>So <script type="math/tex">|\alpha \varphi(h)| = |\alpha | |\varphi (h)| \leq |\alpha| |c/|\alpha| = c</script>
+</p>
+<p>
+<script type="math/tex">\mathcal{O}(h)</script>:</p>
+<p>Assume <script type="math/tex">\varphi , \psi</script> are <script type="math/tex">\mathcal{O}(h)</script>.
+We can find <script type="math/tex">c_1, \delta_1</script>, if <script type="math/tex">|h| \leq \delta_1, \varphi (h) \leq c_1 |h|</script>.
+We can find <script type="math/tex">c_2, \delta_2</script>, if <script type="math/tex">|h| \leq \delta_2, \psi (h) \leq c_2 |h|</script>.</p>
+<p>Let <script type="math/tex">c = 2 \cdot \max \{c_1, c_2\}, \delta = \min \{\delta_1, \delta_2\}</script>, when <script type="math/tex">|h| \leq \delta</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+|\varphi (h) + \psi (h)| \leq |\varphi (h)| + |\psi (h)|
+\leq c_1|h| + c_2 |h| \leq c |h|
+</script>
+</p>
+<p>For the scalor multiplication, given <script type="math/tex">\alpha</script>, we want to show <script type="math/tex">\alpha \varphi</script> is also <script type="math/tex">\mathcal{O}(h)</script>.</p>
+<p>Note <script type="math/tex">|\alpha \varphi(h)| = |\alpha | |\varphi (h)| \leq (|\alpha |c) |\varphi (h)|</script>, so
+<script type="math/tex">\alpha \varphi</script> is also <script type="math/tex">\mathcal{O}(h)</script>.</p>
+<p>
+<script type="math/tex">o(h)</script>:</p>
+<p>Assume <script type="math/tex">\varphi , \psi</script> are <script type="math/tex">o(h)</script>, for any given <script type="math/tex">c</script>, we can find <script type="math/tex">\delta_1</script> such that when <script type="math/tex">h < \delta_1</script>,
+<script type="math/tex">|\varphi (h)| ≤ c|h|/2</script>. Similarly, we can find <script type="math/tex">\delta_2</script> such that when <script type="math/tex">h < \delta_2</script>, <script type="math/tex">|\psi (h)| ≤ c|h|/2</script>.</p>
+<p>Then let <script type="math/tex">\delta = \min \{\delta_1, \delta_2\}</script>, when <script type="math/tex">h < \delta</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+|\varphi(h) + \psi(h)| \leq |\varphi(h)| + |\psi(h)| < c|h|/2 + c|h|/2 = c|h|
+</script>
+</p>
+<p>For the scalor multiplication, given <script type="math/tex">\alpha</script>, we want to show <script type="math/tex">\alpha \varphi</script> is also <script type="math/tex">o(h)</script>.
+For any given <script type="math/tex">c</script>, we can find <script type="math/tex">\delta > 0</script>, such that if <script type="math/tex">|h| \leq \delta</script>, <script type="math/tex">|\varphi (h)| \leq  (c/|\alpha|)|h|</script>.</p>
+<p>So <script type="math/tex">|\alpha \varphi(h)| = |\alpha | |\varphi (h)| \leq |\alpha| c/|\alpha||h| = c|h|</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="proposition-425">Proposition 4.2.5.</h3>
+<p>Every linear mapping is <script type="math/tex">\mathcal{O}(h)</script>. The only <script type="math/tex">o(h)</script>
+linear mapping is the zero mapping.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">T : \mathbb{R}^n \longrightarrow \mathbb{R}^m</script>, The unit sphere in
+<script type="math/tex">\mathbb{R}^n</script> is compact.</p>
+<p>
+<script type="math/tex">T</script> is linear, then we can find matrix <script type="math/tex">A</script>, such that <script type="math/tex">b = T(a) = Aa</script>.
+Then <script type="math/tex">b_i = A_{i, .}a</script>, then <script type="math/tex">|b_i| = |⟨A_{i, .},a⟩| \leq |A_{i, .}||a|</script>.
+When <script type="math/tex">|a|</script> is small, <script type="math/tex">|b_i|</script> is also small.
+So each component is continuous.
+So <script type="math/tex">T</script> is continuous.</p>
+<p>Then the image of unit sphere is also compact. Since <script type="math/tex">||</script> is also
+continuous, then we can find <script type="math/tex">c</script>, such that <script type="math/tex">|T(h_0)| \leq c</script> for all <script type="math/tex">|h_0| = 1</script>.</p>
+<p>Then for any <script type="math/tex">h</script>, <script type="math/tex">h = |h| h_0</script>, then <script type="math/tex">|T(|h| h_0)| = ||h|T(h_0)| \leq c|h|</script>.</p>
+<p>Assume <script type="math/tex">T</script> is non-zero, <script type="math/tex">|T(h_0)| = 2c > 0</script>. For any <script type="math/tex">h = |h| h_0</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+|T(h)| = |h| |T(h_0)| = 2c|h| > c|h|
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="proposition-426-product-property-for-landau-functions">Proposition 4.2.6 (Product property for Landau functions).</h3>
+<p>Consider two scalar-valued functions and their product function,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\varphi, \psi , \varphi \psi : B(0_n, \epsilon) \rightarrow \mathbb{R}
+</script>
+</p>
+<p>If <script type="math/tex">\varphi</script> is <script type="math/tex">o(1)</script> and <script type="math/tex">ψ</script> is <script type="math/tex">\mathcal{O}(h)</script> then <script type="math/tex">\varphi ψ</script> is <script type="math/tex">o(h)</script>. Especially, the product of two linear functions is <script type="math/tex">o(h)</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Given <script type="math/tex">c > 0</script>. </p>
+<p>Since <script type="math/tex">ψ</script> is <script type="math/tex">\mathcal{O}(h)</script>, we can find <script type="math/tex">d</script> such that
+<script type="math/tex">\left| ψ (h) \right| \leq d |h|</script> if <script type="math/tex">|h| \leq \delta_1</script>.</p>
+<p>For <script type="math/tex">\varphi</script>, since it's <script type="math/tex">o(1)</script>, we can find <script type="math/tex">\delta_2</script>, if
+<script type="math/tex">|h| \leq \delta_2</script>, <script type="math/tex">\left| \varphi (h) \right| \leq c/d</script>.</p>
+<p>Let <script type="math/tex">\delta = \min \{\delta_1, \delta_2\}</script>, if <script type="math/tex">|h| \leq \delta</script>, then
+<script type="math/tex">\left| ψ (h)\varphi (h) \right| \leq (c/d)(d|h|) = c|h|</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="proposition-427-composition-properties-of-the-landau-spaces">Proposition 4.2.7 (Composition properties of the Landau spaces).</h3>
+<p>The composition of <script type="math/tex">o(1)</script>-mappings is again an <script type="math/tex">o(1)</script>-mapping. Also, the
+composition of <script type="math/tex">\mathcal{O}(h)</script>-mappings is again an <script type="math/tex">\mathcal{O}(h)</script>-mapping. 
+Furthermore, the composition of an <script type="math/tex">\mathcal{O}(h)</script>-mapping and an
+<script type="math/tex">o(h)</script>-mapping, in either order, is again an <script type="math/tex">o(h)</script>-mapping. Symbolically,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+    o(o(1)) &= o(1)\\
+    \mathcal{O}(\mathcal{O}(h)) &= \mathcal{O}(h) \\
+    o(\mathcal{O}(h)) &= o(h) \\
+    \mathcal{O}(o(h)) &= o(h) \\
+\end{align*} 
+</script>
+</p>
+<p>That is, <script type="math/tex">o(1)</script> and <script type="math/tex">\mathcal{O}(h)</script> absorb themselves, and <script type="math/tex">o(h)</script> absorbs 
+<script type="math/tex">\mathcal{O}(h)</script> from either side.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">o(o(1)) = o(1)</script>
+</p>
+<p>Assume <script type="math/tex">\psi, \varphi</script> are both <script type="math/tex">o(1)</script>.</p>
+<p>Given <script type="math/tex">c > 0</script>.</p>
+<p>Since <script type="math/tex">ψ</script> is <script type="math/tex">o(1)</script>, we can find <script type="math/tex">\delta_1</script> , such that
+if <script type="math/tex">|h| \leq \delta_1</script>, <script type="math/tex">\left| ψ (h) \right| \leq c</script>.</p>
+<p>Since <script type="math/tex">\varphi</script> is <script type="math/tex">o(1)</script>, we can find <script type="math/tex">\delta_2</script> , such that
+if <script type="math/tex">|h| \leq \delta_2</script>, <script type="math/tex">\left| \varphi (h) \right| \leq \delta_1</script>.</p>
+<p>Let <script type="math/tex">\delta = \min \{\delta_1, \delta_2\}</script>, if <script type="math/tex">|h| \leq \delta</script>,
+<script type="math/tex">|\varphi (h)|\leq \delta_1</script>.</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+|\psi (\varphi (h))| \leq c
+</script>
+</p>
+<hr />
+<p>
+<script type="math/tex">\mathcal{O}(\mathcal{O}(h)) = \mathcal{O}(h)</script>
+</p>
+<p>Assume <script type="math/tex">\psi, \varphi</script> are both <script type="math/tex">\mathcal{O}(h)</script>.</p>
+<p>Since <script type="math/tex">ψ</script> is <script type="math/tex">\mathcal{O}(h)</script>, we can find <script type="math/tex">c_1</script> and <script type="math/tex">\delta_1</script> , such that
+if <script type="math/tex">|h| \leq \delta_1</script>, <script type="math/tex">\left| ψ (h) \right| \leq c_1 |h|</script>
+</p>
+<p>Since <script type="math/tex">\varphi</script> is <script type="math/tex">\mathcal{O}(h)</script>, we can find <script type="math/tex">c_2</script> and <script type="math/tex">\delta_2</script>,
+such that
+if <script type="math/tex">|h| \leq \delta_2</script>, <script type="math/tex">\left| \varphi (h) \right| \leq c_2 |h|</script>
+</p>
+<p>Let <script type="math/tex">\delta = \min \{\delta_1 / c_2, \delta_2\}</script>, if <script type="math/tex">|h| \leq \delta</script>,
+<script type="math/tex">|\varphi (h)|\leq c_2 |h| \leq \delta_1</script>.</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+|\psi (\varphi (h))| \leq
+c_1 |\varphi (h)| \leq c_1 c_2|h|
+</script>
+</p>
+<p>So we find <script type="math/tex">c_1 \cdot c_2</script>.</p>
+<hr />
+<p>
+<script type="math/tex">o(\mathcal{O}(h)) = o(h)</script>
+</p>
+<p>Assume <script type="math/tex">ψ</script> is <script type="math/tex">\mathcal{O}(h)</script> and <script type="math/tex">\varphi</script> is <script type="math/tex">o(h)</script>.</p>
+<p>Given <script type="math/tex">c > 0</script>.</p>
+<p>Since <script type="math/tex">ψ</script> is <script type="math/tex">\mathcal{O}(h)</script>, we can find <script type="math/tex">d</script> and <script type="math/tex">\delta_1</script> , such that
+if <script type="math/tex">|h| \leq \delta_1</script>, <script type="math/tex">\left| ψ (h) \right| \leq d |h|</script>
+</p>
+<p>Since <script type="math/tex">\varphi</script> is <script type="math/tex">o(h)</script>, we can find <script type="math/tex">\delta_2</script>, if <script type="math/tex">|h| \leq \delta_2</script>,
+<script type="math/tex">|\varphi (h)| \leq (c/d) |h|</script>.</p>
+<p>So let <script type="math/tex">|h| \leq \min \{\delta_1, \delta_2 / d\}</script>,
+so <script type="math/tex">|\psi (h)| \leq d|h| \leq \delta_2</script>.
+Then</p>
+<p>
+<script type="math/tex; mode=display">
+\left| \varphi (\psi (h)) \right| \leq (c/d)|\psi (h)|
+\leq (c/d) (d |h|) = c|h|
+</script>
+</p>
+<hr />
+<p>
+<script type="math/tex">\mathcal{O}(o(h)) = o(h)</script>
+</p>
+<p>Assume <script type="math/tex">ψ</script> is <script type="math/tex">\mathcal{O}(h)</script> and <script type="math/tex">\varphi</script> is <script type="math/tex">o(h)</script>.</p>
+<p>Given <script type="math/tex">c > 0</script>.</p>
+<p>Since <script type="math/tex">ψ</script> is <script type="math/tex">\mathcal{O}(h)</script>, we can find <script type="math/tex">d</script> and <script type="math/tex">\delta_1</script> , such that
+if <script type="math/tex">|h| \leq \delta_1</script>, <script type="math/tex">\left| ψ (h) \right| \leq d |h|</script>
+</p>
+<p>Since <script type="math/tex">\varphi</script> is <script type="math/tex">o(h)</script>, we can find <script type="math/tex">\delta_2</script>, if <script type="math/tex">|h| \leq \delta_2</script>,
+<script type="math/tex">|\varphi (h)| \leq (c/d) |h|</script>.</p>
+<p>So let <script type="math/tex">|h| \leq \min \{(d/c)\delta_1, \delta_2\}</script>, so
+<script type="math/tex">|\varphi (h)| \leq (c/d)|h| \leq \delta_1</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+|\psi (\varphi (h))| \leq d |\varphi (h)| \leq d ((c/d)|h|) = c|h|
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../ch03ex/" class="btn btn-neutral float-left" title="Chapter 03 Exercises"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ch04ex/" class="btn btn-neutral float-right" title="Chapter 04 Exercises">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/eroicaleo/shurman-calculus-euclidean-space/" class="fa fa-code-fork" style="color: #fcfcfc"> Github</a>
+        </span>
+    
+    
+      <span><a href="../ch03ex/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../ch04ex/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

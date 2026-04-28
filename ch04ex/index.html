@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Quotes - Calculus and Analysis in Euclidean Space</title>
+    <title>Chapter 04 Exercises - Calculus and Analysis in Euclidean Space</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Quotes";
-        var mkdocs_page_input_path = "quotes.md";
+        var mkdocs_page_name = "Chapter 04 Exercises";
+        var mkdocs_page_input_path = "ch04ex.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -71,8 +71,22 @@
                 <li class="toctree-l1"><a class="reference internal" href="../ch04notes/">Chapter 04 Notes</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../ch04ex/">Chapter 04 Exercises</a>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Chapter 04 Exercises</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#42-new-environment-the-bachmannlandau-notation">4.2 New Environment: The Bachmann–Landau Notation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#43-one-variable-revisionism-the-derivative-redefined">4.3 One-Variable Revisionism: The Derivative Redefined</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#431">4.3.1.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#432">4.3.2.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#433">4.3.3.</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                 </li>
               </ul>
               <ul>
@@ -93,9 +107,9 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Quotes</li>
+      <li class="breadcrumb-item active">Chapter 04 Exercises</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/eroicaleo/shurman-calculus-euclidean-space/blob/main/docs/quotes.md" class="icon icon-github"> Edit on Github</a>
+          <a href="https://github.com/eroicaleo/shurman-calculus-euclidean-space/blob/main/docs/ch04ex.md" class="icon icon-github"> Edit on Github</a>
     </li>
   </ul>
   <hr/>
@@ -103,35 +117,65 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h2 id="35-the-determinant-characterizing-properties-and-their-consequences">3.5 The Determinant: Characterizing Properties and Their Consequences</h2>
-<p>We could start at the first bullet (existence) and proceed from the construction
-of the determinant to its properties, but when a construction is complicated
-(as the determinant’s construction is), it fails to communicate intent, and
-pulling it out of thin air as the starting point of a long discussion is an 
-obstacle to understanding.
-A few naturally gifted readers will see what the unexplained
-idea really is, enabling them to skim the ensuing technicalities and go on to
-start using the determinant eﬀectively; some other tough-minded readers can
-work through the machinery and then see its operational consequences; but
-it is all too easy for the rest of us to be defeated by disorienting detail-fatigue
-before the presentation gets to the consequential points and provides any
-energizing clarity.</p>
-<p>Another option would be to start at the second bullet (uniqueness), letting
-the desired properties of the determinant guide our construction of it. This
-process wouldn’t be as alienating as starting with existence, but deriving
-the determinant’s necessary construction has only limited benefit, because
-we intend to use the construction as little as possible. Working through the
-derivation would still squander our energy on the internal mechanisms of the
-determinant before getting to its behavior, when its behavior is what truly
-lets us understand it. We first want to learn to use the determinant easily and
-artfully. Doing so will make its internals feel of secondary importance, as they
-should.</p>
-<p>The upshot is that in this section we will pursue the third bullet (conse-
-quences), and then the next section will proceed to the second bullet (unique-
-ness) and finally the first one (existence).</p>
+                <h1 id="chapter-4-the-derivative">Chapter 4 The Derivative</h1>
+<h2 id="42-new-environment-the-bachmannlandau-notation">4.2 New Environment: The Bachmann–Landau Notation</h2>
+<h2 id="43-one-variable-revisionism-the-derivative-redefined">4.3 One-Variable Revisionism: The Derivative Redefined</h2>
+<h3 id="431">4.3.1.</h3>
+<p>Let <script type="math/tex">T : R^n → R^m</script> be a linear mapping. Show that for every <script type="math/tex">ε</script> &gt; 0,
+the behavior of <script type="math/tex">T</script> on <script type="math/tex">B(0_n,ε)</script> determines the behavior of <script type="math/tex">T</script> everywhere.</p>
+<p><strong>Proof</strong>:</p>
+<p>Given any <script type="math/tex">x</script>, let <script type="math/tex">\lambda = 2|x|/\epsilon</script> and <script type="math/tex">x = \lambda x_0</script>.
+Then <script type="math/tex">|x_0| = \epsilon / 2</script>, so <script type="math/tex">x_0 \in B(0_n,ε)</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+T(x) = T( \lambda x_0) = \lambda T(x_0)
+</script>
+</p>
+<p>So <script type="math/tex">x</script> is determined by <script type="math/tex">x_0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="432">4.3.2.</h3>
+<p>Give a geometric interpretation of the derivative when <script type="math/tex">n = m = 2</script>.
+Give a geometric interpretation of the derivative when <script type="math/tex">n = 1</script> and <script type="math/tex">m = 2</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>When <script type="math/tex">n = m = 2</script>, we can think that there are 2 graphs of Figure 4.4.
+So the derivative is 2 planes.</p>
+<p>When <script type="math/tex">n = 1</script> and <script type="math/tex">m = 2</script>, the derivative is a line.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="433">4.3.3.</h3>
+<p>Let <script type="math/tex">f : A → R^m</script> (where <script type="math/tex">A ⊂ R^n</script>) have component functions
+<script type="math/tex">f_1,...,f_m</script>, and let a be an interior point of <script type="math/tex">A</script>.
+Let <script type="math/tex">T : R^n → R^m</script> be a linear
+mapping with component functions <script type="math/tex">T_1,...,T_m</script>.
+Using the componentwise nature of the <script type="math/tex">o(h)</script> condition,
+established in Section 4.2, prove the component-wise nature of 
+diﬀerentiability: <script type="math/tex">f</script> is diﬀerentiable at a with derivative <script type="math/tex">T</script>
+if and only if each component <script type="math/tex">f_i</script> is diﬀerentiable at a with
+derivative <script type="math/tex">T_i</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+f(a+h) - f(a) - T(h) \text{ is } o(h) \\
+& \Longleftrightarrow \\
+(f_1(a+h) - f_1(a) - T_1(h), \cdots, f_n(a+h) - f_n(a) - T_n(h))
+\text{ is } o(h) \\
+& \Longleftrightarrow \\
+f_i(a+h) - f_i(a) - T_i(h) \text{ is } o(h) \\
+& \text{componentwise nature of the } o(h)
+\end{align*}  
+</script>
+</p>
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../ch04notes/" class="btn btn-neutral float-left" title="Chapter 04 Notes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../unsolved/" class="btn btn-neutral float-right" title="Unsolved Problems">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -157,6 +201,10 @@ ness) and finally the first one (existence).</p>
         </span>
     
     
+      <span><a href="../ch04notes/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../unsolved/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

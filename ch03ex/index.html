@@ -184,7 +184,35 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#310-the-cross-product-lines-and-planes-in-mathbbr3">3.10 The Cross Product, Lines, and Planes in \mathbb{R}^3</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#3105">3.10.5.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#31011">3.10.11.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#31012">3.10.12.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#31013">3.10.13.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#31014">3.10.14.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#31015">3.10.15.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#31016">3.10.16.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#31017">3.10.17.</a>
+    </li>
+        </ul>
+    </li>
     </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch04notes/">Chapter 04 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch04ex/">Chapter 04 Exercises</a>
                 </li>
               </ul>
               <ul>
@@ -230,8 +258,7 @@ more substance than the other.)</p>
 <p>
 <script type="math/tex">\Rightarrow</script>
 </p>
-<p>Use induction, when <script type="math/tex">k = 1</script>
-</p>
+<p>Use induction, when <script type="math/tex">k = 1</script>,</p>
 <p>
 <script type="math/tex; mode=display"> 
 T(α_1 x_1) = α_1 T(x_1)
@@ -266,7 +293,7 @@ Show that <script type="math/tex">T(0_n) = 0_m</script>. (An intrinsic argument 
 <p>Note in both <script type="math/tex">\mathbb{R}^n, \mathbb{R}^m</script>, <script type="math/tex">0 v = 0</script>.
 So</p>
 <p>
-<script type="math/tex; mode=display"> 
+<script type="math/tex; mode=display">
 T(0) = T(0 v_n) = 0 T(v_n) = 0 v_m = 0
 </script>
 </p>
@@ -1442,7 +1469,7 @@ e^λ & e^λ & \frac{1}{2!} e^λ & \frac{1}{3!} e^λ \\
 <h3 id="328">3.2.8.</h3>
 <p>Let <script type="math/tex">a,b,d</script> be real numbers with <script type="math/tex">ad = 1</script>. show that</p>
 <p>
-<script type="math/tex; mode=display"> 
+<script type="math/tex; mode=display">
 \begin{bmatrix}
 a & b \\
 0 & d \\
@@ -1456,7 +1483,8 @@ a & b \\
 a & 0 \\
 0 & d  \\
 \end{bmatrix}
-</script>.</p>
+</script>
+</p>
 <p><strong>Proof</strong>: Just regular matrix multiplication.</p>
 <p>(b)</p>
 <p>Let <script type="math/tex">a,b,c,d</script> be real numbers with <script type="math/tex">c \neq 0</script> and <script type="math/tex">ad−bc = 1</script>. Show that</p>
@@ -2222,12 +2250,265 @@ v_3' \\
 <p>
 <script type="math/tex">\square</script>
 </p>
+<h2 id="310-the-cross-product-lines-and-planes-in-mathbbr3">3.10 The Cross Product, Lines, and Planes in <script type="math/tex">\mathbb{R}^3</script>
+</h2>
+<h3 id="3105">3.10.5.</h3>
+<p>(a) Let <script type="math/tex">U,V ∈ M_n(\mathbb{R}^n)</script> be skew-symmetric,
+meaning that <script type="math/tex">U^T=−U</script>
+and similarly for <script type="math/tex">V</script>, where <script type="math/tex">U^T</script> is the transpose of <script type="math/tex">U</script> 
+(Exercise3.2.4). Show that
+<script type="math/tex">aU</script> is skew-symmetric for every <script type="math/tex">a ∈ R</script>, and that <script type="math/tex">U+V</script> 
+is skew-symmetric.Thus
+the skew-symmetric matrices form a vector space. Show furthermore 
+that the Lie bracket <script type="math/tex">[U,V] = UV−VU</script> is skew-symmetric. One can 
+optionally check
+that although the Lie bracket product is not in general 
+associative, it instead satisfies the Jacobi identity,</p>
+<p>
+<script type="math/tex; mode=display"> 
+[U,[V,W]]+[V,[W,U]]+[W,[U,V]] = 0
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+(aU)^T = a \cdot U^T = a \cdot (-U) = -(aU)
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+(U+V)^T = U^T + V^T = (-U) + (-V) = - (U+V)
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+(UV−VU)^T = (UV)^T - (VU)^T = (V^T U^T) - (U^T V^T) \\
+= (-V) (-U) - (-U) (-V) \\
+= - (UV - VU) \\
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+[U,[V,W]] = [U, (VW - WV)] = U(VW - WV) - (VW - WV)U
+= UVW - UWV - VWU + WVU \\
+[V,[U,W]] = [V, (UW - WU)] = V(UW - WU) - (UW - WU)V
+= VUW - VWU - UWV + WUV \\
+[W,[U,V]] = [W, (UV - VU)] = W(UV - VU) - (UV - VU)W
+= WUV - WVU - UVW + VUW \\
+</script>
+</p>
+<p>Note</p>
+<p>
+<script type="math/tex; mode=display">
+(UVW - UWV - VWU + WVU)
++ (VUW - VWU - UWV + WUV)
++ (WUV - WVU - UVW + VUW)
+\\
+= -2 UWV - 2 VWU + 2 VUW + 2 WUV
+</script>
+</p>
+<h3 id="31011">3.10.11.</h3>
+<p>Show that <script type="math/tex">ℓ(p,d)</script> and <script type="math/tex">ℓ(p',d')</script> intersect if and only if the 
+linear equation <script type="math/tex">Dt= Δp</script> is solvable, where
+<script type="math/tex">D ∈ M_{3, 2}(\mathbb{R})</script> has columns <script type="math/tex">d</script> and <script type="math/tex">d'</script>, <script type="math/tex">t</script> is the
+column vector <script type="math/tex">\begin{bmatrix}
+    t_1 \\ t_2 \\
+\end{bmatrix}</script>, and <script type="math/tex">Δp = p'-p</script>.</p>
+<p>For what points <script type="math/tex">p</script> and <script type="math/tex">p'</script> do <script type="math/tex">ℓ(p,(1,2,2))</script>
+and <script type="math/tex">ℓ(p',(2,−1,4))</script> intersect?</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+p + dt = p' + d't' \\
+\Rightarrow \\
+p - p' = d t_1 + d' t_2 \\
+\Rightarrow \\
+Δp = \begin{bmatrix}
+d & d'
+\end{bmatrix}
+\begin{bmatrix}
+    t_1 \\ t_2 \\
+\end{bmatrix}
+</script>
+</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+Δp = \begin{bmatrix}
+d & d'
+\end{bmatrix}
+\begin{bmatrix}
+    t_1 \\ t_2 \\
+\end{bmatrix} \\
+\Rightarrow \\
+p - p' = d t_1 + d' t_2 \\
+\Rightarrow \\
+p + d t_1 = p' + d' t_2 \\
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="31012">3.10.12.</h3>
+<p>Use vector geometry to show that the distance from the point <script type="math/tex">q</script> to
+the line <script type="math/tex">ℓ(p,d)</script> is</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{|(q-p) \times d|}{|d|}
+</script>
+</p>
+<p>(Hint: what is the area of the parallelogram spanned by <script type="math/tex">q−p</script> and <script type="math/tex">d</script>?)
+Find the distance from the point <script type="math/tex">(3,4,5)</script> to the line
+<script type="math/tex">ℓ((1,1,1),(1,2,3))</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>As shown in the figure below</p>
+<p><img alt="alt" src="../assets/ex-3-10-12.png" /></p>
+<p>The area of the parallelogram spanned by <script type="math/tex">q−p</script> and <script type="math/tex">d</script> is </p>
+<p>
+<script type="math/tex; mode=display">
+|q-p \times d|
+</script>
+</p>
+<p>Then the distance</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{
+|(q-p) \times d|
+}{|d|}
+</script>
+</p>
+<p>So <script type="math/tex">q = (3,4,5), p = (1,1,1), d = (1,2,3)</script>
+</p>
+<p>
+<script type="math/tex">(q - p) = (2,3,4)</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+(2,3,4) \times (1,2,3) = (1, -2, 1)
+</script>
+</p>
+<p>So the distance is </p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{
+|(1, -2, 1)|
+}{
+|(1,2,3)|
+} = \sqrt[]{
+\frac{
+    6
+}{14}
+}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="31013">3.10.13.</h3>
+<p>Show that the time of nearest approach of two particles whose
+positions are <script type="math/tex">s(t) = p + tv</script>,
+<script type="math/tex">\tilde{s}(t) = \tilde{p} + t \tilde{v}</script>
+is <script type="math/tex">t= −⟨Δp,Δv⟩/|Δv|^2</script>. (You may
+assume that the particles are at their nearest approach when the 
+diﬀerence of their velocities is orthogonal to the diﬀerence of 
+their positions.)</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+⟨(p+tv)-(p'+tv'),(v-v')⟩ = 0 \\
+\Rightarrow \\
+⟨(p-p')+t(v-v'),v-v'⟩ = 0 \\
+\Rightarrow \\
+⟨Δp+tΔv,Δv⟩ = 0 \\
+\Rightarrow \\
+⟨Δp,Δv⟩ + t ⟨Δv,Δv⟩ = 0 \\
+\Rightarrow \\
+t = −⟨Δp,Δv⟩/|Δv|^2
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="31014">3.10.14.</h3>
+<p>Write the equation of the plane through <script type="math/tex">(1,2,3)</script> with normal
+direction <script type="math/tex">(1,1,1)</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+⟨(x-1,y-2,z-3),(1,1,1)⟩ = 0 \\
+\Rightarrow \\
+x + y + z = 6 \\
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="31015">3.10.15.</h3>
+<p>Where does the plane <script type="math/tex">x/a+y/b+z/c = 1</script> intersect each axis?</p>
+<p><strong>Solution</strong>:</p>
+<p>It intersects with <script type="math/tex">(a, 0, 0),(0,b,0),(0,0,c)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="31016">3.10.16.</h3>
+<p>Specify the plane containing the point <script type="math/tex">p</script> and spanned by directions
+<script type="math/tex">d</script> and <script type="math/tex">d'</script>. Specify the plane containing the three points
+<script type="math/tex">p</script>, <script type="math/tex">q</script>, and <script type="math/tex">r</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>To find a normal (orthogonal) vector <script type="math/tex">n</script>, we have <script type="math/tex">n = d \times d'</script>.
+So, for any <script type="math/tex">q</script>, if <script type="math/tex">⟨p-q, d \times d'⟩ = 0</script>, then <script type="math/tex">q</script> in the plane.</p>
+<p>Let <script type="math/tex">d = q - p, d' = r - p</script>, the we just need to have <script type="math/tex">s</script> to satisfy:</p>
+<p>
+<script type="math/tex; mode=display"> 
+⟨s - p, q - p \times r - p⟩
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="31017">3.10.17.</h3>
+<p>Use vector geometry to show that the distance from the point <script type="math/tex">q</script> to
+the plane <script type="math/tex">P(p,n)</script> is</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{
+|⟨q-p,n⟩|
+}{|n|}
+</script>
+</p>
+<p>(Hint: Resolve <script type="math/tex">q−p</script> into components parallel and normal to <script type="math/tex">n</script>.)
+Find the distance from the point <script type="math/tex">(3,4,5)</script> to the plane
+<script type="math/tex">P((1,1,1),(1,2,3))</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>From exercise 2.2.15,</p>
+<p>
+<script type="math/tex; mode=display"> 
+(q-p)_{\parallel n} =
+\frac{⟨n, q-p⟩}{|n|^2}n
+</script>
+</p>
+<p>And the distance is</p>
+<p>
+<script type="math/tex; mode=display"> 
+|(q-p)_{\parallel n}| =\\
+\frac{|⟨n, q-p⟩|}{|n|^2}|n| = \\
+\frac{|⟨n, q-p⟩|}{|n|}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../ch03notes/" class="btn btn-neutral float-left" title="Chapter 03 Notes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../unsolved/" class="btn btn-neutral float-right" title="Unsolved Problems">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../ch04notes/" class="btn btn-neutral float-right" title="Chapter 04 Notes">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -2257,7 +2538,7 @@ v_3' \\
       <span><a href="../ch03notes/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../unsolved/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../ch04notes/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
