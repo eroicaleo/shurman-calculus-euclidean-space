@@ -17,7 +17,7 @@ more substance than the other.)
 
 $\Rightarrow$
 
-Use induction, when $k = 1$
+Use induction, when $k = 1$,
 
 $$ 
 T(α_1 x_1) = α_1 T(x_1)
@@ -57,7 +57,7 @@ Show that $T(0_n) = 0_m$. (An intrinsic argument is nicer.)
 Note in both $\mathbb{R}^n, \mathbb{R}^m$, $0 v = 0$.
 So
 
-$$ 
+$$
 T(0) = T(0 v_n) = 0 T(v_n) = 0 v_m = 0
 $$
 
@@ -1297,7 +1297,7 @@ $\square$
 
 Let $a,b,d$ be real numbers with $ad = 1$. show that
 
-$$ 
+$$
 \begin{bmatrix}
 a & b \\
 0 & d \\
@@ -1311,7 +1311,7 @@ a & b \\
 a & 0 \\
 0 & d  \\
 \end{bmatrix}
-$$.
+$$
 
 **Proof**: Just regular matrix multiplication.
 
@@ -2164,5 +2164,265 @@ So $|\det A| = |\det A'| = \text{vol } P' = \text{vol} P$.
 
 $\square$
 
+## 3.10 The Cross Product, Lines, and Planes in $\mathbb{R}^3$
+
+### 3.10.5.
+
+(a) Let $U,V ∈ M_n(\mathbb{R}^n)$ be skew-symmetric,
+meaning that $U^T=−U$
+and similarly for $V$, where $U^T$ is the transpose of $U$ 
+(Exercise3.2.4). Show that
+$aU$ is skew-symmetric for every $a ∈ R$, and that $U+V$ 
+is skew-symmetric.Thus
+the skew-symmetric matrices form a vector space. Show furthermore 
+that the Lie bracket $[U,V] = UV−VU$ is skew-symmetric. One can 
+optionally check
+that although the Lie bracket product is not in general 
+associative, it instead satisfies the Jacobi identity,
+
+$$ 
+[U,[V,W]]+[V,[W,U]]+[W,[U,V]] = 0
+$$
+
+**Proof**:
+
+$$ 
+(aU)^T = a \cdot U^T = a \cdot (-U) = -(aU)
+$$
+
+$$ 
+(U+V)^T = U^T + V^T = (-U) + (-V) = - (U+V)
+$$
+
+$$ 
+(UV−VU)^T = (UV)^T - (VU)^T = (V^T U^T) - (U^T V^T) \\
+= (-V) (-U) - (-U) (-V) \\
+= - (UV - VU) \\
+$$
+
+$$ 
+[U,[V,W]] = [U, (VW - WV)] = U(VW - WV) - (VW - WV)U
+= UVW - UWV - VWU + WVU \\
+[V,[U,W]] = [V, (UW - WU)] = V(UW - WU) - (UW - WU)V
+= VUW - VWU - UWV + WUV \\
+[W,[U,V]] = [W, (UV - VU)] = W(UV - VU) - (UV - VU)W
+= WUV - WVU - UVW + VUW \\
+$$
+
+Note
+
+$$
+(UVW - UWV - VWU + WVU)
++ (VUW - VWU - UWV + WUV)
++ (WUV - WVU - UVW + VUW)
+\\
+= -2 UWV - 2 VWU + 2 VUW + 2 WUV
+$$
+
+### 3.10.11.
+
+Show that $ℓ(p,d)$ and $ℓ(p',d')$ intersect if and only if the 
+linear equation $Dt= Δp$ is solvable, where
+$D ∈ M_{3, 2}(\mathbb{R})$ has columns $d$ and $d'$, $t$ is the
+column vector $\begin{bmatrix}
+    t_1 \\ t_2 \\
+\end{bmatrix}$, and $Δp = p'-p$.
+
+For what points $p$ and $p'$ do $ℓ(p,(1,2,2))$
+and $ℓ(p',(2,−1,4))$ intersect?
+
+**Proof**:
+
+$\Rightarrow$
+
+$$ 
+p + dt = p' + d't' \\
+\Rightarrow \\
+p - p' = d t_1 + d' t_2 \\
+\Rightarrow \\
+Δp = \begin{bmatrix}
+d & d'
+\end{bmatrix}
+\begin{bmatrix}
+    t_1 \\ t_2 \\
+\end{bmatrix}
+$$
+
+$\Leftarrow$
+
+$$ 
+Δp = \begin{bmatrix}
+d & d'
+\end{bmatrix}
+\begin{bmatrix}
+    t_1 \\ t_2 \\
+\end{bmatrix} \\
+\Rightarrow \\
+p - p' = d t_1 + d' t_2 \\
+\Rightarrow \\
+p + d t_1 = p' + d' t_2 \\
+$$
+
+$\square$
+
+### 3.10.12.
+
+Use vector geometry to show that the distance from the point $q$ to
+the line $ℓ(p,d)$ is
+
+$$ 
+\frac{|(q-p) \times d|}{|d|}
+$$
+
+(Hint: what is the area of the parallelogram spanned by $q−p$ and $d$?)
+Find the distance from the point $(3,4,5)$ to the line
+$ℓ((1,1,1),(1,2,3))$.
+
+**Proof**:
+
+As shown in the figure below
+
+![alt](./assets/ex-3-10-12.png)
+
+The area of the parallelogram spanned by $q−p$ and $d$ is 
+
+$$
+|q-p \times d|
+$$
+
+Then the distance
+
+$$ 
+\frac{
+|(q-p) \times d|
+}{|d|}
+$$
+
+So $q = (3,4,5), p = (1,1,1), d = (1,2,3)$
+
+$(q - p) = (2,3,4)$
+
+$$ 
+(2,3,4) \times (1,2,3) = (1, -2, 1)
+$$
+
+So the distance is 
+
+$$ 
+\frac{
+|(1, -2, 1)|
+}{
+|(1,2,3)|
+} = \sqrt[]{
+\frac{
+    6
+}{14}
+}
+$$
+
+$\square$
+
+### 3.10.13.
+
+Show that the time of nearest approach of two particles whose
+positions are $s(t) = p + tv$,
+$\tilde{s}(t) = \tilde{p} + t \tilde{v}$
+is $t= −⟨Δp,Δv⟩/|Δv|^2$. (You may
+assume that the particles are at their nearest approach when the 
+diﬀerence of their velocities is orthogonal to the diﬀerence of 
+their positions.)
+
+**Proof**:
+
+$$ 
+⟨(p+tv)-(p'+tv'),(v-v')⟩ = 0 \\
+\Rightarrow \\
+⟨(p-p')+t(v-v'),v-v'⟩ = 0 \\
+\Rightarrow \\
+⟨Δp+tΔv,Δv⟩ = 0 \\
+\Rightarrow \\
+⟨Δp,Δv⟩ + t ⟨Δv,Δv⟩ = 0 \\
+\Rightarrow \\
+t = −⟨Δp,Δv⟩/|Δv|^2
+$$
+
+$\square$
+
+### 3.10.14.
+
+Write the equation of the plane through $(1,2,3)$ with normal
+direction $(1,1,1)$.
+
+**Solution**:
+
+$$ 
+⟨(x-1,y-2,z-3),(1,1,1)⟩ = 0 \\
+\Rightarrow \\
+x + y + z = 6 \\
+$$
+
+$\square$
+
+### 3.10.15.
+
+Where does the plane $x/a+y/b+z/c = 1$ intersect each axis?
+
+**Solution**:
+
+It intersects with $(a, 0, 0),(0,b,0),(0,0,c)$.
+
+$\square$
+
+### 3.10.16.
+
+Specify the plane containing the point $p$ and spanned by directions
+$d$ and $d'$. Specify the plane containing the three points
+$p$, $q$, and $r$.
+
+**Solution**:
+
+To find a normal (orthogonal) vector $n$, we have $n = d \times d'$.
+So, for any $q$, if $⟨p-q, d \times d'⟩ = 0$, then $q$ in the plane.
+
+Let $d = q - p, d' = r - p$, the we just need to have $s$ to satisfy:
+
+$$ 
+⟨s - p, q - p \times r - p⟩
+$$
+
+$\square$
+
+### 3.10.17.
+
+Use vector geometry to show that the distance from the point $q$ to
+the plane $P(p,n)$ is
+
+$$ 
+\frac{
+|⟨q-p,n⟩|
+}{|n|}
+$$
+
+(Hint: Resolve $q−p$ into components parallel and normal to $n$.)
+Find the distance from the point $(3,4,5)$ to the plane
+$P((1,1,1),(1,2,3))$.
+
+**Solution**:
+
+From exercise 2.2.15,
+
+$$ 
+(q-p)_{\parallel n} =
+\frac{⟨n, q-p⟩}{|n|^2}n
+$$
+
+And the distance is
+
+$$ 
+|(q-p)_{\parallel n}| =\\
+\frac{|⟨n, q-p⟩|}{|n|^2}|n| = \\
+\frac{|⟨n, q-p⟩|}{|n|}
+$$
 
 
+$\square$

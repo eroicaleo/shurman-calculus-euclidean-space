@@ -865,4 +865,27 @@ each scale factor and times−1 for each transposition.
 
 $\square$
 
+## 3.9 Geometry of the Determinant: Orientation
+
+We have $f_1, \cdots, f_p \in \mathbb{R}^n$. Arrange them in column to get $F \in M_{n, p}(\mathbb{R})$.
+
+$F$ defines a linear map $T$ from $\mathbb{R}^p$ to $\mathbb{R}^n$
+
+$$ 
+T : x \mapsto Fx 
+$$
+
+We can view $Fx$ in two ways:
+
+1. It's the linear combination: $x_1 f_1 + \cdots + x_p f_p$.
+2. It's the coefficients of $\mathcal{M}(Tx) = \mathcal{M}(T) \mathcal{M}(x)$ and note
+$\mathcal{M}(T, (e_1, \cdots, e_p), (e_1, \cdots, e_n)) = F$.
+
+We have following equivlent conditions
+
+* $\{f_1, \cdots, f_p\}$ is a basis of $\mathbb{R}^n$
+* $y \in \mathbb{R}^n$ can be uniquely represented by them
+* $y = Fx$ for some unique $x \in \mathbb{R}^p$.
+* $F$ is invertible
+* $\det F \neq 0$
 
