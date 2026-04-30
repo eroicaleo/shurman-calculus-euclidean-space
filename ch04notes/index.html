@@ -86,6 +86,18 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#43-one-variable-revisionism-the-derivative-redefined">4.3 One-Variable Revisionism: The Derivative Redefined</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-431-interior-point">Definition 4.3.1 (Interior point).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-432-derivative">Definition 4.3.2 (Derivative).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#proposition-433-uniqueness-of-the-derivative">Proposition 4.3.3 (Uniqueness of the derivative).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#proposition-434">Proposition 4.3.4.</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -338,6 +350,100 @@ if <script type="math/tex">|h| \leq \delta_1</script>, <script type="math/tex">\
 <p>
 <script type="math/tex; mode=display"> 
 |\psi (\varphi (h))| \leq d |\varphi (h)| \leq d ((c/d)|h|) = c|h|
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="43-one-variable-revisionism-the-derivative-redefined">4.3 One-Variable Revisionism: The Derivative Redefined</h2>
+<p>The one-variable derivative as recalled at the beginning of the chapter,</p>
+<p>
+<script type="math/tex; mode=display"> 
+f'(a) = \lim \limits_{h \to 0}
+\frac{
+f(a+h) - f(a)
+}{h}
+</script>
+</p>
+<p>is a construction. To rethink the derivative,
+we should characterize it instead.</p>
+<p>Consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+g(h) = f(a+h)−f(a)−th.
+</script>
+</p>
+<p>To reiterate, the idea
+that f has a tangent of slope t at <script type="math/tex">(a,f(a))</script> has been normalized to
+the tidier idea that <script type="math/tex">g</script> has slope <script type="math/tex">0</script> at the origin:</p>
+<blockquote>
+<p>To say that the graph of <script type="math/tex">g</script> is horizontal at the origin is to say that for
+every positive real number <script type="math/tex">c</script>, however small, the region between the
+lines of slope <script type="math/tex">±c</script> contains the graph of <script type="math/tex">g</script> close enough to the origin.</p>
+</blockquote>
+<p>that is</p>
+<blockquote>
+<p>The intuitive condition for the graph of <script type="math/tex">g</script> to be horizontal at the origin
+is precisely that <script type="math/tex">g</script> is <script type="math/tex">o(h)</script>.
+The horizontal nature of the graph of <script type="math/tex">g</script> at the
+origin connotes that the graph of <script type="math/tex">f</script> has a tangent of slope <script type="math/tex">t</script> at
+<script type="math/tex">(a,f(a))</script>.</p>
+</blockquote>
+<h3 id="definition-431-interior-point">Definition 4.3.1 (Interior point).</h3>
+<p>Let <script type="math/tex">A</script> be a subset of <script type="math/tex">R^n</script>, and let a be
+a point of <script type="math/tex">A</script>. Then <script type="math/tex">a</script> is an interior point of <script type="math/tex">A</script> if some <script type="math/tex">ε</script>-ball about
+<script type="math/tex">a</script> is a subset of <script type="math/tex">A</script>.
+That is, <script type="math/tex">a</script> is an interior point of <script type="math/tex">A</script> if <script type="math/tex">B(a,ε) ⊂ A</script> for some <script type="math/tex">ε > 0</script>.</p>
+<h3 id="definition-432-derivative">Definition 4.3.2 (Derivative).</h3>
+<p>Let <script type="math/tex">A</script> be a subset of <script type="math/tex">R^n</script>, let <script type="math/tex">f : A → R^m</script>
+be a mapping, and let <script type="math/tex">a</script> be an interior point of <script type="math/tex">A</script>. Then <script type="math/tex">f</script> is 
+diﬀerentiable at <script type="math/tex">a</script> if there exists a linear mapping <script type="math/tex">T_a : R^n → R^m</script> 
+satisfying the condition</p>
+<p>
+<script type="math/tex; mode=display"> 
+\tag{4-1}
+f(a+h)−f(a)−Ta(h) \text{ is } o(h).
+</script>
+</p>
+<p>This <script type="math/tex">T_a</script> is called the derivative of <script type="math/tex">f</script> at <script type="math/tex">a</script>,
+written <script type="math/tex">Df_a</script> or <script type="math/tex">(Df)_a</script>. When <script type="math/tex">f</script>
+is diﬀerentiable at <script type="math/tex">a</script>, the matrix of the linear mapping <script type="math/tex">Df_a</script>
+is written <script type="math/tex">f'(a)</script>
+and is called the Jacobian matrix of <script type="math/tex">f</script> at <script type="math/tex">a</script>.</p>
+<h3 id="proposition-433-uniqueness-of-the-derivative">Proposition 4.3.3 (Uniqueness of the derivative).</h3>
+<p>Let <script type="math/tex">f : A → R^m</script>
+(where <script type="math/tex">A ⊂ R^n</script>) be diﬀerentiable at <script type="math/tex">a</script>.
+Then there is only one linear mapping satisfying the definition of <script type="math/tex">Df_a</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume we have <script type="math/tex">T, \tilde{T}</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+f(a+h) - f(a) - T(h) &= o(h) \\
+f(a+h) - f(a) - \tilde{T}(h) &= o(h) \\
+& \Rightarrow \\
+T(h) - \tilde{T}(h) &= o(h) \\
+& \Rightarrow \\
+(T - \tilde{T})(h) &= o(h)
+\end{align*}
+</script>
+</p>
+<p>Since the only linear <script type="math/tex">o(h)</script> mapping is <script type="math/tex">0</script> mapping, then <script type="math/tex">T = \tilde{T}</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="proposition-434">Proposition 4.3.4.</h3>
+<p>If <script type="math/tex">f</script> is diﬀerentiable at <script type="math/tex">a</script> then <script type="math/tex">f</script> is continuous at <script type="math/tex">a</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+f(a+h)−f(a) \\
+&= f(a+h)−f(a)−T_a(h)+T_a(h) \\
+&= o(h)+O(h) \\
+&= O(h) \\
+&= o(1).
+\end{align*} 
 </script>
 </p>
 <p>
