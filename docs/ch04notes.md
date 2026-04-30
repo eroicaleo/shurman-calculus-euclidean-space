@@ -262,3 +262,107 @@ $$
 $$
 
 $\square$
+
+## 4.3 One-Variable Revisionism: The Derivative Redefined
+
+The one-variable derivative as recalled at the beginning of the chapter,
+
+$$ 
+f'(a) = \lim \limits_{h \to 0}
+\frac{
+f(a+h) - f(a)
+}{h}
+$$
+
+is a construction. To rethink the derivative,
+we should characterize it instead.
+
+Consider
+
+$$ 
+g(h) = f(a+h)−f(a)−th.
+$$
+
+To reiterate, the idea
+that f has a tangent of slope t at $(a,f(a))$ has been normalized to
+the tidier idea that $g$ has slope $0$ at the origin:
+
+> To say that the graph of $g$ is horizontal at the origin is to say that for
+> every positive real number $c$, however small, the region between the
+> lines of slope $±c$ contains the graph of $g$ close enough to the origin.
+
+that is
+
+> The intuitive condition for the graph of $g$ to be horizontal at the origin
+> is precisely that $g$ is $o(h)$.
+> The horizontal nature of the graph of $g$ at the
+> origin connotes that the graph of $f$ has a tangent of slope $t$ at
+> $(a,f(a))$.
+
+### Definition 4.3.1 (Interior point).
+
+Let $A$ be a subset of $R^n$, and let a be
+a point of $A$. Then $a$ is an interior point of $A$ if some $ε$-ball about
+$a$ is a subset of $A$.
+That is, $a$ is an interior point of $A$ if $B(a,ε) ⊂ A$ for some $ε > 0$.
+
+### Definition 4.3.2 (Derivative).
+
+Let $A$ be a subset of $R^n$, let $f : A → R^m$
+be a mapping, and let $a$ be an interior point of $A$. Then $f$ is 
+diﬀerentiable at $a$ if there exists a linear mapping $T_a : R^n → R^m$ 
+satisfying the condition
+
+$$ 
+\tag{4-1}
+f(a+h)−f(a)−Ta(h) \text{ is } o(h).
+$$
+
+This $T_a$ is called the derivative of $f$ at $a$,
+written $Df_a$ or $(Df)_a$. When $f$
+is diﬀerentiable at $a$, the matrix of the linear mapping $Df_a$
+is written $f'(a)$
+and is called the Jacobian matrix of $f$ at $a$.
+
+### Proposition 4.3.3 (Uniqueness of the derivative).
+
+Let $f : A → R^m$
+(where $A ⊂ R^n$) be diﬀerentiable at $a$.
+Then there is only one linear mapping satisfying the definition of $Df_a$.
+
+**Proof**:
+
+Assume we have $T, \tilde{T}$,
+
+$$ 
+\begin{align*}
+f(a+h) - f(a) - T(h) &= o(h) \\
+f(a+h) - f(a) - \tilde{T}(h) &= o(h) \\
+& \Rightarrow \\
+T(h) - \tilde{T}(h) &= o(h) \\
+& \Rightarrow \\
+(T - \tilde{T})(h) &= o(h)
+\end{align*}
+$$
+
+Since the only linear $o(h)$ mapping is $0$ mapping, then $T = \tilde{T}$.
+
+$\square$
+
+### Proposition 4.3.4.
+
+If $f$ is diﬀerentiable at $a$ then $f$ is continuous at $a$.
+
+**Proof**:
+
+$$ 
+\begin{align*}
+f(a+h)−f(a) \\
+&= f(a+h)−f(a)−T_a(h)+T_a(h) \\
+&= o(h)+O(h) \\
+&= O(h) \\
+&= o(1).
+\end{align*} 
+$$
+
+$\square$
