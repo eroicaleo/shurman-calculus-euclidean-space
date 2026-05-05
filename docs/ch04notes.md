@@ -366,3 +366,194 @@ f(a+h)−f(a) \\
 $$
 
 $\square$
+
+## 4.4 Basic Results and the Chain Rule
+
+### Theorem 4.4.3 (Chain rule).
+
+### Proposition 4.4.5 (Multivariable product and quotient rules).
+
+Let $f : A → R$ (where $A ⊂ \mathbb{R}^n$) and
+$g : B → \mathbb{R}$ (where $B ⊂ \mathbb{R}^n$) be functions,
+and let $f$ and $g$ diﬀerentiable at $a$. Then:
+
+(1) $fg$ is diﬀerentiable at $a$ with derivative
+
+$$ 
+D(fg)_a = f(a) Dg_a + g(a) Df_a
+$$
+
+**Proof**:
+
+Consider
+
+$$ 
+\begin{align*}
+h : \mathbb{R}^n \longrightarrow \mathbb{R}^2 &\qquad h(a) = (f(a), g(a)) \\
+p : \mathbb{R}^2 \longrightarrow \mathbb{R} &\qquad p(x, y) = xy \\
+\end{align*} 
+$$
+
+Then $fg = p \circ h$.
+
+$$
+\begin{align*}
+D(fg)_a &= D(p \circ h)_a \\
+&= Dp_{h(a)} \circ Dh_a \\
+\end{align*} 
+$$
+
+Note $Dh_a = (Df_a, Dg_a)$, so we have
+
+$$
+\begin{align*}
+(Dp_{h(a)} \circ Dh_a)(k)
+&= Dp_{h(a)}(Dh_a(k)) \\
+&= Dp_{h(a)}(Df_a(k), Dg_a(k)) \\
+&= g(a)Df_a(k) + f(a) Dg_a(k) \\
+&= (f(a) Dg_a + g(a) Df_a)(k) \\
+\end{align*}
+$$
+
+(2) If $g(a) \neq 0$ then $f/g$ is diﬀerentiable at a with derivative
+
+$$ 
+D(\frac{f}{g})_a =
+\frac{
+g(a)Df_a−f(a)Dg_a
+}{
+g(a)^2
+}
+$$
+
+**Proof**:
+
+Consider
+
+$$
+\begin{align*}
+D(r \circ g)_a(k)
+&= (Dr_{g(a)} \circ Dg_a)(k) \\
+&= Dr_{g(a)} (Dg_a(k)) \\
+&= -\frac{Dg_a(k)}{g^2(a)} \\
+&= (-\frac{Dg_a}{g^2(a)}) (k) \\
+\end{align*} 
+$$
+
+So $D(r \circ g)_a = -\frac{Dg_a}{g^2(a)}$ 
+
+$$ 
+\begin{align*}
+h : \mathbb{R}^n \longrightarrow \mathbb{R}^2 &\qquad h(a) = (f(a), 1/g(a)) \\
+p : \mathbb{R}^2 \longrightarrow \mathbb{R} &\qquad p(x, y) = xy \\
+\end{align*} 
+$$
+
+Then $f/g = p \circ h$.
+
+$$
+\begin{align*}
+D(f/g)_a &= D(p \circ h)_a \\
+&= Dp_{h(a)} \circ Dh_a \\
+\end{align*} 
+$$
+
+Note $Dh_a = (Df_a, -\frac{Dg_a}{g^2(a)})$, so we have
+
+$$ 
+\begin{align*}
+(Dp_{h(a)} \circ Dh_a)(k)
+&= Dp_{h(a)}(Dh_a(k)) \\
+&= Dp_{h(a)}(Df_a(k), -\frac{Dg_a}{g^2(a)}(k)) \\
+&= \frac{1}{g(a)} Df_a(k) - f(a) \frac{Dg_a}{g^2(a)}(k) \\
+&= \left(\frac{g(a) Df_a - f(a) Dg_a}{g^2(a)}\right)(k) \\
+\end{align*}
+$$
+
+So
+
+$$ 
+D\left(\frac{f}{g}\right)_a =
+\frac{
+g(a)Df_a−f(a)Dg_a
+}{
+g(a)^2
+}
+$$
+
+$\square$
+
+### Another example
+
+Consider $f(x,y) = (x^2-y)(y+1)$ for all $(x,y) \in \mathbb{R}^2$
+
+Let
+
+$$ 
+\begin{align*}
+X(x,y) &= x \\
+Y(x,y) &= y \\
+\end{align*} 
+$$
+
+Then
+
+$$ 
+f = \frac{
+X^2 - Y
+}{
+Y + 1
+}
+$$
+
+Let
+
+$$ 
+\begin{align*}
+l &= X^2 - Y \\
+g &= Y + 1 \\
+a &= (x, y) \\
+\end{align*} 
+$$
+
+Then note
+
+$$
+\begin{align*}
+g(a) &= y + 1\\
+g(a+(h,k)) - g(a) &= (y+k+1) - (y+1) = k\\
+Dg_a(h,k) &= k \\
+\end{align*} 
+$$
+
+Also note
+
+$$
+\begin{align*}
+l(a) &= x^2 - y \\
+l(a+(h, k)) - l(a) &= ((x+h)^2 - (y+k)) - (x^2 - y)\\
+&= (2xh + h^2) - k \\
+Dl_a(h,k) &= 2xh - k
+\end{align*}  
+$$
+
+Combine these together, we have
+
+$$ 
+\begin{align*}
+Df_a(h,k) &=
+D\left( \frac{l}{g}\right)_a (h,k)\\
+&=
+\frac{
+g(a) Dl_a - l(a) Dg_a
+}{g^2(a)} (h,k) \\
+&=
+\frac{
+(y+1) (2xh-k) - (x^2 - y) k
+}{(y+1)^2} \\
+&=
+\frac{2x}{y+1} h - \frac{x^2+1}{(y+1)^2} k \\
+\end{align*} 
+$$
+
+This results are confirmed by the textbook.

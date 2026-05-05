@@ -184,3 +184,109 @@ This shows $Df_{(0,0)}$ cannot be $0$, then we have a contradiction.
 So $f$ is not diﬀerentiable at $(0,0)$
 
 $\square$
+
+## 4.4 Basic Results and the Chain Rule
+
+### 4.4.3.
+
+Prove part (2) of Lemma 4.4.4.
+
+Define the reciprocal function
+
+$$ 
+r : \mathbb{R} - \{0\} \longrightarrow \mathbb{R}, \qquad
+r(x) = 1/x
+$$
+
+Then the derivative of $r$ at every nonzero real number a exists and is
+
+$$ 
+Dr_a(h) = -h / a^2
+$$
+
+**Proof**:
+
+$$ 
+\begin{align*}
+r(a+h) - r(a) - Dr_a(h)
+&= 1/(a+h) - 1/a + h / a^2 \\
+&= -h/(a+h)a + h / a^2 \\
+&= h ( \frac{1}{a^2} - \frac{1}{a(a+h)}) \\
+&= \frac{h}{a} \frac{h}{a(a+h)} \\
+&= \frac{h^2}{a^2(a+h)} \\
+\end{align*} 
+$$
+
+Since when $|h| < |a/2|$, $|a+h| \geq ||a| - |h|| > |a| - |a/2| = |a/2|$.
+
+$$ 
+\left| \frac{h^2}{a^2(a+h)} \right| 
+\leq
+\left| \frac{2h^2}{a^3} \right| 
+$$
+
+So it's $o(h)$.
+
+$\square$
+
+### 4.4.4
+
+Prove the quotient rule.
+
+**Proof**:
+
+Consider
+
+$$
+\begin{align*}
+D(r \circ g)_a(k)
+&= (Dr_{g(a)} \circ Dg_a)(k) \\
+&= Dr_{g(a)} (Dg_a(k)) \\
+&= -\frac{Dg_a(k)}{g^2(a)} \\
+&= (-\frac{Dg_a}{g^2(a)}) (k) \\
+\end{align*} 
+$$
+
+So $D(r \circ g)_a = -\frac{Dg_a}{g^2(a)}$ 
+
+$$ 
+\begin{align*}
+h : \mathbb{R}^n \longrightarrow \mathbb{R}^2 &\qquad h(a) = (f(a), 1/g(a)) \\
+p : \mathbb{R}^2 \longrightarrow \mathbb{R} &\qquad p(x, y) = xy \\
+\end{align*} 
+$$
+
+Then $f/g = p \circ h$.
+
+$$
+\begin{align*}
+D(f/g)_a &= D(p \circ h)_a \\
+&= Dp_{h(a)} \circ Dh_a \\
+\end{align*} 
+$$
+
+Note $Dh_a = (Df_a, -\frac{Dg_a}{g^2(a)})$, so we have
+
+$$ 
+\begin{align*}
+(Dp_{h(a)} \circ Dh_a)(k)
+&= Dp_{h(a)}(Dh_a(k)) \\
+&= Dp_{h(a)}(Df_a(k), -\frac{Dg_a}{g^2(a)}(k)) \\
+&= \frac{1}{g(a)} Df_a(k) - f(a) \frac{Dg_a}{g^2(a)}(k) \\
+&= \left(\frac{g(a) Df_a - f(a) Dg_a}{g^2(a)}\right)(k) \\
+\end{align*}
+$$
+
+So
+
+$$ 
+D\left(\frac{f}{g}\right)_a =
+\frac{
+g(a)Df_a−f(a)Dg_a
+}{
+g(a)^2
+}
+$$
+
+$\square$
+
