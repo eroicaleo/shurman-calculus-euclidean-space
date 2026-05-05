@@ -94,6 +94,14 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#44-basic-results-and-the-chain-rule">4.4 Basic Results and the Chain Rule</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#443">4.4.3.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#444">4.4.4</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -286,6 +294,107 @@ Similarly, we must have <script type="math/tex">\beta = 0</script>.</p>
 </p>
 <p>This shows <script type="math/tex">Df_{(0,0)}</script> cannot be <script type="math/tex">0</script>, then we have a contradiction.</p>
 <p>So <script type="math/tex">f</script> is not diﬀerentiable at <script type="math/tex">(0,0)</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="44-basic-results-and-the-chain-rule">4.4 Basic Results and the Chain Rule</h2>
+<h3 id="443">4.4.3.</h3>
+<p>Prove part (2) of Lemma 4.4.4.</p>
+<p>Define the reciprocal function</p>
+<p>
+<script type="math/tex; mode=display"> 
+r : \mathbb{R} - \{0\} \longrightarrow \mathbb{R}, \qquad
+r(x) = 1/x
+</script>
+</p>
+<p>Then the derivative of <script type="math/tex">r</script> at every nonzero real number a exists and is</p>
+<p>
+<script type="math/tex; mode=display"> 
+Dr_a(h) = -h / a^2
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+r(a+h) - r(a) - Dr_a(h)
+&= 1/(a+h) - 1/a + h / a^2 \\
+&= -h/(a+h)a + h / a^2 \\
+&= h ( \frac{1}{a^2} - \frac{1}{a(a+h)}) \\
+&= \frac{h}{a} \frac{h}{a(a+h)} \\
+&= \frac{h^2}{a^2(a+h)} \\
+\end{align*} 
+</script>
+</p>
+<p>Since when <script type="math/tex">|h| < |a/2|</script>, <script type="math/tex">|a+h| \geq ||a| - |h|| > |a| - |a/2| = |a/2|</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| \frac{h^2}{a^2(a+h)} \right| 
+\leq
+\left| \frac{2h^2}{a^3} \right| 
+</script>
+</p>
+<p>So it's <script type="math/tex">o(h)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="444">4.4.4</h3>
+<p>Prove the quotient rule.</p>
+<p><strong>Proof</strong>:</p>
+<p>Consider</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+D(r \circ g)_a(k)
+&= (Dr_{g(a)} \circ Dg_a)(k) \\
+&= Dr_{g(a)} (Dg_a(k)) \\
+&= -\frac{Dg_a(k)}{g^2(a)} \\
+&= (-\frac{Dg_a}{g^2(a)}) (k) \\
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">D(r \circ g)_a = -\frac{Dg_a}{g^2(a)}</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+h : \mathbb{R}^n \longrightarrow \mathbb{R}^2 &\qquad h(a) = (f(a), 1/g(a)) \\
+p : \mathbb{R}^2 \longrightarrow \mathbb{R} &\qquad p(x, y) = xy \\
+\end{align*} 
+</script>
+</p>
+<p>Then <script type="math/tex">f/g = p \circ h</script>.</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+D(f/g)_a &= D(p \circ h)_a \\
+&= Dp_{h(a)} \circ Dh_a \\
+\end{align*} 
+</script>
+</p>
+<p>Note <script type="math/tex">Dh_a = (Df_a, -\frac{Dg_a}{g^2(a)})</script>, so we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+(Dp_{h(a)} \circ Dh_a)(k)
+&= Dp_{h(a)}(Dh_a(k)) \\
+&= Dp_{h(a)}(Df_a(k), -\frac{Dg_a}{g^2(a)}(k)) \\
+&= \frac{1}{g(a)} Df_a(k) - f(a) \frac{Dg_a}{g^2(a)}(k) \\
+&= \left(\frac{g(a) Df_a - f(a) Dg_a}{g^2(a)}\right)(k) \\
+\end{align*}
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+D\left(\frac{f}{g}\right)_a =
+\frac{
+g(a)Df_a−f(a)Dg_a
+}{
+g(a)^2
+}
+</script>
 </p>
 <p>
 <script type="math/tex">\square</script>

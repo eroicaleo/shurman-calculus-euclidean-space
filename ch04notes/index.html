@@ -98,6 +98,16 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#44-basic-results-and-the-chain-rule">4.4 Basic Results and the Chain Rule</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-443-chain-rule">Theorem 4.4.3 (Chain rule).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#proposition-445-multivariable-product-and-quotient-rules">Proposition 4.4.5 (Multivariable product and quotient rules).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#another-example">Another example</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -449,6 +459,191 @@ f(a+h)−f(a) \\
 <p>
 <script type="math/tex">\square</script>
 </p>
+<h2 id="44-basic-results-and-the-chain-rule">4.4 Basic Results and the Chain Rule</h2>
+<h3 id="theorem-443-chain-rule">Theorem 4.4.3 (Chain rule).</h3>
+<h3 id="proposition-445-multivariable-product-and-quotient-rules">Proposition 4.4.5 (Multivariable product and quotient rules).</h3>
+<p>Let <script type="math/tex">f : A → R</script> (where <script type="math/tex">A ⊂ \mathbb{R}^n</script>) and
+<script type="math/tex">g : B → \mathbb{R}</script> (where <script type="math/tex">B ⊂ \mathbb{R}^n</script>) be functions,
+and let <script type="math/tex">f</script> and <script type="math/tex">g</script> diﬀerentiable at <script type="math/tex">a</script>. Then:</p>
+<p>(1) <script type="math/tex">fg</script> is diﬀerentiable at <script type="math/tex">a</script> with derivative</p>
+<p>
+<script type="math/tex; mode=display"> 
+D(fg)_a = f(a) Dg_a + g(a) Df_a
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+h : \mathbb{R}^n \longrightarrow \mathbb{R}^2 &\qquad h(a) = (f(a), g(a)) \\
+p : \mathbb{R}^2 \longrightarrow \mathbb{R} &\qquad p(x, y) = xy \\
+\end{align*} 
+</script>
+</p>
+<p>Then <script type="math/tex">fg = p \circ h</script>.</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+D(fg)_a &= D(p \circ h)_a \\
+&= Dp_{h(a)} \circ Dh_a \\
+\end{align*} 
+</script>
+</p>
+<p>Note <script type="math/tex">Dh_a = (Df_a, Dg_a)</script>, so we have</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+(Dp_{h(a)} \circ Dh_a)(k)
+&= Dp_{h(a)}(Dh_a(k)) \\
+&= Dp_{h(a)}(Df_a(k), Dg_a(k)) \\
+&= g(a)Df_a(k) + f(a) Dg_a(k) \\
+&= (f(a) Dg_a + g(a) Df_a)(k) \\
+\end{align*}
+</script>
+</p>
+<p>(2) If <script type="math/tex">g(a) \neq 0</script> then <script type="math/tex">f/g</script> is diﬀerentiable at a with derivative</p>
+<p>
+<script type="math/tex; mode=display"> 
+D(\frac{f}{g})_a =
+\frac{
+g(a)Df_a−f(a)Dg_a
+}{
+g(a)^2
+}
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Consider</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+D(r \circ g)_a(k)
+&= (Dr_{g(a)} \circ Dg_a)(k) \\
+&= Dr_{g(a)} (Dg_a(k)) \\
+&= -\frac{Dg_a(k)}{g^2(a)} \\
+&= (-\frac{Dg_a}{g^2(a)}) (k) \\
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">D(r \circ g)_a = -\frac{Dg_a}{g^2(a)}</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+h : \mathbb{R}^n \longrightarrow \mathbb{R}^2 &\qquad h(a) = (f(a), 1/g(a)) \\
+p : \mathbb{R}^2 \longrightarrow \mathbb{R} &\qquad p(x, y) = xy \\
+\end{align*} 
+</script>
+</p>
+<p>Then <script type="math/tex">f/g = p \circ h</script>.</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+D(f/g)_a &= D(p \circ h)_a \\
+&= Dp_{h(a)} \circ Dh_a \\
+\end{align*} 
+</script>
+</p>
+<p>Note <script type="math/tex">Dh_a = (Df_a, -\frac{Dg_a}{g^2(a)})</script>, so we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+(Dp_{h(a)} \circ Dh_a)(k)
+&= Dp_{h(a)}(Dh_a(k)) \\
+&= Dp_{h(a)}(Df_a(k), -\frac{Dg_a}{g^2(a)}(k)) \\
+&= \frac{1}{g(a)} Df_a(k) - f(a) \frac{Dg_a}{g^2(a)}(k) \\
+&= \left(\frac{g(a) Df_a - f(a) Dg_a}{g^2(a)}\right)(k) \\
+\end{align*}
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+D\left(\frac{f}{g}\right)_a =
+\frac{
+g(a)Df_a−f(a)Dg_a
+}{
+g(a)^2
+}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="another-example">Another example</h3>
+<p>Consider <script type="math/tex">f(x,y) = (x^2-y)(y+1)</script> for all <script type="math/tex">(x,y) \in \mathbb{R}^2</script>
+</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+X(x,y) &= x \\
+Y(x,y) &= y \\
+\end{align*} 
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+f = \frac{
+X^2 - Y
+}{
+Y + 1
+}
+</script>
+</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+l &= X^2 - Y \\
+g &= Y + 1 \\
+a &= (x, y) \\
+\end{align*} 
+</script>
+</p>
+<p>Then note</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+g(a) &= y + 1\\
+g(a+(h,k)) - g(a) &= (y+k+1) - (y+1) = k\\
+Dg_a(h,k) &= k \\
+\end{align*} 
+</script>
+</p>
+<p>Also note</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+l(a) &= x^2 - y \\
+l(a+(h, k)) - l(a) &= ((x+h)^2 - (y+k)) - (x^2 - y)\\
+&= (2xh + h^2) - k \\
+Dl_a(h,k) &= 2xh - k
+\end{align*}  
+</script>
+</p>
+<p>Combine these together, we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+Df_a(h,k) &=
+D\left( \frac{l}{g}\right)_a (h,k)\\
+&=
+\frac{
+g(a) Dl_a - l(a) Dg_a
+}{g^2(a)} (h,k) \\
+&=
+\frac{
+(y+1) (2xh-k) - (x^2 - y) k
+}{(y+1)^2} \\
+&=
+\frac{2x}{y+1} h - \frac{x^2+1}{(y+1)^2} k \\
+\end{align*} 
+</script>
+</p>
+<p>This results are confirmed by the textbook.</p>
               
             </div>
           </div><footer>
