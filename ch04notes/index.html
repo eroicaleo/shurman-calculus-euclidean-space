@@ -102,6 +102,8 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#theorem-443-chain-rule">Theorem 4.4.3 (Chain rule).</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lemma-444-derivatives-of-the-product-and-reciprocal-functions">Lemma 4.4.4 (Derivatives of the product and reciprocal functions).</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#proposition-445-multivariable-product-and-quotient-rules">Proposition 4.4.5 (Multivariable product and quotient rules).</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#another-example">Another example</a>
@@ -461,6 +463,141 @@ f(a+h)−f(a) \\
 </p>
 <h2 id="44-basic-results-and-the-chain-rule">4.4 Basic Results and the Chain Rule</h2>
 <h3 id="theorem-443-chain-rule">Theorem 4.4.3 (Chain rule).</h3>
+<p>Let <script type="math/tex">f : A \rightarrow R^m</script> (where <script type="math/tex">A ⊂ R^n</script>) be a
+mapping, let <script type="math/tex">B ⊂ R^m</script> be a set containing <script type="math/tex">f(A)</script>, and
+let <script type="math/tex">g : B \rightarrow R^ℓ</script> be a mapping.
+Thus the composition <script type="math/tex">g◦f : A \rightarrow R^ℓ</script> is defined. If <script type="math/tex">f</script> is 
+diﬀerentiable at the point <script type="math/tex">a ∈ A</script>, and <script type="math/tex">g</script> is diﬀerentiable
+at the point <script type="math/tex">f(a) ∈ B</script>, then the
+composition <script type="math/tex">g ◦f</script> is diﬀerentiable at the point <script type="math/tex">a</script>,
+and its derivative there is</p>
+<p>
+<script type="math/tex; mode=display"> 
+D(f \circ g)_a =
+Dg_{f(a)} \circ Df_a
+</script>
+</p>
+<p>In terms of Jacobian matrices, since the matrix of a composition is the product
+of the matrices, the chain rule is</p>
+<p>
+<script type="math/tex; mode=display"> 
+(g ◦f)'(a) = g '(f(a))f'(a).
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>For simplicity, we first take <script type="math/tex">a = 0_n</script> and <script type="math/tex">f(a) = 0_m</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+f(h) &= S(h) + o(h) \\
+g(k) &= T(k) + o(k) \\
+\end{align*} 
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+g(f(h)) &= T(f(h)) + o(f(h)) \\
+&= T(S(h) + o(h)) + o(S(h) + o(h)) \\
+&= T(S(h)) + T(o(h)) + o(O(h) + o(h)) \\
+&= T(S(h)) + O(o(h)) + o(O(h)) \\
+&= T(S(h)) + o(h) + o(h) \\
+&= T(S(h)) + o(h) \\
+\end{align*}  
+</script>
+</p>
+<p>Then for the general</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+f(a + h) &= f(a) + S(h) + o(h) \\
+g(f(a) + k) &= g(f(a)) + T(k) + o(k) \\
+\end{align*} 
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+g(f(a+h))
+&= g(f(a) + S(h) + o(h)) \\
+&= g(f(a)) + T(S(h) + o(h)) + o(S(h) + o(h)) \\
+&= g(f(a)) + T(S(h)) + T(o(h)) + o(O(h) + o(h)) \\
+&= g(f(a)) + T(S(h)) + O(o(h)) + o(O(h)) \\
+&= g(f(a)) + T(S(h)) + o(h) + o(h) \\
+&= g(f(a)) + T(S(h)) + o(h) \\
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="lemma-444-derivatives-of-the-product-and-reciprocal-functions">Lemma 4.4.4 (Derivatives of the product and reciprocal functions).</h3>
+<p>Define the product function,</p>
+<p>
+<script type="math/tex; mode=display"> 
+p : \mathbb{R}^2 \longrightarrow \mathbb{R}, \qquad p(x,y) = xy,
+</script>
+</p>
+<p>and define the reciprocal function</p>
+<p>
+<script type="math/tex; mode=display"> 
+r : \mathbb{R} - \{0\} \longrightarrow \mathbb{R}, \qquad r(x) = 1/x,
+</script>
+</p>
+<p>Then</p>
+<p>(1) The derivative of <script type="math/tex">p</script> at every point <script type="math/tex">(a,b) ∈ R^2</script> exists and is</p>
+<p>
+<script type="math/tex; mode=display"> 
+Dp_{(a,b)}(h, k) = ak + bh
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+(x+h)(y+k) - xy - (ak + bh)
+&= hk \\
+\end{align*}
+</script>
+</p>
+<p>Since <script type="math/tex">|h| \leq |(h,k)|, |k| \leq |(h,k)|</script>, so
+<script type="math/tex">|h||k| \leq |(h,k)|^2 = o(h,k)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(2) The derivative of <script type="math/tex">r</script> at every nonzero real number a exists and is</p>
+<p>
+<script type="math/tex; mode=display"> 
+Dr_a(h) = -h / a^2
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+r(a+h) - r(a) - Dr_a(h)
+&= 1/(a+h) - 1/a + h / a^2 \\
+&= -h/(a+h)a + h / a^2 \\
+&= h ( \frac{1}{a^2} - \frac{1}{a(a+h)}) \\
+&= \frac{h}{a} \frac{h}{a(a+h)} \\
+&= \frac{h^2}{a^2(a+h)} \\
+\end{align*} 
+</script>
+</p>
+<p>Since when <script type="math/tex">|h| < |a/2|</script>, <script type="math/tex">|a+h| \geq ||a| - |h|| > |a| - |a/2| = |a/2|</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| \frac{h^2}{a^2(a+h)} \right| 
+\leq
+\left| \frac{2h^2}{a^3} \right| 
+</script>
+</p>
+<p>So it's <script type="math/tex">o(h)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
 <h3 id="proposition-445-multivariable-product-and-quotient-rules">Proposition 4.4.5 (Multivariable product and quotient rules).</h3>
 <p>Let <script type="math/tex">f : A → R</script> (where <script type="math/tex">A ⊂ \mathbb{R}^n</script>) and
 <script type="math/tex">g : B → \mathbb{R}</script> (where <script type="math/tex">B ⊂ \mathbb{R}^n</script>) be functions,
@@ -644,6 +781,69 @@ g(a) Dl_a - l(a) Dg_a
 </script>
 </p>
 <p>This results are confirmed by the textbook.</p>
+<p>Now we can follow the approach in the text book.</p>
+<p>
+<script type="math/tex; mode=display"> 
+f = \frac{
+X^2 - Y
+}{
+Y + 1
+}
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+&Df_a(h, k) \\
+\\
+&\text{Use 4.4.5 (2) quotient rule} \\
+&= \frac{
+(Y+1)(a)D(X^2-Y)_a - (X^2-Y)(a) D(Y+1)_a
+}{(Y+1)^2(a)}(h, k)\\
+\\
+&\text{Use } (Y+1)(a) = y+1 \\
+&= \frac{
+(y+1)D(X^2-Y)_a - (X^2-Y)(a) D(Y+1)_a
+}{(y+1)^2}(h, k)\\
+\\
+&\text{Use } (X^2-Y)(a) = x^2-y \\
+&= \frac{
+(y+1)D(X^2-Y)_a - (x^2-y) D(Y+1)_a
+}{(y+1)^2}(h, k)\\
+\\
+&\text{Use 4.4.2 (Linearity of the derivative)} \\
+&= \frac{
+(y+1)(D(X^2)_a-DY_a) - (x^2-y) (DY_a+D1_a)
+}{(y+1)^2}(h, k)\\
+\\
+&\text{Use 4.4.1 Derivatives of constant and linear mappings} \\
+&= \frac{
+(y+1)(D(X^2)_a-Y) - (x^2-y) Y
+}{(y+1)^2}(h, k)\\
+\\
+&\text{Use 4.4.5 (a) product rule} \\
+&= \frac{
+(y+1)(2X(a)DX_a-Y) - (x^2-y) Y
+}{(y+1)^2}(h, k)\\
+\\
+&\text{Use 4.4.1 Derivatives of constant and linear mappings} \\
+&= \frac{
+(y+1)(2xX-Y) - (x^2-y) Y
+}{(y+1)^2}(h, k)\\
+\\
+&= \frac{
+2x(y+1)X - (x^2+1) Y
+}{(y+1)^2}(h, k)\\
+\\
+&= \frac{
+2x
+}{(y+1)}h - \frac{x^2+1}{(y+1)^2}k\\
+\end{align*}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
               
             </div>
           </div><footer>
