@@ -371,6 +371,143 @@ $\square$
 
 ### Theorem 4.4.3 (Chain rule).
 
+Let $f : A \rightarrow R^m$ (where $A ⊂ R^n$) be a
+mapping, let $B ⊂ R^m$ be a set containing $f(A)$, and
+let $g : B \rightarrow R^ℓ$ be a mapping.
+Thus the composition $g◦f : A \rightarrow R^ℓ$ is defined. If $f$ is 
+diﬀerentiable at the point $a ∈ A$, and $g$ is diﬀerentiable
+at the point $f(a) ∈ B$, then the
+composition $g ◦f$ is diﬀerentiable at the point $a$,
+and its derivative there is
+
+$$ 
+D(f \circ g)_a =
+Dg_{f(a)} \circ Df_a
+$$
+
+In terms of Jacobian matrices, since the matrix of a composition is the product
+of the matrices, the chain rule is
+
+$$ 
+(g ◦f)'(a) = g '(f(a))f'(a).
+$$
+
+**Proof**:
+
+For simplicity, we first take $a = 0_n$ and $f(a) = 0_m$.
+
+$$ 
+\begin{align*}
+f(h) &= S(h) + o(h) \\
+g(k) &= T(k) + o(k) \\
+\end{align*} 
+$$
+
+Then
+
+$$
+\begin{align*}
+g(f(h)) &= T(f(h)) + o(f(h)) \\
+&= T(S(h) + o(h)) + o(S(h) + o(h)) \\
+&= T(S(h)) + T(o(h)) + o(O(h) + o(h)) \\
+&= T(S(h)) + O(o(h)) + o(O(h)) \\
+&= T(S(h)) + o(h) + o(h) \\
+&= T(S(h)) + o(h) \\
+\end{align*}  
+$$
+
+Then for the general
+
+$$ 
+\begin{align*}
+f(a + h) &= f(a) + S(h) + o(h) \\
+g(f(a) + k) &= g(f(a)) + T(k) + o(k) \\
+\end{align*} 
+$$
+
+Then
+
+$$ 
+\begin{align*}
+g(f(a+h))
+&= g(f(a) + S(h) + o(h)) \\
+&= g(f(a)) + T(S(h) + o(h)) + o(S(h) + o(h)) \\
+&= g(f(a)) + T(S(h)) + T(o(h)) + o(O(h) + o(h)) \\
+&= g(f(a)) + T(S(h)) + O(o(h)) + o(O(h)) \\
+&= g(f(a)) + T(S(h)) + o(h) + o(h) \\
+&= g(f(a)) + T(S(h)) + o(h) \\
+\end{align*} 
+$$
+
+$\square$
+
+### Lemma 4.4.4 (Derivatives of the product and reciprocal functions).
+
+Define the product function,
+
+$$ 
+p : \mathbb{R}^2 \longrightarrow \mathbb{R}, \qquad p(x,y) = xy,
+$$
+
+and define the reciprocal function
+
+$$ 
+r : \mathbb{R} - \{0\} \longrightarrow \mathbb{R}, \qquad r(x) = 1/x,
+$$
+
+Then
+
+(1) The derivative of $p$ at every point $(a,b) ∈ R^2$ exists and is
+
+$$ 
+Dp_{(a,b)}(h, k) = ak + bh
+$$
+
+**Proof**:
+
+$$ 
+\begin{align*}
+(x+h)(y+k) - xy - (ak + bh)
+&= hk \\
+\end{align*}
+$$
+
+Since $|h| \leq |(h,k)|, |k| \leq |(h,k)|$, so
+$|h||k| \leq |(h,k)|^2 = o(h,k)$.
+
+$\square$
+
+(2) The derivative of $r$ at every nonzero real number a exists and is
+
+$$ 
+Dr_a(h) = -h / a^2
+$$
+
+**Proof**:
+
+$$ 
+\begin{align*}
+r(a+h) - r(a) - Dr_a(h)
+&= 1/(a+h) - 1/a + h / a^2 \\
+&= -h/(a+h)a + h / a^2 \\
+&= h ( \frac{1}{a^2} - \frac{1}{a(a+h)}) \\
+&= \frac{h}{a} \frac{h}{a(a+h)} \\
+&= \frac{h^2}{a^2(a+h)} \\
+\end{align*} 
+$$
+
+Since when $|h| < |a/2|$, $|a+h| \geq ||a| - |h|| > |a| - |a/2| = |a/2|$.
+
+$$ 
+\left| \frac{h^2}{a^2(a+h)} \right| 
+\leq
+\left| \frac{2h^2}{a^3} \right| 
+$$
+
+So it's $o(h)$.
+
+$\square$
+
 ### Proposition 4.4.5 (Multivariable product and quotient rules).
 
 Let $f : A → R$ (where $A ⊂ \mathbb{R}^n$) and
@@ -557,3 +694,64 @@ g(a) Dl_a - l(a) Dg_a
 $$
 
 This results are confirmed by the textbook.
+
+Now we can follow the approach in the text book.
+
+$$ 
+f = \frac{
+X^2 - Y
+}{
+Y + 1
+}
+$$
+
+$$ 
+\begin{align*}
+&Df_a(h, k) \\
+\\
+&\text{Use 4.4.5 (2) quotient rule} \\
+&= \frac{
+(Y+1)(a)D(X^2-Y)_a - (X^2-Y)(a) D(Y+1)_a
+}{(Y+1)^2(a)}(h, k)\\
+\\
+&\text{Use } (Y+1)(a) = y+1 \\
+&= \frac{
+(y+1)D(X^2-Y)_a - (X^2-Y)(a) D(Y+1)_a
+}{(y+1)^2}(h, k)\\
+\\
+&\text{Use } (X^2-Y)(a) = x^2-y \\
+&= \frac{
+(y+1)D(X^2-Y)_a - (x^2-y) D(Y+1)_a
+}{(y+1)^2}(h, k)\\
+\\
+&\text{Use 4.4.2 (Linearity of the derivative)} \\
+&= \frac{
+(y+1)(D(X^2)_a-DY_a) - (x^2-y) (DY_a+D1_a)
+}{(y+1)^2}(h, k)\\
+\\
+&\text{Use 4.4.1 Derivatives of constant and linear mappings} \\
+&= \frac{
+(y+1)(D(X^2)_a-Y) - (x^2-y) Y
+}{(y+1)^2}(h, k)\\
+\\
+&\text{Use 4.4.5 (a) product rule} \\
+&= \frac{
+(y+1)(2X(a)DX_a-Y) - (x^2-y) Y
+}{(y+1)^2}(h, k)\\
+\\
+&\text{Use 4.4.1 Derivatives of constant and linear mappings} \\
+&= \frac{
+(y+1)(2xX-Y) - (x^2-y) Y
+}{(y+1)^2}(h, k)\\
+\\
+&= \frac{
+2x(y+1)X - (x^2+1) Y
+}{(y+1)^2}(h, k)\\
+\\
+&= \frac{
+2x
+}{(y+1)}h - \frac{x^2+1}{(y+1)^2}k\\
+\end{align*}
+$$
+
+$\square$
