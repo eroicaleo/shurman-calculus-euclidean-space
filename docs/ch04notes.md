@@ -369,6 +369,87 @@ $\square$
 
 ## 4.4 Basic Results and the Chain Rule
 
+### Proposition 4.4.1 (Derivatives of constant and linear mappings).
+
+(1) Let $C : A → R^m$ (where $A ⊂ R^n$) be the constant mapping
+$C(x) = c$ for
+all $x ∈ A$, where $c$ is some fixed value in $R^m$.
+Then the derivative of $C$ at
+every interior point $a$ of $A$ is the zero mapping.
+
+**Proof**:
+
+$$ 
+\begin{align*}
+&C(a+h) - C(a) - 0(h) \\
+&= c - c - 0 \\
+&= 0 \\
+&= o(h)
+\end{align*} 
+$$
+
+$\square$
+
+(2) The derivative of a linear mapping $T : R^n → R^m$ at every point $a ∈ R^n$
+is again $T$.
+
+**Proof**:
+
+$$ 
+\begin{align*}
+& T(a+h) - T(a) - T(h) \\
+&= T(a) + T(h) - T(a) - T(h) \\
+&= 0 \\
+&= o(h) \\
+\end{align*} 
+$$
+
+$\square$
+
+### Proposition 4.4.2 (Linearity of the derivative).
+
+Let $f : A → R^m$
+(where $A ⊂ R^n$) and $g : B → R^m$ (where $B ⊂ R^n$) be mappings,
+and let a be
+a point of $A∩B$. Suppose that $f$ and $g$ are diﬀerentiable at a with 
+derivatives $Df_a$ and $Dg_a$. Then:
+
+(1) The sum $f + g : A ∩ B → R^m$ is diﬀerentiable at $a$ with derivative
+$D(f +g)_a = Df_a +Dg_a$.
+
+**Proof**:
+
+$$
+\begin{align*}
+&(f+g)(a+h) - (f+g)(a) - (Df_a +Dg_a)(h) \\
+&=
+(f(a+h) - f(a) - Df_a(h)) +
+(g(a+h) - g(a) - Dg_a(h)) \\
+&= o(h) + o(h) \\
+&= o(h)
+\end{align*} 
+$$
+
+$\square$
+
+(2) For every $\alpha ∈ R$, the scalar multiple $\alpha f : A → Rm$ is 
+diﬀerentiable 
+at $a$ with derivative $D(\alpha f)_a = \alpha Df_a$.
+
+**Proof**:
+
+$$ 
+\begin{align*}
+&(\alpha f)(a+h) - (\alpha f)(a) - (\alpha Df_a)(h) \\
+&= \alpha (f)(a+h) - \alpha (f)(a) - \alpha (Df_a)(h) \\
+&= \alpha (f(a+h) - f(a) - (Df_a)(h)) \\
+&= \alpha o(h) \\
+&= o(h)
+\end{align*}
+$$
+
+$\square$
+
 ### Theorem 4.4.3 (Chain rule).
 
 Let $f : A \rightarrow R^m$ (where $A ⊂ R^n$) be a

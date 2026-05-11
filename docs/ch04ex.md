@@ -187,6 +187,22 @@ $\square$
 
 ## 4.4 Basic Results and the Chain Rule
 
+### 4.4.1.
+
+Prove part (2) of Proposition 4.4.1.
+
+**Proof**: See ch04 notes.
+
+$\square$
+
+### 4.4.2.
+
+Prove part (2) of Proposition 4.4.2.
+
+**Proof**: See ch04 notes.
+
+$\square$
+
 ### 4.4.3.
 
 Prove part (2) of Lemma 4.4.4.
@@ -290,3 +306,64 @@ $$
 
 $\square$
 
+### 4.4.5.
+
+Let $f(x,y,z) = xyz$. Find $Df_{(a,b,c)}$ for arbitrary $(a,b,c) ∈ R^3$.
+(Hint: $f$ is the product $XYZ$,
+where $X$ is the linear function $X(x,y,z) = x$ and
+similarly for $Y$ and $Z$.)
+
+**Solution**:
+
+$$ 
+\begin{align*}
+f(x,y,z) &= XYZ \\
+Df_{(a,b,c)} &=
+D(XYZ)_{(a,b,c)} \\
+&= X(a,b,c)D(YZ)_{(a,b,c)} + (YZ)(a,b,c) DX_{(a,b,c)} \\
+&= a (Y(a,b,c) DZ_{(a,b,c)} + Z(a,b,c) DY_{(a,b,c)}) + bcX(a,b,c) \\
+&= abZ + acY + bcX \\
+\end{align*} 
+$$
+
+$\square$
+
+### 4.4.6.
+
+Define $f(x,y) = xy^2/(y − 1)$ on $\{(x,y) \in R^2 : y \neq 1\}$.
+Find $Df_{(a,b)}$ where $(a,b)$ is a point in the domain of $f$.
+
+**Solution**:
+
+Define $X(x, y) = x, Y(x,y) = y$, then we have:
+
+$$ 
+\begin{align*}
+&Df_{a,b}(h,k) \\
+&=
+\frac{
+(Y-1)(a,b) D(XY^2)_{(a,b)} - (XY^2)(a,b)D(Y-1)_{(a,b)}
+}{
+(Y-1)^2(a,b)
+}(h,k) \\
+&=
+\frac{
+(b-1)(X(a,b)D(Y^2)_{(a,b)}+Y^2(a,b)DX_{(a,b)}) - ab^2 Y
+}{
+(b-1)^2
+}(h,k) \\
+&=
+\frac{
+(b-1)(2abY + b^2X) - ab^2 Y
+}{
+(b-1)^2
+}(h,k) \\ 
+&=
+\left( 
+\frac{b^2}{b-1}X +
+\frac{ab^2-2ab}{(b-1)^2}Y
+\right) (h,k)
+\end{align*} 
+$$
+
+$\square$
