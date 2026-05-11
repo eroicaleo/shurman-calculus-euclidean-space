@@ -96,9 +96,17 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#44-basic-results-and-the-chain-rule">4.4 Basic Results and the Chain Rule</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#441">4.4.1.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#442">4.4.2.</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#443">4.4.3.</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#444">4.4.4</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#445">4.4.5.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#446">4.4.6.</a>
     </li>
         </ul>
     </li>
@@ -299,6 +307,18 @@ Similarly, we must have <script type="math/tex">\beta = 0</script>.</p>
 <script type="math/tex">\square</script>
 </p>
 <h2 id="44-basic-results-and-the-chain-rule">4.4 Basic Results and the Chain Rule</h2>
+<h3 id="441">4.4.1.</h3>
+<p>Prove part (2) of Proposition 4.4.1.</p>
+<p><strong>Proof</strong>: See ch04 notes.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="442">4.4.2.</h3>
+<p>Prove part (2) of Proposition 4.4.2.</p>
+<p><strong>Proof</strong>: See ch04 notes.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
 <h3 id="443">4.4.3.</h3>
 <p>Prove part (2) of Lemma 4.4.4.</p>
 <p>Define the reciprocal function</p>
@@ -394,6 +414,65 @@ g(a)Df_a−f(a)Dg_a
 }{
 g(a)^2
 }
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="445">4.4.5.</h3>
+<p>Let <script type="math/tex">f(x,y,z) = xyz</script>. Find <script type="math/tex">Df_{(a,b,c)}</script> for arbitrary <script type="math/tex">(a,b,c) ∈ R^3</script>.
+(Hint: <script type="math/tex">f</script> is the product <script type="math/tex">XYZ</script>,
+where <script type="math/tex">X</script> is the linear function <script type="math/tex">X(x,y,z) = x</script> and
+similarly for <script type="math/tex">Y</script> and <script type="math/tex">Z</script>.)</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+f(x,y,z) &= XYZ \\
+Df_{(a,b,c)} &=
+D(XYZ)_{(a,b,c)} \\
+&= X(a,b,c)D(YZ)_{(a,b,c)} + (YZ)(a,b,c) DX_{(a,b,c)} \\
+&= a (Y(a,b,c) DZ_{(a,b,c)} + Z(a,b,c) DY_{(a,b,c)}) + bcX(a,b,c) \\
+&= abZ + acY + bcX \\
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="446">4.4.6.</h3>
+<p>Define <script type="math/tex">f(x,y) = xy^2/(y − 1)</script> on <script type="math/tex">\{(x,y) \in R^2 : y \neq 1\}</script>.
+Find <script type="math/tex">Df_{(a,b)}</script> where <script type="math/tex">(a,b)</script> is a point in the domain of <script type="math/tex">f</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>Define <script type="math/tex">X(x, y) = x, Y(x,y) = y</script>, then we have:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+&Df_{a,b}(h,k) \\
+&=
+\frac{
+(Y-1)(a,b) D(XY^2)_{(a,b)} - (XY^2)(a,b)D(Y-1)_{(a,b)}
+}{
+(Y-1)^2(a,b)
+}(h,k) \\
+&=
+\frac{
+(b-1)(X(a,b)D(Y^2)_{(a,b)}+Y^2(a,b)DX_{(a,b)}) - ab^2 Y
+}{
+(b-1)^2
+}(h,k) \\
+&=
+\frac{
+(b-1)(2abY + b^2X) - ab^2 Y
+}{
+(b-1)^2
+}(h,k) \\ 
+&=
+\left( 
+\frac{b^2}{b-1}X +
+\frac{ab^2-2ab}{(b-1)^2}Y
+\right) (h,k)
+\end{align*} 
 </script>
 </p>
 <p>

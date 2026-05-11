@@ -100,6 +100,10 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#44-basic-results-and-the-chain-rule">4.4 Basic Results and the Chain Rule</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#proposition-441-derivatives-of-constant-and-linear-mappings">Proposition 4.4.1 (Derivatives of constant and linear mappings).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#proposition-442-linearity-of-the-derivative">Proposition 4.4.2 (Linearity of the derivative).</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#theorem-443-chain-rule">Theorem 4.4.3 (Chain rule).</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#lemma-444-derivatives-of-the-product-and-reciprocal-functions">Lemma 4.4.4 (Derivatives of the product and reciprocal functions).</a>
@@ -462,6 +466,84 @@ f(a+h)−f(a) \\
 <script type="math/tex">\square</script>
 </p>
 <h2 id="44-basic-results-and-the-chain-rule">4.4 Basic Results and the Chain Rule</h2>
+<h3 id="proposition-441-derivatives-of-constant-and-linear-mappings">Proposition 4.4.1 (Derivatives of constant and linear mappings).</h3>
+<p>(1) Let <script type="math/tex">C : A → R^m</script> (where <script type="math/tex">A ⊂ R^n</script>) be the constant mapping
+<script type="math/tex">C(x) = c</script> for
+all <script type="math/tex">x ∈ A</script>, where <script type="math/tex">c</script> is some fixed value in <script type="math/tex">R^m</script>.
+Then the derivative of <script type="math/tex">C</script> at
+every interior point <script type="math/tex">a</script> of <script type="math/tex">A</script> is the zero mapping.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+&C(a+h) - C(a) - 0(h) \\
+&= c - c - 0 \\
+&= 0 \\
+&= o(h)
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(2) The derivative of a linear mapping <script type="math/tex">T : R^n → R^m</script> at every point <script type="math/tex">a ∈ R^n</script>
+is again <script type="math/tex">T</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+& T(a+h) - T(a) - T(h) \\
+&= T(a) + T(h) - T(a) - T(h) \\
+&= 0 \\
+&= o(h) \\
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="proposition-442-linearity-of-the-derivative">Proposition 4.4.2 (Linearity of the derivative).</h3>
+<p>Let <script type="math/tex">f : A → R^m</script>
+(where <script type="math/tex">A ⊂ R^n</script>) and <script type="math/tex">g : B → R^m</script> (where <script type="math/tex">B ⊂ R^n</script>) be mappings,
+and let a be
+a point of <script type="math/tex">A∩B</script>. Suppose that <script type="math/tex">f</script> and <script type="math/tex">g</script> are diﬀerentiable at a with 
+derivatives <script type="math/tex">Df_a</script> and <script type="math/tex">Dg_a</script>. Then:</p>
+<p>(1) The sum <script type="math/tex">f + g : A ∩ B → R^m</script> is diﬀerentiable at <script type="math/tex">a</script> with derivative
+<script type="math/tex">D(f +g)_a = Df_a +Dg_a</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+&(f+g)(a+h) - (f+g)(a) - (Df_a +Dg_a)(h) \\
+&=
+(f(a+h) - f(a) - Df_a(h)) +
+(g(a+h) - g(a) - Dg_a(h)) \\
+&= o(h) + o(h) \\
+&= o(h)
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(2) For every <script type="math/tex">\alpha ∈ R</script>, the scalar multiple <script type="math/tex">\alpha f : A → Rm</script> is 
+diﬀerentiable 
+at <script type="math/tex">a</script> with derivative <script type="math/tex">D(\alpha f)_a = \alpha Df_a</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+&(\alpha f)(a+h) - (\alpha f)(a) - (\alpha Df_a)(h) \\
+&= \alpha (f)(a+h) - \alpha (f)(a) - \alpha (Df_a)(h) \\
+&= \alpha (f(a+h) - f(a) - (Df_a)(h)) \\
+&= \alpha o(h) \\
+&= o(h)
+\end{align*}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
 <h3 id="theorem-443-chain-rule">Theorem 4.4.3 (Chain rule).</h3>
 <p>Let <script type="math/tex">f : A \rightarrow R^m</script> (where <script type="math/tex">A ⊂ R^n</script>) be a
 mapping, let <script type="math/tex">B ⊂ R^m</script> be a set containing <script type="math/tex">f(A)</script>, and
