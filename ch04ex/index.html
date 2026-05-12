@@ -108,6 +108,10 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#446">4.4.6.</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#447">4.4.7</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#448-a-bigger-generalization-of-the-product-rule">4.4.8. (A bigger generalization of the product rule.)</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -432,7 +436,7 @@ f(x,y,z) &= XYZ \\
 Df_{(a,b,c)} &=
 D(XYZ)_{(a,b,c)} \\
 &= X(a,b,c)D(YZ)_{(a,b,c)} + (YZ)(a,b,c) DX_{(a,b,c)} \\
-&= a (Y(a,b,c) DZ_{(a,b,c)} + Z(a,b,c) DY_{(a,b,c)}) + bcX(a,b,c) \\
+&= a (Y(a,b,c) DZ_{(a,b,c)} + Z(a,b,c) DY_{(a,b,c)}) + bcX \\
 &= abZ + acY + bcX \\
 \end{align*} 
 </script>
@@ -472,6 +476,215 @@ Find <script type="math/tex">Df_{(a,b)}</script> where <script type="math/tex">(
 \frac{b^2}{b-1}X +
 \frac{ab^2-2ab}{(b-1)^2}Y
 \right) (h,k)
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="447">4.4.7</h3>
+<p>(A generalization of the product rule.) Recall that a function</p>
+<p>
+<script type="math/tex; mode=display"> 
+f : \mathbb{R}^n \times \mathbb{R}^n \longrightarrow \mathbb{R}
+</script>
+</p>
+<p>is called bilinear if for all <script type="math/tex">x,x',y,y' ∈ \mathbb{R}^n</script> and all
+<script type="math/tex">\alpha \in \mathbb{R}</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+f(x+x',y) &= f(x,y)+f(x',y), \\
+f(x,y +y') &= f(x,y)+f(x,y'), \\
+f(αx,y) &= αf(x,y) = f(x,αy). \\
+\end{align*}
+</script>
+</p>
+<p>(a) Show that if <script type="math/tex">f</script> is bilinear then <script type="math/tex">f(h,k)</script> is <script type="math/tex">o(h,k)</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+h &= h_1 e_1 + \cdots + h_n e_n \\
+k &= k_1 e_1 + \cdots + k_n e_n \\
+\end{align*} 
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+f(h,k) &= \sum_{i = 1}^{n} \sum_{j = 1}^{n} h_i k_j f(e_i, e_j)
+\end{align*}
+</script>
+</p>
+<p>We can find a <script type="math/tex">M</script> such that <script type="math/tex">|f(e_i, e_j)| \leq M</script> for all <script type="math/tex">i, j</script>.
+We also know <script type="math/tex">|h_i| \leq |h| \leq |(h,k)|, |k_j| \leq |k| \leq |(h,k)|</script> for all <script type="math/tex">i, j</script>.</p>
+<p>So we have</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+|f(h,k)| &= 
+\left| 
+\sum_{i = 1}^{n} \sum_{j = 1}^{n} h_i k_j f(e_i, e_j)
+\right| \\
+& \leq
+\sum_{i = 1}^{n} \sum_{j = 1}^{n} |h_i k_j f(e_i, e_j)| \\
+& \leq
+|h||k| n^2 M \\
+& \leq n^2 M |(h,k)|^2 \\
+&= o(h, k)
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show that if <script type="math/tex">f</script> is bilinear then <script type="math/tex">f</script> is diﬀerentiable with
+<script type="math/tex">Df_{(a,b)}(h,k) = f(a,k)+f(h,b)</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>First of all, we need to show <script type="math/tex">Df_{(a,b)}(h,k)</script> is a linear function
+of <script type="math/tex">(h,k)</script>.</p>
+<p>Given <script type="math/tex">(h_1,k_1)</script> and <script type="math/tex">(h_2,k_2)</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+& Df_{(a,b)}((h_1,k_1) + (h_2,k_2)) \\
+&= Df_{(a,b)}(h_1+h_2,k_1+k_2) \\
+&= f(a, k_1+k_2) + f(h_1+h_2, b) \\
+&= (f(a,k_1)+f(h_1,b)) + (f(a,k_2)+f(h_2,b)) \\
+&= Df_{(a,b)}(h_1,k_1) + Df_{(a,b)}(h_2,k_2) \\
+\end{align*} 
+</script>
+</p>
+<p>Similarly given <script type="math/tex">\alpha \in \mathbb{R}</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+& Df_{(a,b)}(\alpha(h,k)) \\
+&= Df_{(a,b)}(\alpha h, \alpha k) \\
+&= f(a, \alpha k) + f(\alpha h, b) \\
+&= \alpha (f(a,k)+f(h,b)) \\
+&= \alpha Df_{(a,b)}(h,k)
+\end{align*} 
+</script>
+</p>
+<p>Then finally, we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+&f(a+h, b+k) - f(a, b) - (f(a,k)+f(h,b)) \\
+&=(f(a,b) + f(h, b) + f(a, k) + f(h, k)) - f(a, b) - (f(a,k)+f(h,b)) \\
+&= f(h,k) \\
+&= o(h, k)
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">f</script> is diﬀerentiable with <script type="math/tex">Df_{(a,b)}(h,k) = f(a,k)+f(h,b)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) What does this exercise say about the inner product?</p>
+<p><strong>Solution</strong>:</p>
+<p>Since inner product is a bilinear function, then it's diﬀerentiable
+at any point of <script type="math/tex">(a,b)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>A little comments for part (a):</p>
+<p>It took me a long way to reach to the solution above. Initially,
+I was thinking to use the following way.</p>
+<p>Assume <script type="math/tex">h = |h| r_0, k = |k| r_1</script>, where <script type="math/tex">r_0, r_1 \in \mathbb{R}^n</script> and
+<script type="math/tex">|r_0| = |r_1| = 1</script>. Then I want to show <script type="math/tex">f(h,k) = |h||k|f(r_0, r_1)</script>,
+as long as I can bound <script type="math/tex">|f(r_0, r_1)|</script>, then it's done.</p>
+<p>So my next thought is to prove <script type="math/tex">f</script> is continuous. </p>
+<p>Given <script type="math/tex">(x_0, y_0)</script> and <script type="math/tex">(x_1, y_1)</script>, I want to use triangle inequality.
+Ideally, I would like to have the following, but it's not correct.</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\left| 
+f(x_1, y_1) - f(x_0, y_0)
+\right|
+&=
+\left| 
+f(x_0, y_1 - y_0) +
+f(x_1 - x_0, y_0)
+\right| \\
+\end{align*} 
+</script>
+</p>
+<p>So I stuck here. I guess I was kinda inspired by how to prove a linear
+map <script type="math/tex">T</script> is continuous which I learned from Gemini.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="448-a-bigger-generalization-of-the-product-rule">4.4.8. (A bigger generalization of the product rule.)</h3>
+<p>A function</p>
+<p>
+<script type="math/tex; mode=display"> 
+f : \mathbb{R}^n \times \cdots \times \mathbb{R}^n \longrightarrow \mathbb{R}
+</script>
+</p>
+<p>(there are <script type="math/tex">k</script> copies of <script type="math/tex">\mathbb{R}^n</script>) is called multilinear if for each
+<script type="math/tex">j ∈ {1,...,k}</script>, for all <script type="math/tex">x_1,...,x_j,x_j',...,x_k ∈ \mathbb{R}^n</script> and all
+<script type="math/tex">\alpha ∈ \mathbb{R}</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+f(x_1,...,x_j +x_j',...,x_k) &=
+f(x_1,...,x_j,...,x_k)+f(x_1,...,x_j',...,x_k) \\
+f(x_1,...,αx_j,...,x_k) &= αf(x_1,...,x_j,...,x_k)
+\end{align*} 
+</script>
+</p>
+<p>(a) Show that if <script type="math/tex">f</script> is multilinear and
+<script type="math/tex">a_1,...,a_k,h_1,...,h_k ∈ \mathbb{R}^n</script> then
+for <script type="math/tex">i,j ∈ \{1,...,k\}</script> (distinct),
+<script type="math/tex">f(a_1,...,h_i,...,h_j,...,a_k)</script> is <script type="math/tex">o(h_1,...,h_k)</script>.
+(Use the previous problem.)</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">g(h_i, h_j) = f(a_1,...,h_i,...,h_j,...,a_k)</script> then
+<script type="math/tex">g(h_i, h_j)</script> is a bilinear function.</p>
+<p>Since <script type="math/tex">g(h_i, h_j)</script> is <script type="math/tex">o(h_i, h_j)</script> from the exercise 4.4.7
+and since <script type="math/tex">|(h_i, h_j)| \leq |(h_1,...,h_k)|</script>, then we can conclude
+<script type="math/tex">g(h_i, h_j)</script> is <script type="math/tex">o(h_1,...,h_k)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show that if <script type="math/tex">f</script> is multilinear then <script type="math/tex">f</script> is diﬀerentiable with</p>
+<p>
+<script type="math/tex; mode=display"> 
+Df_{(a_1 ,...,a_k)}(h_1,...,h_k) =
+\sum_{j = 1}^{k}
+f(a_1,...,a_{j−1},h_j,a_{j+1},...,a_k).
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>The linearity of <script type="math/tex">Df_{(a_1 ,...,a_k)}</script> is similarly to exercise 4.4.7 (b).
+So we skip here.</p>
+<p>Note that</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+& f(a_1+h_1, \cdots, a_k+h_k) \\
+&= f(a_1, \cdots, a_k) \\
+&+
+\sum_{j = 1}^{k} f(a_1,...,a_{j−1},h_j,a_{j+1},...,a_k) \\
+&+ \text{ items with at least 2 } h_i, h_j 
+\end{align*} 
+</script>
+</p>
+<p>From part (a), items with at least 2 <script type="math/tex">h_i, h_j</script> are
+<script type="math/tex">o(h_1,...,h_k)</script>, so</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+&f(a_1+h_1, \cdots, a_k+h_k) - f(a_1, \cdots, a_k) - Df_{(a_1 ,...,a_k)}(h_1,...,h_k) \\
+&= \text{ items with at least 2 } h_i, h_j \\
+&= o(h_1,...,h_k)
 \end{align*} 
 </script>
 </p>
