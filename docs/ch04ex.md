@@ -321,7 +321,7 @@ f(x,y,z) &= XYZ \\
 Df_{(a,b,c)} &=
 D(XYZ)_{(a,b,c)} \\
 &= X(a,b,c)D(YZ)_{(a,b,c)} + (YZ)(a,b,c) DX_{(a,b,c)} \\
-&= a (Y(a,b,c) DZ_{(a,b,c)} + Z(a,b,c) DY_{(a,b,c)}) + bcX(a,b,c) \\
+&= a (Y(a,b,c) DZ_{(a,b,c)} + Z(a,b,c) DY_{(a,b,c)}) + bcX \\
 &= abZ + acY + bcX \\
 \end{align*} 
 $$
@@ -363,6 +363,231 @@ $$
 \frac{b^2}{b-1}X +
 \frac{ab^2-2ab}{(b-1)^2}Y
 \right) (h,k)
+\end{align*} 
+$$
+
+$\square$
+
+### 4.4.7
+
+(A generalization of the product rule.) Recall that a function
+
+$$ 
+f : \mathbb{R}^n \times \mathbb{R}^n \longrightarrow \mathbb{R}
+$$
+
+is called bilinear if for all $x,x',y,y' ∈ \mathbb{R}^n$ and all
+$\alpha \in \mathbb{R}$,
+
+$$ 
+\begin{align*}
+f(x+x',y) &= f(x,y)+f(x',y), \\
+f(x,y +y') &= f(x,y)+f(x,y'), \\
+f(αx,y) &= αf(x,y) = f(x,αy). \\
+\end{align*}
+$$
+
+(a) Show that if $f$ is bilinear then $f(h,k)$ is $o(h,k)$.
+
+**Proof**:
+
+Let
+
+$$ 
+\begin{align*}
+h &= h_1 e_1 + \cdots + h_n e_n \\
+k &= k_1 e_1 + \cdots + k_n e_n \\
+\end{align*} 
+$$
+
+Then
+
+$$ 
+\begin{align*}
+f(h,k) &= \sum_{i = 1}^{n} \sum_{j = 1}^{n} h_i k_j f(e_i, e_j)
+\end{align*}
+$$
+
+We can find a $M$ such that $|f(e_i, e_j)| \leq M$ for all $i, j$.
+We also know $|h_i| \leq |h| \leq |(h,k)|, |k_j| \leq |k| \leq |(h,k)|$ for all $i, j$.
+
+So we have
+
+$$
+\begin{align*}
+|f(h,k)| &= 
+\left| 
+\sum_{i = 1}^{n} \sum_{j = 1}^{n} h_i k_j f(e_i, e_j)
+\right| \\
+& \leq
+\sum_{i = 1}^{n} \sum_{j = 1}^{n} |h_i k_j f(e_i, e_j)| \\
+& \leq
+|h||k| n^2 M \\
+& \leq n^2 M |(h,k)|^2 \\
+&= o(h, k)
+\end{align*} 
+$$
+
+$\square$
+
+(b) Show that if $f$ is bilinear then $f$ is diﬀerentiable with
+$Df_{(a,b)}(h,k) = f(a,k)+f(h,b)$.
+
+**Proof**:
+
+First of all, we need to show $Df_{(a,b)}(h,k)$ is a linear function
+of $(h,k)$.
+
+Given $(h_1,k_1)$ and $(h_2,k_2)$
+
+$$ 
+\begin{align*}
+& Df_{(a,b)}((h_1,k_1) + (h_2,k_2)) \\
+&= Df_{(a,b)}(h_1+h_2,k_1+k_2) \\
+&= f(a, k_1+k_2) + f(h_1+h_2, b) \\
+&= (f(a,k_1)+f(h_1,b)) + (f(a,k_2)+f(h_2,b)) \\
+&= Df_{(a,b)}(h_1,k_1) + Df_{(a,b)}(h_2,k_2) \\
+\end{align*} 
+$$
+
+Similarly given $\alpha \in \mathbb{R}$,
+
+$$ 
+\begin{align*}
+& Df_{(a,b)}(\alpha(h,k)) \\
+&= Df_{(a,b)}(\alpha h, \alpha k) \\
+&= f(a, \alpha k) + f(\alpha h, b) \\
+&= \alpha (f(a,k)+f(h,b)) \\
+&= \alpha Df_{(a,b)}(h,k)
+\end{align*} 
+$$
+
+Then finally, we have
+
+$$ 
+\begin{align*}
+&f(a+h, b+k) - f(a, b) - (f(a,k)+f(h,b)) \\
+&=(f(a,b) + f(h, b) + f(a, k) + f(h, k)) - f(a, b) - (f(a,k)+f(h,b)) \\
+&= f(h,k) \\
+&= o(h, k)
+\end{align*} 
+$$
+
+So $f$ is diﬀerentiable with $Df_{(a,b)}(h,k) = f(a,k)+f(h,b)$.
+
+$\square$
+
+(c) What does this exercise say about the inner product?
+
+**Solution**:
+
+Since inner product is a bilinear function, then it's diﬀerentiable
+at any point of $(a,b)$.
+
+$\square$
+
+A little comments for part (a):
+
+It took me a long way to reach to the solution above. Initially,
+I was thinking to use the following way.
+
+Assume $h = |h| r_0, k = |k| r_1$, where $r_0, r_1 \in \mathbb{R}^n$ and
+$|r_0| = |r_1| = 1$. Then I want to show $f(h,k) = |h||k|f(r_0, r_1)$,
+as long as I can bound $|f(r_0, r_1)|$, then it's done.
+
+So my next thought is to prove $f$ is continuous. 
+
+Given $(x_0, y_0)$ and $(x_1, y_1)$, I want to use triangle inequality.
+Ideally, I would like to have the following, but it's not correct.
+
+$$
+\begin{align*}
+\left| 
+f(x_1, y_1) - f(x_0, y_0)
+\right|
+&=
+\left| 
+f(x_0, y_1 - y_0) +
+f(x_1 - x_0, y_0)
+\right| \\
+\end{align*} 
+$$
+
+So I stuck here. I guess I was kinda inspired by how to prove a linear
+map $T$ is continuous which I learned from Gemini.
+
+$\square$
+
+### 4.4.8. (A bigger generalization of the product rule.)
+
+A function
+
+$$ 
+f : \mathbb{R}^n \times \cdots \times \mathbb{R}^n \longrightarrow \mathbb{R}
+$$
+
+(there are $k$ copies of $\mathbb{R}^n$) is called multilinear if for each
+$j ∈ {1,...,k}$, for all $x_1,...,x_j,x_j',...,x_k ∈ \mathbb{R}^n$ and all
+$\alpha ∈ \mathbb{R}$,
+
+$$ 
+\begin{align*}
+f(x_1,...,x_j +x_j',...,x_k) &=
+f(x_1,...,x_j,...,x_k)+f(x_1,...,x_j',...,x_k) \\
+f(x_1,...,αx_j,...,x_k) &= αf(x_1,...,x_j,...,x_k)
+\end{align*} 
+$$
+
+(a) Show that if $f$ is multilinear and
+$a_1,...,a_k,h_1,...,h_k ∈ \mathbb{R}^n$ then
+for $i,j ∈ \{1,...,k\}$ (distinct),
+$f(a_1,...,h_i,...,h_j,...,a_k)$ is $o(h_1,...,h_k)$.
+(Use the previous problem.)
+
+**Proof**:
+
+Let $g(h_i, h_j) = f(a_1,...,h_i,...,h_j,...,a_k)$ then
+$g(h_i, h_j)$ is a bilinear function.
+
+Since $g(h_i, h_j)$ is $o(h_i, h_j)$ from the exercise 4.4.7
+and since $|(h_i, h_j)| \leq |(h_1,...,h_k)|$, then we can conclude
+$g(h_i, h_j)$ is $o(h_1,...,h_k)$.
+
+$\square$
+
+(b) Show that if $f$ is multilinear then $f$ is diﬀerentiable with
+
+$$ 
+Df_{(a_1 ,...,a_k)}(h_1,...,h_k) =
+\sum_{j = 1}^{k}
+f(a_1,...,a_{j−1},h_j,a_{j+1},...,a_k).
+$$
+
+**Proof**:
+
+The linearity of $Df_{(a_1 ,...,a_k)}$ is similarly to exercise 4.4.7 (b).
+So we skip here.
+
+Note that
+
+$$
+\begin{align*}
+& f(a_1+h_1, \cdots, a_k+h_k) \\
+&= f(a_1, \cdots, a_k) \\
+&+
+\sum_{j = 1}^{k} f(a_1,...,a_{j−1},h_j,a_{j+1},...,a_k) \\
+&+ \text{ items with at least 2 } h_i, h_j 
+\end{align*} 
+$$
+
+From part (a), items with at least 2 $h_i, h_j$ are
+$o(h_1,...,h_k)$, so
+
+$$
+\begin{align*}
+&f(a_1+h_1, \cdots, a_k+h_k) - f(a_1, \cdots, a_k) - Df_{(a_1 ,...,a_k)}(h_1,...,h_k) \\
+&= \text{ items with at least 2 } h_i, h_j \\
+&= o(h_1,...,h_k)
 \end{align*} 
 $$
 
