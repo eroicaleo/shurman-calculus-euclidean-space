@@ -568,7 +568,94 @@ $$
 The linearity of $Df_{(a_1 ,...,a_k)}$ is similarly to exercise 4.4.7 (b).
 So we skip here.
 
-Note that
+We would like to first prove: given a multilinear function
+$f(h_1, h_2, a_3, \cdots, a_k)$ and any $c > 0$, for any $|a_i| \leq M$, we can 
+find $h > 0$ such that if $|(h_1, h_2)| < h$,
+
+$$ 
+|f(h_1, h_2, a_3, \cdots, a_k)| < c|(h_1, h_2)|
+$$
+
+We use induction on $k$. When $k = 3$, assume
+
+$$ 
+a_3 = x_1 e_1 + \cdots + x_n e_n
+$$
+
+Then
+
+$$
+\begin{align*}
+& |f(h_1, h_2, a_3)| \\
+&=
+\left| \sum_{i = 1}^{n} x_i f(h_1, h_2, e_i)  \right| \\
+&\leq \sum_{i = 1}^{n} \left| x_i f(h_1, h_2, e_i) \right| \\
+&= \sum_{i = 1}^{n} |x_i| |f(h_1, h_2, e_i)| \\
+& \leq M \sum_{i = 1}^{n} |f(h_1, h_2, e_i)|
+\end{align*} 
+$$
+
+For each $i$ we can find $k_i$ such that if $|(h_1, h_2)| < k_i$,
+then $|f(h_1, h_2, e_i)| < c/(nM) \cdot |(h_1, h_2)|$. Let $h = \min k_i$, then
+if $|(h_1, h_2)| < h$,
+
+$$ 
+M \sum_{i = 1}^{n} |f(h_1, h_2, e_i)| <
+M \cdot n \cdot c/(nM) \cdot |(h_1, h_2)|
+= c|(h_1, h_2)|
+$$
+
+Then assume the statement is true for $3 \leq k \leq m$.
+
+We will prove when $k = m+1$, assume
+
+$$ 
+a_{m+1} = x_1 e_1 + \cdots + x_n e_n
+$$
+
+then
+
+$$
+\begin{align*}
+&|f(h_1, h_2, a_3, \cdots, a_m, a_{m+1})| \\
+& \leq \sum_{i = 1}^{n} \left| x_i f(h_1, h_2, a_3, \cdots, a_m, e_i) \right| \\
+& = \sum_{i = 1}^{n} \left| x_i | | f(h_1, h_2, a_3, \cdots, a_m, e_i) \right| \\
+& \leq M \sum_{i = 1}^{n} | f(h_1, h_2, a_3, \cdots, a_m, e_i) | \\
+\end{align*} 
+$$
+
+Let $g_i(h_1, h_2, a_3, \cdots, a_m) = 
+f(h_1, h_2, a_3, \cdots, a_m, e_i)$ and $g_i$ is a multilinear function with only $k = m$ parameters.
+
+Now we can apply the induction, for each $g_i$, we can find $k_i$ such that
+if $|(h_1, h_2)| < k_i$,
+then $|g_i(h_1, h_2, a_3, \cdots, a_m)| < c/(nM) \cdot |(h_1, h_2)|$. Let $h = \min k_i$, then
+if $|(h_1, h_2)| < h$,
+
+$$ 
+M \sum_{i = 1}^{n} |g_i(h_1, h_2, a_3, \cdots, a_m)| <
+M \cdot n \cdot c/(nM) \cdot |(h_1, h_2)|
+= c|(h_1, h_2)|
+$$
+
+So in summary, we proved given a multilinear function
+$f(h_1, h_2, a_3, \cdots, a_k)$ and any $c > 0$, we can 
+find $h > 0$, as long as $|a_i| \leq M$, and $|(h_1, h_2)| < h$,
+
+$$ 
+|f(h_1, h_2, a_3, \cdots, a_k)| < c|(h_1, h_2)|
+$$
+
+The above statement can be generalized to given a multilinear function
+$f(a_1, a_2, a_3, \cdots, a_k)$ and any $c > 0$, we can 
+find $h > 0$, as long as $|a_i| \leq M$, and $|(h_i, h_j)| < h$, we have
+
+$$ 
+|f(a_1,...,h_i,...,h_j,...,a_k)| < c |(h_i, h_j)|
+\leq c |(h_1, \cdots, h_k)|
+$$
+
+Then note that
 
 $$
 \begin{align*}
@@ -580,7 +667,9 @@ $$
 \end{align*} 
 $$
 
-From part (a), items with at least 2 $h_i, h_j$ are
+From the previous induction and the generalization, as long as
+$|h_i| \leq M, |a_j| \leq M$, then
+items with at least 2 $h_i, h_j$ are
 $o(h_1,...,h_k)$, so
 
 $$
@@ -590,5 +679,42 @@ $$
 &= o(h_1,...,h_k)
 \end{align*} 
 $$
+
+$\square$
+
+Another much cleaner approach suggested by Gemini is to prove this first
+
+$$ 
+|f(a_1, \cdots, a_k)| \leq C |a_1| \cdots| a_k|
+$$
+
+Assume 
+
+$$ 
+a_i = x_{i1} e_1 + \cdots + x_{in} e_n
+$$
+
+Then
+
+$$ 
+\begin{align*}
+&|f(a_1, \cdots, a_k)| \\
+& \leq
+\sum \limits_{j_1 = 1}^{n} \cdots
+\sum \limits_{j_k = 1}^{n} |x_{j_1,1}|\cdots|x_{j_k,k}||f(e_1, \cdots, e_k)| \\
+& \leq |a_1| \cdots| a_k|
+\sum \limits_{j_1 = 1}^{n} \cdots
+\sum \limits_{j_k = 1}^{n} |f(e_1, \cdots, e_k)|
+\end{align*} 
+$$
+
+$\square$
+
+(c) When $k = n$, what does this exercise say about the determinant?
+
+**Proof**:
+
+It means the determinant is differentiable at any point
+$(a_1, \cdots, a_n)$.
 
 $\square$
