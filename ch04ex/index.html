@@ -665,7 +665,92 @@ f(a_1,...,a_{j−1},h_j,a_{j+1},...,a_k).
 <p><strong>Proof</strong>:</p>
 <p>The linearity of <script type="math/tex">Df_{(a_1 ,...,a_k)}</script> is similarly to exercise 4.4.7 (b).
 So we skip here.</p>
-<p>Note that</p>
+<p>We would like to first prove: given a multilinear function
+<script type="math/tex">f(h_1, h_2, a_3, \cdots, a_k)</script> and any <script type="math/tex">c > 0</script>, for any <script type="math/tex">|a_i| \leq M</script>, we can 
+find <script type="math/tex">h > 0</script> such that if <script type="math/tex">|(h_1, h_2)| < h</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+|f(h_1, h_2, a_3, \cdots, a_k)| < c|(h_1, h_2)|
+</script>
+</p>
+<p>We use induction on <script type="math/tex">k</script>. When <script type="math/tex">k = 3</script>, assume</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_3 = x_1 e_1 + \cdots + x_n e_n
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+& |f(h_1, h_2, a_3)| \\
+&=
+\left| \sum_{i = 1}^{n} x_i f(h_1, h_2, e_i)  \right| \\
+&\leq \sum_{i = 1}^{n} \left| x_i f(h_1, h_2, e_i) \right| \\
+&= \sum_{i = 1}^{n} |x_i| |f(h_1, h_2, e_i)| \\
+& \leq M \sum_{i = 1}^{n} |f(h_1, h_2, e_i)|
+\end{align*} 
+</script>
+</p>
+<p>For each <script type="math/tex">i</script> we can find <script type="math/tex">k_i</script> such that if <script type="math/tex">|(h_1, h_2)| < k_i</script>,
+then <script type="math/tex">|f(h_1, h_2, e_i)| < c/(nM) \cdot |(h_1, h_2)|</script>. Let <script type="math/tex">h = \min k_i</script>, then
+if <script type="math/tex">|(h_1, h_2)| < h</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+M \sum_{i = 1}^{n} |f(h_1, h_2, e_i)| <
+M \cdot n \cdot c/(nM) \cdot |(h_1, h_2)|
+= c|(h_1, h_2)|
+</script>
+</p>
+<p>Then assume the statement is true for <script type="math/tex">3 \leq k \leq m</script>.</p>
+<p>We will prove when <script type="math/tex">k = m+1</script>, assume</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_{m+1} = x_1 e_1 + \cdots + x_n e_n
+</script>
+</p>
+<p>then</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+&|f(h_1, h_2, a_3, \cdots, a_m, a_{m+1})| \\
+& \leq \sum_{i = 1}^{n} \left| x_i f(h_1, h_2, a_3, \cdots, a_m, e_i) \right| \\
+& = \sum_{i = 1}^{n} \left| x_i | | f(h_1, h_2, a_3, \cdots, a_m, e_i) \right| \\
+& \leq M \sum_{i = 1}^{n} | f(h_1, h_2, a_3, \cdots, a_m, e_i) | \\
+\end{align*} 
+</script>
+</p>
+<p>Let <script type="math/tex">g_i(h_1, h_2, a_3, \cdots, a_m) = 
+f(h_1, h_2, a_3, \cdots, a_m, e_i)</script> and <script type="math/tex">g_i</script> is a multilinear function with only <script type="math/tex">k = m</script> parameters.</p>
+<p>Now we can apply the induction, for each <script type="math/tex">g_i</script>, we can find <script type="math/tex">k_i</script> such that
+if <script type="math/tex">|(h_1, h_2)| < k_i</script>,
+then <script type="math/tex">|g_i(h_1, h_2, a_3, \cdots, a_m)| < c/(nM) \cdot |(h_1, h_2)|</script>. Let <script type="math/tex">h = \min k_i</script>, then
+if <script type="math/tex">|(h_1, h_2)| < h</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+M \sum_{i = 1}^{n} |g_i(h_1, h_2, a_3, \cdots, a_m)| <
+M \cdot n \cdot c/(nM) \cdot |(h_1, h_2)|
+= c|(h_1, h_2)|
+</script>
+</p>
+<p>So in summary, we proved given a multilinear function
+<script type="math/tex">f(h_1, h_2, a_3, \cdots, a_k)</script> and any <script type="math/tex">c > 0</script>, we can 
+find <script type="math/tex">h > 0</script>, as long as <script type="math/tex">|a_i| \leq M</script>, and <script type="math/tex">|(h_1, h_2)| < h</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+|f(h_1, h_2, a_3, \cdots, a_k)| < c|(h_1, h_2)|
+</script>
+</p>
+<p>The above statement can be generalized to given a multilinear function
+<script type="math/tex">f(a_1, a_2, a_3, \cdots, a_k)</script> and any <script type="math/tex">c > 0</script>, we can 
+find <script type="math/tex">h > 0</script>, as long as <script type="math/tex">|a_i| \leq M</script>, and <script type="math/tex">|(h_i, h_j)| < h</script>, we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+|f(a_1,...,h_i,...,h_j,...,a_k)| < c |(h_i, h_j)|
+\leq c |(h_1, \cdots, h_k)|
+</script>
+</p>
+<p>Then note that</p>
 <p>
 <script type="math/tex; mode=display">
 \begin{align*}
@@ -677,7 +762,9 @@ So we skip here.</p>
 \end{align*} 
 </script>
 </p>
-<p>From part (a), items with at least 2 <script type="math/tex">h_i, h_j</script> are
+<p>From the previous induction and the generalization, as long as
+<script type="math/tex">|h_i| \leq M, |a_j| \leq M</script>, then
+items with at least 2 <script type="math/tex">h_i, h_j</script> are
 <script type="math/tex">o(h_1,...,h_k)</script>, so</p>
 <p>
 <script type="math/tex; mode=display">
@@ -688,6 +775,42 @@ So we skip here.</p>
 \end{align*} 
 </script>
 </p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>Another much cleaner approach suggested by Gemini is to prove this first</p>
+<p>
+<script type="math/tex; mode=display"> 
+|f(a_1, \cdots, a_k)| \leq C |a_1| \cdots| a_k|
+</script>
+</p>
+<p>Assume </p>
+<p>
+<script type="math/tex; mode=display"> 
+a_i = x_{i1} e_1 + \cdots + x_{in} e_n
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+&|f(a_1, \cdots, a_k)| \\
+& \leq
+\sum \limits_{j_1 = 1}^{n} \cdots
+\sum \limits_{j_k = 1}^{n} |x_{j_1,1}|\cdots|x_{j_k,k}||f(e_1, \cdots, e_k)| \\
+& \leq |a_1| \cdots| a_k|
+\sum \limits_{j_1 = 1}^{n} \cdots
+\sum \limits_{j_k = 1}^{n} |f(e_1, \cdots, e_k)|
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) When <script type="math/tex">k = n</script>, what does this exercise say about the determinant?</p>
+<p><strong>Proof</strong>:</p>
+<p>It means the determinant is differentiable at any point
+<script type="math/tex">(a_1, \cdots, a_n)</script>.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
