@@ -114,6 +114,18 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#45-calculating-the-derivative">4.5 Calculating the Derivative</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-451-partial-derivative">Definition 4.5.1 (Partial derivative).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-452-the-derivative-in-coordinates-necessity">Theorem 4.5.2 (The derivative in coordinates: necessity).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example">Example</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-453-the-derivative-in-coordinates-sufficiency">Theorem 4.5.3 (The derivative in coordinates: suﬃciency).</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -526,7 +538,7 @@ derivatives <script type="math/tex">Df_a</script> and <script type="math/tex">Dg
 <p>
 <script type="math/tex">\square</script>
 </p>
-<p>(2) For every <script type="math/tex">\alpha ∈ R</script>, the scalar multiple <script type="math/tex">\alpha f : A → Rm</script> is 
+<p>(2) For every <script type="math/tex">\alpha ∈ R</script>, the scalar multiple <script type="math/tex">\alpha f : A → R^m</script> is 
 diﬀerentiable 
 at <script type="math/tex">a</script> with derivative <script type="math/tex">D(\alpha f)_a = \alpha Df_a</script>.</p>
 <p><strong>Proof</strong>:</p>
@@ -921,6 +933,158 @@ Y + 1
 2x
 }{(y+1)}h - \frac{x^2+1}{(y+1)^2}k\\
 \end{align*}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="45-calculating-the-derivative">4.5 Calculating the Derivative</h2>
+<h3 id="definition-451-partial-derivative">Definition 4.5.1 (Partial derivative).</h3>
+<p>Let <script type="math/tex">A</script> be a subset of <script type="math/tex">\mathbb{R}^n</script>, let
+<script type="math/tex">f : A → R</script> be a function, and let <script type="math/tex">a = (a_1,...,a_n)</script> be an interior point of <script type="math/tex">A</script>. Fix
+<script type="math/tex">j ∈ \{1,...,n\}</script>. Define</p>
+<p>
+<script type="math/tex; mode=display"> 
+\varphi(t) = f(a_1,...,a_{j−1},t,a_{j+1},...,a_n) \quad \text{for } t \text{ near} a_j
+</script>
+</p>
+<p>Then the <script type="math/tex">j</script>th partial derivative of <script type="math/tex">f</script> at <script type="math/tex">a</script> is defined as</p>
+<p>
+<script type="math/tex; mode=display"> 
+D_j f(a) = \varphi'(a_j)
+</script>
+</p>
+<p>if <script type="math/tex">\varphi'(a_j)</script> exists. Here the prime signifies ordinary one-variable diﬀerentiation.</p>
+<p>Equivalently,</p>
+<p>
+<script type="math/tex; mode=display"> 
+D_j f(a) = \lim \limits_{t \to 0} \frac{
+f(a+t e_j) - f(a)
+}{t}
+</script>
+</p>
+<p>if the limit exists and it is not being taken at an endpoint of the domain of
+the diﬀerence quotient.</p>
+<h3 id="theorem-452-the-derivative-in-coordinates-necessity">Theorem 4.5.2 (The derivative in coordinates: necessity).</h3>
+<p>Let the
+mapping <script type="math/tex">f : A \longrightarrow \mathbb{R}^m</script> (where <script type="math/tex">A ⊂ \mathbb{R}^n</script>) be 
+diﬀerentiable at the point <script type="math/tex">a ∈ A</script>.
+Then for each <script type="math/tex">i ∈ \{1,...,m\}</script> and <script type="math/tex">j ∈ \{1,...,n\}</script>,
+the partial derivative <script type="math/tex">D_{j}f_{i}(a)</script> exists.
+Furthermore, each <script type="math/tex">D_{j}f_{i}(a)</script> is the <script type="math/tex">(i,j)</script>th entry of the Jacobian matrix
+of <script type="math/tex">f</script> at <script type="math/tex">a</script>. Thus the Jacobian matrix is</p>
+<p>
+<script type="math/tex; mode=display">
+f'(a) =
+\begin{bmatrix}
+D_1f_1(a) & \cdots & D_{n}f_1(a) \newline
+D_1f_2(a) & \cdots & D_{n}f_2(a) \newline
+\cdots   & \ddots & \cdots   \newline
+D_1f_{m}(a) & \cdots & D_{n}f_{m}(a) \newline
+\end{bmatrix}
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>The derivative of the component function <script type="math/tex">f_i</script> at a is described by the <script type="math/tex">i</script>th
+row of <script type="math/tex">f'(a)</script>.</p>
+<p>Call the row entries <script type="math/tex">d_{i1},d_{i2},...,d_{in}</script>. Since linear of is matrix
+times, it follows that</p>
+<p>
+<script type="math/tex; mode=display"> 
+Df_{i}(a)(t e_j) = d_{ij}t \quad \text{ for all } t \in \mathbb{R} 
+</script>
+</p>
+<p>Let <script type="math/tex">h= te_j</script> with <script type="math/tex">t</script> a variable real number, so that <script type="math/tex">h → 0_n</script> as <script type="math/tex">t → 0</script>,</p>
+<p>Note that <script type="math/tex">f_i(a+h)−f_i(a)−Df_i(a)(h) = o(h)</script> so we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+0 &= \lim \limits_{t \to 0}
+\frac{
+|f_i(a+t e_j)−f_i(a)−Df_i(a)(t e_j)|  
+}{| t e_j|} \\
+&= \lim \limits_{t \to 0}
+\frac{
+|f_i(a+t e_j)−f_i(a)− d_{ij}t|  
+}{| t |} \\
+&= \lim \limits_{t \to 0} \left| 
+\frac{
+    f_i(a+t e_j)−f_i(a)
+}{t} -d_{ij}
+ \right| 
+\end{align*} 
+</script>
+</p>
+<p>So we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim \limits_{t \to 0} 
+\frac{
+f_i(a+t e_j)−f_i(a)
+}{t} = d_{ij}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="example">Example</h3>
+<p>
+<script type="math/tex; mode=display"> 
+f : \mathbb{R}^2 \longrightarrow \mathbb{R}^2,
+\quad
+f(x,y) =
+\begin{cases}
+    \frac{2xy}{x^2+y^2} &\text{if } (x,y) \neq (0,0)\\
+    0 &\text{if } (x,y) = (0,0)\\
+\end{cases} 
+</script>
+</p>
+<p>It's easy to see <script type="math/tex">D_{1}f_{}(0,0) = D_{2}f_{}(0,0) = 0</script>, but <script type="math/tex">f</script> is
+not continuous at <script type="math/tex">(0,0)</script> much less diﬀerentiable there. (If we approach <script type="math/tex">(0,0)</script>
+from <script type="math/tex">x = y</script>.)</p>
+<h3 id="theorem-453-the-derivative-in-coordinates-sufficiency">Theorem 4.5.3 (The derivative in coordinates: suﬃciency).</h3>
+<p>Let <script type="math/tex">f : A \longrightarrow \mathbb{R}^m</script> (where <script type="math/tex">A ⊂ \mathbb{R}^n</script>)
+be a mapping, and let <script type="math/tex">a</script> be an interior point of <script type="math/tex">A</script>.
+Suppose that for each <script type="math/tex">i ∈ \{1,...,m\}</script> and <script type="math/tex">j ∈ \{1,...,n\}</script>,
+the partial derivative
+<script type="math/tex">D_{j}f_{i}</script> exists not only at <script type="math/tex">a</script> but at all points in some <script type="math/tex">ε</script>-ball about <script type="math/tex">a</script>,
+and the partial derivative <script type="math/tex">D_{j}f_{i}</script> is continuous at <script type="math/tex">a</script>.
+Then <script type="math/tex">f</script> is diﬀerentiable at <script type="math/tex">a</script>.</p>
+<p>The necessary conditions in Theorem 4.5.2 are:</p>
+<blockquote>
+<p>If a graph has a well-fitting plane at some point, then at that point
+we see well-fitting lines in the cross sections parallel to the coordinate
+axes.</p>
+</blockquote>
+<p>The suﬃcient conditions in Theorem 4.5.3 are:</p>
+<blockquote>
+<p>If a graph has well-fitting lines in the cross sections at and near the
+point, and if those lines don’t change much as we move among cross
+sections at and near the point, then the graph has a well-fitting plane.</p>
+</blockquote>
+<p><strong>Proof</strong>:</p>
+<p>It's enough to prove <script type="math/tex">m = 1</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+f(a+h) - f(a) =
+&f(a_1 +h_1,a_2 +h_2,a_3 +h_3)−f(a_1,a_2 +h_2,a_3 +h_3) \\
+&+ f(a_1,a_2 +h_2,a_3 +h_3)−f(a_1,a_2,a_3 +h_3) \\
+&+ f(a_1,a_2,a_3 +h_3)−f(a_1,a_2,a_3) \\
+& \text{ apply the mean value theorem
+in two directions } \\
+& \text{ and the one-variable derivative’s characterizing property in
+the third} \\
+& \Rightarrow \\
+= &D_1f(a_1 +c_1,a_2 +h_2,a_3 +h_3)h_1 \\
+&+ D_2f(a_1, a_2 + c_2, a_3+ h_3)h_2 \\
+&+ D_3f(a_1, a_2, a_3)h_3 + o(h_3) \\
+& \text{ Since partial derivatives are continuous at the point } \\
+= &(D_1f(a) + o(1)) h_1 \\
+&+ (D_2f(a) + o(1)) h_2 \\
+&+ (D_3f(a) + o(1)) h_3 + o(h) \\
+= &D_1f(a) h_1 + D_2f(a) h_2 + D_3f(a) h_3 + o(h)
+\end{align*} 
 </script>
 </p>
 <p>
