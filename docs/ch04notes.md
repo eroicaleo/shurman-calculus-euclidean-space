@@ -432,7 +432,7 @@ $$
 
 $\square$
 
-(2) For every $\alpha ∈ R$, the scalar multiple $\alpha f : A → Rm$ is 
+(2) For every $\alpha ∈ R$, the scalar multiple $\alpha f : A → R^m$ is 
 diﬀerentiable 
 at $a$ with derivative $D(\alpha f)_a = \alpha Df_a$.
 
@@ -833,6 +833,168 @@ $$
 2x
 }{(y+1)}h - \frac{x^2+1}{(y+1)^2}k\\
 \end{align*}
+$$
+
+$\square$
+
+## 4.5 Calculating the Derivative
+
+### Definition 4.5.1 (Partial derivative).
+
+Let $A$ be a subset of $\mathbb{R}^n$, let
+$f : A → R$ be a function, and let $a = (a_1,...,a_n)$ be an interior point of $A$. Fix
+$j ∈ \{1,...,n\}$. Define
+
+$$ 
+\varphi(t) = f(a_1,...,a_{j−1},t,a_{j+1},...,a_n) \quad \text{for } t \text{ near} a_j
+$$
+
+Then the $j$th partial derivative of $f$ at $a$ is defined as
+
+$$ 
+D_j f(a) = \varphi'(a_j)
+$$
+
+if $\varphi'(a_j)$ exists. Here the prime signifies ordinary one-variable diﬀerentiation.
+
+Equivalently,
+
+$$ 
+D_j f(a) = \lim \limits_{t \to 0} \frac{
+f(a+t e_j) - f(a)
+}{t}
+$$
+
+if the limit exists and it is not being taken at an endpoint of the domain of
+the diﬀerence quotient.
+
+### Theorem 4.5.2 (The derivative in coordinates: necessity).
+
+Let the
+mapping $f : A \longrightarrow \mathbb{R}^m$ (where $A ⊂ \mathbb{R}^n$) be 
+diﬀerentiable at the point $a ∈ A$.
+Then for each $i ∈ \{1,...,m\}$ and $j ∈ \{1,...,n\}$,
+the partial derivative $D_{j}f_{i}(a)$ exists.
+Furthermore, each $D_{j}f_{i}(a)$ is the $(i,j)$th entry of the Jacobian matrix
+of $f$ at $a$. Thus the Jacobian matrix is
+
+$$
+f'(a) =
+\begin{bmatrix}
+D_1f_1(a) & \cdots & D_{n}f_1(a) \newline
+D_1f_2(a) & \cdots & D_{n}f_2(a) \newline
+\cdots   & \ddots & \cdots   \newline
+D_1f_{m}(a) & \cdots & D_{n}f_{m}(a) \newline
+\end{bmatrix}
+$$
+
+**Proof**:
+
+The derivative of the component function $f_i$ at a is described by the $i$th
+row of $f'(a)$.
+
+Call the row entries $d_{i1},d_{i2},...,d_{in}$. Since linear of is matrix
+times, it follows that
+
+$$ 
+Df_{i}(a)(t e_j) = d_{ij}t \quad \text{ for all } t \in \mathbb{R} 
+$$
+
+Let $h= te_j$ with $t$ a variable real number, so that $h → 0_n$ as $t → 0$,
+
+Note that $f_i(a+h)−f_i(a)−Df_i(a)(h) = o(h)$ so we have
+
+$$ 
+\begin{align*}
+0 &= \lim \limits_{t \to 0}
+\frac{
+|f_i(a+t e_j)−f_i(a)−Df_i(a)(t e_j)|  
+}{| t e_j|} \\
+&= \lim \limits_{t \to 0}
+\frac{
+|f_i(a+t e_j)−f_i(a)− d_{ij}t|  
+}{| t |} \\
+&= \lim \limits_{t \to 0} \left| 
+\frac{
+    f_i(a+t e_j)−f_i(a)
+}{t} -d_{ij}
+ \right| 
+\end{align*} 
+$$
+
+So we have
+
+$$ 
+\lim \limits_{t \to 0} 
+\frac{
+f_i(a+t e_j)−f_i(a)
+}{t} = d_{ij}
+$$
+
+$\square$
+
+### Example
+
+$$ 
+f : \mathbb{R}^2 \longrightarrow \mathbb{R}^2,
+\quad
+f(x,y) =
+\begin{cases}
+    \frac{2xy}{x^2+y^2} &\text{if } (x,y) \neq (0,0)\\
+    0 &\text{if } (x,y) = (0,0)\\
+\end{cases} 
+$$
+
+It's easy to see $D_{1}f_{}(0,0) = D_{2}f_{}(0,0) = 0$, but $f$ is
+not continuous at $(0,0)$ much less diﬀerentiable there. (If we approach $(0,0)$
+from $x = y$.)
+
+### Theorem 4.5.3 (The derivative in coordinates: suﬃciency).
+
+Let $f : A \longrightarrow \mathbb{R}^m$ (where $A ⊂ \mathbb{R}^n$)
+be a mapping, and let $a$ be an interior point of $A$.
+Suppose that for each $i ∈ \{1,...,m\}$ and $j ∈ \{1,...,n\}$,
+the partial derivative
+$D_{j}f_{i}$ exists not only at $a$ but at all points in some $ε$-ball about $a$,
+and the partial derivative $D_{j}f_{i}$ is continuous at $a$.
+Then $f$ is diﬀerentiable at $a$.
+
+The necessary conditions in Theorem 4.5.2 are:
+
+> If a graph has a well-fitting plane at some point, then at that point
+we see well-fitting lines in the cross sections parallel to the coordinate
+axes.
+
+The suﬃcient conditions in Theorem 4.5.3 are:
+
+> If a graph has well-fitting lines in the cross sections at and near the
+point, and if those lines don’t change much as we move among cross
+sections at and near the point, then the graph has a well-fitting plane.
+
+**Proof**:
+
+It's enough to prove $m = 1$.
+
+$$ 
+\begin{align*}
+f(a+h) - f(a) =
+&f(a_1 +h_1,a_2 +h_2,a_3 +h_3)−f(a_1,a_2 +h_2,a_3 +h_3) \\
+&+ f(a_1,a_2 +h_2,a_3 +h_3)−f(a_1,a_2,a_3 +h_3) \\
+&+ f(a_1,a_2,a_3 +h_3)−f(a_1,a_2,a_3) \\
+& \text{ apply the mean value theorem
+in two directions } \\
+& \text{ and the one-variable derivative’s characterizing property in
+the third} \\
+& \Rightarrow \\
+= &D_1f(a_1 +c_1,a_2 +h_2,a_3 +h_3)h_1 \\
+&+ D_2f(a_1, a_2 + c_2, a_3+ h_3)h_2 \\
+&+ D_3f(a_1, a_2, a_3)h_3 + o(h_3) \\
+& \text{ Since partial derivatives are continuous at the point } \\
+= &(D_1f(a) + o(1)) h_1 \\
+&+ (D_2f(a) + o(1)) h_2 \\
+&+ (D_3f(a) + o(1)) h_3 + o(h) \\
+= &D_1f(a) h_1 + D_2f(a) h_2 + D_3f(a) h_3 + o(h)
+\end{align*} 
 $$
 
 $\square$
