@@ -998,3 +998,129 @@ the third} \\
 $$
 
 $\square$
+
+---
+**Thus, to reiterate some earlier discussion and to amplify slightly:**
+
+> The diﬀerentiability of $f$ at a implies the existence of all the partial 
+derivatives at $a$, and the partial derivatives are the entries of the 
+derivative matrix
+
+> while the existence of all the partial derivatives at and about $a$,
+> and their continuity at $a$, combine to imply the
+> diﬀerentiability of $f$ at $a$
+
+> but the existence of all partial derivatives at a need not imply the
+> diﬀerentiability of $f$ at $a$.
+
+> And in fact, the previous proof shows that we need to check the scope and
+continuity only of all but one of the partial derivatives. The proof used
+the existence of D3f at a but not its existence near a or its continuity
+at a, and a variant argument or a reindexing shows that nothing is special
+about the last variable. This observation is a bit of a relief, telling us 
+that
+in the case of one input variable, our methods do not need to assume that
+the derivative exists at and about a point and is continuous at the point
+in order to confirm merely that it exists at the point. We codify this bullet
+as a variant suﬃciency theorem:
+
+---
+
+### Theorem 4.5.4 (The derivative in coordinates: suﬃciency).
+
+Let $f : A \longrightarrow \mathbb{R}^m$  (where $A ⊂ \mathbb{R}^n$) be a 
+mapping, and let $a$ be an interior point of $A$.
+Suppose that for each $i \in \{1,\cdots,m\}$,
+
+* for each $j \in \{1,\cdots,n\}$, the partial derivative $D_{j}f_{i}(a)$  
+  exists,
+* and for each but at most one $j \in \{1,\cdots,n\}$,
+  the partial derivative $D_{j}f_{i}$ exists in some $ε$-ball about $a$ and is continuous at $a$.
+
+Then $f$ is diﬀerentiable at $a$.
+
+> Note how all this compares to the discussion of the determinant in the
+previous chapter. There we wanted the determinant to satisfy characterizing
+properties. We found the only function that could possibly satisfy them, and
+then we verified that it did. Here we wanted the derivative to satisfy a char-
+acterizing property, and we found the only possibility for the derivative—the
+linear mapping whose matrix consists of the partial derivatives, which must
+exist if the derivative does.But analysis is more subtle than algebra: this 
+linear mapping need not satisfy the characterizing property of the derivative 
+unless we add further assumptions.
+
+### Example
+
+$$ 
+f(x,y) =
+\begin{cases}
+    \frac{x^2y}{x^2+y^2} &\text{if } (x,y) \neq (0,0)\\
+    0 &\text{if } (x,y) = (0,0)\\
+\end{cases} 
+$$
+
+Note
+
+$$ 
+D_{1}f_{}(0,0) = \lim \limits_{t \to 0} \frac{f(t,0)-f(0,0)}{t}
+= \lim \limits_{t \to 0} \frac{0-0}{t} = 0
+$$
+
+Similarly $D_{2}f_{}(0,0) = 0$. So the only possibly derivative for $f$
+at $(0,0)$ is $0$.
+
+$$ 
+\begin{align*}
+|f(h,k) - f(0,0)| &=
+|f(h,k)| \\
+&= \frac{|h|^2|k|}{|(h,k)|^2}
+\end{align*} 
+$$
+
+If we approach $(0,0)$ with $h = k$, then we have
+
+$$ 
+\frac{|h|^2|k|}{|(h,k)|^2} = \frac{|(h,h)|}{2 \sqrt[]{2}}
+$$
+
+### Theorem 4.5.5 (Chain rule in coordinates).
+
+Let $f : A \longrightarrow \mathbb{R}^m$ (where
+$A ⊂ R^n$) be diﬀerentiable at the point $a$ of $A$,
+and let $g : f(A) \longrightarrow \mathbb{R}^l$ be
+diﬀerentiable at the point $b= f(a)$. Then the composition
+$g ◦f : A \longrightarrow R^ℓ$ is
+diﬀerentiable at $a$, and its partial derivatives are
+
+$$ 
+D_{j}(g \circ f)_{i}(a) =
+\sum_{k = 1}^{n}
+D_{k}g_{i}(b) D_{j}f_{k}(a)
+\quad \text{for } i = 1,...,ℓ, j = 1,...,n.
+$$
+
+$\square$
+
+### example
+
+$z = f(x,t,u), x = g(t,u)$ compute $\frac{\partial z}{\partial t}$.
+
+$$
+\begin{align*}
+\frac{\partial z}{\partial t} &=
+D_{1}(f \circ g)_{1}(a) \\
+&= \sum_{k = 1}^{3}
+D_{k}f_{1}(b) D_{1}g_{k}(a) \\
+&= D_{1}f_{1}(b) D_{1}g_{1}(a) +
+D_{2}f_{1}(b) D_{1}g_{2}(a) +
+D_{3}f_{1}(b) D_{1}g_{3}(a)
+\\
+&= D_{1}f_{1}(b) D_{1}g_{1}(a) +
+D_{2}f_{1}(b) \cdot 1 +
+D_{3}f_{1}(b) \cdot 0 \\
+&= \frac{\partial z}{\partial x} \frac{\partial x}{\partial t} +
+\frac{\partial z}{\partial t}
+\end{align*} 
+$$
+
+$\square$
