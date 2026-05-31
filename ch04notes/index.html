@@ -124,6 +124,14 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#theorem-453-the-derivative-in-coordinates-sufficiency">Theorem 4.5.3 (The derivative in coordinates: suﬃciency).</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-454-the-derivative-in-coordinates-sufficiency">Theorem 4.5.4 (The derivative in coordinates: suﬃciency).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example_1">Example</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-455-chain-rule-in-coordinates">Theorem 4.5.5 (Chain rule in coordinates).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example_2">example</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -1084,6 +1092,130 @@ the third} \\
 &+ (D_2f(a) + o(1)) h_2 \\
 &+ (D_3f(a) + o(1)) h_3 + o(h) \\
 = &D_1f(a) h_1 + D_2f(a) h_2 + D_3f(a) h_3 + o(h)
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<hr />
+<p><strong>Thus, to reiterate some earlier discussion and to amplify slightly:</strong></p>
+<blockquote>
+<p>The diﬀerentiability of <script type="math/tex">f</script> at a implies the existence of all the partial 
+derivatives at <script type="math/tex">a</script>, and the partial derivatives are the entries of the 
+derivative matrix</p>
+<p>while the existence of all the partial derivatives at and about <script type="math/tex">a</script>,
+and their continuity at <script type="math/tex">a</script>, combine to imply the
+diﬀerentiability of <script type="math/tex">f</script> at <script type="math/tex">a</script>
+</p>
+<p>but the existence of all partial derivatives at a need not imply the
+diﬀerentiability of <script type="math/tex">f</script> at <script type="math/tex">a</script>.</p>
+<p>And in fact, the previous proof shows that we need to check the scope and
+continuity only of all but one of the partial derivatives. The proof used
+the existence of D3f at a but not its existence near a or its continuity
+at a, and a variant argument or a reindexing shows that nothing is special
+about the last variable. This observation is a bit of a relief, telling us 
+that
+in the case of one input variable, our methods do not need to assume that
+the derivative exists at and about a point and is continuous at the point
+in order to confirm merely that it exists at the point. We codify this bullet
+as a variant suﬃciency theorem:</p>
+</blockquote>
+<hr />
+<h3 id="theorem-454-the-derivative-in-coordinates-sufficiency">Theorem 4.5.4 (The derivative in coordinates: suﬃciency).</h3>
+<p>Let <script type="math/tex">f : A \longrightarrow \mathbb{R}^m</script>  (where <script type="math/tex">A ⊂ \mathbb{R}^n</script>) be a 
+mapping, and let <script type="math/tex">a</script> be an interior point of <script type="math/tex">A</script>.
+Suppose that for each <script type="math/tex">i \in \{1,\cdots,m\}</script>,</p>
+<ul>
+<li>for each <script type="math/tex">j \in \{1,\cdots,n\}</script>, the partial derivative <script type="math/tex">D_{j}f_{i}(a)</script>
+<br />
+  exists,</li>
+<li>and for each but at most one <script type="math/tex">j \in \{1,\cdots,n\}</script>,
+  the partial derivative <script type="math/tex">D_{j}f_{i}</script> exists in some <script type="math/tex">ε</script>-ball about <script type="math/tex">a</script> and is continuous at <script type="math/tex">a</script>.</li>
+</ul>
+<p>Then <script type="math/tex">f</script> is diﬀerentiable at <script type="math/tex">a</script>.</p>
+<blockquote>
+<p>Note how all this compares to the discussion of the determinant in the
+previous chapter. There we wanted the determinant to satisfy characterizing
+properties. We found the only function that could possibly satisfy them, and
+then we verified that it did. Here we wanted the derivative to satisfy a char-
+acterizing property, and we found the only possibility for the derivative—the
+linear mapping whose matrix consists of the partial derivatives, which must
+exist if the derivative does.But analysis is more subtle than algebra: this 
+linear mapping need not satisfy the characterizing property of the derivative 
+unless we add further assumptions.</p>
+</blockquote>
+<h3 id="example_1">Example</h3>
+<p>
+<script type="math/tex; mode=display"> 
+f(x,y) =
+\begin{cases}
+    \frac{x^2y}{x^2+y^2} &\text{if } (x,y) \neq (0,0)\\
+    0 &\text{if } (x,y) = (0,0)\\
+\end{cases} 
+</script>
+</p>
+<p>Note</p>
+<p>
+<script type="math/tex; mode=display"> 
+D_{1}f_{}(0,0) = \lim \limits_{t \to 0} \frac{f(t,0)-f(0,0)}{t}
+= \lim \limits_{t \to 0} \frac{0-0}{t} = 0
+</script>
+</p>
+<p>Similarly <script type="math/tex">D_{2}f_{}(0,0) = 0</script>. So the only possibly derivative for <script type="math/tex">f</script>
+at <script type="math/tex">(0,0)</script> is <script type="math/tex">0</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+|f(h,k) - f(0,0)| &=
+|f(h,k)| \\
+&= \frac{|h|^2|k|}{|(h,k)|^2}
+\end{align*} 
+</script>
+</p>
+<p>If we approach <script type="math/tex">(0,0)</script> with <script type="math/tex">h = k</script>, then we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{|h|^2|k|}{|(h,k)|^2} = \frac{|(h,h)|}{2 \sqrt[]{2}}
+</script>
+</p>
+<h3 id="theorem-455-chain-rule-in-coordinates">Theorem 4.5.5 (Chain rule in coordinates).</h3>
+<p>Let <script type="math/tex">f : A \longrightarrow \mathbb{R}^m</script> (where
+<script type="math/tex">A ⊂ R^n</script>) be diﬀerentiable at the point <script type="math/tex">a</script> of <script type="math/tex">A</script>,
+and let <script type="math/tex">g : f(A) \longrightarrow \mathbb{R}^l</script> be
+diﬀerentiable at the point <script type="math/tex">b= f(a)</script>. Then the composition
+<script type="math/tex">g ◦f : A \longrightarrow R^ℓ</script> is
+diﬀerentiable at <script type="math/tex">a</script>, and its partial derivatives are</p>
+<p>
+<script type="math/tex; mode=display"> 
+D_{j}(g \circ f)_{i}(a) =
+\sum_{k = 1}^{n}
+D_{k}g_{i}(b) D_{j}f_{k}(a)
+\quad \text{for } i = 1,...,ℓ, j = 1,...,n.
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="example_2">example</h3>
+<p>
+<script type="math/tex">z = f(x,t,u), x = g(t,u)</script> compute <script type="math/tex">\frac{\partial z}{\partial t}</script>.</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\frac{\partial z}{\partial t} &=
+D_{1}(f \circ g)_{1}(a) \\
+&= \sum_{k = 1}^{3}
+D_{k}f_{1}(b) D_{1}g_{k}(a) \\
+&= D_{1}f_{1}(b) D_{1}g_{1}(a) +
+D_{2}f_{1}(b) D_{1}g_{2}(a) +
+D_{3}f_{1}(b) D_{1}g_{3}(a)
+\\
+&= D_{1}f_{1}(b) D_{1}g_{1}(a) +
+D_{2}f_{1}(b) \cdot 1 +
+D_{3}f_{1}(b) \cdot 0 \\
+&= \frac{\partial z}{\partial x} \frac{\partial x}{\partial t} +
+\frac{\partial z}{\partial t}
 \end{align*} 
 </script>
 </p>
