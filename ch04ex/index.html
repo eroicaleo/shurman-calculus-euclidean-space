@@ -114,6 +114,16 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#45-calculating-the-derivative">4.5 Calculating the Derivative</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#451">4.5.1.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#452">4.5.2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#453">4.5.3</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -811,6 +821,151 @@ a_i = x_{i1} e_1 + \cdots + x_{in} e_n
 <p><strong>Proof</strong>:</p>
 <p>It means the determinant is differentiable at any point
 <script type="math/tex">(a_1, \cdots, a_n)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="45-calculating-the-derivative">4.5 Calculating the Derivative</h2>
+<h3 id="451">4.5.1.</h3>
+<p>Explain why in the discussion beginning this section the tangent
+plane <script type="math/tex">\mathcal{P}</script> consists of all points <script type="math/tex">(a,b,f(a,b)) + (h,k,T(h,k))</script>
+where <script type="math/tex">T(h,k) = ϕ'(a)h+ψ'(b)k</script>.</p>
+<h3 id="452">4.5.2</h3>
+<p>This exercise shows that all partial derivatives of a function can exist at
+and about a point without being continuous at the point. Define
+<script type="math/tex">f : \mathbb{R}^2 \longrightarrow \mathbb{R}</script> by</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x,y) =
+\begin{cases}
+    \frac{2xy}{x^2+y^2} &\text{if } (x,y) \neq (0,0)\\
+    0 &\text{if } (x,y) = (0,0)\\
+\end{cases} 
+</script>
+</p>
+<p>(a) Show that <script type="math/tex">D_1f(0,0) = D_2f(0,0) = 0</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+D_1f(0,0) &=
+\lim \limits_{t \to 0} \frac{
+f(t,0) - f(0,0)
+}{t} \\
+&= \lim \limits_{t \to 0}
+\frac{\frac{2t \cdot 0}{t^2 + 0^2}-0}{t} \\
+&= \lim \limits_{t \to 0}
+\frac{0-0}{t} \\
+&= 0
+\end{align*} 
+</script>
+</p>
+<p>Similarly <script type="math/tex">D_{2}f_{}(0,0) = 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show that <script type="math/tex">D_1f(a,b)</script> and <script type="math/tex">D_2f(a,b)</script> exist and are continuous at all other <script type="math/tex">(a,b) ∈ \mathbb{R}^2</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+D_1f(a,b)
+&= \frac{2b}{a^2+b^2} -\frac{(2ab)(2a)}{(a^2+b^2)^2} \\
+&=
+\frac{2a^2b + 2b^3 - 4a^2b}{(a^2+b^2)^2} \\
+&=
+\frac{2b^3 - 2a^2b}{(a^2+b^2)^2}
+\end{align*} 
+</script>
+</p>
+<p>Similarly,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+D_2f(a,b)
+&=
+\frac{2a^3 - 2b^2a}{(b^2+a^2)^2}
+\end{align*} 
+</script>
+</p>
+<p>It is a continuous function.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Show that <script type="math/tex">D_1f</script> and <script type="math/tex">D_2f</script> are discontinuous at <script type="math/tex">(0,0)</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>If we approach <script type="math/tex">(0,0)</script> with <script type="math/tex">a=b</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+D_1f(a,b)
+&=
+\frac{2b^3 - 2a^2b}{(a^2+b^2)^2} \\
+&=
+\frac{2a^3 - 2a^3}{(a^2+a^2)^2} \\
+&= 0
+\end{align*} 
+</script>
+</p>
+<p>If we approach <script type="math/tex">(0,0)</script> with <script type="math/tex">b=2a</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+D_1f(a,b)
+&=
+\frac{2b^3 - 2a^2b}{(a^2+b^2)^2} \\
+&=
+\frac{16a^3 - 4a^3}{(a^2+4a^2)^2} \\
+&=
+\frac{12}{25a} \\
+& \rightarrow \infty 
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">D_1f</script> is not continuous at <script type="math/tex">(0,0)</script>.
+Similarly, <script type="math/tex">D_2f</script> is not continuous at <script type="math/tex">(0,0)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="453">4.5.3</h3>
+<p>Define <script type="math/tex">f : \mathbb{R} \longrightarrow \mathbb{R}</script> by</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) =
+\begin{cases}
+    x^2 \sin \frac{1}{x} &\text{if } x \neq 0\\
+    0 &\text{if } x = 0\\
+\end{cases} 
+</script>
+</p>
+<p>Show that <script type="math/tex">f'(x)</script> exists for all <script type="math/tex">x</script> but that
+<script type="math/tex">f'</script> 
+is discontinuous at <script type="math/tex">0</script>. Explain how
+this disproves the converse of Theorem 4.5.3.</p>
+<p><strong>Proof</strong>:</p>
+<p>When <script type="math/tex">x \neq 0</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+f'(x) &= 2x \sin \frac{1}{x} - x^2 \cos \frac{1}{x} (\frac{1}{x^2}) \\
+&= 2x \sin \frac{1}{x} - \cos \frac{1}{x}
+\end{align*} 
+</script>
+</p>
+<p>When <script type="math/tex">x = 0</script>,</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+f'(0) &= \lim \limits_{x \to 0}
+\frac{x^2 \sin \frac{1}{x} - 0}{x} \\
+&= \lim \limits_{x \to 0}
+x \sin \frac{1}{x} \\
+&= 0
+\end{align*} 
+</script>
+</p>
+<p>Consider <script type="math/tex">a_n = \frac{1}{2 \pi n}, b_n = \frac{1}{(2n+1) \pi }</script>,
+then <script type="math/tex">f'(a_n) = -1, f'(b_n) = 1</script>.</p>
+<p>So <script type="math/tex">f'(x)</script> is not continuous at <script type="math/tex">0</script>.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
