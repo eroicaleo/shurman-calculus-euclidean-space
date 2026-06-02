@@ -718,3 +718,160 @@ It means the determinant is differentiable at any point
 $(a_1, \cdots, a_n)$.
 
 $\square$
+
+## 4.5 Calculating the Derivative
+
+### 4.5.1.
+
+Explain why in the discussion beginning this section the tangent
+plane $\mathcal{P}$ consists of all points $(a,b,f(a,b)) + (h,k,T(h,k))$
+where $T(h,k) = ϕ'(a)h+ψ'(b)k$.
+
+### 4.5.2
+
+This exercise shows that all partial derivatives of a function can exist at
+and about a point without being continuous at the point. Define
+$f : \mathbb{R}^2 \longrightarrow \mathbb{R}$ by
+
+$$ 
+f(x,y) =
+\begin{cases}
+    \frac{2xy}{x^2+y^2} &\text{if } (x,y) \neq (0,0)\\
+    0 &\text{if } (x,y) = (0,0)\\
+\end{cases} 
+$$
+
+(a) Show that $D_1f(0,0) = D_2f(0,0) = 0$.
+
+**Proof**:
+
+$$ 
+\begin{align*}
+D_1f(0,0) &=
+\lim \limits_{t \to 0} \frac{
+f(t,0) - f(0,0)
+}{t} \\
+&= \lim \limits_{t \to 0}
+\frac{\frac{2t \cdot 0}{t^2 + 0^2}-0}{t} \\
+&= \lim \limits_{t \to 0}
+\frac{0-0}{t} \\
+&= 0
+\end{align*} 
+$$
+
+Similarly $D_{2}f_{}(0,0) = 0$.
+
+$\square$
+
+(b) Show that $D_1f(a,b)$ and $D_2f(a,b)$ exist and are continuous at all other $(a,b) ∈ \mathbb{R}^2$.
+
+**Proof**:
+
+$$ 
+\begin{align*}
+D_1f(a,b)
+&= \frac{2b}{a^2+b^2} -\frac{(2ab)(2a)}{(a^2+b^2)^2} \\
+&=
+\frac{2a^2b + 2b^3 - 4a^2b}{(a^2+b^2)^2} \\
+&=
+\frac{2b^3 - 2a^2b}{(a^2+b^2)^2}
+\end{align*} 
+$$
+
+Similarly,
+
+$$ 
+\begin{align*}
+D_2f(a,b)
+&=
+\frac{2a^3 - 2b^2a}{(b^2+a^2)^2}
+\end{align*} 
+$$
+
+It is a continuous function.
+
+$\square$
+
+(c) Show that $D_1f$ and $D_2f$ are discontinuous at $(0,0)$.
+
+**Proof**:
+
+If we approach $(0,0)$ with $a=b$, then
+
+$$ 
+\begin{align*}
+D_1f(a,b)
+&=
+\frac{2b^3 - 2a^2b}{(a^2+b^2)^2} \\
+&=
+\frac{2a^3 - 2a^3}{(a^2+a^2)^2} \\
+&= 0
+\end{align*} 
+$$
+
+If we approach $(0,0)$ with $b=2a$, then
+
+$$ 
+\begin{align*}
+D_1f(a,b)
+&=
+\frac{2b^3 - 2a^2b}{(a^2+b^2)^2} \\
+&=
+\frac{16a^3 - 4a^3}{(a^2+4a^2)^2} \\
+&=
+\frac{12}{25a} \\
+& \rightarrow \infty 
+\end{align*} 
+$$
+
+So $D_1f$ is not continuous at $(0,0)$.
+Similarly, $D_2f$ is not continuous at $(0,0)$.
+
+$\square$
+
+### 4.5.3
+
+Define $f : \mathbb{R} \longrightarrow \mathbb{R}$ by
+
+$$ 
+f(x) =
+\begin{cases}
+    x^2 \sin \frac{1}{x} &\text{if } x \neq 0\\
+    0 &\text{if } x = 0\\
+\end{cases} 
+$$
+
+Show that $f'(x)$ exists for all $x$ but that
+$f'$ 
+is discontinuous at $0$. Explain how
+this disproves the converse of Theorem 4.5.3.
+
+**Proof**:
+
+When $x \neq 0$,
+
+$$ 
+\begin{align*}
+f'(x) &= 2x \sin \frac{1}{x} - x^2 \cos \frac{1}{x} (\frac{1}{x^2}) \\
+&= 2x \sin \frac{1}{x} - \cos \frac{1}{x}
+\end{align*} 
+$$
+
+When $x = 0$,
+
+$$
+\begin{align*}
+f'(0) &= \lim \limits_{x \to 0}
+\frac{x^2 \sin \frac{1}{x} - 0}{x} \\
+&= \lim \limits_{x \to 0}
+x \sin \frac{1}{x} \\
+&= 0
+\end{align*} 
+$$
+
+Consider $a_n = \frac{1}{2 \pi n}, b_n = \frac{1}{(2n+1) \pi }$,
+then $f'(a_n) = -1, f'(b_n) = 1$.
+
+So $f'(x)$ is not continuous at $0$.
+
+$\square$
