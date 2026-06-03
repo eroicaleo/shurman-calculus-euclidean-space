@@ -122,6 +122,16 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#453">4.5.3</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#454">4.5.4.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#455">4.5.5.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#456">4.5.6.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#457">4.5.7.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#458">4.5.8.</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -966,6 +976,333 @@ x \sin \frac{1}{x} \\
 <p>Consider <script type="math/tex">a_n = \frac{1}{2 \pi n}, b_n = \frac{1}{(2n+1) \pi }</script>,
 then <script type="math/tex">f'(a_n) = -1, f'(b_n) = 1</script>.</p>
 <p>So <script type="math/tex">f'(x)</script> is not continuous at <script type="math/tex">0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="454">4.5.4.</h3>
+<p>Discuss the derivatives of the following mappings at the following
+points.</p>
+<p>(a)
+<script type="math/tex">f(x,y) = \frac{x^2 - y}{y+1}</script> 
+on
+<script type="math/tex">\{(x,y) \in R^2 : y  \neq −1\}</script> at generic <script type="math/tex">(a,b)</script> with <script type="math/tex">b \neq −1</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+D_{1}f_{}(a,b)
+&= \frac{2a}{b+1}
+\end{align*}
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+D_{2}f_{}(a, b)
+&= \frac{-1}{b+1} - \frac{a^2-b}{(b+1)^2} \\
+&= -\frac{a^2+1}{(b+1)^2}
+\end{align*} 
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+Df(a,b) =
+\left[ \frac{2a}{b+1}, -\frac{1+a^2}{(b+1)^2} \right] 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) <script type="math/tex">f(x,y) = \frac{xy^2}{y-1}</script>
+on <script type="math/tex">\{(x,y) ∈ \mathbb{R}^2 : y \neq 1\}</script> at generic <script type="math/tex">(a,b)</script> with <script type="math/tex">b \neq 1</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+D_{1}f_{}(a,b)
+&= \frac{b^2}{b-1}
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+D_{2}f_{}(a,b)
+&= \frac{2ab}{b-1} - \frac{ab^2}{(b-1)^2} \\
+&= \frac{ab^2-2ab}{(b-1)^2}
+\end{align*}
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+Df(a,b) =
+\left[
+\frac{b^2}{b-1}, \frac{ab^2-2ab}{(b-1)^2}
+\right]
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c)</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x,y)=
+\begin{cases}
+    \frac{xy}{\sqrt[]{x^2+y^2}} &\text{if } (x,y) \neq (0,0)\\
+    0 &\text{if } (x,y) = (0,0)\\
+\end{cases} 
+</script>
+</p>
+<p>at generic <script type="math/tex">(a,b) \neq (0,0)</script> and at <script type="math/tex">(0,0)</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>First consider <script type="math/tex">(a,b) \neq (0,0)</script>.</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+D_{1}f_{}(a,b)
+&= \frac{b}{\sqrt[]{a^2+b^2}} -
+\frac{2a^2b}{2(a^2+b^2)^{3/2}} \\
+&=
+\frac{2b(a^2+b^2)-2a^2b}{2(a^2+b^2)^{3/2}} \\
+&=
+\frac{b^3}{(a^2+b^2)^{3/2}}
+\end{align*}
+</script>
+</p>
+<p>Similarly,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+D_{2}f_{}(a,b)
+&= \frac{a^3}{(a^2+b^2)^{3/2}}
+\end{align*} 
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+Df(a,b)=
+\left[ 
+\frac{b^3}{(a^2+b^2)^{3/2}},
+\frac{a^3}{(a^2+b^2)^{3/2}}
+\right] 
+</script>
+</p>
+<p>Then note <script type="math/tex">D_1f(a,b)</script> is not continuous at <script type="math/tex">(0,0)</script>.
+If we approach <script type="math/tex">(0,0)</script> with <script type="math/tex">a = b</script>, then we get</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim \limits_{(a,b) \to (0,0)} D_1f(a,b)
+= \frac{1}{2\sqrt[]{2}}
+</script>
+</p>
+<p>But if we approach <script type="math/tex">(0,0)</script> with <script type="math/tex">a = 2b</script>, then we get</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim \limits_{(a,b) \to (0,0)} D_1f(a,b)
+= \frac{1}{5\sqrt[]{5}}
+</script>
+</p>
+<p>Similarly, <script type="math/tex">D_2f(a,b)</script> is not continuous at <script type="math/tex">(0,0)</script>.</p>
+<p>Now, assume <script type="math/tex">f</script> is differentiable at <script type="math/tex">(0,0)</script> and <script type="math/tex">Df(0,0) = [c,d]</script>, and we approach approach <script type="math/tex">(0,0)</script> with <script type="math/tex">a = b = h</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+f(h,h) - f(0,0) - Df(0,0)(h,h) = \frac{1}{\sqrt[]{2}}|h| - (c+d)h = o(|h|)
+\end{align*} 
+</script>
+</p>
+<p>So if <script type="math/tex">h > 0</script>, then <script type="math/tex">c+d = \frac{1}{\sqrt[]{2}}</script> and if <script type="math/tex">h < 0</script>, then <script type="math/tex">c+d = -\frac{1}{\sqrt[]{2}}</script>.
+This is not possible.</p>
+<p>So <script type="math/tex">f</script> does not have derivative at <script type="math/tex">(0,0)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="455">4.5.5.</h3>
+<p>For what diﬀerentiable mappings <script type="math/tex">f : A \longrightarrow \mathbb{R}^m</script> is
+<script type="math/tex">f'(a)</script> a diagonal
+matrix for all <script type="math/tex">a ∈ A</script>?
+(A diagonal matrix is a matrix whose <script type="math/tex">(i,j)</script>th entries for
+all <script type="math/tex">i \neq j</script> are <script type="math/tex">0</script>.)</p>
+<p><strong>Solution</strong>:</p>
+<p>It means</p>
+<p>
+<script type="math/tex; mode=display"> 
+D_{j}f_{i}(a) =
+\begin{cases}
+    0 &\text{if } i \neq j \\
+    f_i'(a_i) &\text{if } i = j \\
+\end{cases} 
+</script>
+</p>
+<p>So the format is like</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(a) = (f_1(a_1), \cdots, f_n(a_n))
+</script>
+</p>
+<p>Basically, <script type="math/tex">f_i</script> is only one-variable function and is only determined
+by <script type="math/tex">a_i</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="456">4.5.6.</h3>
+<p>Show that if <script type="math/tex">z = f(xy)</script> then <script type="math/tex">x</script>, <script type="math/tex">y</script>, and z satisfy the diﬀerential equation
+<script type="math/tex">x \cdot z_x−y \cdot z_y = 0</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+g : \mathbb{R}^2 \longrightarrow \mathbb{R},
+\qquad
+(x,y) \longrightarrow xy
+</script>
+</p>
+<p>So <script type="math/tex">z = f (g(x,y)) = (f \circ g)(x,y)</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+z_x(a,b)
+&=
+D_1(f \circ g)(a,b) \\
+&= D_1 f(g(a,b)) \cdot D_1g(a,b) \\
+&= D_1 f(g(a,b)) \cdot b
+\end{align*} 
+</script>
+</p>
+<p>Similarly</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+z_y(a,b)
+&=
+D_2(f \circ g)(a,b) \\
+&= D_1 f(g(a,b)) \cdot D_2g(a,b) \\
+&= D_1 f(g(a,b)) \cdot a
+\end{align*} 
+</script>
+</p>
+<p>So we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+a \cdot z_x(a,b) = ab D_1 f(g(a,b)) = b \cdot z_y(a,b)
+</script>
+</p>
+<p>i.e.</p>
+<p>
+<script type="math/tex; mode=display"> 
+x \cdot z_x−y \cdot z_y = 0
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="457">4.5.7.</h3>
+<p>Let <script type="math/tex">w = F(xz,yz)</script>. Show that <script type="math/tex">x \cdot w_x +y \cdot w_y = z \cdot w_z</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+g : \mathbb{R}^3 \longrightarrow \mathbb{R}^2,
+\qquad
+(x,y,z) \longrightarrow (xz, yz)
+</script>
+</p>
+<p>Then <script type="math/tex">w = F(g(x,y,z)) = (F \circ g)(x,y,z)</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+w_x(a,b,c) &= D_{1}(F \circ g)_{1}(a,b,c) \\
+&= D_{1}F_{1}(g(a,b,c))D_{1}g_{1}(a,b,c)+
+D_{2}F_{1}(g(a,b,c))D_{1}g_{2}(a,b,c) \\
+&= D_{1}F_{1}(g(a,b,c)) \cdot c + D_{2}F_{1}(g(a,b,c)) \cdot 0 \\
+&= D_{1}F_{1}(g(a,b,c)) \cdot c
+\end{align*}
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+w_y(a,b,c) &= D_{2}(F \circ g)_{1}(a,b,c) \\
+&= D_{1}F_{1}(g(a,b,c))D_{2}g_{1}(a,b,c)+
+D_{2}F_{1}(g(a,b,c))D_{2}g_{2}(a,b,c) \\
+&= D_{1}F_{1}(g(a,b,c)) \cdot 0 + D_{2}F_{1}(g(a,b,c)) \cdot c \\
+&= D_{2}F_{1}(g(a,b,c)) \cdot c
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+w_z(a,b,c) &= D_{3}(F \circ g)_{1}(a,b,c) \\
+&= D_{1}F_{1}(g(a,b,c))D_{3}g_{1}(a,b,c)+
+D_{2}F_{1}(g(a,b,c))D_{3}g_{2}(a,b,c) \\
+&= D_{1}F_{1}(g(a,b,c)) \cdot a + D_{2}F_{1}(g(a,b,c)) \cdot b \\
+\end{align*}
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+(x \cdot w_x)(a,b,c) = ac D_{1}F_{1}(g(a,b,c)) \\
+(y \cdot w_y)(a,b,c) = bc D_{2}F_{1}(g(a,b,c)) \\
+(z \cdot w_z)(a,b,c) = ac D_{1}F_{1}(g(a,b,c)) + bc D_{2}F_{1}(g(a,b,c))
+</script>
+</p>
+<p>Therefore</p>
+<p>
+<script type="math/tex; mode=display"> 
+x \cdot w_x +y \cdot w_y = z \cdot w_z
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="458">4.5.8.</h3>
+<p>If <script type="math/tex">z = f(ax+by)</script>, show that <script type="math/tex">bz_x = az_y</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+g : \mathbb{R}^2 \longrightarrow \mathbb{R}^1,
+\qquad
+(x,y) \longrightarrow ax+by
+</script>
+</p>
+<p>So <script type="math/tex">z = f(g(x,y)) = (f \circ g)(x,y)</script>.</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+z_x(c,d)
+&= D_{1}(f \circ g)_{1}(c,d) \\
+&= D_{1}f_{1}(g(c,d))D_{1}g_{1}(c,d) \\
+&= D_{1}f_{1}(g(c,d)) \cdot a
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+z_y(c,d)
+&= D_{2}(f \circ g)_{1}(c,d) \\
+&= D_{1}f_{1}(g(c,d))D_{2}g_{1}(c,d) \\
+&= D_{1}f_{1}(g(c,d)) \cdot b
+\end{align*} 
+</script>
+</p>
+<p>So we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+b z_x(c,d) = abD_{1}f_{1}(g(c,d)) = a z_y(c,d)
+</script>
+</p>
+<p>So we have <script type="math/tex">bz_x = az_y</script>.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
