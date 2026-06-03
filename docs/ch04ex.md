@@ -875,3 +875,338 @@ then $f'(a_n) = -1, f'(b_n) = 1$.
 So $f'(x)$ is not continuous at $0$.
 
 $\square$
+
+### 4.5.4.
+
+Discuss the derivatives of the following mappings at the following
+points.
+
+(a)
+$f(x,y) = \frac{x^2 - y}{y+1}$ 
+on
+$\{(x,y) \in R^2 : y  \neq −1\}$ at generic $(a,b)$ with $b \neq −1$.
+
+**Proof**:
+
+$$
+\begin{align*}
+D_{1}f_{}(a,b)
+&= \frac{2a}{b+1}
+\end{align*}
+$$
+
+$$ 
+\begin{align*}
+D_{2}f_{}(a, b)
+&= \frac{-1}{b+1} - \frac{a^2-b}{(b+1)^2} \\
+&= -\frac{a^2+1}{(b+1)^2}
+\end{align*} 
+$$
+
+So
+
+$$ 
+Df(a,b) =
+\left[ \frac{2a}{b+1}, -\frac{1+a^2}{(b+1)^2} \right] 
+$$
+
+$\square$
+
+(b) $f(x,y) = \frac{xy^2}{y-1}$
+on $\{(x,y) ∈ \mathbb{R}^2 : y \neq 1\}$ at generic $(a,b)$ with $b \neq 1$.
+
+**Proof**:
+
+$$
+\begin{align*}
+D_{1}f_{}(a,b)
+&= \frac{b^2}{b-1}
+\end{align*} 
+$$
+
+$$ 
+\begin{align*}
+D_{2}f_{}(a,b)
+&= \frac{2ab}{b-1} - \frac{ab^2}{(b-1)^2} \\
+&= \frac{ab^2-2ab}{(b-1)^2}
+\end{align*}
+$$
+
+So
+
+$$ 
+Df(a,b) =
+\left[
+\frac{b^2}{b-1}, \frac{ab^2-2ab}{(b-1)^2}
+\right]
+$$
+
+$\square$
+
+(c)
+
+$$ 
+f(x,y)=
+\begin{cases}
+    \frac{xy}{\sqrt[]{x^2+y^2}} &\text{if } (x,y) \neq (0,0)\\
+    0 &\text{if } (x,y) = (0,0)\\
+\end{cases} 
+$$
+
+at generic $(a,b) \neq (0,0)$ and at $(0,0)$.
+
+**Proof**:
+
+First consider $(a,b) \neq (0,0)$.
+
+$$
+\begin{align*}
+D_{1}f_{}(a,b)
+&= \frac{b}{\sqrt[]{a^2+b^2}} -
+\frac{2a^2b}{2(a^2+b^2)^{3/2}} \\
+&=
+\frac{2b(a^2+b^2)-2a^2b}{2(a^2+b^2)^{3/2}} \\
+&=
+\frac{b^3}{(a^2+b^2)^{3/2}}
+\end{align*}
+$$
+
+Similarly,
+
+$$ 
+\begin{align*}
+D_{2}f_{}(a,b)
+&= \frac{a^3}{(a^2+b^2)^{3/2}}
+\end{align*} 
+$$
+
+So
+
+$$ 
+Df(a,b)=
+\left[ 
+\frac{b^3}{(a^2+b^2)^{3/2}},
+\frac{a^3}{(a^2+b^2)^{3/2}}
+\right] 
+$$
+
+Then note $D_1f(a,b)$ is not continuous at $(0,0)$.
+If we approach $(0,0)$ with $a = b$, then we get
+
+$$ 
+\lim \limits_{(a,b) \to (0,0)} D_1f(a,b)
+= \frac{1}{2\sqrt[]{2}}
+$$
+
+But if we approach $(0,0)$ with $a = 2b$, then we get
+
+$$ 
+\lim \limits_{(a,b) \to (0,0)} D_1f(a,b)
+= \frac{1}{5\sqrt[]{5}}
+$$
+
+Similarly, $D_2f(a,b)$ is not continuous at $(0,0)$.
+
+Now, assume $f$ is differentiable at $(0,0)$ and $Df(0,0) = [c,d]$, and we approach approach $(0,0)$ with $a = b = h$
+
+$$ 
+\begin{align*}
+f(h,h) - f(0,0) - Df(0,0)(h,h) = \frac{1}{\sqrt[]{2}}|h| - (c+d)h = o(|h|)
+\end{align*} 
+$$
+
+So if $h > 0$, then $c+d = \frac{1}{\sqrt[]{2}}$ and if $h < 0$, then $c+d = -\frac{1}{\sqrt[]{2}}$.
+This is not possible.
+
+So $f$ does not have derivative at $(0,0)$.
+
+$\square$
+
+### 4.5.5.
+
+For what diﬀerentiable mappings $f : A \longrightarrow \mathbb{R}^m$ is
+$f'(a)$ a diagonal
+matrix for all $a ∈ A$?
+(A diagonal matrix is a matrix whose $(i,j)$th entries for
+all $i \neq j$ are $0$.)
+
+**Solution**:
+
+It means
+
+$$ 
+D_{j}f_{i}(a) =
+\begin{cases}
+    0 &\text{if } i \neq j \\
+    f_i'(a_i) &\text{if } i = j \\
+\end{cases} 
+$$
+
+So the format is like
+
+$$ 
+f(a) = (f_1(a_1), \cdots, f_n(a_n))
+$$
+
+Basically, $f_i$ is only one-variable function and is only determined
+by $a_i$.
+
+$\square$
+
+### 4.5.6.
+
+Show that if $z = f(xy)$ then $x$, $y$, and z satisfy the diﬀerential equation
+$x \cdot z_x−y \cdot z_y = 0$.
+
+**Solution**:
+
+Let
+
+$$ 
+g : \mathbb{R}^2 \longrightarrow \mathbb{R},
+\qquad
+(x,y) \longrightarrow xy
+$$
+
+So $z = f (g(x,y)) = (f \circ g)(x,y)$
+
+$$
+\begin{align*}
+z_x(a,b)
+&=
+D_1(f \circ g)(a,b) \\
+&= D_1 f(g(a,b)) \cdot D_1g(a,b) \\
+&= D_1 f(g(a,b)) \cdot b
+\end{align*} 
+$$
+
+Similarly
+
+$$
+\begin{align*}
+z_y(a,b)
+&=
+D_2(f \circ g)(a,b) \\
+&= D_1 f(g(a,b)) \cdot D_2g(a,b) \\
+&= D_1 f(g(a,b)) \cdot a
+\end{align*} 
+$$
+
+So we have
+
+$$ 
+a \cdot z_x(a,b) = ab D_1 f(g(a,b)) = b \cdot z_y(a,b)
+$$
+
+i.e.
+
+$$ 
+x \cdot z_x−y \cdot z_y = 0
+$$
+
+$\square$
+
+### 4.5.7.
+
+Let $w = F(xz,yz)$. Show that $x \cdot w_x +y \cdot w_y = z \cdot w_z$.
+
+**Proof**:
+
+Let
+
+$$ 
+g : \mathbb{R}^3 \longrightarrow \mathbb{R}^2,
+\qquad
+(x,y,z) \longrightarrow (xz, yz)
+$$
+
+Then $w = F(g(x,y,z)) = (F \circ g)(x,y,z)$
+
+$$
+\begin{align*}
+w_x(a,b,c) &= D_{1}(F \circ g)_{1}(a,b,c) \\
+&= D_{1}F_{1}(g(a,b,c))D_{1}g_{1}(a,b,c)+
+D_{2}F_{1}(g(a,b,c))D_{1}g_{2}(a,b,c) \\
+&= D_{1}F_{1}(g(a,b,c)) \cdot c + D_{2}F_{1}(g(a,b,c)) \cdot 0 \\
+&= D_{1}F_{1}(g(a,b,c)) \cdot c
+\end{align*}
+$$
+
+$$ 
+\begin{align*}
+w_y(a,b,c) &= D_{2}(F \circ g)_{1}(a,b,c) \\
+&= D_{1}F_{1}(g(a,b,c))D_{2}g_{1}(a,b,c)+
+D_{2}F_{1}(g(a,b,c))D_{2}g_{2}(a,b,c) \\
+&= D_{1}F_{1}(g(a,b,c)) \cdot 0 + D_{2}F_{1}(g(a,b,c)) \cdot c \\
+&= D_{2}F_{1}(g(a,b,c)) \cdot c
+\end{align*} 
+$$
+
+$$ 
+\begin{align*}
+w_z(a,b,c) &= D_{3}(F \circ g)_{1}(a,b,c) \\
+&= D_{1}F_{1}(g(a,b,c))D_{3}g_{1}(a,b,c)+
+D_{2}F_{1}(g(a,b,c))D_{3}g_{2}(a,b,c) \\
+&= D_{1}F_{1}(g(a,b,c)) \cdot a + D_{2}F_{1}(g(a,b,c)) \cdot b \\
+\end{align*}
+$$
+
+So
+
+$$ 
+(x \cdot w_x)(a,b,c) = ac D_{1}F_{1}(g(a,b,c)) \\
+(y \cdot w_y)(a,b,c) = bc D_{2}F_{1}(g(a,b,c)) \\
+(z \cdot w_z)(a,b,c) = ac D_{1}F_{1}(g(a,b,c)) + bc D_{2}F_{1}(g(a,b,c))
+$$
+
+Therefore
+
+$$ 
+x \cdot w_x +y \cdot w_y = z \cdot w_z
+$$
+
+$\square$
+
+### 4.5.8.
+
+If $z = f(ax+by)$, show that $bz_x = az_y$.
+
+**Proof**:
+
+Let
+
+$$ 
+g : \mathbb{R}^2 \longrightarrow \mathbb{R}^1,
+\qquad
+(x,y) \longrightarrow ax+by
+$$
+
+So $z = f(g(x,y)) = (f \circ g)(x,y)$.
+
+$$
+\begin{align*}
+z_x(c,d)
+&= D_{1}(f \circ g)_{1}(c,d) \\
+&= D_{1}f_{1}(g(c,d))D_{1}g_{1}(c,d) \\
+&= D_{1}f_{1}(g(c,d)) \cdot a
+\end{align*} 
+$$
+
+$$
+\begin{align*}
+z_y(c,d)
+&= D_{2}(f \circ g)_{1}(c,d) \\
+&= D_{1}f_{1}(g(c,d))D_{2}g_{1}(c,d) \\
+&= D_{1}f_{1}(g(c,d)) \cdot b
+\end{align*} 
+$$
+
+So we have
+
+$$ 
+b z_x(c,d) = abD_{1}f_{1}(g(c,d)) = a z_y(c,d)
+$$
+
+So we have $bz_x = az_y$.
+
+$\square$
