@@ -1210,3 +1210,152 @@ $$
 So we have $bz_x = az_y$.
 
 $\square$
+
+### 4.5.9.
+
+The function $f : \mathbb{R}^2 \longrightarrow \mathbb{R}$ is called 
+homogeneous of degree $k$ if
+$f(tx,ty) = t^kf(x,y)$ for all scalars $t$ and vectors $(x,y)$.
+Letting $f_1$ and $f_2$
+denote the first and second partial derivatives of $f$, show that such $f$ 
+satisfies the diﬀerential equation
+
+$$ 
+xf_1(x,y)+yf_2(x,y) = kf(x,y).
+$$
+
+(Hint: First diﬀerentiate the homogeneity condition with respect to $t$, 
+viewing $x$ and $y$ as fixed but generic; the derivative of one side will 
+require the chain rule. Second, since the resulting condition holds for all 
+scalars $t$, it holds for any particular $t$ of your choosing.)
+
+**Proof**:
+
+Let
+
+$$ 
+g : \mathbb{R}^3 \longrightarrow \mathbb{R}^2,
+\qquad
+g(x,y,t) \longrightarrow (tx, ty)
+$$
+
+Then $f(tx,ty) = f(g(x,y,t)) = (f \circ g)(x,y,t)$,
+
+$$
+\begin{align*}
+D_{3}(f \circ g)(a,b,c)
+&= D_{1}f(g(a,b,c)) D_{3}g_{1}(a,b,c) +
+D_{2}f(g(a,b,c)) D_{3}g_{2}(a,b,c) \\
+&= D_{1}f(g(a,b,c)) \cdot a +
+D_{2}f(g(a,b,c)) \cdot b
+\end{align*} 
+$$
+
+On the other hand since $f(tx,ty) = t^kf(x,y)$, then
+
+$$ 
+D_{3}(f \circ g)(a,b,c) = kc^{k-1}f(a,b)
+$$
+
+If we plug $c = 1$ in both equation, then for any $a,b$ we get
+
+$$
+a D_{1}f(a, b) + b D_{2}f(a,b) = k f(a,b)
+$$
+
+Then that's exactly
+
+$$ 
+xf_1(x,y)+yf_2(x,y) = kf(x,y)
+$$
+
+$\square$
+
+### 4.5.10
+
+Let
+
+$$ 
+f : \mathbb{R}^2 \longrightarrow \mathbb{R}
+$$
+
+be a function such that for all $(x,y) ∈ \mathbb{R}^2$, the integral
+
+$$ 
+F : \mathbb{R}^2 \longrightarrow \mathbb{R},
+\qquad
+F(x,y) = \int_{v=0}^{y} f(x,v) dv
+$$
+
+exists and is diﬀerentiable with respect to $x$,
+its partial derivative with respect
+to $x$ being obtained by passing the $x$-derivative through the $v$-integral,
+
+$$ 
+\begin{align*}
+\frac{\partial F(x,y)}{\partial x}
+&= \frac{\partial }{\partial x}
+\int_{v=0}^{y} f(x,v) dv \\
+&= \lim \limits_{h \to 0}
+\frac{
+\int_{v=0}^{y}f(x+h,v)dv - \int_{v=0}^{y}f(x,v)dv
+}{h} \\
+&= \lim \limits_{h \to 0}
+\int_{v=0}^{y}
+\frac{
+f(x+h,v) - f(x,v)
+}{h} dv \\
+& \overset{!}{=}
+\int_{v=0}^{y}
+\lim \limits_{h \to 0}
+\frac{
+f(x+h,v) - f(x,v)
+}{h} dv \\
+&=
+\int_{v=0}^{y}
+\frac{ \partial f
+}{\partial x} (x,v) dv
+\end{align*} 
+$$
+
+(The "!" step requires justification, but under reasonable circumstances it can
+be carried out.)
+Define a function
+
+$$ 
+G : \mathbb{R} \longrightarrow \mathbb{R},
+\qquad
+G(x) = \int_{v=0}^{x}f(x,v)dv
+$$
+
+Thus $x$ aﬀects $G$ in two ways: as a parameter for the integrand,
+and as the
+upper limit of integration. What is $dG(x)/dx$?
+
+**Solution**:
+
+Note $G(x) = F(x, x)$, now we can consider
+
+$$ 
+g : \mathbb{R} \longrightarrow \mathbb{R}^2,
+\qquad
+g(x) = (x, x)
+$$
+
+Now we have $G(x) = (F \circ g)(x)$, so
+
+$$
+\begin{align*}
+\frac{dG}{dx}(a)
+&= D_{1}(F \circ g)_{1}(a) \\
+&= D_{1}F_{1}(g(a)) D_{1}g_{1}(a) +
+D_{2}F_{1}(g(a)) D_{1}g_{2}(a) \\
+&= D_{1}F_{1}(a, a) \cdot 1 + D_{2}F_{1}(a, a) \cdot 1 \\
+&=
+\left( \int_{v=0}^{a}
+\frac{ \partial f
+}{\partial x} (a,v) dv \right)  + f(a,a)
+\end{align*} 
+$$
+
+$\square$
