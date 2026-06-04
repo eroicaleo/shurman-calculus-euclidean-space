@@ -132,6 +132,10 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#458">4.5.8.</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#459">4.5.9.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4510">4.5.10</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -1303,6 +1307,151 @@ b z_x(c,d) = abD_{1}f_{1}(g(c,d)) = a z_y(c,d)
 </script>
 </p>
 <p>So we have <script type="math/tex">bz_x = az_y</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="459">4.5.9.</h3>
+<p>The function <script type="math/tex">f : \mathbb{R}^2 \longrightarrow \mathbb{R}</script> is called 
+homogeneous of degree <script type="math/tex">k</script> if
+<script type="math/tex">f(tx,ty) = t^kf(x,y)</script> for all scalars <script type="math/tex">t</script> and vectors <script type="math/tex">(x,y)</script>.
+Letting <script type="math/tex">f_1</script> and <script type="math/tex">f_2</script>
+denote the first and second partial derivatives of <script type="math/tex">f</script>, show that such <script type="math/tex">f</script> 
+satisfies the diﬀerential equation</p>
+<p>
+<script type="math/tex; mode=display"> 
+xf_1(x,y)+yf_2(x,y) = kf(x,y).
+</script>
+</p>
+<p>(Hint: First diﬀerentiate the homogeneity condition with respect to <script type="math/tex">t</script>, 
+viewing <script type="math/tex">x</script> and <script type="math/tex">y</script> as fixed but generic; the derivative of one side will 
+require the chain rule. Second, since the resulting condition holds for all 
+scalars <script type="math/tex">t</script>, it holds for any particular <script type="math/tex">t</script> of your choosing.)</p>
+<p><strong>Proof</strong>:</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+g : \mathbb{R}^3 \longrightarrow \mathbb{R}^2,
+\qquad
+g(x,y,t) \longrightarrow (tx, ty)
+</script>
+</p>
+<p>Then <script type="math/tex">f(tx,ty) = f(g(x,y,t)) = (f \circ g)(x,y,t)</script>,</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+D_{3}(f \circ g)(a,b,c)
+&= D_{1}f(g(a,b,c)) D_{3}g_{1}(a,b,c) +
+D_{2}f(g(a,b,c)) D_{3}g_{2}(a,b,c) \\
+&= D_{1}f(g(a,b,c)) \cdot a +
+D_{2}f(g(a,b,c)) \cdot b
+\end{align*} 
+</script>
+</p>
+<p>On the other hand since <script type="math/tex">f(tx,ty) = t^kf(x,y)</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+D_{3}(f \circ g)(a,b,c) = kc^{k-1}f(a,b)
+</script>
+</p>
+<p>If we plug <script type="math/tex">c = 1</script> in both equation, then for any <script type="math/tex">a,b</script> we get</p>
+<p>
+<script type="math/tex; mode=display">
+a D_{1}f(a, b) + b D_{2}f(a,b) = k f(a,b)
+</script>
+</p>
+<p>Then that's exactly</p>
+<p>
+<script type="math/tex; mode=display"> 
+xf_1(x,y)+yf_2(x,y) = kf(x,y)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="4510">4.5.10</h3>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+f : \mathbb{R}^2 \longrightarrow \mathbb{R}
+</script>
+</p>
+<p>be a function such that for all <script type="math/tex">(x,y) ∈ \mathbb{R}^2</script>, the integral</p>
+<p>
+<script type="math/tex; mode=display"> 
+F : \mathbb{R}^2 \longrightarrow \mathbb{R},
+\qquad
+F(x,y) = \int_{v=0}^{y} f(x,v) dv
+</script>
+</p>
+<p>exists and is diﬀerentiable with respect to <script type="math/tex">x</script>,
+its partial derivative with respect
+to <script type="math/tex">x</script> being obtained by passing the <script type="math/tex">x</script>-derivative through the <script type="math/tex">v</script>-integral,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+\frac{\partial F(x,y)}{\partial x}
+&= \frac{\partial }{\partial x}
+\int_{v=0}^{y} f(x,v) dv \\
+&= \lim \limits_{h \to 0}
+\frac{
+\int_{v=0}^{y}f(x+h,v)dv - \int_{v=0}^{y}f(x,v)dv
+}{h} \\
+&= \lim \limits_{h \to 0}
+\int_{v=0}^{y}
+\frac{
+f(x+h,v) - f(x,v)
+}{h} dv \\
+& \overset{!}{=}
+\int_{v=0}^{y}
+\lim \limits_{h \to 0}
+\frac{
+f(x+h,v) - f(x,v)
+}{h} dv \\
+&=
+\int_{v=0}^{y}
+\frac{ \partial f
+}{\partial x} (x,v) dv
+\end{align*} 
+</script>
+</p>
+<p>(The "!" step requires justification, but under reasonable circumstances it can
+be carried out.)
+Define a function</p>
+<p>
+<script type="math/tex; mode=display"> 
+G : \mathbb{R} \longrightarrow \mathbb{R},
+\qquad
+G(x) = \int_{v=0}^{x}f(x,v)dv
+</script>
+</p>
+<p>Thus <script type="math/tex">x</script> aﬀects <script type="math/tex">G</script> in two ways: as a parameter for the integrand,
+and as the
+upper limit of integration. What is <script type="math/tex">dG(x)/dx</script>?</p>
+<p><strong>Solution</strong>:</p>
+<p>Note <script type="math/tex">G(x) = F(x, x)</script>, now we can consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+g : \mathbb{R} \longrightarrow \mathbb{R}^2,
+\qquad
+g(x) = (x, x)
+</script>
+</p>
+<p>Now we have <script type="math/tex">G(x) = (F \circ g)(x)</script>, so</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\frac{dG}{dx}(a)
+&= D_{1}(F \circ g)_{1}(a) \\
+&= D_{1}F_{1}(g(a)) D_{1}g_{1}(a) +
+D_{2}F_{1}(g(a)) D_{1}g_{2}(a) \\
+&= D_{1}F_{1}(a, a) \cdot 1 + D_{2}F_{1}(a, a) \cdot 1 \\
+&=
+\left( \int_{v=0}^{a}
+\frac{ \partial f
+}{\partial x} (a,v) dv \right)  + f(a,a)
+\end{align*} 
+</script>
+</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
