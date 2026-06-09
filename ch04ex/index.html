@@ -138,6 +138,14 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#46-higher-order-derivatives">4.6 Higher-Order Derivatives</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#462">4.6.2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#463-the-wave-equation">4.6.3. (The wave equation)</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -1452,6 +1460,147 @@ D_{2}F_{1}(g(a)) D_{1}g_{2}(a) \\
 \end{align*} 
 </script>
 </p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="46-higher-order-derivatives">4.6 Higher-Order Derivatives</h2>
+<h3 id="462">4.6.2</h3>
+<p>Suppose <script type="math/tex">u</script>, as a function of <script type="math/tex">x</script> and <script type="math/tex">y</script>, satisfies
+the diﬀerential equation
+<script type="math/tex">u_{xx} − u_{yy} = 0</script>.
+Make the change of variables <script type="math/tex">x = s + t, y= s− t</script>. What
+corresponding diﬀerential equation does <script type="math/tex">u</script> satisfy when viewed as a function
+of <script type="math/tex">s</script> and <script type="math/tex">t</script>? (That is, find a nontrivial relation involving
+at least one of <script type="math/tex">u, u_s, u_t, u_{ss}, u_{tt},</script> and <script type="math/tex">u_{st}</script>.)</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+u_s &= u_x x_s + u_y y_s \\
+&=u_x + u_y \\
+u_t &= u_x x_t + u_y y_t \\
+&= u_x - u_y
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+u_{ss} &= u_{xx}x_s + u_{xy} y_s + u_{yx} x_s + u_{yy} y_s \\
+&= u_{xx} + u_{xy} + u_{yx} + u_{yy} \\
+&= u_{xx} + 2 u_{xy} + u_{yy}
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+u_{st} &= u_{xx}x_t + u_{xy} y_t + u_{yx} x_t + u_{yy} y_t \\
+&= u_{xx} - u_{xy} + u_{yx} - u_{yy} \\
+&= u_{xx} - u_{yy} \\
+&= 0
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+u_{tt} &= u_{xx}x_t + u_{xy} y_t - u_{yx} x_t - u_{yy} y_t \\
+&= u_{xx} - u_{xy} - u_{yx} + u_{yy} \\
+&= u_{xx} - 2 u_{xy} + u_{yy}
+\end{align*} 
+</script>
+</p>
+<p>So the function is <script type="math/tex">u_{st}</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="463-the-wave-equation">4.6.3. (The wave equation)</h3>
+<p>(a) Let <script type="math/tex">c</script> be a constant, tacitly understood to
+denote the speed of light. Let <script type="math/tex">x</script> and <script type="math/tex">t</script> denote a space variable and a time
+variable, and introduce variables</p>
+<p>
+<script type="math/tex; mode=display"> 
+p =x+ct, \qquad q = x-ct.
+</script>
+</p>
+<p>Show that a quantity <script type="math/tex">w</script>, viewed as a function of <script type="math/tex">x</script> and <script type="math/tex">t</script>,
+satisfies the wave equation,</p>
+<p>
+<script type="math/tex; mode=display"> 
+c^2 w_{xx} = w_{tt}
+</script>
+</p>
+<p>if and only if it satisfies the equation</p>
+<p>
+<script type="math/tex; mode=display"> 
+w_{pq} = 0
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+x &= \frac{p+q}{2} \\
+t &= \frac{p-q}{2c} \\
+x_p = 1/2 &, x_q = 1/2 \\
+t_p = 1/(2c) &, t_q = -1/(2c) 
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+w_p &= w_x x_p + w_t t_p \\
+&= \frac{1}{2} w_x + \frac{1}{2c} w_t \\
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+w_{pq} &=
+\frac{1}{2} w_{xx}x_q + \frac{1}{2} w_{xt} t_q +
+\frac{1}{2c} w_{tx}x_q + \frac{1}{2c} w_{tt}t_q \\
+&= \frac{1}{4} w_{xx} - \frac{1}{4c} w_{xt}
++ \frac{1}{4c} w_{tx} - \frac{1}{4c^2} w_{tt} \\
+&= 0
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+p_x = 1, &\qquad p_t = c \\
+q_x = 1, &\qquad q_t = -c \\
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+w_x &= w_p p_x + w_q q_x \\
+&= w_p + w_q \\
+w_t &= w_p p_t + w_q q_t \\
+&= w_p c - w_q c \\
+w_{xx} &= w_{pp} p_x + w_{pq} q_x + w_{qp} p_x + w_{qq} q_x \\
+&= w_{pp} + w_{pq} + w_{qp} + w_{qq} \\
+&= w_{pp} + w_{qq} \\
+w_{tt} &= c (w_{pp} p_t + w_{pq} q_t - w_{qp} p_t - w_{qq} q_t) \\
+&= c (w_{pp} c - w_{pq} c - w_{qp} c + w_{qq} c) \\
+&= c^2 (w_{pp} - w_{pq} - w_{qp} + w_{qq}) \\
+&= c^2 (w_{pp} + w_{qq}) \\
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">w_{tt} = c^2 w_{xx}</script> as required.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
