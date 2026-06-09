@@ -1359,3 +1359,138 @@ D_{2}F_{1}(g(a)) D_{1}g_{2}(a) \\
 $$
 
 $\square$
+
+## 4.6 Higher-Order Derivatives
+
+### 4.6.2
+
+Suppose $u$, as a function of $x$ and $y$, satisfies
+the diﬀerential equation
+$u_{xx} − u_{yy} = 0$.
+Make the change of variables $x = s + t, y= s− t$. What
+corresponding diﬀerential equation does $u$ satisfy when viewed as a function
+of $s$ and $t$? (That is, find a nontrivial relation involving
+at least one of $u, u_s, u_t, u_{ss}, u_{tt},$ and $u_{st}$.)
+
+**Solution**:
+
+$$ 
+\begin{align*}
+u_s &= u_x x_s + u_y y_s \\
+&=u_x + u_y \\
+u_t &= u_x x_t + u_y y_t \\
+&= u_x - u_y
+\end{align*} 
+$$
+
+$$
+\begin{align*}
+u_{ss} &= u_{xx}x_s + u_{xy} y_s + u_{yx} x_s + u_{yy} y_s \\
+&= u_{xx} + u_{xy} + u_{yx} + u_{yy} \\
+&= u_{xx} + 2 u_{xy} + u_{yy}
+\end{align*} 
+$$ 
+
+$$
+\begin{align*}
+u_{st} &= u_{xx}x_t + u_{xy} y_t + u_{yx} x_t + u_{yy} y_t \\
+&= u_{xx} - u_{xy} + u_{yx} - u_{yy} \\
+&= u_{xx} - u_{yy} \\
+&= 0
+\end{align*} 
+$$ 
+
+$$ 
+\begin{align*}
+u_{tt} &= u_{xx}x_t + u_{xy} y_t - u_{yx} x_t - u_{yy} y_t \\
+&= u_{xx} - u_{xy} - u_{yx} + u_{yy} \\
+&= u_{xx} - 2 u_{xy} + u_{yy}
+\end{align*} 
+$$
+
+So the function is $u_{st}$
+
+$\square$
+
+### 4.6.3. (The wave equation)
+
+(a) Let $c$ be a constant, tacitly understood to
+denote the speed of light. Let $x$ and $t$ denote a space variable and a time
+variable, and introduce variables
+
+$$ 
+p =x+ct, \qquad q = x-ct.
+$$
+
+Show that a quantity $w$, viewed as a function of $x$ and $t$,
+satisfies the wave equation,
+
+$$ 
+c^2 w_{xx} = w_{tt}
+$$
+
+if and only if it satisfies the equation
+
+$$ 
+w_{pq} = 0
+$$
+
+**Proof**:
+
+$\Rightarrow$
+
+$$
+\begin{align*}
+x &= \frac{p+q}{2} \\
+t &= \frac{p-q}{2c} \\
+x_p = 1/2 &, x_q = 1/2 \\
+t_p = 1/(2c) &, t_q = -1/(2c) 
+\end{align*} 
+$$
+
+$$
+\begin{align*}
+w_p &= w_x x_p + w_t t_p \\
+&= \frac{1}{2} w_x + \frac{1}{2c} w_t \\
+\end{align*} 
+$$
+
+$$
+\begin{align*}
+w_{pq} &=
+\frac{1}{2} w_{xx}x_q + \frac{1}{2} w_{xt} t_q +
+\frac{1}{2c} w_{tx}x_q + \frac{1}{2c} w_{tt}t_q \\
+&= \frac{1}{4} w_{xx} - \frac{1}{4c} w_{xt}
++ \frac{1}{4c} w_{tx} - \frac{1}{4c^2} w_{tt} \\
+&= 0
+\end{align*} 
+$$
+
+$\Leftarrow$
+
+$$
+\begin{align*}
+p_x = 1, &\qquad p_t = c \\
+q_x = 1, &\qquad q_t = -c \\
+\end{align*} 
+$$
+
+$$
+\begin{align*}
+w_x &= w_p p_x + w_q q_x \\
+&= w_p + w_q \\
+w_t &= w_p p_t + w_q q_t \\
+&= w_p c - w_q c \\
+w_{xx} &= w_{pp} p_x + w_{pq} q_x + w_{qp} p_x + w_{qq} q_x \\
+&= w_{pp} + w_{pq} + w_{qp} + w_{qq} \\
+&= w_{pp} + w_{qq} \\
+w_{tt} &= c (w_{pp} p_t + w_{pq} q_t - w_{qp} p_t - w_{qq} q_t) \\
+&= c (w_{pp} c - w_{pq} c - w_{qp} c + w_{qq} c) \\
+&= c^2 (w_{pp} - w_{pq} - w_{qp} + w_{qq}) \\
+&= c^2 (w_{pp} + w_{qq}) \\
+\end{align*} 
+$$
+
+So $w_{tt} = c^2 w_{xx}$ as required.
+
+$\square$
